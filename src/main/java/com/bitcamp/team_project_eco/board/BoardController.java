@@ -1,6 +1,5 @@
-package com.bitcamp.team_project_eco.controllers;
+package com.bitcamp.team_project_eco.board;
 
-import com.bitcamp.team_project_eco.entities.Board;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.entities;
+package com.bitcamp.team_project_eco.admin;
 
 import lombok.Data;
 
