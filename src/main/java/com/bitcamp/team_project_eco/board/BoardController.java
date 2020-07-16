@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.board;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +10,8 @@ import java.util.List;
 @RequestMapping("/board")
 public class BoardController {
     // create, read, update, delete.
+    @Autowired BoardRepository boardRepository;
+
     @PostMapping("/create")
     public boolean createBoard(@RequestBody Board board){
 
