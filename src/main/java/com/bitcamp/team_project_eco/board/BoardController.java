@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", maxAge = 3306)
 @RestController
 @RequestMapping("/board")
 public class BoardController {
