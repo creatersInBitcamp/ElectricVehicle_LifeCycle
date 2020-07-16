@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.controllers;
+package com.bitcamp.team_project_eco;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
