@@ -1,27 +1,28 @@
 package com.bitcamp.team_project_eco.board;
 
 
-import lombok.Data;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Entity
-@Data
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long boardNo;
-    private String titie;
-    private String content;
-    private String hashTag;
-    private String createDate;
-    private String updateDate;
-    private Long recomendation;
-    private Long boardHits;
-    private String userId;
-    private Long communityNo;
+    @Column(length = 20) private Long boardNo;
+    @Column(length = 50) private String titie;
+    @Column private String content;
+    @Column(length = 20) private String hashTag;
+    @Column(length = 20) private LocalDateTime createDate;
+    @Column(length = 20) private LocalDateTime updateDate;
+    @Column(length = 20) private int recomendation;
+    @Column(length = 20) private Long boardHits;
+    @Column(length = 20) private String userId;
+    @Column(length = 20) private int communityNo;
 }
