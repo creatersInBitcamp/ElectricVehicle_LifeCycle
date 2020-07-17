@@ -1,6 +1,6 @@
 package com.bitcamp.team_project_eco.newCar;
 
-import com.bitcamp.team_project_eco.usedCar.MarketPrice;
+import com.bitcamp.team_project_eco.usedPurchase.MarketPrice;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
