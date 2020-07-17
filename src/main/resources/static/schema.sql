@@ -177,5 +177,4 @@ CREATE TABLE comparison
     `order_id`            VARCHAR(45)    NULL,
     PRIMARY KEY (car_id)
 );
->>>>>>> newcar
 
