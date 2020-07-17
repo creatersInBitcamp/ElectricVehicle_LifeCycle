@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.newCar.purchase;
+package com.bitcamp.team_project_eco.purchase;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;

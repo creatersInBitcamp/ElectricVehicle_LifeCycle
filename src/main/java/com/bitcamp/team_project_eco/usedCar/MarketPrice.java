@@ -1,6 +1,6 @@
 package com.bitcamp.team_project_eco.usedCar;
 
-import com.bitcamp.team_project_eco.newCar.electriccar.ElectricCar;
+import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

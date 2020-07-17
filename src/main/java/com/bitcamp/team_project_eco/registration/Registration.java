@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.newCar.registration;
+package com.bitcamp.team_project_eco.registration;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
