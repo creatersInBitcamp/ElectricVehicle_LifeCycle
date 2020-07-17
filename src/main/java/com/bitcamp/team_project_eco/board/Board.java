@@ -1,6 +1,5 @@
 package com.bitcamp.team_project_eco.board;
 
-
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 

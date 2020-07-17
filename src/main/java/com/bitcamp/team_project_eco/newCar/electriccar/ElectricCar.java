@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.newCar;
+package com.bitcamp.team_project_eco.newCar.electriccar;
 
 import com.bitcamp.team_project_eco.usedPurchase.MarketPrice;
 import lombok.Getter;
