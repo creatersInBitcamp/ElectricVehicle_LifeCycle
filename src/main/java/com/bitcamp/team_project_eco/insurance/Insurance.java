@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.newCar.insurance;
+package com.bitcamp.team_project_eco.insurance;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

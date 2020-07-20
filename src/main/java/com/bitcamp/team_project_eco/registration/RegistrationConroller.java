@@ -1,5 +1,4 @@
-package com.bitcamp.team_project_eco.newCar.insurance;
-
+package com.bitcamp.team_project_eco.registration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,8 +9,8 @@ import javax.persistence.EntityManager;
 
 @CrossOrigin(origins = "*",maxAge = 3600)
 @RestController
-@RequestMapping("/insurance")
-public class InsuranceController {
+@RequestMapping("/registration")
+public class RegistrationConroller {
     @Autowired EntityManager manager;
-    @Autowired InsuranceRepository repository;
+    @Autowired RegistrationRepository repository;
 }

@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.newCar.electriccar;
+package com.bitcamp.team_project_eco.electriccar;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;

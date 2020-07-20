@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.newCar.comparison;
+package com.bitcamp.team_project_eco.comparison;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -6,7 +6,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
