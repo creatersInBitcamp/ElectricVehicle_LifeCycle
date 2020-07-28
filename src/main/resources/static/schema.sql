@@ -1,23 +1,3 @@
-CREATE TABLE electric_car
-(
-    `car_id`                 INT            NOT NULL    AUTO_INCREMENT,
-    `manufacturer`           VARCHAR(45)    NULL,
-    `trim`                   VARCHAR(45)    NULL,
-    `manufacturing_yyyy_mm`  VARCHAR(45)    NULL,
-    `price`                  VARCHAR(45)    NULL,
-    `fuel_efficiency`        VARCHAR(45)    NULL,
-    `rapid_charging`         VARCHAR(45)    NULL,
-    `slow_charging`          VARCHAR(45)    NULL,
-    `mileage`                VARCHAR(45)    NULL,
-    `battery_capacity`       VARCHAR(45)    NULL,
-    `subsidy`                VARCHAR(45)    NULL,
-    `production_site`        VARCHAR(45)    NULL,
-    `color`                  VARCHAR(45)    NULL,
-    `technical_option`       VARCHAR(45)    NULL,
-    `design_option`          VARCHAR(45)    NULL,
-    PRIMARY KEY (car_id)
-)default character set utf8 collate UTF8_GENERAL_CI;
-
 CREATE TABLE market_price
 (
     `id`                     INT            NULL        AUTO_INCREMENT,
@@ -112,3 +92,41 @@ ALTER TABLE bookmark
         REFERENCES sights (sights_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 
+CREATE TABLE car
+(
+    `car_id`                    INT            NOT NULL    AUTO_INCREMENT COMMENT '차 아이디',
+    `car_name`                  VARCHAR(45)    NULL        COMMENT '이름',
+    `brand`                     VARCHAR(45)    NULL        COMMENT '브랜드',
+    `price`                     VARCHAR(45)    NULL        COMMENT '가격',
+    `engine_type`               VARCHAR(45)    NULL        COMMENT '엔진형식',
+    `supercharge_method`        VARCHAR(45)    NULL        COMMENT '과급방식',
+    `exhaust_volume`            VARCHAR(45)    NULL        COMMENT '배기량',
+    `fuel`                      VARCHAR(45)    NULL        COMMENT '연료',
+    `fuel_efficiency`           VARCHAR(45)    NULL        COMMENT '연비(등급)',
+    `passengers_number`         VARCHAR(45)    NULL        COMMENT '승차인원',
+    `driving_method`            VARCHAR(45)    NULL        COMMENT '구동방식',
+    `transmission`              VARCHAR(45)    NULL        COMMENT '변속기',
+    `maximum_output`            VARCHAR(45)    NULL        COMMENT '최대출력',
+    `maximum_torque`            VARCHAR(45)    NULL        COMMENT '최대토크',
+    `top_Speed`                 VARCHAR(45)    NULL        COMMENT '최고속도',
+    `acceleration_performance`  VARCHAR(45)    NULL        COMMENT '가속성능(0-100 km/h)',
+    `CO2_emissions`             VARCHAR(45)    NULL        COMMENT 'CO²배출량',
+    `length`                    VARCHAR(45)    NULL        COMMENT '전장',
+    `width`                     VARCHAR(45)    NULL        COMMENT '전폭',
+    `height`                    VARCHAR(45)    NULL        COMMENT '전고',
+    `wheel_base`                VARCHAR(45)    NULL        COMMENT '축거',
+    `front_distance`            VARCHAR(45)    NULL        COMMENT '윤거전',
+    `back_distance`             VARCHAR(45)    NULL        COMMENT '윤거후',
+    `weight`                    VARCHAR(45)    NULL        COMMENT '공차중량',
+    `front_wheel`               VARCHAR(45)    NULL        COMMENT '전륜타이어',
+    `rear_wheel`                VARCHAR(45)    NULL        COMMENT '후륜타이어',
+    `front_suspension`          VARCHAR(45)    NULL        COMMENT '전륜서스펜션',
+    `rear_suspension`           VARCHAR(45)    NULL        COMMENT '후륜서스펜션',
+    `front_braking`             VARCHAR(45)    NULL        COMMENT '전륜제동장치',
+    `rear_braking`              VARCHAR(45)    NULL        COMMENT '후륜제동장치',
+    `steering`                  VARCHAR(45)    NULL        COMMENT '스티어링',
+    `img`                       VARCHAR(45)    NULL        COMMENT '사진',
+    PRIMARY KEY (car_id)
+);
+
+ALTER TABLE car COMMENT '자동차';
