@@ -22,6 +22,4 @@ public class MarketPrice {
 
     @Column(name = "manufacturing_yyyy_mm", nullable = false) private String manufacturingYyyyMm;
 
-    @ManyToOne
-    @JoinColumn(name = "car_id") private ElectricCar electricCar;
 }
