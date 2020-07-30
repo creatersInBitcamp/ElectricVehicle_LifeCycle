@@ -27,6 +27,10 @@ dependencies {
     compile group: 'com.querydsl', name: 'querydsl-jpa', version: '4.3.0'
     compile group: 'com.querydsl', name: 'querydsl-apt', version: '4.3.0'
     compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.744'
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.5.4'
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.2'
+
+
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

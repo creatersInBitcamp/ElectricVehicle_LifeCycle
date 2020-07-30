@@ -1,0 +1,33 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitcamp.team_project_eco._mappers.MbFareMapper">
+    <select id="selectOne" parameterType="com.bitcamp.team_project_eco._mybatisFare.MbFare"
+            resultType="com.bitcamp.team_project_eco._mybatisFare.MbFare">
+        SELECT
+        fare_id fareId ,
+        start_name startName,
+        arrive_name	arriveName,
+        type_one typeOne,
+        type_two typeTwo,
+        type_three typeThree,
+        type_four typeFour,
+        type_five typeFive,
+        type_light_car typeLightCar
+         FROM fare WHERE start_name LIKE #{startName} AND arrive_name LIKE #{arriveName}
+    </select>
+
+    <select id="selectAll" resultType="com.bitcamp.team_project_eco._mybatisFare.MbFare">
+        SELECT
+        fare_id fareId ,
+        start_name startName,
+        arrive_name	arriveName,
+        type_one typeOne,
+        type_two typeTwo,
+        type_three typeThree,
+        type_four typeFour,
+        type_five typeFive,
+        type_light_car typeLightCar FROM fare LIMIT 5
+    </select>
+
+</mapper>
