@@ -45,6 +45,5 @@ public class ElectricCar {
 
     @Column(name = "design_option", nullable = false) private String designOption;
 
-    @OneToMany(mappedBy = "electric_car", cascade = CascadeType.ALL)
-    private List<MarketPrice> marketPrices;
+
 }
