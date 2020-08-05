@@ -1,10 +1,7 @@
 package com.bitcamp.team_project_eco.car;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name="car")
 public class Car {
     @Id
@@ -50,5 +47,68 @@ public class Car {
     @Column(name="steering",nullable = false) private String steering ;
     @Column(name="img",nullable = false) private String img;
 
-
+    @Builder
+    private Car(Long carId,
+                String carName,
+                String price,
+                String engineType,
+                String superchargeMethod,
+                String exhaustVolume,
+                String fuel,
+                String fuelEfficiency,
+                String passengersNumber,
+                String drivingMethod,
+                String transmission,
+                String maximumOutput,
+                String maximumTorque,
+                String topSpeed,
+                String accelerationPerformance,
+                String brakingPerformance,
+                String CO2Emissions,
+                String length,
+                String fullWidth,
+                String wheelBase,
+                String frontDistance,
+                String backDistance,
+                String weight,
+                String frontWheel,
+                String rearWheel,
+                String frontSuspension,
+                String rearSuspension,
+                String frontBraking,
+                String rearBraking,
+                String steering,
+                String img){
+        this.carId = carId;
+        this.carName = carName;
+        this.price = price;
+        this.engineType = engineType;
+        this.superchargeMethod = superchargeMethod;
+        this.exhaustVolume = exhaustVolume;
+        this.fuel = fuel;
+        this.fuelEfficiency = fuelEfficiency;
+        this.passengersNumber = passengersNumber;
+        this.drivingMethod = drivingMethod;
+        this.transmission = transmission;
+        this.maximumOutput = maximumOutput;
+        this.maximumTorque = maximumTorque;
+        this.topSpeed = topSpeed;
+        this.accelerationPerformance = accelerationPerformance;
+        this.brakingPerformance = brakingPerformance;
+        this.CO2Emissions = CO2Emissions;
+        this.length = length;
+        this.fullWidth = fullWidth;
+        this.wheelBase = wheelBase;
+        this.frontDistance = frontDistance;
+        this.backDistance = backDistance;
+        this.weight = weight;
+        this.frontWheel = frontWheel;
+        this.rearWheel = rearWheel;
+        this.frontSuspension = frontSuspension;
+        this.rearSuspension = rearSuspension;
+        this.frontBraking = frontBraking;
+        this.rearBraking = rearBraking;
+        this.steering = steering;
+        this. img = img;
+    }
 }
