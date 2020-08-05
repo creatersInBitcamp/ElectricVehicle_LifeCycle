@@ -21,9 +21,9 @@ public class BoardController {
     public List<Board> boardList(){
         return null;
     }
-    @GetMapping("/read")
+    @GetMapping("/read/{boardNo}")
     public Board readBoard(@PathVariable Long boardNo){
-
+        System.out.println(boardNo);
         return null;
     }
     @PostMapping("/update")
