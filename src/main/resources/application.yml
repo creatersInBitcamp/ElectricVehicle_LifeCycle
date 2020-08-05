@@ -1,14 +1,8 @@
 spring:
-  mvc:
-    view:
-      suffix: .html
-  jpa:
-    show-sql: true
-    database: mysql
-    hibernate:
-      ddl-auto: update
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://127.0.0.1:3306/jusundb
-    username: jusundb
-    password: jusundb
+    url: jdbc:h2:mem:testdb;
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect

@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", maxAge = 3306)
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/board")
+@RequestMapping("/boards")
 public class BoardController {
     // create, read, update, delete.
     @Autowired BoardRepository boardRepository;

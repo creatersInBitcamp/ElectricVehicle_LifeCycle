@@ -6,9 +6,10 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
+@ToString
 @Entity
-@Getter @Setter @ToString @NoArgsConstructor
 @Table(name = "board")
 public class Board {
     @Id
@@ -22,7 +23,29 @@ public class Board {
     @CreationTimestamp
     @Column(name = "update_date") private LocalDateTime updateDate;
     @Column(name = "recomendation", nullable = false) private int recomendation;
-    @Column(name = "board_hits", nullable = false) private Long boardHits;
+    @Column(name = "board_hits", nullable = false) private int boardHits;
     @Column(name = "user_id", nullable = false) private String userId;
     @Column(name = "community_id", nullable = false) private int communityId;
+
+    @Builder
+    private Board(Long id, String title,
+                  String content,
+                  String hashTag,
+                  LocalDateTime createDate,
+                  LocalDateTime updateDate,
+                  int recomendation,
+                  int boardHits,
+                  String userId,
+                  int coummunityId){
+        this.id = id;
+        this.titie = title;
+        this.content = content;
+        this.hashTag = hashTag;
+        this.createDate = createDate;
+        this.updateDate = updateDate;
+        this.recomendation = recomendation;
+        this.boardHits = boardHits;
+        this.userId = userId;
+        this.communityId = coummunityId;
+    }
 }
