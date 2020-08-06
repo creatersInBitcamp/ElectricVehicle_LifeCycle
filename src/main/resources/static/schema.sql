@@ -18,30 +18,19 @@ CREATE TABLE electric_car
     PRIMARY KEY (car_id)
 )default character set utf8 collate UTF8_GENERAL_CI;
 
-CREATE TABLE market_price
+CREATE TABLE used_car
 (
-    `id`                     INT            NULL        AUTO_INCREMENT,
-    `car_type`               VARCHAR(45)    NULL,
-    `depreciation_rate`      VARCHAR(45)    NULL,
-    `car_id`                 INT            NULL,
-    `manufacturing_yyyy_mm`  VARCHAR(45)    NULL,
-    PRIMARY KEY (id)
+    `usedcar_id`  INT            NOT NULL    AUTO_INCREMENT COMMENT '중고차  아이디',
+    `price`       VARCHAR(45)    NULL        COMMENT '중고가격',
+    `img_id`      VARCHAR(45)    NULL        COMMENT '이미지',
+    `manufacturer`VARCHAR(45)    NULL        COMMENT '제조사',
+    `car_name`    VARCHAR(45)    NULL        COMMENT '차종',
+    `trim`        VARCHAR(45)    NULL        COMMENT '트림',
+    `age`         VARCHAR(45)    NULL        COMMENT '연식',
+    `mileage`     VARCHAR(45)    NULL        COMMENT '주행거리',
+    PRIMARY KEY (usedcar_id)
 )default character set utf8 collate UTF8_GENERAL_CI;
-
-ALTER TABLE market_price
-    ADD CONSTRAINT FK_market_price_car_id_electric_car_car_id FOREIGN KEY (car_id)
-        REFERENCES electric_car (car_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
-CREATE TABLE residual_rate
-(
-    `car_type`       VARCHAR(45)    NULL,
-    `durable_years`  VARCHAR(45)    NULL,
-    `one_year`       INT            NULL,
-    `two_years`      INT            NULL,
-    `three_years`    INT            NULL,
-    `four_years`     INT            NULL,
-    `five_years`     INT            NULL
-)default character set utf8 collate UTF8_GENERAL_CI;
+ALTER TABLE used_car COMMENT '중고차';
 
 -- sights Table Create SQL
 CREATE TABLE sights
