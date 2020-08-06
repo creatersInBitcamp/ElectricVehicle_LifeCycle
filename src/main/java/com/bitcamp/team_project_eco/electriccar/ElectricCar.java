@@ -1,6 +1,5 @@
 package com.bitcamp.team_project_eco.electriccar;
 
-import com.bitcamp.team_project_eco.marketPrice.MarketPrice;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -45,6 +44,4 @@ public class ElectricCar {
 
     @Column(name = "design_option", nullable = false) private String designOption;
 
-    @OneToMany(mappedBy = "electric_car", cascade = CascadeType.ALL)
-    private List<MarketPrice> marketPrices;
 }
