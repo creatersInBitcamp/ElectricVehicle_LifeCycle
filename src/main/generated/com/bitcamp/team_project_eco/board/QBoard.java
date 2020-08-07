@@ -21,15 +21,15 @@ public class QBoard extends EntityPathBase<Board> {
 
     public final NumberPath<Long> boardHits = createNumber("boardHits", Long.class);
 
-    public final NumberPath<Long> boardNo = createNumber("boardNo", Long.class);
-
-    public final NumberPath<Integer> communityNo = createNumber("communityNo", Integer.class);
+    public final NumberPath<Integer> communityId = createNumber("communityId", Integer.class);
 
     public final StringPath content = createString("content");
 
     public final DateTimePath<java.time.LocalDateTime> createDate = createDateTime("createDate", java.time.LocalDateTime.class);
 
     public final StringPath hashTag = createString("hashTag");
+
+    public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final NumberPath<Integer> recomendation = createNumber("recomendation", Integer.class);
 
