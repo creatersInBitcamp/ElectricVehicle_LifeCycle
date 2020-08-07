@@ -42,3 +42,44 @@ CREATE TABLE residual_rate
     `four_years`     INT            NULL,
     `five_years`     INT            NULL
 )default character set utf8 collate UTF8_GENERAL_CI;
+
+CREATE TABLE user
+(
+    `id`             INT            NOT NULL    AUTO_INCREMENT,
+    `user_id`        VARCHAR(45)    NULL,
+    `password`       VARCHAR(45)    NULL,
+    `addr`           VARCHAR(70)    NULL,
+    `register_date`  DATETIME       NULL,
+    `name`           VARCHAR(45)    NULL,
+    `ssr`            VARCHAR(45)    NULL,
+    `email`          VARCHAR(45)    NULL,
+    `phone_number`   VARCHAR(45)    NULL,
+    `visit_count`    INT            NULL,
+    `nickname`       VARCHAR(45)    NULL,
+    `sns_confirm`    VARCHAR(45)    NULL,
+    `email_confirm`  VARCHAR(45)    NULL,
+    `grade`          VARCHAR(45)    NULL,
+    `ban_date`       DATETIME       NULL,
+    `profile_image`  VARCHAR(45)    NULL,
+    `profile_text`   VARCHAR(45)    NULL,
+    `admin_check`    VARCHAR(45)    NULL,
+    `payment_info`   VARCHAR(45)    NULL,
+    PRIMARY KEY (id, user_id)
+);
+
+
+-- user Table Create SQL
+CREATE TABLE user_car
+(
+    `id`             INT            NOT NULL    AUTO_INCREMENT,
+    `car_number`     VARCHAR(45)    NULL,
+    `register_date`  VARCHAR(45)    NULL,
+    `user_id`        VARCHAR(45)    NULL,
+    `car_id`         VARCHAR(45)    NULL,
+    PRIMARY KEY (id)
+);
+
+ALTER TABLE user_car
+    ADD CONSTRAINT FK_user_car_user_id_user_user_id FOREIGN KEY (user_id)
+        REFERENCES user (user_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
