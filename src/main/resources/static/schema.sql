@@ -257,5 +257,3 @@ CREATE TABLE img
 )default character set utf8 collate UTF8_GENERAL_CI;
 
 ALTER TABLE img COMMENT '이미지';
-
-
