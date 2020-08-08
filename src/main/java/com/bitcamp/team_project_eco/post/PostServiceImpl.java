@@ -70,7 +70,8 @@ public class PostServiceImpl implements PostService {
                     csvRecord.get(3),
                     csvRecord.get(4),
                     0,
-                    0
+                    0,
+                    Integer.parseInt(csvRecord.get(5))
             ));
         }
         } catch (Exception e) {
