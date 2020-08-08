@@ -12,6 +12,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_seq") private Long userSeq;
     @Column(name = "user_id") private String userId;
+    @Column(name = "password") private String password;
     @Column(name = "register_date") private String registerDate;
     @Column(name = "addr") private String addr;
     @Column(name = "name") private String name;
@@ -32,6 +33,7 @@ public class User {
     private User(
         Long userSeq,
         String userId,
+        String password,
         String registerDate,
         String addr,
         String name,
@@ -49,6 +51,7 @@ public class User {
         String paymentInfo){
         this.userSeq = userSeq;
         this.userId = userId;
+        this.password = password;
         this.registerDate = registerDate;
         this.addr = addr;
         this.name = name;
