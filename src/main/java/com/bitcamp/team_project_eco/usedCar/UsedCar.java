@@ -28,7 +28,4 @@ public class UsedCar {
         this.mileage = mileage;
     }
 
-    public UsedCar() {
-
-    }
 }
