@@ -27,5 +27,4 @@ public class UsedCar {
         this.age = age;
         this.mileage = mileage;
     }
-
 }

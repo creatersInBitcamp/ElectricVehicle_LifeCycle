@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @ToString
 @Table(name = "post")
 public class Post {
@@ -23,8 +24,6 @@ public class Post {
     @Column(name = "recomendation", nullable = false) private int recomendation;
     @Column(name = "hits", nullable = false) private int hits;
 
-    public Post(){}
-
     @Builder
     public Post(int i, String s, String s1, String s2, String s3, String s4, int i1, int i2) {
         this.postId = i;
@@ -36,4 +35,5 @@ public class Post {
         this.recomendation = i1;
         this.hits = i2;
     }
+
 }

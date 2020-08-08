@@ -3,10 +3,12 @@ package com.bitcamp.team_project_eco.comment;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 interface CommentService extends JpaService<Comment> {
 
+    List<Comment> findByPostId(String postId);
 }
 
 @Service
@@ -40,5 +42,10 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public boolean exists(String id) {
         return false;
+    }
+
+    @Override
+    public List<Comment> findByPostId(String postId) {
+        return null;
     }
 }
