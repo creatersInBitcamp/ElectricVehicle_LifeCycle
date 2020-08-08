@@ -7,14 +7,26 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    @Autowired UserRepository userRepository;
-    @GetMapping("/idCheck/{userId}")
-    public boolean idCheck(@PathVariable String userId){
-        return false;
-    }
+    @Autowired UserService userService;
 
-    @PostMapping("/register")
+    @GetMapping(value = "/idCheck/{userId}")
+    public boolean idCheck(@PathVariable("userId") String userId){
+        System.out.println(userId);
+        return true;
+    }
+   /* @GetMapping(value = "/idCheck/${userId}")
+    public ResponseEntity<Object> idCheck(@PathVariable String userId){
+        Optional<User> idCheckResult = userService.findUserByUserId(userId);
+        if(idCheckResult.isPresent()) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }*/
+
+    @PostMapping(value = "/register")
     public boolean register(@RequestBody User user){
-        return false;
+        System.out.println(user);
+        return true;
     }
 }

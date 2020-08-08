@@ -33,6 +33,8 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath name = createString("name");
 
+    public final StringPath password = createString("password");
+
     public final StringPath paymentInfo = createString("paymentInfo");
 
     public final StringPath phoneNumber = createString("phoneNumber");
