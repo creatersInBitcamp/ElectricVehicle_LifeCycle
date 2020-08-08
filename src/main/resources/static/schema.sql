@@ -20,7 +20,7 @@ CREATE TABLE user
     `profile_text`   VARCHAR(45)    NULL,
     `admin_check`    VARCHAR(45)    NULL,
     `payment_info`   VARCHAR(45)    NULL,
-    PRIMARY KEY (user_id,id)
+    PRIMARY KEY (user_seq,id)
 )default character set utf8 collate UTF8_GENERAL_CI;
 
 ALTER TABLE user COMMENT '사용자';
@@ -67,9 +67,35 @@ CREATE TABLE eccar
     `color`                     VARCHAR(45)    NULL        COMMENT '색상',
     `eol`                       boolean        NULL        COMMENT '단종(End of Life)',
     PRIMARY KEY (eccar_id)
-);
+)default character set utf8 collate UTF8_GENERAL_CI;
 
 ALTER TABLE eccar COMMENT '전기차';
+
+CREATE TABLE used_car
+(
+    `usedcar_id`  INT            NOT NULL    AUTO_INCREMENT COMMENT '중고차아이디',
+    `price`       VARCHAR(45)    NULL        COMMENT '중고가격',
+    `img_id`      INT            NULL        COMMENT '이미지',
+    `age`         VARCHAR(45)    NULL        COMMENT '연식',
+    `mileage`     VARCHAR(45)    NULL        COMMENT '주행거리',
+    `user_seq`    INT            NOT NULL,
+    `eccar_id`    INT            NOT NULL,
+    PRIMARY KEY (usedcar_id)
+)default character set utf8 collate UTF8_GENERAL_CI;
+
+ALTER TABLE used_car COMMENT '중고차';
+
+ALTER TABLE used_car
+    ADD CONSTRAINT FK_used_car_img_id_img_img_id FOREIGN KEY (img_id)
+        REFERENCES img (img_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE used_car
+    ADD CONSTRAINT FK_used_car_user_seq_user_user_seq FOREIGN KEY (user_seq)
+        REFERENCES user (user_seq) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE used_car
+    ADD CONSTRAINT FK_used_car_eccar_id_eccar_eccar_id FOREIGN KEY (eccar_id)
+        REFERENCES eccar (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 CREATE TABLE purchase
 (
@@ -80,7 +106,7 @@ CREATE TABLE purchase
     `car_id`             INT            NULL,
     `user_id`            VARCHAR(45)    NULL,
     PRIMARY KEY (order_id)
-);
+)default character set utf8 collate UTF8_GENERAL_CI;
 
 ALTER TABLE purchase COMMENT '구매';
 
@@ -164,7 +190,7 @@ CREATE TABLE information
     `brand`             VARCHAR(45)    NULL        COMMENT '브랜드',
     `release_date`      VARCHAR(45)    NULL        COMMENT '출시일',
     PRIMARY KEY (info_id)
-);
+)default character set utf8 collate UTF8_GENERAL_CI;
 
 ALTER TABLE information COMMENT '전기차모델정보';
 CREATE TABLE car
@@ -221,5 +247,17 @@ CREATE TABLE fare
 )default character set utf8 collate UTF8_GENERAL_CI;
 
 ALTER TABLE fare COMMENT '고속도로 통행요금';
+
+CREATE TABLE img
+(
+    `img_id`       INT            NOT NULL    AUTO_INCREMENT COMMENT '이미지아이디',
+    `img_name`     VARCHAR(45)    NULL        COMMENT '이미지이름',
+    `img_file`     VARCHAR(45)    NULL        COMMENT '이미지파일',
+    `upload_date`  DATETIME       NULL        COMMENT '등록일자',
+    `category`     VARCHAR(45)    NULL        COMMENT '카테고리',
+    PRIMARY KEY (img_id)
+)default character set utf8 collate UTF8_GENERAL_CI;
+
+ALTER TABLE img COMMENT '이미지';
 
 
