@@ -2,7 +2,7 @@
 CREATE TABLE user
 (
     `user_seq`             INT            NOT NULL    AUTO_INCREMENT,
-    `id`             VARCHAR(45)    NULL,
+    `user_id`        VARCHAR(45)    NULL,
     `password`       VARCHAR(45)    NULL,
     `addr`           VARCHAR(70)    NULL,
     `register_date`  DATETIME       NULL,
@@ -20,8 +20,8 @@ CREATE TABLE user
     `profile_text`   VARCHAR(45)    NULL,
     `admin_check`    VARCHAR(45)    NULL,
     `payment_info`   VARCHAR(45)    NULL,
-    PRIMARY KEY (user_id,id)
-)default character set utf8 collate UTF8_GENERAL_CI;
+    PRIMARY KEY (user_seq)
+);
 
 ALTER TABLE user COMMENT '사용자';
 
