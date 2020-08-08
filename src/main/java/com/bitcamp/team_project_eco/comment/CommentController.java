@@ -1,12 +1,19 @@
 package com.bitcamp.team_project_eco.comment;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RestController
+@RestController @AllArgsConstructor
 @RequestMapping("/comments")
 public class CommentController {
     //create, read, update, delete
+    private CommentService commentService;
+
+    @GetMapping("/getcmt/{postId}")
+    public List<Comment> findByPostId(@PathVariable String postId) {
+        return commentService.findByPostId(postId);
+    }
 }

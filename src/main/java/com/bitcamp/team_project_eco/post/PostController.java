@@ -28,4 +28,13 @@ public class PostController {
         return service.findById(postId);
     }
 
+    @PostMapping("/insert")
+    public void insertPost(@RequestBody Post post) {
+        service.insertPost(post);
+    }
+
+    public void updatePost(@RequestBody Post post) {
+        service.updatePost(post);
+    }
+
 }

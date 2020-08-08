@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 public class UserController {
     @Autowired UserRepository userRepository;
-    @GetMapping("/idCheck/${userId}")
+    @GetMapping("/idCheck/{userId}")
     public boolean idCheck(@PathVariable String userId){
         return false;
     }
