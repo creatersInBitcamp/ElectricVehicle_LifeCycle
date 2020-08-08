@@ -85,8 +85,6 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void updatePost(Post post) {
-        Post target = new Post();
         int targetPostId = post.getPostId();
-        repository.findById();
     }
 }

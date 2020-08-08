@@ -32,9 +32,14 @@ public class PostController {
     public void insertPost(@RequestBody Post post) {
         service.insertPost(post);
     }
-
+    @PostMapping("/update")
     public void updatePost(@RequestBody Post post) {
         service.updatePost(post);
+    }
+
+    @GetMapping("/delete")
+    public void deletePost(@PathVariable String postId) {
+        service.delete(postId);
     }
 
 }
