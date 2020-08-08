@@ -110,11 +110,6 @@ CREATE TABLE purchase
 
 ALTER TABLE purchase COMMENT '구매';
 
-ALTER TABLE purchase
-    ADD CONSTRAINT FK_purchase_order_id_insurance_order_id FOREIGN KEY (order_id)
-        REFERENCES insurance (order_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
-
 
 /*서비스*/
 CREATE TABLE charging_station
@@ -193,6 +188,7 @@ CREATE TABLE information
 )default character set utf8 collate UTF8_GENERAL_CI;
 
 ALTER TABLE information COMMENT '전기차모델정보';
+
 CREATE TABLE car
 (
     `car_id`                    INT(11)        NOT NULL   AUTO_INCREMENT  COMMENT '차 아이디',
@@ -248,6 +244,8 @@ CREATE TABLE fare
 
 ALTER TABLE fare COMMENT '고속도로 통행요금';
 
+
+/*이미지*/
 CREATE TABLE img
 (
     `img_id`       INT            NOT NULL    AUTO_INCREMENT COMMENT '이미지아이디',
