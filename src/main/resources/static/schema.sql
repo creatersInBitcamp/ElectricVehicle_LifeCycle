@@ -165,7 +165,7 @@ ALTER TABLE bookmark
         REFERENCES sights (sights_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 ALTER TABLE bookmark
-    ADD CONSTRAINT FK_bookmark_charger_id_charging_station_charging_station_id FOREIGN KEY (charger_id)
+    ADD CONSTRAINT FK_bookmark_charger_id_charging_station_charging_station_id FOREIGN KEY (charging_station_id)
         REFERENCES charging_station (charging_station_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 ALTER TABLE bookmark
