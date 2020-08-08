@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.user;
 
+import com.bitcamp.team_project_eco.post.Post;
 import lombok.Builder;
 import lombok.Data;
 
@@ -28,6 +29,11 @@ public class User {
     @Column(name = "profile_text") private String profileText;
     @Column(name = "admin_check") private String adminCheck;
     @Column(name = "payment_info") private String paymentInfo;
+
+    @JsonIgnore
+    @OneToMany
+    @JoinColumn(name = "post_id")
+    private Post post;
 
     @Builder
     private User(

@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -16,6 +17,8 @@ import com.querydsl.core.types.Path;
 public class QUser extends EntityPathBase<User> {
 
     private static final long serialVersionUID = -635930762L;
+
+    private static final PathInits INITS = PathInits.DIRECT2;
 
     public static final QUser user = new QUser("user");
 
@@ -39,6 +42,8 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath phoneNumber = createString("phoneNumber");
 
+    public final com.bitcamp.team_project_eco.post.QPost post;
+
     public final StringPath profileImage = createString("profileImage");
 
     public final StringPath profileText = createString("profileText");
@@ -56,15 +61,24 @@ public class QUser extends EntityPathBase<User> {
     public final StringPath visitCount = createString("visitCount");
 
     public QUser(String variable) {
-        super(User.class, forVariable(variable));
+        this(User.class, forVariable(variable), INITS);
     }
 
     public QUser(Path<? extends User> path) {
-        super(path.getType(), path.getMetadata());
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
     public QUser(PathMetadata metadata) {
-        super(User.class, metadata);
+        this(metadata, PathInits.getFor(metadata, INITS));
+    }
+
+    public QUser(PathMetadata metadata, PathInits inits) {
+        this(User.class, metadata, inits);
+    }
+
+    public QUser(Class<? extends User> type, PathMetadata metadata, PathInits inits) {
+        super(type, metadata, inits);
+        this.post = inits.isInitialized("post") ? new com.bitcamp.team_project_eco.post.QPost(forProperty("post"), inits.get("post")) : null;
     }
 
 }

@@ -13,6 +13,10 @@ import java.util.Optional;
 
 interface PostService extends JpaService<Post> {
     public void readCsv();
+
+    void insertPost(Post post);
+
+    void updatePost(Post post);
 }
 
 @Service
@@ -66,11 +70,22 @@ public class PostServiceImpl implements PostService {
                     csvRecord.get(3),
                     csvRecord.get(4),
                     0,
-                    0
+                    0,
+                    Integer.parseInt(csvRecord.get(5))
             ));
         }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void insertPost(Post post) {
+        repository.save(post);
+    }
+
+    @Override
+    public void updatePost(Post post) {
+        int targetPostId = post.getPostId();
     }
 }

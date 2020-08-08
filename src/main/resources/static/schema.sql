@@ -70,18 +70,31 @@ CREATE TABLE eccar
 )default character set utf8 collate UTF8_GENERAL_CI;
 
 ALTER TABLE eccar COMMENT '전기차';
-
-CREATE TABLE used_car
-(
-    `usedcar_id`  INT            NOT NULL    AUTO_INCREMENT COMMENT '중고차아이디',
-    `price`       VARCHAR(45)    NULL        COMMENT '중고가격',
-    `img_id`      INT            NULL        COMMENT '이미지',
-    `age`         VARCHAR(45)    NULL        COMMENT '연식',
-    `mileage`     VARCHAR(45)    NULL        COMMENT '주행거리',
-    `user_seq`    INT            NOT NULL,
-    `eccar_id`    INT            NOT NULL,
-    PRIMARY KEY (usedcar_id)
+CREATE TABLE `used_car` (
+                            `usedcar_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '중고차 아이디',
+                            `price` VARCHAR(45) NULL DEFAULT NULL COMMENT '중고가격',
+                            `manufacturer` VARCHAR(45) NULL DEFAULT NULL COMMENT '제조사',
+                            `car_name` VARCHAR(45) NULL DEFAULT NULL COMMENT '차종',
+                            `trim` VARCHAR(45) NULL DEFAULT NULL COMMENT '트림',
+                            `yyyy` VARCHAR(45) NULL DEFAULT NULL COMMENT '연형',
+                            `age` VARCHAR(45) NULL DEFAULT NULL COMMENT '연식',
+                            `mileage` VARCHAR(45) NULL DEFAULT NULL COMMENT '주행거리',
+                            `img_id`      INT            NULL        COMMENT '이미지',
+                            `eccar_id` INT(11) NULL DEFAULT NULL COMMENT '차 아이디',
+                            `user_seq` INT(11) NULL DEFAULT NULL COMMENT '유저 아이디',
+                            PRIMARY KEY (`usedcar_id`)
 )default character set utf8 collate UTF8_GENERAL_CI;
+# CREATE TABLE used_car
+# (
+#     `usedcar_id`  INT            NOT NULL    AUTO_INCREMENT COMMENT '중고차아이디',
+#     `price`       VARCHAR(45)    NULL        COMMENT '중고가격',
+#     `img_id`      INT            NULL        COMMENT '이미지',
+#     `age`         VARCHAR(45)    NULL        COMMENT '연식',
+#     `mileage`     VARCHAR(45)    NULL        COMMENT '주행거리',
+#     `user_seq`    INT            NOT NULL,
+#     `eccar_id`    INT            NOT NULL,
+#     PRIMARY KEY (usedcar_id)
+# )default character set utf8 collate UTF8_GENERAL_CI;
 
 ALTER TABLE used_car COMMENT '중고차';
 
