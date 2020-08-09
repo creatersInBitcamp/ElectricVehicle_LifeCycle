@@ -1,6 +1,7 @@
-package com.bitcamp.team_project_eco.bookmark;
+package com.bitcamp.team_project_eco.wishlist;
 
 import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
+import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import com.bitcamp.team_project_eco.sights.Sights;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,25 +16,20 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@Table(name="bookmark")
-public class Bookmark {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bookmark_id")
-    private Long bookmarkId;
-
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "sights_id")
-    private Sights sights;
-
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "charging_station_id")
-    private ChargingStation chargingStation;
+@Table(name="wishlist")
+public class Wishlist {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "wishlist_id")
+    private Long wishlistId;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_seq")
     private User user;
 
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "eccar_id")
+    private ElectricCar electricCar;
 }

@@ -13,7 +13,7 @@ import com.querydsl.core.types.Path;
  * QPurchas is a Querydsl query type for Purchas
  */
 @Generated("com.querydsl.codegen.EntitySerializer")
-public class QPurchas extends EntityPathBase<Purchas> {
+public class QPurchas extends EntityPathBase<Purchase> {
 
     private static final long serialVersionUID = -365416561L;
 
@@ -28,15 +28,15 @@ public class QPurchas extends EntityPathBase<Purchas> {
     public final StringPath purchasing_method = createString("purchasing_method");
 
     public QPurchas(String variable) {
-        super(Purchas.class, forVariable(variable));
+        super(Purchase.class, forVariable(variable));
     }
 
-    public QPurchas(Path<? extends Purchas> path) {
+    public QPurchas(Path<? extends Purchase> path) {
         super(path.getType(), path.getMetadata());
     }
 
     public QPurchas(PathMetadata metadata) {
-        super(Purchas.class, metadata);
+        super(Purchase.class, metadata);
     }
 
 }

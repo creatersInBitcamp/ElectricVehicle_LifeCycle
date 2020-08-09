@@ -9,6 +9,6 @@ import javax.persistence.EntityManager;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/purchas")
-public class PurchasController {
+@RequestMapping("/purchases")
+public class PurchaseController {
 }

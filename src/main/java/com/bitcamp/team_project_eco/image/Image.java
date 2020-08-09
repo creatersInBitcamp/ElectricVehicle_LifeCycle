@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.image;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,13 +14,22 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "image_id", nullable = false)
     private Long imageId;
+    @Column(name = "img_name", nullable = false, length = 700)
+    private String imgName;
+    @Column(name = "img_file", nullable = false)
+    private String imgFile;
+    @Column(name = "upload_date", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private DateTime uploadDate;
+    @Column(name = "category", nullable = false)
+    private String category;
 
-    @Column(name = "url", nullable = false, length = 700)
-    private String url;
+    public Image() {}
 
-    @Column(name = "update_date", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private DateTime updateDate;
-
-    @Column(name = "image_cate", nullable = false)
-    private String imageCate;
+    @Builder
+    public Image(String imgName, String imgFile, DateTime uploadDate, String category){
+        this.imgName = imgName;
+        this.imgFile = imgFile;
+        this.uploadDate = uploadDate;
+        this.category = category;
+    }
 }

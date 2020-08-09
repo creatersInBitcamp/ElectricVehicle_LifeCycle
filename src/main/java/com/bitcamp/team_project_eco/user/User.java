@@ -1,8 +1,11 @@
 package com.bitcamp.team_project_eco.user;
 
+import com.bitcamp.team_project_eco.bookmark.Bookmark;
 import com.bitcamp.team_project_eco.comment.Comment;
 import com.bitcamp.team_project_eco.post.Post;
+import com.bitcamp.team_project_eco.purchase.Purchase;
 import com.bitcamp.team_project_eco.usedCar.UsedCar;
+import com.bitcamp.team_project_eco.wishlist.Wishlist;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
@@ -43,6 +46,13 @@ public class User {
     private List<Post> postList;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Comment> comments;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Bookmark> bookmarkList;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Purchase> purchasesList;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Wishlist> wishlistList;
+
 
     public User() {}
 

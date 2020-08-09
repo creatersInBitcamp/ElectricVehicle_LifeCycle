@@ -75,8 +75,8 @@ CREATE TABLE used_car
 (
     `usedcar_id`    INT(11)        NOT NULL    AUTO_INCREMENT COMMENT '중고차 아이디',
     `price`         VARCHAR(45)    NULL        DEFAULT NULL COMMENT '중고가격',
-    `manufacturer`  VARCHAR(45)    NULL        DEFAULT NULL COMMENT '제조사',
-    `car_name`      VARCHAR(45)    NULL        DEFAULT NULL COMMENT '차종',
+    `brand`         VARCHAR(45)    NULL        DEFAULT NULL COMMENT '제조사',
+    `model_name`    VARCHAR(45)    NULL        DEFAULT NULL COMMENT '차종',
     `trim`          VARCHAR(45)    NULL        DEFAULT NULL COMMENT '트림',
     `yyyy`          VARCHAR(45)    NULL        DEFAULT NULL COMMENT '연형',
     `age`           VARCHAR(45)    NULL        DEFAULT NULL COMMENT '연식',
@@ -146,17 +146,17 @@ ALTER TABLE wishlist
 /*서비스*/
 CREATE TABLE charging_station
 (
+    `charging_station_id`  INT             NOT NULL AUTO_INCREMENT   COMMENT '충전소아이디',
     `unit_name`            VARCHAR(45)     NULL        COMMENT '충전소명',
-    `charging_station_id`  INT(11)             NOT NULL AUTO_INCREMENT   COMMENT '충전소아이디',
     `charger_id`           VARCHAR(45)     NULL        COMMENT '충전기ID',
     `charger_type`         INT             NULL        COMMENT '충전기타입',
     `address`              VARCHAR(200)    NULL        COMMENT '주소',
-    `x_value`              VARCHAR(45)     NULL        COMMENT '위도',
-    `y_value`              VARCHAR(45)     NULL        COMMENT '경도',
+    `x_value`              double          NULL        COMMENT '위도',
+    `y_value`              double          NULL        COMMENT '경도',
     `business_hours`       VARCHAR(45)     NULL        COMMENT '이용가능시간',
     `agency_name`          VARCHAR(45)     NULL        COMMENT '운영기관명',
     `phone`                VARCHAR(45)     NULL        COMMENT '연락처',
-    `charger_state`        INT             NULL        COMMENT '충전기상태',
+    `charger_state`        VARCHAR(45)     NULL        COMMENT '충전기상태',
     `update_date`          VARCHAR(45)     NULL        COMMENT '상태갱신일시',
     `boosting_charge`      VARCHAR(45)     NULL        COMMENT '급속충전',
     PRIMARY KEY (charging_station_id)
@@ -170,8 +170,8 @@ CREATE TABLE sights
     `name`            VARCHAR(45)     NULL        COMMENT '이름',
     `street_address`  VARCHAR(45)     NULL        COMMENT '소재지도로명주소',
     `branch_address`  VARCHAR(45)     NULL        COMMENT '소재지지번주소',
-    `x_value`         VARCHAR(45)     NULL        COMMENT '위도',
-    `y_value`         VARCHAR(45)     NULL        COMMENT '경도',
+    `x_value`         double          NULL        COMMENT '위도',
+    `y_value`         double          NULL        COMMENT '경도',
     `capacity`        INT             NULL        COMMENT '수용인원수',
     `parking_lot`     INT             NULL        COMMENT '주차가능수',
     `info`            VARCHAR(300)    NULL        COMMENT '관광지소개',
@@ -247,20 +247,6 @@ ALTER TABLE comment
 
 
 /*참조테이블*/
-CREATE TABLE information
-(
-    `info_id`           INT            NOT NULL    AUTO_INCREMENT COMMENT '정보아이디',
-    `car_name`          VARCHAR(45)    NULL        COMMENT '모델명',
-    `boosting_charge`   VARCHAR(45)    NULL        COMMENT '급속충전',
-    `slow_charging`     VARCHAR(45)    NULL        COMMENT '완속충전',
-    `battery_capacity`  VARCHAR(45)    NULL        COMMENT '배터리용량',
-    `brand`             VARCHAR(45)    NULL        COMMENT '브랜드',
-    `release_date`      VARCHAR(45)    NULL        COMMENT '출시일',
-    PRIMARY KEY (info_id)
-)default character set utf8 collate UTF8_GENERAL_CI;
-
-ALTER TABLE information COMMENT '전기차모델정보';
-
 CREATE TABLE car
 (
     `car_id`                    INT(11)        NOT NULL   AUTO_INCREMENT  COMMENT '차 아이디',
