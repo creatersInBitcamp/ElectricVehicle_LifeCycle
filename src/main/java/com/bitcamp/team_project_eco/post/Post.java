@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.post;
 
+import com.bitcamp.team_project_eco.comment.Comment;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
@@ -7,12 +8,10 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
+@Data
 @Table(name = "post")
 public class Post {
     @Id
@@ -36,19 +35,9 @@ public class Post {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "user_seq")
+    @JoinColumn(name = "user_seq") // 외래키를 받는 쪽.
     private User user;
 
-    @Builder
-    public Post(int i, String s, String s1, String s2, String s3, String s4, int i1, int i2, int i3) {
-        this.postId = i;
-        this.link = s;
-        this.titie = s1;
-        this.date = s2;
-        this.img = s3;
-        this.content = s4;
-        this.recomendation = i1;
-        this.hits = i2;
-    }
-
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<Comment> comments;
 }

@@ -26,8 +26,6 @@ public class QComment extends EntityPathBase<Comment> {
 
     public final NumberPath<Integer> commentId = createNumber("commentId", Integer.class);
 
-    public final com.bitcamp.team_project_eco.post.QPost post;
-
     public final DateTimePath<org.joda.time.DateTime> regDate = createDateTime("regDate", org.joda.time.DateTime.class);
 
     public final com.bitcamp.team_project_eco.user.QUser user;
@@ -50,8 +48,7 @@ public class QComment extends EntityPathBase<Comment> {
 
     public QComment(Class<? extends Comment> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.post = inits.isInitialized("post") ? new com.bitcamp.team_project_eco.post.QPost(forProperty("post"), inits.get("post")) : null;
-        this.user = inits.isInitialized("user") ? new com.bitcamp.team_project_eco.user.QUser(forProperty("user"), inits.get("user")) : null;
+        this.user = inits.isInitialized("user") ? new com.bitcamp.team_project_eco.user.QUser(forProperty("user")) : null;
     }
 
 }

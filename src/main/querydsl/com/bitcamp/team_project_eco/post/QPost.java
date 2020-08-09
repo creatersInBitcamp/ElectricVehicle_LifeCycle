@@ -22,6 +22,8 @@ public class QPost extends EntityPathBase<Post> {
 
     public static final QPost post = new QPost("post");
 
+    public final ListPath<com.bitcamp.team_project_eco.comment.Comment, com.bitcamp.team_project_eco.comment.QComment> comments = this.<com.bitcamp.team_project_eco.comment.Comment, com.bitcamp.team_project_eco.comment.QComment>createList("comments", com.bitcamp.team_project_eco.comment.Comment.class, com.bitcamp.team_project_eco.comment.QComment.class, PathInits.DIRECT2);
+
     public final StringPath content = createString("content");
 
     public final StringPath date = createString("date");
@@ -58,7 +60,7 @@ public class QPost extends EntityPathBase<Post> {
 
     public QPost(Class<? extends Post> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.user = inits.isInitialized("user") ? new com.bitcamp.team_project_eco.user.QUser(forProperty("user"), inits.get("user")) : null;
+        this.user = inits.isInitialized("user") ? new com.bitcamp.team_project_eco.user.QUser(forProperty("user")) : null;
     }
 
 }

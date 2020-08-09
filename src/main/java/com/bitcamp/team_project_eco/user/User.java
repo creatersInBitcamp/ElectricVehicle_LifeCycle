@@ -1,10 +1,12 @@
 package com.bitcamp.team_project_eco.user;
 
-import com.bitcamp.team_project_eco.post.Post;
-import lombok.Builder;
+//import com.bitcamp.team_project_eco.post.Post;
+import com.bitcamp.team_project_eco.comment.Comment;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -13,6 +15,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_seq") private Long userSeq;
     @Column(name = "user_id") private String userId;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password") private String password;
     @Column(name = "register_date") private String registerDate;
     @Column(name = "addr") private String addr;
@@ -30,49 +33,8 @@ public class User {
     @Column(name = "admin_check") private String adminCheck;
     @Column(name = "payment_info") private String paymentInfo;
 
-    @JsonIgnore
-    @OneToMany
-    @JoinColumn(name = "post_id")
-    private Post post;
-
-    @Builder
-    private User(
-        Long userSeq,
-        String userId,
-        String password,
-        String registerDate,
-        String addr,
-        String name,
-        String ssr,
-        String email,
-        String phoneNumber,
-        String visitCount,
-        String snsConfirm,
-        String emailConfirm,
-        String grade,
-        String banDate,
-        String profileImage,
-        String profileText,
-        String adminCheck,
-        String paymentInfo){
-        this.userSeq = userSeq;
-        this.userId = userId;
-        this.password = password;
-        this.registerDate = registerDate;
-        this.addr = addr;
-        this.name = name;
-        this.ssr = ssr;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.visitCount = visitCount;
-        this.snsConfirm = snsConfirm;
-        this.emailConfirm = emailConfirm;
-        this.grade = grade;
-        this.banDate = banDate;
-        this.profileImage = profileImage;
-        this.profileText = profileText;
-        this.adminCheck = adminCheck;
-        this.paymentInfo = paymentInfo;
-
-    }
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) // 외래키를 주는 쪽이 oneToMany
+    private List<Post> postList;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Comment> comments;
 }

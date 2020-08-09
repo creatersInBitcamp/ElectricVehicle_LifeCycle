@@ -1,8 +1,6 @@
 package com.bitcamp.team_project_eco.comment;
 
-import com.bitcamp.team_project_eco.post.Post;
 import com.bitcamp.team_project_eco.user.User;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.joda.time.DateTime;
@@ -22,13 +20,7 @@ public class Comment {
     @Column(name = "reg_date", nullable = false, length = 45) private DateTime regDate;
     @Column(name = "comment", nullable = false, length = 500) private String comment;
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "user_seq")
+    @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "post_id")
-    private Post post;
 }
