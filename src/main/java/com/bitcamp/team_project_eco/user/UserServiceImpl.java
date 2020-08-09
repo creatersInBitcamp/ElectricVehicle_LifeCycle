@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void delete(String id) {
-        userRepository.delete(findById());
+
     }
 
     @Override

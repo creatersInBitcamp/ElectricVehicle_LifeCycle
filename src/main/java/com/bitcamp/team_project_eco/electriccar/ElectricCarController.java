@@ -7,11 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
 
-@CrossOrigin(origins = "*",maxAge = 3600)
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/electriccar")
 public class ElectricCarController {
-    @Autowired
-    EntityManager manager;
-    @Autowired ElectricCarRepository repository;
 }

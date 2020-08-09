@@ -23,4 +23,52 @@ public class Comment {
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 
+    public Comment(int commentId, DateTime regDate, String comment, User user) {
+        this.commentId = commentId;
+        this.regDate = regDate;
+        this.comment = comment;
+        this.user = user;
+    }
+
+    public int getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(int commentId) {
+        this.commentId = commentId;
+    }
+
+    public DateTime getRegDate() {
+        return regDate;
+    }
+
+    public void setRegDate(DateTime regDate) {
+        this.regDate = regDate;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "commentId=" + commentId +
+                ", regDate=" + regDate +
+                ", comment='" + comment + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }

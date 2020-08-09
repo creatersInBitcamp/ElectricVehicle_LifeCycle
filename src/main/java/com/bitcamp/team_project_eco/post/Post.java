@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Data
 @Table(name = "post")
 public class Post {
     @Id
@@ -46,5 +45,101 @@ public class Post {
 
     public Post() {
 
+    }
+
+    public int getPostId() {
+        return postId;
+    }
+
+    public void setPostId(int postId) {
+        this.postId = postId;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getTitie() {
+        return titie;
+    }
+
+    public void setTitie(String titie) {
+        this.titie = titie;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int getRecomendation() {
+        return recomendation;
+    }
+
+    public void setRecomendation(int recomendation) {
+        this.recomendation = recomendation;
+    }
+
+    public int getHits() {
+        return hits;
+    }
+
+    public void setHits(int hits) {
+        this.hits = hits;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "postId=" + postId +
+                ", link='" + link + '\'' +
+                ", titie='" + titie + '\'' +
+                ", date='" + date + '\'' +
+                ", img='" + img + '\'' +
+                ", content='" + content + '\'' +
+                ", recomendation=" + recomendation +
+                ", hits=" + hits +
+                ", user=" + user +
+                ", comments=" + comments +
+                '}';
     }
 }

@@ -1,15 +1,9 @@
 package com.bitcamp.team_project_eco.electriccar;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Getter @Setter @ToString @NoArgsConstructor
 @Table(name = "electric_car")
 public class ElectricCar {
     @Id
@@ -44,5 +38,162 @@ public class ElectricCar {
 
     @Column(name = "design_option", nullable = false) private String designOption;
 
+    public ElectricCar(Long id, String manufacturer, String trim, String manufacturingYyyyMm, String price, String fuelEfficiency, String rapidCharging, String slowCharging, String mileage, String batteryCapacity, String subsidy, String productionSite, String color, String technicalOption, String designOption) {
+        this.id = id;
+        this.manufacturer = manufacturer;
+        this.trim = trim;
+        this.manufacturingYyyyMm = manufacturingYyyyMm;
+        this.price = price;
+        this.fuelEfficiency = fuelEfficiency;
+        this.rapidCharging = rapidCharging;
+        this.slowCharging = slowCharging;
+        this.mileage = mileage;
+        this.batteryCapacity = batteryCapacity;
+        this.subsidy = subsidy;
+        this.productionSite = productionSite;
+        this.color = color;
+        this.technicalOption = technicalOption;
+        this.designOption = designOption;
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public String getTrim() {
+        return trim;
+    }
+
+    public void setTrim(String trim) {
+        this.trim = trim;
+    }
+
+    public String getManufacturingYyyyMm() {
+        return manufacturingYyyyMm;
+    }
+
+    public void setManufacturingYyyyMm(String manufacturingYyyyMm) {
+        this.manufacturingYyyyMm = manufacturingYyyyMm;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getFuelEfficiency() {
+        return fuelEfficiency;
+    }
+
+    public void setFuelEfficiency(String fuelEfficiency) {
+        this.fuelEfficiency = fuelEfficiency;
+    }
+
+    public String getRapidCharging() {
+        return rapidCharging;
+    }
+
+    public void setRapidCharging(String rapidCharging) {
+        this.rapidCharging = rapidCharging;
+    }
+
+    public String getSlowCharging() {
+        return slowCharging;
+    }
+
+    public void setSlowCharging(String slowCharging) {
+        this.slowCharging = slowCharging;
+    }
+
+    public String getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(String mileage) {
+        this.mileage = mileage;
+    }
+
+    public String getBatteryCapacity() {
+        return batteryCapacity;
+    }
+
+    public void setBatteryCapacity(String batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    public String getSubsidy() {
+        return subsidy;
+    }
+
+    public void setSubsidy(String subsidy) {
+        this.subsidy = subsidy;
+    }
+
+    public String getProductionSite() {
+        return productionSite;
+    }
+
+    public void setProductionSite(String productionSite) {
+        this.productionSite = productionSite;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getTechnicalOption() {
+        return technicalOption;
+    }
+
+    public void setTechnicalOption(String technicalOption) {
+        this.technicalOption = technicalOption;
+    }
+
+    public String getDesignOption() {
+        return designOption;
+    }
+
+    public void setDesignOption(String designOption) {
+        this.designOption = designOption;
+    }
+
+    @Override
+    public String toString() {
+        return "ElectricCar{" +
+                "id=" + id +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", trim='" + trim + '\'' +
+                ", manufacturingYyyyMm='" + manufacturingYyyyMm + '\'' +
+                ", price='" + price + '\'' +
+                ", fuelEfficiency='" + fuelEfficiency + '\'' +
+                ", rapidCharging='" + rapidCharging + '\'' +
+                ", slowCharging='" + slowCharging + '\'' +
+                ", mileage='" + mileage + '\'' +
+                ", batteryCapacity='" + batteryCapacity + '\'' +
+                ", subsidy='" + subsidy + '\'' +
+                ", productionSite='" + productionSite + '\'' +
+                ", color='" + color + '\'' +
+                ", technicalOption='" + technicalOption + '\'' +
+                ", designOption='" + designOption + '\'' +
+                '}';
+    }
 }

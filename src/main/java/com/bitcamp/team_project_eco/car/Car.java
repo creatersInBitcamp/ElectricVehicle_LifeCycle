@@ -6,10 +6,6 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name="car")
 public class Car {
     @Id
@@ -47,38 +43,7 @@ public class Car {
     @Column(name="steering",nullable = false) private String steering ;
     @Column(name="img",nullable = false) private String img;
 
-    @Builder
-    private Car(Long carId,
-                String carName,
-                String price,
-                String engineType,
-                String superchargeMethod,
-                String exhaustVolume,
-                String fuel,
-                String fuelEfficiency,
-                String passengersNumber,
-                String drivingMethod,
-                String transmission,
-                String maximumOutput,
-                String maximumTorque,
-                String topSpeed,
-                String accelerationPerformance,
-                String brakingPerformance,
-                String CO2Emissions,
-                String length,
-                String fullWidth,
-                String wheelBase,
-                String frontDistance,
-                String backDistance,
-                String weight,
-                String frontWheel,
-                String rearWheel,
-                String frontSuspension,
-                String rearSuspension,
-                String frontBraking,
-                String rearBraking,
-                String steering,
-                String img){
+    public Car(Long carId, String carName, String price, String engineType, String superchargeMethod, String exhaustVolume, String fuel, String fuelEfficiency, String passengersNumber, String drivingMethod, String transmission, String maximumOutput, String maximumTorque, String topSpeed, String accelerationPerformance, String brakingPerformance, String CO2Emissions, String length, String fullWidth, String height, String wheelBase, String frontDistance, String backDistance, String weight, String frontWheel, String rearWheel, String frontSuspension, String rearSuspension, String frontBraking, String rearBraking, String steering, String img) {
         this.carId = carId;
         this.carName = carName;
         this.price = price;
@@ -98,6 +63,7 @@ public class Car {
         this.CO2Emissions = CO2Emissions;
         this.length = length;
         this.fullWidth = fullWidth;
+        this.height = height;
         this.wheelBase = wheelBase;
         this.frontDistance = frontDistance;
         this.backDistance = backDistance;
@@ -109,6 +75,262 @@ public class Car {
         this.frontBraking = frontBraking;
         this.rearBraking = rearBraking;
         this.steering = steering;
-        this. img = img;
+        this.img = img;
+    }
+
+    public Long getCarId() {
+        return carId;
+    }
+
+    public void setCarId(Long carId) {
+        this.carId = carId;
+    }
+
+    public String getCarName() {
+        return carName;
+    }
+
+    public void setCarName(String carName) {
+        this.carName = carName;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(String engineType) {
+        this.engineType = engineType;
+    }
+
+    public String getSuperchargeMethod() {
+        return superchargeMethod;
+    }
+
+    public void setSuperchargeMethod(String superchargeMethod) {
+        this.superchargeMethod = superchargeMethod;
+    }
+
+    public String getExhaustVolume() {
+        return exhaustVolume;
+    }
+
+    public void setExhaustVolume(String exhaustVolume) {
+        this.exhaustVolume = exhaustVolume;
+    }
+
+    public String getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(String fuel) {
+        this.fuel = fuel;
+    }
+
+    public String getFuelEfficiency() {
+        return fuelEfficiency;
+    }
+
+    public void setFuelEfficiency(String fuelEfficiency) {
+        this.fuelEfficiency = fuelEfficiency;
+    }
+
+    public String getPassengersNumber() {
+        return passengersNumber;
+    }
+
+    public void setPassengersNumber(String passengersNumber) {
+        this.passengersNumber = passengersNumber;
+    }
+
+    public String getDrivingMethod() {
+        return drivingMethod;
+    }
+
+    public void setDrivingMethod(String drivingMethod) {
+        this.drivingMethod = drivingMethod;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
+    public String getMaximumOutput() {
+        return maximumOutput;
+    }
+
+    public void setMaximumOutput(String maximumOutput) {
+        this.maximumOutput = maximumOutput;
+    }
+
+    public String getMaximumTorque() {
+        return maximumTorque;
+    }
+
+    public void setMaximumTorque(String maximumTorque) {
+        this.maximumTorque = maximumTorque;
+    }
+
+    public String getTopSpeed() {
+        return topSpeed;
+    }
+
+    public void setTopSpeed(String topSpeed) {
+        this.topSpeed = topSpeed;
+    }
+
+    public String getAccelerationPerformance() {
+        return accelerationPerformance;
+    }
+
+    public void setAccelerationPerformance(String accelerationPerformance) {
+        this.accelerationPerformance = accelerationPerformance;
+    }
+
+    public String getBrakingPerformance() {
+        return brakingPerformance;
+    }
+
+    public void setBrakingPerformance(String brakingPerformance) {
+        this.brakingPerformance = brakingPerformance;
+    }
+
+    public String getCO2Emissions() {
+        return CO2Emissions;
+    }
+
+    public void setCO2Emissions(String CO2Emissions) {
+        this.CO2Emissions = CO2Emissions;
+    }
+
+    public String getLength() {
+        return length;
+    }
+
+    public void setLength(String length) {
+        this.length = length;
+    }
+
+    public String getFullWidth() {
+        return fullWidth;
+    }
+
+    public void setFullWidth(String fullWidth) {
+        this.fullWidth = fullWidth;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWheelBase() {
+        return wheelBase;
+    }
+
+    public void setWheelBase(String wheelBase) {
+        this.wheelBase = wheelBase;
+    }
+
+    public String getFrontDistance() {
+        return frontDistance;
+    }
+
+    public void setFrontDistance(String frontDistance) {
+        this.frontDistance = frontDistance;
+    }
+
+    public String getBackDistance() {
+        return backDistance;
+    }
+
+    public void setBackDistance(String backDistance) {
+        this.backDistance = backDistance;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getFrontWheel() {
+        return frontWheel;
+    }
+
+    public void setFrontWheel(String frontWheel) {
+        this.frontWheel = frontWheel;
+    }
+
+    public String getRearWheel() {
+        return rearWheel;
+    }
+
+    public void setRearWheel(String rearWheel) {
+        this.rearWheel = rearWheel;
+    }
+
+    public String getFrontSuspension() {
+        return frontSuspension;
+    }
+
+    public void setFrontSuspension(String frontSuspension) {
+        this.frontSuspension = frontSuspension;
+    }
+
+    public String getRearSuspension() {
+        return rearSuspension;
+    }
+
+    public void setRearSuspension(String rearSuspension) {
+        this.rearSuspension = rearSuspension;
+    }
+
+    public String getFrontBraking() {
+        return frontBraking;
+    }
+
+    public void setFrontBraking(String frontBraking) {
+        this.frontBraking = frontBraking;
+    }
+
+    public String getRearBraking() {
+        return rearBraking;
+    }
+
+    public void setRearBraking(String rearBraking) {
+        this.rearBraking = rearBraking;
+    }
+
+    public String getSteering() {
+        return steering;
+    }
+
+    public void setSteering(String steering) {
+        this.steering = steering;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

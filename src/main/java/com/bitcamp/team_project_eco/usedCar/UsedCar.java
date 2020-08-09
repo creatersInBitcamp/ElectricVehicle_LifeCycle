@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Getter @Setter @ToString @NoArgsConstructor
 @Table(name = "used_car")
 public class UsedCar {
     @Id
@@ -31,5 +30,64 @@ public class UsedCar {
         this.price = price;
         this.age = age;
         this.mileage = mileage;
+    }
+
+    public UsedCar(Long usedCarId, String price, String age, String mileage, User user) {
+        this.usedCarId = usedCarId;
+        this.price = price;
+        this.age = age;
+        this.mileage = mileage;
+        this.user = user;
+    }
+
+    public Long getUsedCarId() {
+        return usedCarId;
+    }
+
+    public void setUsedCarId(Long usedCarId) {
+        this.usedCarId = usedCarId;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(String mileage) {
+        this.mileage = mileage;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "UsedCar{" +
+                "usedCarId=" + usedCarId +
+                ", price='" + price + '\'' +
+                ", age='" + age + '\'' +
+                ", mileage='" + mileage + '\'' +
+                ", user=" + user +
+                '}';
     }
 }
