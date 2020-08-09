@@ -40,4 +40,15 @@ public class Post {
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments;
+
+    public Post(int postId, String link, String title, String date, String img, String content, int recomendation, int hits, int userSeq) {
+        this.postId = postId;
+        this.link = link;
+        this.titie = title;
+        this.date = date;
+        this.img = img;
+        this.content = content;
+        this.recomendation = recomendation;
+        this.hits = hits;
+    }
 }
