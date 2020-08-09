@@ -42,6 +42,8 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath phoneNumber = createString("phoneNumber");
 
+    public final ListPath<com.bitcamp.team_project_eco.post.Post, com.bitcamp.team_project_eco.post.QPost> postList = this.<com.bitcamp.team_project_eco.post.Post, com.bitcamp.team_project_eco.post.QPost>createList("postList", com.bitcamp.team_project_eco.post.Post.class, com.bitcamp.team_project_eco.post.QPost.class, PathInits.DIRECT2);
+
     public final StringPath profileImage = createString("profileImage");
 
     public final StringPath profileText = createString("profileText");
@@ -51,6 +53,8 @@ public class QUser extends EntityPathBase<User> {
     public final StringPath snsConfirm = createString("snsConfirm");
 
     public final StringPath ssr = createString("ssr");
+
+    public final ListPath<com.bitcamp.team_project_eco.usedCar.UsedCar, com.bitcamp.team_project_eco.usedCar.QUsedCar> usedCarList = this.<com.bitcamp.team_project_eco.usedCar.UsedCar, com.bitcamp.team_project_eco.usedCar.QUsedCar>createList("usedCarList", com.bitcamp.team_project_eco.usedCar.UsedCar.class, com.bitcamp.team_project_eco.usedCar.QUsedCar.class, PathInits.DIRECT2);
 
     public final StringPath userId = createString("userId");
 

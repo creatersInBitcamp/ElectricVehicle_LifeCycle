@@ -12,6 +12,8 @@ interface CustomUserRepository {
 }
 @Repository
 public class UserRepositoryImpl implements CustomUserRepository{
+    public UserRepositoryImpl() {
+    }
 
     @Override
     public Optional<User> findByUserId(String userId) {
