@@ -7,22 +7,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
 interface CustomUserRepository {
     Optional<User> findByUserId(String userId);
 }
 @Repository
-public class UserRepositoryImpl extends QuerydslRepositorySupport implements CustomUserRepository{
-    @Autowired
-    JPAQueryFactory queryFactory;
-
-    /**
-     * Creates a new {@link QuerydslRepositorySupport} instance for the given domain type.
-     *
-     * @param domainClass must not be {@literal null}.
-     */
+public class UserRepositoryImpl implements CustomUserRepository{
     public UserRepositoryImpl() {
-        super(User.class);
     }
 
     @Override

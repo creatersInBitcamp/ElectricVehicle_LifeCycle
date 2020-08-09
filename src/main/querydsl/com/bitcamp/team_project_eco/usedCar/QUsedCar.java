@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -16,6 +17,8 @@ import com.querydsl.core.types.Path;
 public class QUsedCar extends EntityPathBase<UsedCar> {
 
     private static final long serialVersionUID = 1954593768L;
+
+    private static final PathInits INITS = PathInits.DIRECT2;
 
     public static final QUsedCar usedCar = new QUsedCar("usedCar");
 
@@ -27,16 +30,27 @@ public class QUsedCar extends EntityPathBase<UsedCar> {
 
     public final NumberPath<Long> usedCarId = createNumber("usedCarId", Long.class);
 
+    public final com.bitcamp.team_project_eco.user.QUser user;
+
     public QUsedCar(String variable) {
-        super(UsedCar.class, forVariable(variable));
+        this(UsedCar.class, forVariable(variable), INITS);
     }
 
     public QUsedCar(Path<? extends UsedCar> path) {
-        super(path.getType(), path.getMetadata());
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
     public QUsedCar(PathMetadata metadata) {
-        super(UsedCar.class, metadata);
+        this(metadata, PathInits.getFor(metadata, INITS));
+    }
+
+    public QUsedCar(PathMetadata metadata, PathInits inits) {
+        this(UsedCar.class, metadata, inits);
+    }
+
+    public QUsedCar(Class<? extends UsedCar> type, PathMetadata metadata, PathInits inits) {
+        super(type, metadata, inits);
+        this.user = inits.isInitialized("user") ? new com.bitcamp.team_project_eco.user.QUser(forProperty("user")) : null;
     }
 
 }

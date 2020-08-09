@@ -1,7 +1,6 @@
 package com.bitcamp.team_project_eco.comparison;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -11,7 +10,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 @Table(name="comparison")
 public class Comparison {
     @Id
@@ -26,4 +24,28 @@ public class Comparison {
     @Column(name="make",nullable = false) private String make;
     @Column(name="picture",nullable = false) private String picture ;
     @Column(name="order_id",nullable = false) private String order_id;
+
+    public Comparison(){ }
+
+    public Comparison(Long id,
+                      String manufacturer,
+                      String manufacturing_year,
+                      String price,
+                      String fuel_efficiency,
+                      String cc,
+                      String mile_age,
+                      String make,
+                      String picture,
+                      String order_id){
+        this.id = id;
+        this.manufacturer = manufacturer;
+        this.manufacturing_year = manufacturing_year;
+        this.price = price;
+        this.fuel_efficiency = fuel_efficiency;
+        this.cc = cc;
+        this.mile_age = mile_age;
+        this.make = make;
+        this.picture = picture;
+        this.order_id = order_id;
+    }
 }

@@ -1,6 +1,8 @@
 package com.bitcamp.team_project_eco.user;
 
 import com.bitcamp.team_project_eco.comment.Comment;
+import com.bitcamp.team_project_eco.post.Post;
+import com.bitcamp.team_project_eco.usedCar.UsedCar;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -32,8 +34,10 @@ public class User {
     @Column(name = "admin_check") private String adminCheck;
     @Column(name = "payment_info") private String paymentInfo;
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) // 외래키를 주는 쪽이 oneToMany
-//    private List<Post> postList;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<UsedCar> usedCarList;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) // 외래키를 주는 쪽이 oneToMany
+    private List<Post> postList;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Comment> comments;
 }

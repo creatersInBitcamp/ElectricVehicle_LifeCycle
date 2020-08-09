@@ -16,22 +16,14 @@ import java.util.List;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "post_id")
-    private int postId;
-    @Column(name = "link", nullable = false)
-    private String link;
-    @Column(name = "title", nullable = false)
-    private String titie;
-    @Column(name = "date")
-    private String date;
-    @Column(name = "img", nullable = false, length = 700)
-    private String img;
-    @Column(name = "content", nullable = false)
-    private String content;
-    @Column(name = "recomendation", nullable = false)
-    private int recomendation;
-    @Column(name = "hits", nullable = false)
-    private int hits;
+    @Column(name = "post_id") private int postId;
+    @Column(name = "link", nullable = false) private String link;
+    @Column(name = "title", nullable = false) private String titie;
+    @Column(name = "date") private String date;
+    @Column(name = "img", nullable = false, length = 700) private String img;
+    @Column(name = "content", nullable = false) private String content;
+    @Column(name = "recomendation", nullable = false) private int recomendation;
+    @Column(name = "hits", nullable = false) private int hits;
 
     @JsonIgnore
     @ManyToOne
@@ -50,5 +42,9 @@ public class Post {
         this.content = content;
         this.recomendation = recomendation;
         this.hits = hits;
+    }
+
+    public Post() {
+
     }
 }
