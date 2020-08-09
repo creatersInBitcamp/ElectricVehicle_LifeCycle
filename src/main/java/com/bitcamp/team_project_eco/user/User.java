@@ -10,9 +10,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
-@ToString
+@Getter @Setter @ToString
 @Table(name = "user")
 @NamedQuery(name = "User.findByUserId",
             query = "select e from User e where e.userId = :userId")
@@ -26,6 +24,7 @@ public class User {
     @Column(name = "register_date") private String registerDate;
     @Column(name = "addr") private String addr;
     @Column(name = "name") private String name;
+    @Column(name = "sex") private String sex;
     @Column(name = "birth_date") private String birthDate;
     @Column(name = "email") private String email;
     @Column(name = "phone_number") private String phoneNumber;
@@ -36,7 +35,6 @@ public class User {
     @Column(name = "ban_date") private String banDate;
     @Column(name = "profile_image") private String profileImage;
     @Column(name = "profile_text") private String profileText;
-    @Column(name = "admin_check") private boolean adminCheck;
     @Column(name = "payment_info") private String paymentInfo;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -50,15 +48,16 @@ public class User {
 
     @Builder
     public User (String userId, String password, String registerDate, String addr,
-                 String name, String birthDate, String email, String phoneNumber,
+                 String name, String sex, String birthDate, String email, String phoneNumber,
                  int visitCount, boolean snsConfirm, boolean emailConfirm, int grade,
-                 String banDate, String profileImage, String profileText, boolean adminCheck,
+                 String banDate, String profileImage, String profileText,
                  String paymentInfo) {
         this.userId = userId;
         this.password = password;
         this.registerDate = registerDate;
         this.addr = addr;
         this.name = name;
+        this.sex = sex;
         this.birthDate = birthDate;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -69,7 +68,6 @@ public class User {
         this.banDate = banDate;
         this.profileImage = profileImage;
         this.profileText = profileText;
-        this.adminCheck = adminCheck;
         this.paymentInfo = paymentInfo;
     }
 

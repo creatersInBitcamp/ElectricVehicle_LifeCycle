@@ -1,16 +1,17 @@
 package com.bitcamp.team_project_eco.electriccar;
 
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Getter @Setter @ToString @NoArgsConstructor
+@Getter @Setter @ToString
 @Table(name = "electric_car")
+@NamedQuery(name = "ElectricCar.findByCarId",
+        query = "select e from ElectricCar e where  e.carId = :carId")
 public class ElectricCar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,5 +45,28 @@ public class ElectricCar {
 
     @Column(name = "design_option", nullable = false) private String designOption;
 
+    public ElectricCar() {}
+
+    @Builder
+    public ElectricCar(String manufacturer, String trim, String manufacturingYyyyMm,
+                       String price, String fuelEfficiency, String rapidCharging,
+                       String slowCharging, String mileage, String batteryCapacity,
+                       String subsidy, String productionSite, String color, String technicalOption,
+                       String designOption) {
+        this.manufacturer = manufacturer;
+        this.trim = trim;
+        this. manufacturingYyyyMm = manufacturingYyyyMm;
+        this.price = price;
+        this.fuelEfficiency = fuelEfficiency;
+        this.rapidCharging = rapidCharging;
+        this.slowCharging = slowCharging;
+        this.mileage = mileage;
+        this.batteryCapacity = batteryCapacity;
+        this.subsidy = subsidy;
+        this.productionSite = productionSite;
+        this.color = color;
+        this.technicalOption = technicalOption;
+        this.designOption = designOption;
+    }
 
 }

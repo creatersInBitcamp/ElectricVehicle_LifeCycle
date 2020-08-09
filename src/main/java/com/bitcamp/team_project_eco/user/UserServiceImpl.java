@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService{
                         csvRecord.get(3), //registerdate
                         csvRecord.get(4), //addr
                         csvRecord.get(5), //name
+                        "male",
                         csvRecord.get(2), //birth
                         csvRecord.get(6), //email
                         csvRecord.get(7), //phonenumber
@@ -55,7 +56,6 @@ public class UserServiceImpl implements UserService{
                         "noban",
                         csvRecord.get(8), //img
                         csvRecord.get(9), //text
-                        false,
                         "미등록"
                 ));
             }
