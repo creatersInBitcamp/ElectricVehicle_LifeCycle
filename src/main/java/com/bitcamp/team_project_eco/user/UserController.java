@@ -5,9 +5,14 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
     @Autowired UserService userService;
+
+    @GetMapping("/csv")
+    public void readCsv() {
+        userService.readCsv();
+    }
 
     @GetMapping(value = "/idCheck/{userId}")
     public boolean idCheck(@PathVariable("userId") String userId){

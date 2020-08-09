@@ -10,15 +10,4 @@ import java.util.List;
 @RequestMapping("/comments")
 public class CommentController {
     //create, read, update, delete
-    private CommentService commentService;
-
-    @GetMapping("/comment/{postId}")
-    public List<Comment> findByPostId(@PathVariable String postId) {
-        return commentService.findByPostId(postId);
-    }
-
-    @PostMapping("/insert")
-    public void insertComment(Comment comment) {
-
-    }
 }

@@ -22,17 +22,19 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath addr = createString("addr");
 
-    public final StringPath adminCheck = createString("adminCheck");
+    public final BooleanPath adminCheck = createBoolean("adminCheck");
 
     public final StringPath banDate = createString("banDate");
+
+    public final StringPath birthDate = createString("birthDate");
 
     public final ListPath<com.bitcamp.team_project_eco.comment.Comment, com.bitcamp.team_project_eco.comment.QComment> comments = this.<com.bitcamp.team_project_eco.comment.Comment, com.bitcamp.team_project_eco.comment.QComment>createList("comments", com.bitcamp.team_project_eco.comment.Comment.class, com.bitcamp.team_project_eco.comment.QComment.class, PathInits.DIRECT2);
 
     public final StringPath email = createString("email");
 
-    public final StringPath emailConfirm = createString("emailConfirm");
+    public final BooleanPath emailConfirm = createBoolean("emailConfirm");
 
-    public final StringPath grade = createString("grade");
+    public final NumberPath<Integer> grade = createNumber("grade", Integer.class);
 
     public final StringPath name = createString("name");
 
@@ -50,9 +52,7 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath registerDate = createString("registerDate");
 
-    public final StringPath snsConfirm = createString("snsConfirm");
-
-    public final StringPath ssr = createString("ssr");
+    public final BooleanPath snsConfirm = createBoolean("snsConfirm");
 
     public final ListPath<com.bitcamp.team_project_eco.usedCar.UsedCar, com.bitcamp.team_project_eco.usedCar.QUsedCar> usedCarList = this.<com.bitcamp.team_project_eco.usedCar.UsedCar, com.bitcamp.team_project_eco.usedCar.QUsedCar>createList("usedCarList", com.bitcamp.team_project_eco.usedCar.UsedCar.class, com.bitcamp.team_project_eco.usedCar.QUsedCar.class, PathInits.DIRECT2);
 
@@ -60,7 +60,7 @@ public class QUser extends EntityPathBase<User> {
 
     public final NumberPath<Long> userSeq = createNumber("userSeq", Long.class);
 
-    public final StringPath visitCount = createString("visitCount");
+    public final NumberPath<Integer> visitCount = createNumber("visitCount", Integer.class);
 
     public QUser(String variable) {
         super(User.class, forVariable(variable));

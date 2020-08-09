@@ -3,12 +3,10 @@ package com.bitcamp.team_project_eco.comment;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 interface CommentService extends JpaService<Comment> {
 
-    List<Comment> findByPostId(String postId);
 }
 
 @Service
@@ -21,31 +19,26 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public Optional<Comment> findById(String id) {
-        return Optional.empty();
+        return repository.findById(Integer.parseInt(id));
     }
 
     @Override
     public Iterable<Comment> findAll() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public int count() {
-        return 0;
+        return (int) repository.count();
     }
 
     @Override
     public void delete(String id) {
-
+        repository.delete(findById(id).orElse(new Comment()));
     }
 
     @Override
     public boolean exists(String id) {
-        return false;
-    }
-
-    @Override
-    public List<Comment> findByPostId(String postId) {
-        return null;
+        return repository.existsById(Integer.parseInt(id));
     }
 }
