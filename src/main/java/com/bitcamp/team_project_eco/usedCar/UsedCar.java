@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter @Setter @ToString @NoArgsConstructor
@@ -17,10 +16,6 @@ public class UsedCar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "usedcar_id") private Long usedCarId;
     @Column(name = "price") private String price;
-    @Column(name = "brand") private String brand;
-    @Column(name = "model_name") private String modelName;
-    @Column(name = "trim") private String trim;
-    @Column(name = "yyyy") private String yyyy;
     @Column(name = "age") private String age;
     @Column(name = "mileage") private String mileage;
 
@@ -41,18 +36,16 @@ public class UsedCar {
 
     @Builder
     public UsedCar(String price,
-                   String brand,
-                   String modelName,
-                   String trim,
-                   String yyyy,
                    String age,
-                   String mileage){
+                   String mileage,
+                   Long imgId,
+                   User userSeq,
+                   ElectricCar eccarId){
         this.price = price;
-        this.brand = brand;
-        this.modelName = modelName;
-        this.trim = trim;
-        this.yyyy = yyyy;
         this.age = age;
         this.mileage = mileage;
+        (this.image = new Image().setImageId(imgId)).getImageId();
+        (this.user = userSeq).getUserSeq();
+        (this.electricCar = eccarId).getEccarId();
     }
 }

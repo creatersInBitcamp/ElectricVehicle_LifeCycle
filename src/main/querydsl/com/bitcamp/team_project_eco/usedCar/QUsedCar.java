@@ -24,25 +24,17 @@ public class QUsedCar extends EntityPathBase<UsedCar> {
 
     public final StringPath age = createString("age");
 
-    public final StringPath brand = createString("brand");
-
     public final com.bitcamp.team_project_eco.electriccar.QElectricCar electricCar;
 
     public final com.bitcamp.team_project_eco.image.QImage image;
 
     public final StringPath mileage = createString("mileage");
 
-    public final StringPath modelName = createString("modelName");
-
     public final StringPath price = createString("price");
-
-    public final StringPath trim = createString("trim");
 
     public final NumberPath<Long> usedCarId = createNumber("usedCarId", Long.class);
 
     public final com.bitcamp.team_project_eco.user.QUser user;
-
-    public final StringPath yyyy = createString("yyyy");
 
     public QUsedCar(String variable) {
         this(UsedCar.class, forVariable(variable), INITS);
