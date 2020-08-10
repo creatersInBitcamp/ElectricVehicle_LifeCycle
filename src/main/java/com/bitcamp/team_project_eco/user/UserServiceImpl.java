@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
                         csvRecord.get(2), //birth
                         csvRecord.get(6), //email
                         csvRecord.get(7), //phonenumber
-                        Integer.parseInt(csvRecord.get(8)),
+                        Integer.parseInt(csvRecord.get(8)), //방문수
                         false,
                         false,
                         0,
