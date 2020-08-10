@@ -38,14 +38,14 @@ public class UsedCar {
     public UsedCar(String price,
                    String age,
                    String mileage,
-                   int imgId,
-                   int userSeq,
-                   int eccarId){
+                   Long imgId,
+                   User userSeq,
+                   ElectricCar eccarId){
         this.price = price;
         this.age = age;
         this.mileage = mileage;
-        this.imgId = imgId;
-        this.userSeq = userSeq;
-        this.eccarId = eccarId;
+        (this.image = new Image().setImageId(imgId)).getImageId();
+        (this.user = userSeq).getUserSeq();
+        (this.electricCar = eccarId).getEccarId();
     }
 }

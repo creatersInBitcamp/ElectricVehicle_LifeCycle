@@ -1,10 +1,13 @@
 package com.bitcamp.team_project_eco.usedCar;
 
+import com.bitcamp.team_project_eco.electriccar.ElectricCar;
+import com.bitcamp.team_project_eco.image.Image;
 import com.bitcamp.team_project_eco.user.User;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -15,6 +18,8 @@ import java.util.Optional;
 interface UsedCarService extends JpaService<UsedCar> {
 
     void readCsv();
+
+    void insertUsedCar(UsedCar usedCar);
 }
 
 @Service
@@ -63,13 +68,19 @@ public class UsedCarServiceImpl implements UsedCarService {
                         csvRecord.get(0),//price
                         csvRecord.get(1),//age
                         csvRecord.get(2),//mileage
-                        csvRecord.get(3),//imgId
-                        csvRecord.get(4),//userSeq
-                        csvRecord.get(5)//
+                        Long.parseLong(csvRecord.get(3)),//imgId
+                        new User().setUserSeq(Long.parseLong(csvRecord.get(4))),//userSeq
+                        new ElectricCar().setEccarId(Long.parseLong(csvRecord.get(5))) //
                 ));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    @Query(value = "")
+    public void insertUsedCar(UsedCar usedCar) {
+        usedCarRepository.save(usedCar);
     }
 }
