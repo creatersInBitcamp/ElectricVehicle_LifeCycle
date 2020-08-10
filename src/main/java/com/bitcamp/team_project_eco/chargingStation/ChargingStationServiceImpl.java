@@ -58,13 +58,14 @@ public class ChargingStationServiceImpl implements ChargingStationService{
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
             for (CSVRecord csvRecord : csvRecords) {
                 chargingStationRepository.save(new ChargingStation(
+                        csvRecord.get(0),
                         csvRecord.get(1),
-                        csvRecord.get(2),
-                        Integer.parseInt(csvRecord.get(3)),
+                        Integer.parseInt(csvRecord.get(2)),
+                        csvRecord.get(3),
                         csvRecord.get(4),
-                        Integer.parseInt(csvRecord.get(5)),
-                        Integer.parseInt(csvRecord.get(6)),
-                        csvRecord.get(7),
+                        csvRecord.get(5),
+                        Double.parseDouble(csvRecord.get(6)),
+                        Double.parseDouble(csvRecord.get(7)),
                         csvRecord.get(8),
                         csvRecord.get(9),
                         csvRecord.get(10),
