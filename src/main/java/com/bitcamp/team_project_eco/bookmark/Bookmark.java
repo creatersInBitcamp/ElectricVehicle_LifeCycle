@@ -4,7 +4,6 @@ import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import com.bitcamp.team_project_eco.sights.Sights;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -33,7 +32,7 @@ public class Bookmark {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "user_seq")
+    @JoinColumn(name = "user_id")
     private User user;
 
 }

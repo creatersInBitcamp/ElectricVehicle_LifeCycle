@@ -22,13 +22,13 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath addr = createString("addr");
 
-    public final BooleanPath adminCheck = createBoolean("adminCheck");
-
     public final StringPath banDate = createString("banDate");
 
     public final StringPath birthDate = createString("birthDate");
 
-    public final ListPath<com.bitcamp.team_project_eco.comment.Comment, com.bitcamp.team_project_eco.comment.QComment> comments = this.<com.bitcamp.team_project_eco.comment.Comment, com.bitcamp.team_project_eco.comment.QComment>createList("comments", com.bitcamp.team_project_eco.comment.Comment.class, com.bitcamp.team_project_eco.comment.QComment.class, PathInits.DIRECT2);
+    public final ListPath<com.bitcamp.team_project_eco.bookmark.Bookmark, com.bitcamp.team_project_eco.bookmark.QBookmark> bookmarkList = this.<com.bitcamp.team_project_eco.bookmark.Bookmark, com.bitcamp.team_project_eco.bookmark.QBookmark>createList("bookmarkList", com.bitcamp.team_project_eco.bookmark.Bookmark.class, com.bitcamp.team_project_eco.bookmark.QBookmark.class, PathInits.DIRECT2);
+
+    public final ListPath<com.bitcamp.team_project_eco.comment.Comment, com.bitcamp.team_project_eco.comment.QComment> commentList = this.<com.bitcamp.team_project_eco.comment.Comment, com.bitcamp.team_project_eco.comment.QComment>createList("commentList", com.bitcamp.team_project_eco.comment.Comment.class, com.bitcamp.team_project_eco.comment.QComment.class, PathInits.DIRECT2);
 
     public final StringPath email = createString("email");
 
@@ -50,7 +50,11 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath profileText = createString("profileText");
 
+    public final ListPath<com.bitcamp.team_project_eco.purchase.Purchase, com.bitcamp.team_project_eco.purchase.QPurchase> purchasesList = this.<com.bitcamp.team_project_eco.purchase.Purchase, com.bitcamp.team_project_eco.purchase.QPurchase>createList("purchasesList", com.bitcamp.team_project_eco.purchase.Purchase.class, com.bitcamp.team_project_eco.purchase.QPurchase.class, PathInits.DIRECT2);
+
     public final StringPath registerDate = createString("registerDate");
+
+    public final StringPath sex = createString("sex");
 
     public final BooleanPath snsConfirm = createBoolean("snsConfirm");
 
@@ -61,6 +65,8 @@ public class QUser extends EntityPathBase<User> {
     public final NumberPath<Long> userSeq = createNumber("userSeq", Long.class);
 
     public final NumberPath<Integer> visitCount = createNumber("visitCount", Integer.class);
+
+    public final ListPath<com.bitcamp.team_project_eco.wishlist.Wishlist, com.bitcamp.team_project_eco.wishlist.QWishlist> wishlistList = this.<com.bitcamp.team_project_eco.wishlist.Wishlist, com.bitcamp.team_project_eco.wishlist.QWishlist>createList("wishlistList", com.bitcamp.team_project_eco.wishlist.Wishlist.class, com.bitcamp.team_project_eco.wishlist.QWishlist.class, PathInits.DIRECT2);
 
     public QUser(String variable) {
         super(User.class, forVariable(variable));

@@ -9,6 +9,7 @@ import com.bitcamp.team_project_eco.wishlist.Wishlist;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -41,18 +42,23 @@ public class User {
     @Column(name = "profile_text") private String profileText;
     @Column(name = "payment_info") private String paymentInfo;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<UsedCar> usedCarList;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) // 외래키를 주는 쪽이 oneToMany
-    private List<Post> postList;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Comment> comments;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Bookmark> bookmarkList;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Purchase> purchasesList;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Wishlist> wishlistList;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = UsedCar.class)
+    private List<UsedCar> usedCarList = new ArrayList<UsedCar>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Post.class) // 외래키를 주는 쪽이 oneToMany
+    private List<Post> postList = new ArrayList<Post>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Comment.class)
+    private List<Comment> commentList = new ArrayList<Comment>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Bookmark.class)
+    private List<Bookmark> bookmarkList = new ArrayList<Bookmark>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Purchase.class)
+    private List<Purchase> purchasesList = new ArrayList<Purchase>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Wishlist.class)
+    private List<Wishlist> wishlistList = new ArrayList<Wishlist>();
 
 
     public User() {}

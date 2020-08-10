@@ -24,7 +24,7 @@ public class Comment {
     @Column(name = "comment", nullable = false, length = 500) private String comment;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_seq")
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne(cascade = CascadeType.ALL)

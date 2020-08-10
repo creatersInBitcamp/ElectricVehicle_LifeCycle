@@ -14,6 +14,8 @@ import java.util.Optional;
 interface UserService extends JpaService<User> {
     Optional<User> findUserByUserId(String user);
     void readCsv();
+
+    boolean insert(User user);
 }
 
 @Service
@@ -62,6 +64,17 @@ public class UserServiceImpl implements UserService {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public boolean insert(User user) {
+        try {
+            userRepository.save(user);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
     }
 

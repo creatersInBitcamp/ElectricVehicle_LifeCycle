@@ -22,9 +22,9 @@ public class QBookmark extends EntityPathBase<Bookmark> {
 
     public static final QBookmark bookmark = new QBookmark("bookmark");
 
-    public final com.bitcamp.team_project_eco.chargingStation.QChargingStation chargingStation;
+    public final NumberPath<Long> bookmarkId = createNumber("bookmarkId", Long.class);
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final com.bitcamp.team_project_eco.chargingStation.QChargingStation chargingStation;
 
     public final com.bitcamp.team_project_eco.sights.QSights sights;
 
