@@ -23,7 +23,7 @@ public class QCar extends EntityPathBase<Car> {
 
     public final StringPath backDistance = createString("backDistance");
 
-    public final StringPath brakingPerformance = createString("brakingPerformance");
+    public final StringPath brand = createString("brand");
 
     public final NumberPath<Long> carId = createNumber("carId", Long.class);
 
@@ -48,8 +48,6 @@ public class QCar extends EntityPathBase<Car> {
     public final StringPath fuel = createString("fuel");
 
     public final StringPath fuelEfficiency = createString("fuelEfficiency");
-
-    public final StringPath fullWidth = createString("fullWidth");
 
     public final StringPath height = createString("height");
 
@@ -82,6 +80,8 @@ public class QCar extends EntityPathBase<Car> {
     public final StringPath weight = createString("weight");
 
     public final StringPath wheelBase = createString("wheelBase");
+
+    public final StringPath width = createString("width");
 
     public QCar(String variable) {
         super(Car.class, forVariable(variable));

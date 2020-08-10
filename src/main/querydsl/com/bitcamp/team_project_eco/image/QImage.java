@@ -19,13 +19,15 @@ public class QImage extends EntityPathBase<Image> {
 
     public static final QImage image = new QImage("image");
 
-    public final StringPath imageCate = createString("imageCate");
+    public final StringPath category = createString("category");
 
     public final NumberPath<Long> imageId = createNumber("imageId", Long.class);
 
-    public final DateTimePath<org.joda.time.DateTime> updateDate = createDateTime("updateDate", org.joda.time.DateTime.class);
+    public final StringPath imgFile = createString("imgFile");
 
-    public final StringPath url = createString("url");
+    public final StringPath imgName = createString("imgName");
+
+    public final DateTimePath<org.joda.time.DateTime> uploadDate = createDateTime("uploadDate", org.joda.time.DateTime.class);
 
     public QImage(String variable) {
         super(Image.class, forVariable(variable));

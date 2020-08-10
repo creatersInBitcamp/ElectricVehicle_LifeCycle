@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -19,11 +20,11 @@ public class QSights extends EntityPathBase<Sights> {
 
     public static final QSights sights = new QSights("sights");
 
+    public final ListPath<com.bitcamp.team_project_eco.bookmark.Bookmark, com.bitcamp.team_project_eco.bookmark.QBookmark> bookmarkList = this.<com.bitcamp.team_project_eco.bookmark.Bookmark, com.bitcamp.team_project_eco.bookmark.QBookmark>createList("bookmarkList", com.bitcamp.team_project_eco.bookmark.Bookmark.class, com.bitcamp.team_project_eco.bookmark.QBookmark.class, PathInits.DIRECT2);
+
     public final StringPath branchAddress = createString("branchAddress");
 
     public final NumberPath<Integer> capacity = createNumber("capacity", Integer.class);
-
-    public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final StringPath info = createString("info");
 
@@ -31,11 +32,13 @@ public class QSights extends EntityPathBase<Sights> {
 
     public final NumberPath<Integer> parkingLot = createNumber("parkingLot", Integer.class);
 
+    public final NumberPath<Long> sightsId = createNumber("sightsId", Long.class);
+
     public final StringPath streetAddress = createString("streetAddress");
 
-    public final StringPath xValue = createString("xValue");
+    public final NumberPath<Double> xValue = createNumber("xValue", Double.class);
 
-    public final StringPath yValue = createString("yValue");
+    public final NumberPath<Double> yValue = createNumber("yValue", Double.class);
 
     public QSights(String variable) {
         super(Sights.class, forVariable(variable));
