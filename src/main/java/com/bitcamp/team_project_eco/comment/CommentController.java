@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RestController @AllArgsConstructor
+@RestController
 @RequestMapping("/comments")
 public class CommentController {
     //create, read, update, delete

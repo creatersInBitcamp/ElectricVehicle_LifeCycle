@@ -27,7 +27,7 @@ public class ChargingStation {
     @Column(name = "update_date") private String updateDate;
     @Column(name = "boosting_charge") private String boostingCharge;
 
-    @OneToMany(mappedBy = "bookmark", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "chargingStation", cascade = CascadeType.ALL)
     private List<Bookmark> bookmarkList;
 
     public ChargingStation(){}

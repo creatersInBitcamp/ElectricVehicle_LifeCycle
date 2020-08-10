@@ -56,11 +56,11 @@ public class ElectricCar {
     @Column(name = "color", nullable = false) private String color;
     @Column(name = "eol", nullable = false) private String eol;
 
-    @OneToMany(mappedBy = "electric_car", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL)
     private List<UsedCar> usedCarList;
-    @OneToMany(mappedBy = "electric_car", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL)
     private List<Purchase> purchasesList;
-    @OneToMany(mappedBy = "electric_car", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL)
     private List<Wishlist> wishlistList;
 
     public ElectricCar() {}

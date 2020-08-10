@@ -51,13 +51,13 @@ public class UserServiceImpl implements UserService {
                         csvRecord.get(2), //birth
                         csvRecord.get(6), //email
                         csvRecord.get(7), //phonenumber
-                        0,
+                        Integer.parseInt(csvRecord.get(8)),
                         false,
                         false,
                         0,
                         "noban",
-                        csvRecord.get(8), //img
-                        csvRecord.get(9), //text
+                        csvRecord.get(9), //img
+                        csvRecord.get(10), //text
                         "미등록"
                 ));
             }
@@ -69,7 +69,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean insert(User user) {
-        return false;
+        try {
+            userRepository.save(user);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override

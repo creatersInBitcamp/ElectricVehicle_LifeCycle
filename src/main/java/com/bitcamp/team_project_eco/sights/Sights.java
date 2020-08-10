@@ -24,7 +24,7 @@ public class Sights {
     @Column(name = "parking_lot", nullable = false) private int parkingLot;
     @Column(name = "info", nullable = false) private String info;
 
-    @OneToMany(mappedBy = "bookmark", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "sights", cascade = CascadeType.ALL)
     private List<Bookmark> bookmarkList;
 
     @Builder
