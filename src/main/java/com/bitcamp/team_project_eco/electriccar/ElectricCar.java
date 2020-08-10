@@ -9,6 +9,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -56,12 +57,12 @@ public class ElectricCar {
     @Column(name = "color", nullable = false) private String color;
     @Column(name = "eol", nullable = false) private boolean eol;
 
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL)
-    private List<UsedCar> usedCarList;
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL)
-    private List<Purchase> purchasesList;
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL)
-    private List<Wishlist> wishlistList;
+    @OneToMany(mappedBy = "electricCar")
+    private List<UsedCar> usedCarList = new ArrayList<UsedCar>();
+    @OneToMany(mappedBy = "electricCar")
+    private List<Purchase> purchasesList = new ArrayList<Purchase>();
+    @OneToMany(mappedBy = "electricCar")
+    private List<Wishlist> wishlistList = new ArrayList<Wishlist>();
 
     public ElectricCar() {}
 
