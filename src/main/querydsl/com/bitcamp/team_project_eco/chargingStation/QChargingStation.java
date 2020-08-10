@@ -34,7 +34,9 @@ public class QChargingStation extends EntityPathBase<ChargingStation> {
 
     public final StringPath chargerState = createString("chargerState");
 
-    public final NumberPath<Integer> chargerType = createNumber("chargerType", Integer.class);
+    public final StringPath chargerType = createString("chargerType");
+
+    public final NumberPath<Integer> chargerTypeID = createNumber("chargerTypeID", Integer.class);
 
     public final NumberPath<Long> chargingStationId = createNumber("chargingStationId", Long.class);
 
@@ -44,9 +46,9 @@ public class QChargingStation extends EntityPathBase<ChargingStation> {
 
     public final StringPath updateDate = createString("updateDate");
 
-    public final NumberPath<Integer> xValue = createNumber("xValue", Integer.class);
+    public final NumberPath<Double> xValue = createNumber("xValue", Double.class);
 
-    public final NumberPath<Integer> yValue = createNumber("yValue", Integer.class);
+    public final NumberPath<Double> yValue = createNumber("yValue", Double.class);
 
     public QChargingStation(String variable) {
         super(ChargingStation.class, forVariable(variable));

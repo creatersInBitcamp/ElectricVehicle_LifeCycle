@@ -145,13 +145,13 @@ CREATE TABLE charging_station
     `unit_name`            VARCHAR(45)     NULL        COMMENT '충전소명',
     `charger_id`           VARCHAR(45)     NULL        COMMENT '충전기ID',
     `charger_type`         INT             NULL        COMMENT '충전기타입',
+    `charger_state`        VARCHAR(45)     NULL        COMMENT '충전기상태',
     `address`              VARCHAR(200)    NULL        COMMENT '주소',
     `x_value`              double          NULL        COMMENT '위도',
     `y_value`              double          NULL        COMMENT '경도',
     `business_hours`       VARCHAR(45)     NULL        COMMENT '이용가능시간',
     `agency_name`          VARCHAR(45)     NULL        COMMENT '운영기관명',
     `phone`                VARCHAR(45)     NULL        COMMENT '연락처',
-    `charger_state`        VARCHAR(45)     NULL        COMMENT '충전기상태',
     `update_date`          VARCHAR(45)     NULL        COMMENT '상태갱신일시',
     `boosting_charge`      VARCHAR(45)     NULL        COMMENT '급속충전',
     PRIMARY KEY (charging_station_id)
@@ -175,7 +175,7 @@ CREATE TABLE sights
 
 ALTER TABLE sights COMMENT '관광지';
 
-CREATE TABLE bookmark
+CREATE TABLE bookmarky_value
 (
     `bookmark_id`          INT    NOT NULL    AUTO_INCREMENT COMMENT '즐겨찾기아이디',
     `sights_id`            INT    NULL        COMMENT '관광지아이디',
