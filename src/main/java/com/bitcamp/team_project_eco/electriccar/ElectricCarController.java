@@ -14,7 +14,7 @@ import java.util.Optional;
 public class ElectricCarController {
     @Autowired ElectricCarService electricCarService;
 
-    @GetMapping("/readcsv")
+    @GetMapping("/csv")
     public void csvRead(){
         electricCarService.readCsv();
     }

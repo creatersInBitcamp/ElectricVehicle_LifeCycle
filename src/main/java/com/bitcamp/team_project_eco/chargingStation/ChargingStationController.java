@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ChargingStationController {
     @Autowired ChargingStationService chargingStationService;
 
-    @GetMapping("/readcsv")
+    @GetMapping("/csv")
     public void csvRead(){
         chargingStationService.readCsv();
     }

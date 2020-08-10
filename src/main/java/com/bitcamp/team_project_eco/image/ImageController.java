@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ImageController {
     @Autowired ImageService imageService;
 
-    @GetMapping("/readcsv")
+    @GetMapping("/csv")
     public void csvRead(){
         imageService.readCsv();
     }

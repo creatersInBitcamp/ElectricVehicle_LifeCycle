@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Getter @Setter @ToString @NoArgsConstructor
+@Getter @Setter @ToString
 @Table(name = "sights")
 public class Sights {
     @Id
@@ -26,6 +26,8 @@ public class Sights {
 
     @OneToMany(mappedBy = "sights", cascade = CascadeType.ALL)
     private List<Bookmark> bookmarkList;
+
+    public Sights(){}
 
     @Builder
     public Sights (String name, String streetAddress, String branchAddress,
