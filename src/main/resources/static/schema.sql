@@ -7,7 +7,7 @@ CREATE TABLE user
     `addr`           VARCHAR(70)    NULL,
     `register_date`  DATETIME       NULL,
     `name`           VARCHAR(45)    NULL,
-    `ssr`            VARCHAR(45)    NULL,
+    `birthday`       VARCHAR(45)    NULL,
     `email`          VARCHAR(45)    NULL,
     `phone_number`   VARCHAR(45)    NULL,
     `visit_count`    INT            NULL,

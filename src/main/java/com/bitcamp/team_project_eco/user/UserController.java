@@ -31,7 +31,6 @@ public class UserController {
 
     @PostMapping(value = "/register")
     public boolean register(@RequestBody User user){
-        System.out.println(user);
-        return true;
+        return userService.insert(user);
     }
 }

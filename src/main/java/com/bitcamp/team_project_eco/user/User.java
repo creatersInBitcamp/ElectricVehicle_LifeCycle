@@ -1,17 +1,11 @@
 package com.bitcamp.team_project_eco.user;
 
-import com.bitcamp.team_project_eco.bookmark.Bookmark;
-import com.bitcamp.team_project_eco.comment.Comment;
-import com.bitcamp.team_project_eco.post.Post;
-import com.bitcamp.team_project_eco.purchase.Purchase;
-import com.bitcamp.team_project_eco.usedCar.UsedCar;
-import com.bitcamp.team_project_eco.wishlist.Wishlist;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
+@Data
 @Entity
 @Getter @Setter @ToString
 @Table(name = "user")
@@ -22,13 +16,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_seq") private Long userSeq;
     @Column(name = "user_id") private String userId;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password") private String password;
     @Column(name = "register_date") private String registerDate;
     @Column(name = "addr") private String addr;
     @Column(name = "name") private String name;
-    @Column(name = "sex") private String sex;
-    @Column(name = "birth_date") private String birthDate;
+    @Column(name = "ssr") private String ssr;
     @Column(name = "email") private String email;
     @Column(name = "phone_number") private String phoneNumber;
     @Column(name = "visit_count") private int visitCount;
@@ -79,6 +71,7 @@ public class User {
         this.profileImage = profileImage;
         this.profileText = profileText;
         this.paymentInfo = paymentInfo;
+
     }
 
 }
