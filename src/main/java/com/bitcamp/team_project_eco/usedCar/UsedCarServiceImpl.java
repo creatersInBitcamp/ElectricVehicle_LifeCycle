@@ -1,8 +1,5 @@
 package com.bitcamp.team_project_eco.usedCar;
 
-import com.bitcamp.team_project_eco.electriccar.ElectricCar;
-import com.bitcamp.team_project_eco.image.Image;
-import com.bitcamp.team_project_eco.user.User;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;

@@ -1,11 +1,14 @@
 package com.bitcamp.team_project_eco.post;
 
+import com.bitcamp.team_project_eco.user.User;
+import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -22,9 +25,10 @@ interface PostService extends JpaService<Post> {
 @Service
 public class PostServiceImpl implements PostService {
     private final PostRepository repository;
-
-    public PostServiceImpl(PostRepository repository) {
+    private final UserRepository userRepository;
+    public PostServiceImpl(PostRepository repository, EntityManager em, UserRepository userRepository) {
         this.repository = repository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -54,7 +58,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void readCsv() {
-        InputStream is = getClass().getResourceAsStream("/static/news.csv");
+        InputStream is = getClass().getResourceAsStream("/static/test.csv");
         try {
         BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
         CSVParser csvParser = new CSVParser(fileReader, CSVFormat.DEFAULT);
@@ -68,8 +72,9 @@ public class PostServiceImpl implements PostService {
                     csvRecord.get(4),
                     0,
                     0,
-                    "News"
-            ));
+                    "News",
+                    userRepository.findById(Long.parseLong(csvRecord.get(5))).orElse(new User()) // user Entity
+                    ));
         }
         } catch (Exception e) {
             e.printStackTrace();

@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport
 import org.springframework.stereotype.Repository;
 
 interface CustomedPostRepository {
-
 }
 
 @Repository

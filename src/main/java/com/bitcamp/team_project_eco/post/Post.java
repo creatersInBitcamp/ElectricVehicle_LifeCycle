@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Data
+@Getter @Setter @ToString
 @Table(name = "post")
 public class Post {
     @Id
@@ -31,10 +31,14 @@ public class Post {
     @JoinColumn(name = "user_seq") // 외래키를 받는 쪽.
     private User user;
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<Comment> comments;
 
-    public Post(String link, String title, String date, String img, String content, int recomendation, int hits, String category) {
+    public Post(String link, String title, String date, String img, String content, int recomendation, int hits, String category, User user) {
         this.link = link;
         this.titie = title;
         this.date = date;
@@ -43,6 +47,7 @@ public class Post {
         this.recomendation = recomendation;
         this.hits = hits;
         this.category = category;
+        this.user = user;
     }
 
     public Post() {

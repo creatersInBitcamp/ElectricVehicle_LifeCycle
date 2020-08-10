@@ -42,22 +42,22 @@ public class User {
     @Column(name = "profile_text") private String profileText;
     @Column(name = "payment_info") private String paymentInfo;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = UsedCar.class)
+    @OneToMany(mappedBy = "user")
     private List<UsedCar> usedCarList = new ArrayList<UsedCar>();
 
-    @OneToMany(cascade = CascadeType.ALL, targetEntity = Post.class) // 외래키를 주는 쪽이 oneToMany
+    @OneToMany(mappedBy = "user") // 외래키를 주는 쪽이 oneToMany
     private List<Post> postList = new ArrayList<Post>();
 
-    @OneToMany(cascade = CascadeType.ALL, targetEntity = Comment.class)
+    @OneToMany(mappedBy = "user")
     private List<Comment> commentList = new ArrayList<Comment>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Bookmark.class)
+    @OneToMany(mappedBy = "user")
     private List<Bookmark> bookmarkList = new ArrayList<Bookmark>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Purchase.class)
+    @OneToMany(mappedBy = "user")
     private List<Purchase> purchasesList = new ArrayList<Purchase>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Wishlist.class)
+    @OneToMany(mappedBy = "user")
     private List<Wishlist> wishlistList = new ArrayList<Wishlist>();
 
 
