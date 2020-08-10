@@ -1,13 +1,21 @@
 package com.bitcamp.team_project_eco.user;
 
-import lombok.Builder;
-import lombok.Data;
+import com.bitcamp.team_project_eco.bookmark.Bookmark;
+import com.bitcamp.team_project_eco.comment.Comment;
+import com.bitcamp.team_project_eco.post.Post;
+import com.bitcamp.team_project_eco.purchase.Purchase;
+import com.bitcamp.team_project_eco.usedCar.UsedCar;
+import com.bitcamp.team_project_eco.wishlist.Wishlist;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
-@Getter @Setter @ToString
+@Getter
+@Setter
+@ToString
 @Table(name = "user")
 @NamedQuery(name = "User.findByUserId",
             query = "select e from User e where e.userId = :userId")
@@ -20,7 +28,8 @@ public class User {
     @Column(name = "register_date") private String registerDate;
     @Column(name = "addr") private String addr;
     @Column(name = "name") private String name;
-    @Column(name = "ssr") private String ssr;
+    @Column(name = "sex") private String sex;
+    @Column(name = "birth_date") private String birthDate;
     @Column(name = "email") private String email;
     @Column(name = "phone_number") private String phoneNumber;
     @Column(name = "visit_count") private int visitCount;

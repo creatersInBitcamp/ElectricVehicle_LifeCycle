@@ -24,6 +24,7 @@ public class Post {
     @Column(name = "content", nullable = false) private String content;
     @Column(name = "recomendation", nullable = false) private int recomendation;
     @Column(name = "hits", nullable = false) private int hits;
+    @Column(name = "category", nullable = false, length = 45) private String category;
 
     @JsonIgnore
     @ManyToOne
@@ -33,7 +34,7 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments;
 
-    public Post(String link, String title, String date, String img, String content, int recomendation, int hits) {
+    public Post(String link, String title, String date, String img, String content, int recomendation, int hits, String category) {
         this.link = link;
         this.titie = title;
         this.date = date;
@@ -41,6 +42,7 @@ public class Post {
         this.content = content;
         this.recomendation = recomendation;
         this.hits = hits;
+        this.category = category;
     }
 
     public Post() {
