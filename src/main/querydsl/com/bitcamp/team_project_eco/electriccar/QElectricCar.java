@@ -40,7 +40,7 @@ public class QElectricCar extends EntityPathBase<ElectricCar> {
 
     public final StringPath energy = createString("energy");
 
-    public final StringPath eol = createString("eol");
+    public final BooleanPath eol = createBoolean("eol");
 
     public final StringPath frontBraking = createString("frontBraking");
 

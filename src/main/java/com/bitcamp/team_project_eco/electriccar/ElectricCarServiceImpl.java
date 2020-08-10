@@ -62,6 +62,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
             int i = 1;
             for (CSVRecord csvRecord : csvRecords) {
                 electricCarRepository.save(new ElectricCar(
+                        csvRecord.get(0),
                         csvRecord.get(1),
                         csvRecord.get(2),
                         csvRecord.get(3),
@@ -95,8 +96,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
                         csvRecord.get(31),
                         csvRecord.get(32),
                         csvRecord.get(33),
-                        csvRecord.get(34),
-                        csvRecord.get(35)));
+                        csvRecord.get(34)));
             }
         } catch (Exception e) {
             e.printStackTrace();

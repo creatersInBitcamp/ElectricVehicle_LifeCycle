@@ -54,7 +54,7 @@ public class ElectricCar {
     @Column(name = "boosting_charge", nullable = false) private String boostingCharge;
     @Column(name = "slow_charging", nullable = false) private String slowCharging;
     @Column(name = "color", nullable = false) private String color;
-    @Column(name = "eol", nullable = false) private String eol;
+    @Column(name = "eol", nullable = false) private boolean eol;
 
     @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL)
     private List<UsedCar> usedCarList;
@@ -110,7 +110,7 @@ public class ElectricCar {
         this.boostingCharge = boostingCharge;
         this.slowCharging = slowCharging;
         this.color = color;
-        this.eol = eol;
+        this.eol = Boolean.parseBoolean(eol);
     }
 
 }

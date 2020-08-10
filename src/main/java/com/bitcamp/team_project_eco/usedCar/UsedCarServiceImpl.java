@@ -57,7 +57,7 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     public void readCsv() {
-        InputStream is = getClass().getResourceAsStream("/static/used743.csv");
+        InputStream is = getClass().getResourceAsStream("/static/used0811.csv");
 
         try {
             BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
