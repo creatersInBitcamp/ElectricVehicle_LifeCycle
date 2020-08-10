@@ -1,12 +1,20 @@
 package com.bitcamp.team_project_eco.usedCar;
 
+import com.bitcamp.team_project_eco.user.User;
 import com.bitcamp.team_project_eco.utils.JpaService;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Optional;
 
 interface UsedCarService extends JpaService<UsedCar> {
 
+    void readCsv();
 }
 
 @Service
@@ -40,5 +48,28 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public boolean exists(String id) {
         return usedCarRepository.existsById((long) Integer.parseInt(id));
+    }
+
+    @Override
+    public void readCsv() {
+        InputStream is = getClass().getResourceAsStream("/static/used743.csv");
+
+        try {
+            BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            CSVParser parser = new CSVParser(fileReader, CSVFormat.DEFAULT);
+            Iterable<CSVRecord> csvRecords = parser.getRecords();
+            for(CSVRecord csvRecord : csvRecords) {
+                usedCarRepository.save(new UsedCar(
+                        csvRecord.get(0),//price
+                        csvRecord.get(1),//age
+                        csvRecord.get(2),//mileage
+                        csvRecord.get(3),//imgId
+                        csvRecord.get(4),//userSeq
+                        csvRecord.get(5)//
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

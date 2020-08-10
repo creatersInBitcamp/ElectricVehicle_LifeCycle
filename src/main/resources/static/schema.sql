@@ -74,10 +74,6 @@ CREATE TABLE used_car
 (
     `usedcar_id`    INT(11)        NOT NULL    AUTO_INCREMENT COMMENT '중고차 아이디',
     `price`         VARCHAR(45)    NULL        DEFAULT NULL COMMENT '중고가격',
-    `brand`         VARCHAR(45)    NULL        DEFAULT NULL COMMENT '제조사',
-    `model_name`    VARCHAR(45)    NULL        DEFAULT NULL COMMENT '차종',
-    `trim`          VARCHAR(45)    NULL        DEFAULT NULL COMMENT '트림',
-    `yyyy`          VARCHAR(45)    NULL        DEFAULT NULL COMMENT '연형',
     `age`           VARCHAR(45)    NULL        DEFAULT NULL COMMENT '연식',
     `mileage`       VARCHAR(45)    NULL        DEFAULT NULL COMMENT '주행거리',
     `img_id`        INT            NULL        DEFAULT NULL COMMENT '이미지',
