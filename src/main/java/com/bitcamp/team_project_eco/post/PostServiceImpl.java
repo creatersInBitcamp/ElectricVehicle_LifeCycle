@@ -60,18 +60,15 @@ public class PostServiceImpl implements PostService {
         BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
         CSVParser csvParser = new CSVParser(fileReader, CSVFormat.DEFAULT);
         Iterable<CSVRecord> csvRecords = csvParser.getRecords();
-        int i = 1;
         for (CSVRecord csvRecord : csvRecords) {
             repository.save(new Post(
-                    i++,
                     csvRecord.get(0),
                     csvRecord.get(1),
                     csvRecord.get(2),
                     csvRecord.get(3),
                     csvRecord.get(4),
                     0,
-                    0,
-                    Integer.parseInt(csvRecord.get(5))
+                    0
             ));
         }
         } catch (Exception e) {

@@ -33,8 +33,7 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments;
 
-    public Post(int postId, String link, String title, String date, String img, String content, int recomendation, int hits, int userSeq) {
-        this.postId = postId;
+    public Post(String link, String title, String date, String img, String content, int recomendation, int hits) {
         this.link = link;
         this.titie = title;
         this.date = date;
