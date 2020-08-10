@@ -45,10 +45,10 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = UsedCar.class)
     private List<UsedCar> usedCarList = new ArrayList<UsedCar>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Post.class) // 외래키를 주는 쪽이 oneToMany
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = Post.class) // 외래키를 주는 쪽이 oneToMany
     private List<Post> postList = new ArrayList<Post>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Comment.class)
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = Comment.class)
     private List<Comment> commentList = new ArrayList<Comment>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, targetEntity = Bookmark.class)

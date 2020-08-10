@@ -55,7 +55,6 @@ public class PostServiceImpl implements PostService {
     @Override
     public void readCsv() {
         InputStream is = getClass().getResourceAsStream("/static/news.csv");
-
         try {
         BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
         CSVParser csvParser = new CSVParser(fileReader, CSVFormat.DEFAULT);

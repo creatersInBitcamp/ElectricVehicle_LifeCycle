@@ -31,7 +31,7 @@ public class Post {
     @JoinColumn(name = "user_seq") // 외래키를 받는 쪽.
     private User user;
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Comment> comments;
 
     public Post(String link, String title, String date, String img, String content, int recomendation, int hits, String category) {

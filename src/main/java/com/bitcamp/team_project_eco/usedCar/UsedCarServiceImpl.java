@@ -62,10 +62,7 @@ public class UsedCarServiceImpl implements UsedCarService {
                 usedCarRepository.save(new UsedCar(
                         csvRecord.get(0),//price
                         csvRecord.get(1),//age
-                        csvRecord.get(2),//mileage
-                        csvRecord.get(3),//imgId
-                        csvRecord.get(4),//userSeq
-                        csvRecord.get(5)//
+                        csvRecord.get(2)//mileage
                 ));
             }
         } catch (Exception e) {

@@ -37,15 +37,9 @@ public class UsedCar {
     @Builder
     public UsedCar(String price,
                    String age,
-                   String mileage,
-                   int imgId,
-                   int userSeq,
-                   int eccarId){
+                   String mileage){
         this.price = price;
         this.age = age;
         this.mileage = mileage;
-        this.imgId = imgId;
-        this.userSeq = userSeq;
-        this.eccarId = eccarId;
     }
 }
