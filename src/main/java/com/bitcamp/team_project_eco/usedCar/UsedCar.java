@@ -37,15 +37,9 @@ public class UsedCar {
     @Builder
     public UsedCar(String price,
                    String age,
-                   String mileage,
-                   Long imgId,
-                   User userSeq,
-                   ElectricCar eccarId){
+                   String mileage){
         this.price = price;
         this.age = age;
         this.mileage = mileage;
-        (this.image = new Image().setImageId(imgId)).getImageId();
-        (this.user = userSeq).getUserSeq();
-        (this.electricCar = eccarId).getEccarId();
     }
 }

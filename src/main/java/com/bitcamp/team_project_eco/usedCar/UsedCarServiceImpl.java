@@ -1,8 +1,5 @@
 package com.bitcamp.team_project_eco.usedCar;
 
-import com.bitcamp.team_project_eco.electriccar.ElectricCar;
-import com.bitcamp.team_project_eco.image.Image;
-import com.bitcamp.team_project_eco.user.User;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -67,10 +64,7 @@ public class UsedCarServiceImpl implements UsedCarService {
                 usedCarRepository.save(new UsedCar(
                         csvRecord.get(0),//price
                         csvRecord.get(1),//age
-                        csvRecord.get(2),//mileage
-                        Long.parseLong(csvRecord.get(3)),//imgId
-                        new User().setUserSeq(Long.parseLong(csvRecord.get(4))),//userSeq
-                        new ElectricCar().setEccarId(Long.parseLong(csvRecord.get(5))) //
+                        csvRecord.get(2)//mileage
                 ));
             }
         } catch (Exception e) {

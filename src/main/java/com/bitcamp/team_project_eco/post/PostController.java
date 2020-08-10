@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.post;
 
+import com.bitcamp.team_project_eco.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

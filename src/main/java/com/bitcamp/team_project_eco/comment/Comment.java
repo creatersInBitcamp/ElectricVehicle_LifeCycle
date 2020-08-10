@@ -3,8 +3,6 @@ package com.bitcamp.team_project_eco.comment;
 import com.bitcamp.team_project_eco.post.Post;
 import com.bitcamp.team_project_eco.user.User;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
