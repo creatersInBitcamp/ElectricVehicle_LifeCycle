@@ -4,6 +4,7 @@ import com.bitcamp.team_project_eco.bookmark.Bookmark;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,8 +29,8 @@ public class ChargingStation {
     @Column(name = "update_date") private String updateDate;
     @Column(name = "boosting_charge") private String boostingCharge;
 
-    @OneToMany(mappedBy = "chargingStation", cascade = CascadeType.ALL)
-    private List<Bookmark> bookmarkList;
+    @OneToMany(mappedBy = "chargingStation")
+    private List<Bookmark> bookmarkList = new ArrayList<Bookmark>();
 
     public ChargingStation(){}
 
