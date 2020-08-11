@@ -184,20 +184,6 @@ CREATE TABLE bookmarky_value
     PRIMARY KEY (bookmark_id)
 )default character set utf8 collate UTF8_GENERAL_CI;
 
-ALTER TABLE bookmark COMMENT '즐겨찾기';
-
-ALTER TABLE bookmark
-    ADD CONSTRAINT FK_bookmark_sights_id_sights_sights_id FOREIGN KEY (sights_id)
-        REFERENCES sights (sights_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
-ALTER TABLE bookmark
-    ADD CONSTRAINT FK_bookmark_charger_id_charging_station_charging_station_id FOREIGN KEY (charging_station_id)
-        REFERENCES charging_station (charging_station_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
-ALTER TABLE bookmark
-    ADD CONSTRAINT FK_bookmark_user_seq_user_seq FOREIGN KEY (user_seq)
-        REFERENCES user (user_seq) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
 /*게시글*/
 CREATE TABLE post
 (
