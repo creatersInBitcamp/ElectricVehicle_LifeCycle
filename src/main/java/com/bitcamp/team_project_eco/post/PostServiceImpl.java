@@ -6,6 +6,8 @@ import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -20,6 +22,8 @@ interface PostService extends JpaService<Post> {
     void insertPost(Post post);
 
     void updatePost(Post post);
+
+    Page<Post> pagingFindAll(Pageable page);
 }
 
 @Service
@@ -89,5 +93,10 @@ public class PostServiceImpl implements PostService {
     @Override
     public void updatePost(Post post) {
 //        int targetPostId = post.getPostId();
+    }
+
+    @Override
+    public Page<Post> pagingFindAll(Pageable page) {
+        return repository.findAll(page);
     }
 }
