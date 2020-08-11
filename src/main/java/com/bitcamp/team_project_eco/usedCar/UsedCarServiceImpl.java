@@ -1,5 +1,9 @@
 package com.bitcamp.team_project_eco.usedCar;
 
+import com.bitcamp.team_project_eco.electriccar.ElectricCar;
+import com.bitcamp.team_project_eco.electriccar.ElectricCarRepository;
+import com.bitcamp.team_project_eco.user.User;
+import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -22,9 +26,13 @@ interface UsedCarService extends JpaService<UsedCar> {
 @Service
 public class UsedCarServiceImpl implements UsedCarService {
     private final UsedCarRepository usedCarRepository;
+    private final UserRepository userRepository;
+    private final ElectricCarRepository electricCarRepository;
 
-    public UsedCarServiceImpl(UsedCarRepository usedCarRepository) {
+    public UsedCarServiceImpl(UsedCarRepository usedCarRepository, UserRepository userRepository, ElectricCarRepository electricCarRepository) {
         this.usedCarRepository = usedCarRepository;
+        this.userRepository = userRepository;
+        this.electricCarRepository = electricCarRepository;
     }
 
     @Override
@@ -54,7 +62,7 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     public void readCsv() {
-        InputStream is = getClass().getResourceAsStream("/static/used743.csv");
+        InputStream is = getClass().getResourceAsStream("/static/used0811.csv");
 
         try {
             BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
@@ -64,7 +72,9 @@ public class UsedCarServiceImpl implements UsedCarService {
                 usedCarRepository.save(new UsedCar(
                         csvRecord.get(0),//price
                         csvRecord.get(1),//age
-                        csvRecord.get(2)//mileage
+                        csvRecord.get(2),//mileage
+                        userRepository.findById(Long.parseLong(csvRecord.get(3))).orElse(new User()),
+                        electricCarRepository.findById(Long.parseLong(csvRecord.get(4))).orElse(new ElectricCar())
                 ));
             }
         } catch (Exception e) {

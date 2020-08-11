@@ -13,7 +13,7 @@ import java.util.Optional;
 public class SightsController {
     @Autowired SightsService sightsService;
 
-    @GetMapping("/readcsv")
+    @GetMapping("/csv")
     public void csvRead(){
         sightsService.readCsv();
     }

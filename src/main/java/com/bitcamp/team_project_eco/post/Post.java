@@ -47,7 +47,7 @@ public class Post {
         this.recomendation = recomendation;
         this.hits = hits;
         this.category = category;
-        this.user = user;
+        setUser(user);
     }
 
     public Post() {

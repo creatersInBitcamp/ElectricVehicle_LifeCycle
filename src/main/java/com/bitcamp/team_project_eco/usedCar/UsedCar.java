@@ -9,7 +9,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Getter @Setter @ToString @NoArgsConstructor
+@Getter @Setter @ToString
 @Table(name = "used_car")
 public class UsedCar {
     @Id
@@ -19,27 +19,47 @@ public class UsedCar {
     @Column(name = "age") private String age;
     @Column(name = "mileage") private String mileage;
 
-    @JsonIgnore
+    /*@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "img_id")
     private Image image;
+
+    public void setImage(Image image){
+        this.image = image;
+    }*/
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_seq")
     private User user;
 
+    public void setUser(User user){
+        this.user = user;
+    }
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "eccar_id")
     private ElectricCar electricCar;
 
+    public void setElectricCar(ElectricCar electricCar){
+        this.electricCar = electricCar;
+    }
+
+    public UsedCar(){}
+
     @Builder
     public UsedCar(String price,
                    String age,
-                   String mileage){
+                   String mileage,
+//                   Image imageId,
+                   User userSeq,
+                   ElectricCar eccarId){
         this.price = price;
         this.age = age;
         this.mileage = mileage;
+//        this.image = imageId;
+        setUser(userSeq);
+        setElectricCar(eccarId);
     }
 }
