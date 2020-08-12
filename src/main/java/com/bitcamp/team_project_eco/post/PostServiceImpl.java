@@ -15,7 +15,7 @@ import javax.persistence.EntityManager;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 interface PostService extends JpaService<Post> {
@@ -86,8 +86,8 @@ public class PostServiceImpl implements PostService {
                     0,
                     0,
                     "news",
-                    userRepository.findById(Long.parseLong(csvRecord.get(5))).orElse(new User()) // user Entity
-                    ));
+                    userRepository.findById(Long.parseLong(csvRecord.get(5))).orElse(new User()), // user Entity
+                    new ArrayList<>()));
         }
         } catch (Exception e) {
             e.printStackTrace();
@@ -98,13 +98,12 @@ public class PostServiceImpl implements PostService {
     public void insertPost(NewPostVO object) {
         User u = object.user;
         Post np = new Post(object.userName, object.link, object.title, object.date, object.img,
-                object.content, 0, 0, object.category, u);
+                object.content, 0, 0, object.category, u, new ArrayList<>());
         repository.save(np);
     }
 
     @Override
     public void updatePost(Post post) {
-
     }
 
     @Override

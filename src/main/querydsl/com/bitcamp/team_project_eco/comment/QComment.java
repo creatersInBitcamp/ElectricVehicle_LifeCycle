@@ -28,7 +28,7 @@ public class QComment extends EntityPathBase<Comment> {
 
     public final com.bitcamp.team_project_eco.post.QPost post;
 
-    public final DateTimePath<org.joda.time.DateTime> regDate = createDateTime("regDate", org.joda.time.DateTime.class);
+    public final StringPath regDate = createString("regDate");
 
     public final com.bitcamp.team_project_eco.user.QUser user;
 
