@@ -1,0 +1,2360 @@
+[
+  {
+    "usedcar_id": 1,
+    "price": "899",
+    "age": "16/12식",
+    "mileage": "60,375km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/7.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/8.jpg", "/assets/images/car/hyundai/ioniqN/11.jpg"],
+    "user_seq": 93,
+    "eccar_id": 54
+  },
+  {
+    "usedcar_id": 2,
+    "price": "300",
+    "age": "18/04식",
+    "mileage": "588km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/8.jpg", "/assets/images/car/gm/boltEVpriemier/9.jpg", "/assets/images/car/gm/boltEVpriemier/10.jpg"],
+    "user_seq": 58,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 3,
+    "price": "2,030",
+    "age": "17/06식",
+    "mileage": "6,495km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/1.jpg", "/assets/images/car/samsung/sm3ZERE/2.jpg", "/assets/images/car/samsung/sm3ZERE/4.jpg", "/assets/images/car/samsung/sm3ZERE/5.jpg"],
+    "user_seq": 212,
+    "eccar_id": 26
+  },
+  {
+    "usedcar_id": 4,
+    "price": "1,550",
+    "age": "19/06식",
+    "mileage": "17,234km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 90,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 5,
+    "price": "899",
+    "age": "16/12식",
+    "mileage": "39,636km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 94,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 6,
+    "price": "1,420",
+    "age": "16/06식",
+    "mileage": "57,037km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/7.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/8.jpg", "/assets/images/car/hyundai/ioniqN/11.jpg"],
+    "user_seq": 150,
+    "eccar_id": 54
+  },
+  {
+    "usedcar_id": 7,
+    "price": "1,459",
+    "age": "16/12식",
+    "mileage": "80,046km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/1.jpg", "/assets/images/car/samsung/sm3ZERE/2.jpg", "/assets/images/car/samsung/sm3ZERE/4.jpg", "/assets/images/car/samsung/sm3ZERE/5.jpg"],
+    "user_seq": 243,
+    "eccar_id": 26
+  },
+  {
+    "usedcar_id": 8,
+    "price": "3,190",
+    "age": "19/07식",
+    "mileage": "5,100km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/7.jpg", "/assets/images/car/hyundai/konaPremium/16.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 129,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 9,
+    "price": "850",
+    "age": "15/09식",
+    "mileage": "44,891km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/7.jpg", "/assets/images/car/hyundai/konaPremium/16.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 109,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 10,
+    "price": "2,699",
+    "age": "19/04식",
+    "mileage": "29,320km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 156,
+    "eccar_id": 29
+  },
+  {
+    "usedcar_id": 11,
+    "price": "1,890",
+    "age": "17/03식",
+    "mileage": "101,000km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/1.jpg", "/assets/images/car/samsung/sm3ZERE/2.jpg", "/assets/images/car/samsung/sm3ZERE/4.jpg", "/assets/images/car/samsung/sm3ZERE/5.jpg"],
+    "user_seq": 225,
+    "eccar_id": 26
+  },
+  {
+    "usedcar_id": 12,
+    "price": "2,950",
+    "age": "19/04식",
+    "mileage": "29,131km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 2,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 13,
+    "price": "1,630",
+    "age": "16/12식",
+    "mileage": "60,864km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/7.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/8.jpg", "/assets/images/car/hyundai/ioniqN/11.jpg"],
+    "user_seq": 244,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 14,
+    "price": "799",
+    "age": "15/03식",
+    "mileage": "43,729km",
+    "img_id": ["/assets/images/car/kia/niroNobless/4.jpg", "/assets/images/car/kia/niroNobless/7.jpg", "/assets/images/car/kia/niroNobless/8.jpg", "/assets/images/car/kia/niroNobless/10.jpg"],
+    "user_seq": 110,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 15,
+    "price": "1,460",
+    "age": "17/02식",
+    "mileage": "9,350km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/12.jpg", "/assets/images/car/hyundai/ioniqQ/14.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 132,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 16,
+    "price": "3,290",
+    "age": "18/06식",
+    "mileage": "19,212km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/12.jpg", "/assets/images/car/hyundai/ioniqQ/14.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 18,
+    "eccar_id": 55
+  },
+  {
+    "usedcar_id": 17,
+    "price": "320",
+    "age": "18/03식",
+    "mileage": "6,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 59,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 18,
+    "price": "2,140",
+    "age": "18/06식",
+    "mileage": "23,000km",
+    "img_id": ["/assets/images/car/kia/soulEV/1.jpg", "/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/7.jpg"],
+    "user_seq": 207,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 19,
+    "price": "1,990",
+    "age": "18/03식",
+    "mileage": "20,000km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/1.jpg", "/assets/images/car/samsung/sm3ZERE/2.jpg", "/assets/images/car/samsung/sm3ZERE/4.jpg", "/assets/images/car/samsung/sm3ZERE/5.jpg"],
+    "user_seq": 213,
+    "eccar_id": 26
+  },
+  {
+    "usedcar_id": 20,
+    "price": "360",
+    "age": "18/01식",
+    "mileage": "543km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 60,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 21,
+    "price": "1,970",
+    "age": "16/11식",
+    "mileage": "22,682km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/7.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/8.jpg", "/assets/images/car/hyundai/ioniqN/11.jpg"],
+    "user_seq": 248,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 22,
+    "price": "2,250",
+    "age": "17/05식",
+    "mileage": "42,900km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/1.jpg", "/assets/images/car/samsung/twizyLife/5.jpg", "/assets/images/car/samsung/twizyLife/10.jpg", "/assets/images/car/samsung/twizyLife/13.jpg"],
+    "user_seq": 165,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 23,
+    "price": "1,699",
+    "age": "17/02식",
+    "mileage": "46,514km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESEplus/5.jpg", "/assets/images/car/samsung/sm3ZESEplus/9.jpg", "/assets/images/car/samsung/sm3ZESEplus/16.jpg", "/assets/images/car/samsung/sm3ZESEplus/17.jpg"],
+    "user_seq": 249,
+    "eccar_id": 28
+  },
+  {
+    "usedcar_id": 24,
+    "price": "1,230",
+    "age": "17/02식",
+    "mileage": "35,499km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/7.jpg", "/assets/images/car/hyundai/konaPremium/16.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 133,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 25,
+    "price": "2,070",
+    "age": "18/03식",
+    "mileage": "48,860km",
+    "img_id": ["/assets/images/car/gm/boltEVLT/5.jpg", "/assets/images/car/gm/boltEVLT/6.jpg", "/assets/images/car/gm/boltEVLT/7.jpg", "/assets/images/car/gm/boltEVLT/15.jpg"],
+    "user_seq": 226,
+    "eccar_id": 46
+  },
+  {
+    "usedcar_id": 26,
+    "price": "3,550",
+    "age": "19/04식",
+    "mileage": "26,040km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 190,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 27,
+    "price": "2,070",
+    "age": "17/04식",
+    "mileage": "60,000km",
+    "img_id": ["/assets/images/car/kia/niroNobless/4.jpg", "/assets/images/car/kia/niroNobless/7.jpg", "/assets/images/car/kia/niroNobless/8.jpg", "/assets/images/car/kia/niroNobless/10.jpg"],
+    "user_seq": 227,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 28,
+    "price": "2,290",
+    "age": "18/04식",
+    "mileage": "48,200km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 158,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 29,
+    "price": "280",
+    "age": "17/12식",
+    "mileage": "2,547km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESEplus/5.jpg", "/assets/images/car/samsung/sm3ZESEplus/9.jpg", "/assets/images/car/samsung/sm3ZESEplus/16.jpg", "/assets/images/car/samsung/sm3ZESEplus/17.jpg"],
+    "user_seq": 61,
+    "eccar_id": 28
+  },
+  {
+    "usedcar_id": 30,
+    "price": "3,188",
+    "age": "19/02식",
+    "mileage": "10,254km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/7.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/8.jpg", "/assets/images/car/hyundai/ioniqN/11.jpg"],
+    "user_seq": 3,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 31,
+    "price": "390",
+    "age": "17/12식",
+    "mileage": "173km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/1.jpg", "/assets/images/car/hyundai/ioniqN/15.jpg", "/assets/images/car/hyundai/ioniqN/23.jpg", "/assets/images/car/hyundai/ioniqN/24.jpg"],
+    "user_seq": 62,
+    "eccar_id": 59
+  },
+  {
+    "usedcar_id": 32,
+    "price": "1,700",
+    "age": "18/04식",
+    "mileage": "15,929km",
+    "img_id": ["/assets/images/car/hyundai/konaModern/4.jpg", "/assets/images/car/hyundai/konaModern/6.jpg", "/assets/images/car/hyundai/konaModern/7.jpg", "/assets/images/car/hyundai/konaModern/16.jpg"],
+    "user_seq": 134,
+    "eccar_id": 11
+  },
+  {
+    "usedcar_id": 33,
+    "price": "1,990",
+    "age": "18/04식",
+    "mileage": "54,284km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/8.jpg", "/assets/images/car/gm/boltEVpriemier/9.jpg", "/assets/images/car/gm/boltEVpriemier/10.jpg"],
+    "user_seq": 208,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 34,
+    "price": "1,730",
+    "age": "17/04식",
+    "mileage": "92,760km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/8.jpg", "/assets/images/car/gm/boltEVpriemier/9.jpg", "/assets/images/car/gm/boltEVpriemier/10.jpg"],
+    "user_seq": 250,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 35,
+    "price": "2,990",
+    "age": "19/04식",
+    "mileage": "69,224km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 191,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 36,
+    "price": "2,450",
+    "age": "18/05식",
+    "mileage": "59,511km",
+    "img_id": ["/assets/images/car/kia/soulEV/1.jpg", "/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/7.jpg"],
+    "user_seq": 159,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 37,
+    "price": "1,990",
+    "age": "17/06식",
+    "mileage": "20,465km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/7.jpg", "/assets/images/car/hyundai/konaPremium/9.jpg", "/assets/images/car/hyundai/konaPremium/14.jpg"],
+    "user_seq": 228,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 38,
+    "price": "2,450",
+    "age": "18/05식",
+    "mileage": "59,511km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/7.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/8.jpg", "/assets/images/car/hyundai/ioniqN/11.jpg"],
+    "user_seq": 160,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 39,
+    "price": "3,160",
+    "age": "18/06식",
+    "mileage": "33,332km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/3.jpg", "/assets/images/car/hyundai/ioniqN/9.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/12.jpg"],
+    "user_seq": 19,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 40,
+    "price": "355",
+    "age": "19/07식",
+    "mileage": "53km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/1.jpg", "/assets/images/car/samsung/twizyLife/5.jpg", "/assets/images/car/samsung/twizyLife/10.jpg", "/assets/images/car/samsung/twizyLife/13.jpg"],
+    "user_seq": 47,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 41,
+    "price": "2,520",
+    "age": "18/03식",
+    "mileage": "39,800km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/5.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/19.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 171,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 42,
+    "price": "275",
+    "age": "18/04식",
+    "mileage": "8,920km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/5.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/19.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 63,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 43,
+    "price": "890",
+    "age": "17/06식",
+    "mileage": "76,712km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 95,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 44,
+    "price": "799",
+    "age": "15/03식",
+    "mileage": "43,729km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/3.jpg", "/assets/images/car/hyundai/ioniqN/9.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/12.jpg"],
+    "user_seq": 111,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 45,
+    "price": "1,830",
+    "age": "18/06식",
+    "mileage": "52,000km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/3.jpg", "/assets/images/car/hyundai/ioniqN/9.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/12.jpg"],
+    "user_seq": 203,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 46,
+    "price": "3,290",
+    "age": "18/06식",
+    "mileage": "19,212km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 20,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 47,
+    "price": "299",
+    "age": "20/06식",
+    "mileage": "5km",
+    "img_id": ["/assets/images/car/kia/niroNobless/4.jpg", "/assets/images/car/kia/niroNobless/7.jpg", "/assets/images/car/kia/niroNobless/8.jpg", "/assets/images/car/kia/niroNobless/10.jpg"],
+    "user_seq": 35,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 48,
+    "price": "1,420",
+    "age": "17/02식",
+    "mileage": "14,000km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/12.jpg", "/assets/images/car/hyundai/ioniqQ/14.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 135,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 49,
+    "price": "320",
+    "age": "18/03식",
+    "mileage": "6,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/11.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg", "/assets/images/car/samsung/twizyIntence/22.jpg"],
+    "user_seq": 64,
+    "eccar_id": 18
+  },
+  {
+    "usedcar_id": 50,
+    "price": "2,140",
+    "age": "18/06식",
+    "mileage": "23,000km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/12.jpg", "/assets/images/car/hyundai/ioniqQ/14.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 209,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 51,
+    "price": "350",
+    "age": "19/03식",
+    "mileage": "2,994km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/8.jpg", "/assets/images/car/gm/boltEVpriemier/9.jpg", "/assets/images/car/gm/boltEVpriemier/10.jpg"],
+    "user_seq": 36,
+    "eccar_id": 44
+  },
+  {
+    "usedcar_id": 52,
+    "price": "1,970",
+    "age": "16/11식",
+    "mileage": "22,682km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/8.jpg", "/assets/images/car/gm/boltEVpriemier/9.jpg", "/assets/images/car/gm/boltEVpriemier/10.jpg"],
+    "user_seq": 251,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 53,
+    "price": "1,699",
+    "age": "17/02식",
+    "mileage": "46,514km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 252,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 54,
+    "price": "2,150",
+    "age": "18/02식",
+    "mileage": "42,744km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 229,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 55,
+    "price": "3,550",
+    "age": "19/04식",
+    "mileage": "26,040km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESEplus/5.jpg", "/assets/images/car/samsung/sm3ZESEplus/9.jpg", "/assets/images/car/samsung/sm3ZESEplus/16.jpg", "/assets/images/car/samsung/sm3ZESEplus/17.jpg"],
+    "user_seq": 192,
+    "eccar_id": 28
+  },
+  {
+    "usedcar_id": 56,
+    "price": "3,350",
+    "age": "18/10식",
+    "mileage": "28,972km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 193,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 57,
+    "price": "1,890",
+    "age": "17/08식",
+    "mileage": "30,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 214,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 58,
+    "price": "2,249",
+    "age": "18/05식",
+    "mileage": "66,271km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/8.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/16.jpg"],
+    "user_seq": 172,
+    "eccar_id": 19
+  },
+  {
+    "usedcar_id": 59,
+    "price": "299",
+    "age": "18/07식",
+    "mileage": "3,900km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/1.jpg", "/assets/images/car/samsung/sm3ZESE/4.jpg", "/assets/images/car/samsung/sm3ZESE/8.jpg", "/assets/images/car/samsung/sm3ZESE/19.jpg"],
+    "user_seq": 65,
+    "eccar_id": 21
+  },
+  {
+    "usedcar_id": 60,
+    "price": "330",
+    "age": "19/07식",
+    "mileage": "30km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 66,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 61,
+    "price": "700",
+    "age": "13/12식",
+    "mileage": "104,000km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/8.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/16.jpg"],
+    "user_seq": 122,
+    "eccar_id": 19
+  },
+  {
+    "usedcar_id": 62,
+    "price": "1,599",
+    "age": "16/07식",
+    "mileage": "100,454km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/3.jpg", "/assets/images/car/hyundai/ioniqN/9.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/12.jpg"],
+    "user_seq": 245,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 63,
+    "price": "1,790",
+    "age": "17/02식",
+    "mileage": "62,787km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/3.jpg", "/assets/images/car/hyundai/ioniqN/9.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/12.jpg"],
+    "user_seq": 253,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 64,
+    "price": "340",
+    "age": "19/06식",
+    "mileage": "70km",
+    "img_id": ["/assets/images/car/kia/soulEV/1.jpg", "/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/7.jpg"],
+    "user_seq": 48,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 65,
+    "price": "1,550",
+    "age": "19/06식",
+    "mileage": "17,234km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 91,
+    "eccar_id": 35
+  },
+  {
+    "usedcar_id": 66,
+    "price": "2,950",
+    "age": "19/04식",
+    "mileage": "29,131km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/1.jpg", "/assets/images/car/samsung/sm3ZESE/4.jpg", "/assets/images/car/samsung/sm3ZESE/8.jpg", "/assets/images/car/samsung/sm3ZESE/19.jpg"],
+    "user_seq": 4,
+    "eccar_id": 21
+  },
+  {
+    "usedcar_id": 67,
+    "price": "1,460",
+    "age": "17/02식",
+    "mileage": "9,350km",
+    "img_id": ["/assets/images/car/hyundai/konaModern/4.jpg", "/assets/images/car/hyundai/konaModern/6.jpg", "/assets/images/car/hyundai/konaModern/7.jpg", "/assets/images/car/hyundai/konaModern/16.jpg"],
+    "user_seq": 136,
+    "eccar_id": 11
+  },
+  {
+    "usedcar_id": 68,
+    "price": "1,990",
+    "age": "18/03식",
+    "mileage": "20,000km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 215,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 69,
+    "price": "2,250",
+    "age": "17/05식",
+    "mileage": "42,900km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 166,
+    "eccar_id": 26
+  },
+  {
+    "usedcar_id": 70,
+    "price": "1,230",
+    "age": "17/02식",
+    "mileage": "35,499km",
+    "img_id": ["/assets/images/car/hyundai/konaModern/4.jpg", "/assets/images/car/hyundai/konaModern/6.jpg", "/assets/images/car/hyundai/konaModern/7.jpg", "/assets/images/car/hyundai/konaModern/16.jpg"],
+    "user_seq": 137,
+    "eccar_id": 11
+  },
+  {
+    "usedcar_id": 71,
+    "price": "2,070",
+    "age": "18/03식",
+    "mileage": "48,860km",
+    "img_id": ["/assets/images/car/kia/niroPrestige/1.jpg", "/assets/images/car/kia/niroPrestige/8.jpg", "/assets/images/car/kia/niroPrestige/16.jpg", "/assets/images/car/kia/niroPrestige/20.jpg"],
+    "user_seq": 230,
+    "eccar_id": 50
+  },
+  {
+    "usedcar_id": 72,
+    "price": "2,290",
+    "age": "18/04식",
+    "mileage": "48,200km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 173,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 73,
+    "price": "390",
+    "age": "17/12식",
+    "mileage": "173km",
+    "img_id": ["/assets/images/car/kia/soulEV/1.jpg", "/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/7.jpg"],
+    "user_seq": 67,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 74,
+    "price": "1,990",
+    "age": "18/04식",
+    "mileage": "54,284km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/1.jpg", "/assets/images/car/hyundai/ioniqN/15.jpg", "/assets/images/car/hyundai/ioniqN/23.jpg", "/assets/images/car/hyundai/ioniqN/24.jpg"],
+    "user_seq": 210,
+    "eccar_id": 59
+  },
+  {
+    "usedcar_id": 75,
+    "price": "355",
+    "age": "19/07식",
+    "mileage": "53km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/3.jpg", "/assets/images/car/hyundai/ioniqN/9.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/12.jpg"],
+    "user_seq": 68,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 76,
+    "price": "2,520",
+    "age": "18/03식",
+    "mileage": "39,800km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 174,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 77,
+    "price": "275",
+    "age": "18/04식",
+    "mileage": "8,920km",
+    "img_id": ["/assets/images/car/gm/boltEVLT/5.jpg", "/assets/images/car/gm/boltEVLT/6.jpg", "/assets/images/car/gm/boltEVLT/7.jpg", "/assets/images/car/gm/boltEVLT/15.jpg"],
+    "user_seq": 69,
+    "eccar_id": 46
+  },
+  {
+    "usedcar_id": 78,
+    "price": "890",
+    "age": "17/06식",
+    "mileage": "76,712km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/11.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg", "/assets/images/car/samsung/twizyIntence/22.jpg"],
+    "user_seq": 92,
+    "eccar_id": 18
+  },
+  {
+    "usedcar_id": 79,
+    "price": "999",
+    "age": "16/12식",
+    "mileage": "42,727km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/7.jpg", "/assets/images/car/hyundai/konaPremium/9.jpg", "/assets/images/car/hyundai/konaPremium/14.jpg"],
+    "user_seq": 96,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 80,
+    "price": "1,399",
+    "age": "17/02식",
+    "mileage": "15,307km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/3.jpg", "/assets/images/car/hyundai/ioniqN/9.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/12.jpg"],
+    "user_seq": 138,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 81,
+    "price": "2,650",
+    "age": "18/06식",
+    "mileage": "19,749km",
+    "img_id": ["/assets/images/car/kia/soulEV/1.jpg", "/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/7.jpg"],
+    "user_seq": 161,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 82,
+    "price": "390",
+    "age": "19/06식",
+    "mileage": "3,602km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 49,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 83,
+    "price": "2,170",
+    "age": "18/04식",
+    "mileage": "27,765km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 240,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 84,
+    "price": "3,330",
+    "age": "19/09식",
+    "mileage": "28,539km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/3.jpg", "/assets/images/car/hyundai/ioniqN/9.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/12.jpg"],
+    "user_seq": 194,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 85,
+    "price": "1,390",
+    "age": "17/02식",
+    "mileage": "16,720km",
+    "img_id": ["/assets/images/car/kia/soulEV/1.jpg", "/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/7.jpg"],
+    "user_seq": 139,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 86,
+    "price": "3,450",
+    "age": "19/09식",
+    "mileage": "6,858km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/1.jpg", "/assets/images/car/samsung/sm3ZESE/4.jpg", "/assets/images/car/samsung/sm3ZESE/8.jpg", "/assets/images/car/samsung/sm3ZESE/19.jpg"],
+    "user_seq": 5,
+    "eccar_id": 25
+  },
+  {
+    "usedcar_id": 87,
+    "price": "300",
+    "age": "17/07식",
+    "mileage": "5,000km",
+    "img_id": ["/assets/images/car/kia/soulEV/1.jpg", "/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/7.jpg"],
+    "user_seq": 70,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 88,
+    "price": "920",
+    "age": "15/12식",
+    "mileage": "47,056km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 112,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 89,
+    "price": "2,850",
+    "age": "19/03식",
+    "mileage": "15,294km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 6,
+    "eccar_id": 35
+  },
+  {
+    "usedcar_id": 90,
+    "price": "3,350",
+    "age": "19/01식",
+    "mileage": "6,337km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/1.jpg", "/assets/images/car/hyundai/ioniqN/15.jpg", "/assets/images/car/hyundai/ioniqN/23.jpg", "/assets/images/car/hyundai/ioniqN/24.jpg"],
+    "user_seq": 7,
+    "eccar_id": 59
+  },
+  {
+    "usedcar_id": 91,
+    "price": "1,350",
+    "age": "16/12식",
+    "mileage": "37,460km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/5.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/19.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 151,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 92,
+    "price": "380",
+    "age": "19/07식",
+    "mileage": "23km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/12.jpg", "/assets/images/car/hyundai/ioniqQ/14.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 50,
+    "eccar_id": 55
+  },
+  {
+    "usedcar_id": 93,
+    "price": "1,820",
+    "age": "18/03식",
+    "mileage": "51,529km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/1.jpg", "/assets/images/car/samsung/twizyLife/5.jpg", "/assets/images/car/samsung/twizyLife/10.jpg", "/assets/images/car/samsung/twizyLife/13.jpg"],
+    "user_seq": 204,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 94,
+    "price": "1,290",
+    "age": "16/11식",
+    "mileage": "68,581km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 140,
+    "eccar_id": 35
+  },
+  {
+    "usedcar_id": 95,
+    "price": "790",
+    "age": "15/12식",
+    "mileage": "54,000km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/7.jpg", "/assets/images/car/hyundai/konaPremium/9.jpg", "/assets/images/car/hyundai/konaPremium/14.jpg"],
+    "user_seq": 113,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 96,
+    "price": "2,999",
+    "age": "18/12식",
+    "mileage": "25,750km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/5.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/19.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 21,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 97,
+    "price": "2,250",
+    "age": "18/02식",
+    "mileage": "15,755km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/5.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/19.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 211,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 98,
+    "price": "3,190",
+    "age": "19/10식",
+    "mileage": "9,000km",
+    "img_id": ["/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/8.jpg", "/assets/images/car/kia/soulEV/17.jpg"],
+    "user_seq": 130,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 99,
+    "price": "1,380",
+    "age": "17/02식",
+    "mileage": "20,256km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/5.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/19.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 141,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 100,
+    "price": "390",
+    "age": "19/06식",
+    "mileage": "57km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/1.jpg", "/assets/images/car/samsung/twizyLife/5.jpg", "/assets/images/car/samsung/twizyLife/10.jpg", "/assets/images/car/samsung/twizyLife/13.jpg"],
+    "user_seq": 51,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 101,
+    "price": "2,560",
+    "age": "19/04식",
+    "mileage": "23,644km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 157,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 102,
+    "price": "1,399",
+    "age": "17/11식",
+    "mileage": "33,000km",
+    "img_id": ["/assets/images/car/gm/spark/1.jpg", "/assets/images/car/gm/spark/2.jpg", "/assets/images/car/gm/spark/3.jpg"],
+    "user_seq": 142,
+    "eccar_id": 48
+  },
+  {
+    "usedcar_id": 103,
+    "price": "2,690",
+    "age": "18/11식",
+    "mileage": "54,000km",
+    "img_id": ["/assets/images/car/gm/boltEVLT/5.jpg", "/assets/images/car/gm/boltEVLT/6.jpg", "/assets/images/car/gm/boltEVLT/7.jpg", "/assets/images/car/gm/boltEVLT/15.jpg"],
+    "user_seq": 22,
+    "eccar_id": 46
+  },
+  {
+    "usedcar_id": 104,
+    "price": "850",
+    "age": "15/08식",
+    "mileage": "46,764km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESEplus/5.jpg", "/assets/images/car/samsung/sm3ZESEplus/9.jpg", "/assets/images/car/samsung/sm3ZESEplus/16.jpg", "/assets/images/car/samsung/sm3ZESEplus/17.jpg"],
+    "user_seq": 114,
+    "eccar_id": 28
+  },
+  {
+    "usedcar_id": 105,
+    "price": "2,200",
+    "age": "18/04식",
+    "mileage": "46,509km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 167,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 106,
+    "price": "330",
+    "age": "19/07식",
+    "mileage": "1,900km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/5.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/19.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 52,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 107,
+    "price": "390",
+    "age": "20/06식",
+    "mileage": "35km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 37,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 108,
+    "price": "290",
+    "age": "19/07식",
+    "mileage": "1,815km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/5.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/19.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 53,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 109,
+    "price": "3,400",
+    "age": "18/05식",
+    "mileage": "15,305km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/6.jpg", "/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 23,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 110,
+    "price": "3,450",
+    "age": "19/05식",
+    "mileage": "27,200km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 195,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 111,
+    "price": "1,820",
+    "age": "18/03식",
+    "mileage": "57,125km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 216,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 112,
+    "price": "750",
+    "age": "16/03식",
+    "mileage": "117,401km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 115,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 113,
+    "price": "3,190",
+    "age": "18/06식",
+    "mileage": "30,500km",
+    "img_id": ["/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/8.jpg", "/assets/images/car/kia/soulEV/17.jpg"],
+    "user_seq": 24,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 114,
+    "price": "850",
+    "age": "14/07식",
+    "mileage": "47,317km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 123,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 115,
+    "price": "2,299",
+    "age": "18/04식",
+    "mileage": "63,708km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/6.jpg", "/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 175,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 116,
+    "price": "1,720",
+    "age": "17/07식",
+    "mileage": "89,000km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/7.jpg", "/assets/images/car/hyundai/konaPremium/9.jpg", "/assets/images/car/hyundai/konaPremium/14.jpg"],
+    "user_seq": 231,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 117,
+    "price": "1,420",
+    "age": "17/02식",
+    "mileage": "10,386km",
+    "img_id": ["/assets/images/car/gm/boltEVLT/5.jpg", "/assets/images/car/gm/boltEVLT/6.jpg", "/assets/images/car/gm/boltEVLT/7.jpg", "/assets/images/car/gm/boltEVLT/15.jpg"],
+    "user_seq": 143,
+    "eccar_id": 46
+  },
+  {
+    "usedcar_id": 118,
+    "price": "420",
+    "age": "20/06식",
+    "mileage": "30km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/8.jpg", "/assets/images/car/gm/boltEVpriemier/9.jpg", "/assets/images/car/gm/boltEVpriemier/10.jpg"],
+    "user_seq": 38,
+    "eccar_id": 44
+  },
+  {
+    "usedcar_id": 119,
+    "price": "420",
+    "age": "20/06식",
+    "mileage": "30km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/7.jpg", "/assets/images/car/hyundai/konaPremium/9.jpg", "/assets/images/car/hyundai/konaPremium/14.jpg"],
+    "user_seq": 39,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 120,
+    "price": "1,750",
+    "age": "16/07식",
+    "mileage": "58,544km",
+    "img_id": ["/assets/images/car/kia/soulBouster/1.jpg", "/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/5.jpg", "/assets/images/car/samsung/sm3ZERE/10.jpg"],
+    "user_seq": 254,
+    "eccar_id": 33
+  },
+  {
+    "usedcar_id": 121,
+    "price": "1,750",
+    "age": "16/07식",
+    "mileage": "58,544km",
+    "img_id": ["/assets/images/car/kia/niroNobless/4.jpg", "/assets/images/car/kia/niroNobless/7.jpg", "/assets/images/car/kia/niroNobless/8.jpg", "/assets/images/car/kia/niroNobless/10.jpg"],
+    "user_seq": 255,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 122,
+    "price": "310",
+    "age": "19/06식",
+    "mileage": "2,200km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 54,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 123,
+    "price": "1,900",
+    "age": "18/01식",
+    "mileage": "52,500km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/17.jpg", "/assets/images/car/hyundai/konaPremium/18.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 232,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 124,
+    "price": "1,390",
+    "age": "17/02식",
+    "mileage": "14,586km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESEplus/5.jpg", "/assets/images/car/samsung/sm3ZESEplus/9.jpg", "/assets/images/car/samsung/sm3ZESEplus/16.jpg", "/assets/images/car/samsung/sm3ZESEplus/17.jpg"],
+    "user_seq": 144,
+    "eccar_id": 28
+  },
+  {
+    "usedcar_id": 125,
+    "price": "2,350",
+    "age": "18/03식",
+    "mileage": "35,382km",
+    "img_id": ["/assets/images/car/kia/niroPrestige/1.jpg", "/assets/images/car/kia/niroPrestige/8.jpg", "/assets/images/car/kia/niroPrestige/16.jpg", "/assets/images/car/kia/niroPrestige/20.jpg"],
+    "user_seq": 196,
+    "eccar_id": 50
+  },
+  {
+    "usedcar_id": 126,
+    "price": "2,340",
+    "age": "17/12식",
+    "mileage": "49,937km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 176,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 127,
+    "price": "370",
+    "age": "20/06식",
+    "mileage": "23km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/11.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg", "/assets/images/car/samsung/twizyIntence/22.jpg"],
+    "user_seq": 40,
+    "eccar_id": 18
+  },
+  {
+    "usedcar_id": 128,
+    "price": "3,190",
+    "age": "18/11식",
+    "mileage": "24,384km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 25,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 129,
+    "price": "1,650",
+    "age": "17/02식",
+    "mileage": "7,500km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 145,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 130,
+    "price": "2,270",
+    "age": "17/05식",
+    "mileage": "53,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 168,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 131,
+    "price": "1,659",
+    "age": "17/07식",
+    "mileage": "77,600km",
+    "img_id": ["/assets/images/car/gm/boltEV/1.jpg", "/assets/images/car/gm/boltEV/6.jpg", "/assets/images/car/gm/boltEV/8.jpg", "/assets/images/car/gm/boltEV/23.jpg"],
+    "user_seq": 233,
+    "eccar_id": 45
+  },
+  {
+    "usedcar_id": 132,
+    "price": "3,090",
+    "age": "18/11식",
+    "mileage": "21,700km",
+    "img_id": ["/assets/images/car/kia/niroNobless/4.jpg", "/assets/images/car/kia/niroNobless/7.jpg", "/assets/images/car/kia/niroNobless/8.jpg", "/assets/images/car/kia/niroNobless/10.jpg"],
+    "user_seq": 26,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 133,
+    "price": "2,850",
+    "age": "18/12식",
+    "mileage": "20,300km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 14,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 134,
+    "price": "1,790",
+    "age": "17/04식",
+    "mileage": "67,000km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 234,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 135,
+    "price": "2,600",
+    "age": "18/11식",
+    "mileage": "41,204km",
+    "img_id": ["/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/8.jpg", "/assets/images/car/kia/soulEV/17.jpg"],
+    "user_seq": 15,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 136,
+    "price": "2,600",
+    "age": "18/11식",
+    "mileage": "41,204km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/17.jpg", "/assets/images/car/hyundai/konaPremium/18.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 16,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 137,
+    "price": "1,850",
+    "age": "17/08식",
+    "mileage": "35,938km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 217,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 138,
+    "price": "1,490",
+    "age": "17/02식",
+    "mileage": "7,084km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/6.jpg", "/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 146,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 139,
+    "price": "1,359",
+    "age": "16/09식",
+    "mileage": "61,893km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 153,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 140,
+    "price": "2,150",
+    "age": "16/12식",
+    "mileage": "7,685km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/1.jpg", "/assets/images/car/samsung/twizyLife/5.jpg", "/assets/images/car/samsung/twizyLife/10.jpg", "/assets/images/car/samsung/twizyLife/13.jpg"],
+    "user_seq": 256,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 141,
+    "price": "1,190",
+    "age": "15/01식",
+    "mileage": "33,957km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/12.jpg", "/assets/images/car/samsung/sm3ZERE/14.jpg", "/assets/images/car/samsung/sm3ZERE/17.jpg", "/assets/images/car/samsung/sm3ZERE/18.jpg"],
+    "user_seq": 186,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 142,
+    "price": "2,420",
+    "age": "18/07식",
+    "mileage": "13,883km",
+    "img_id": ["/assets/images/car/hyundai/konaModern/1.jpg", "/assets/images/car/hyundai/konaModern/2.jpg", "/assets/images/car/hyundai/konaModern/3.jpg", "/assets/images/car/hyundai/konaModern/4.jpg"],
+    "user_seq": 169,
+    "eccar_id": 9
+  },
+  {
+    "usedcar_id": 143,
+    "price": "999",
+    "age": "15/12식",
+    "mileage": "17,082km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 124,
+    "eccar_id": 35
+  },
+  {
+    "usedcar_id": 144,
+    "price": "2,330",
+    "age": "18/05식",
+    "mileage": "62,400km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 177,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 145,
+    "price": "1,790",
+    "age": "16/08식",
+    "mileage": "59,113km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/1.jpg", "/assets/images/car/samsung/twizyLife/5.jpg", "/assets/images/car/samsung/twizyLife/10.jpg", "/assets/images/car/samsung/twizyLife/13.jpg"],
+    "user_seq": 257,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 146,
+    "price": "280",
+    "age": "18/08식",
+    "mileage": "8,790km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 71,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 147,
+    "price": "2,790",
+    "age": "18/08식",
+    "mileage": "23,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 17,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 148,
+    "price": "1,599",
+    "age": "17/04식",
+    "mileage": "70,200km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 258,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 149,
+    "price": "2,090",
+    "age": "18/05식",
+    "mileage": "25,776km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/17.jpg", "/assets/images/car/hyundai/konaPremium/18.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 205,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 150,
+    "price": "2,150",
+    "age": "17/04식",
+    "mileage": "26,949km",
+    "img_id": ["/assets/images/car/kia/niroNobless/4.jpg", "/assets/images/car/kia/niroNobless/7.jpg", "/assets/images/car/kia/niroNobless/8.jpg", "/assets/images/car/kia/niroNobless/10.jpg"],
+    "user_seq": 259,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 151,
+    "price": "1,300",
+    "age": "15/12식",
+    "mileage": "51,703km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 154,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 152,
+    "price": "360",
+    "age": "19/07식",
+    "mileage": "19km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 72,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 153,
+    "price": "2,180",
+    "age": "17/11식",
+    "mileage": "14,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 235,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 154,
+    "price": "1,890",
+    "age": "19/05식",
+    "mileage": "18,816km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/24.jpg", "/assets/images/car/samsung/sm3ZESE/7.jpg", "/assets/images/car/samsung/sm3ZESE/18.jpg", "/assets/images/car/samsung/sm3ZESE/16.jpg"],
+    "user_seq": 241,
+    "eccar_id": 25
+  },
+  {
+    "usedcar_id": 155,
+    "price": "770",
+    "age": "13/12식",
+    "mileage": "75,818km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/2.jpg", "/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/18.jpg"],
+    "user_seq": 128,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 156,
+    "price": "870",
+    "age": "15/08식",
+    "mileage": "67,804km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 116,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 157,
+    "price": "3,050",
+    "age": "19/02식",
+    "mileage": "11,300km",
+    "img_id": ["/assets/images/car/kia/soulBouster/1.jpg", "/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/5.jpg", "/assets/images/car/samsung/sm3ZERE/10.jpg"],
+    "user_seq": 8,
+    "eccar_id": 33
+  },
+  {
+    "usedcar_id": 158,
+    "price": "1,850",
+    "age": "17/09식",
+    "mileage": "19,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 147,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 159,
+    "price": "2,010",
+    "age": "17/06식",
+    "mileage": "13,833km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/2.jpg", "/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/18.jpg"],
+    "user_seq": 218,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 160,
+    "price": "1,550",
+    "age": "17/06식",
+    "mileage": "24,978km",
+    "img_id": ["/assets/images/car/hyundai/konaModern/4.jpg", "/assets/images/car/hyundai/konaModern/6.jpg", "/assets/images/car/hyundai/konaModern/7.jpg", "/assets/images/car/hyundai/konaModern/16.jpg"],
+    "user_seq": 148,
+    "eccar_id": 11
+  },
+  {
+    "usedcar_id": 161,
+    "price": "1,849",
+    "age": "16/07식",
+    "mileage": "43,000km",
+    "img_id": ["/assets/images/car/kia/niroNobless/3.jpg", "/assets/images/car/kia/niroNobless/6.jpg", "/assets/images/car/kia/niroNobless/9.jpg", "/assets/images/car/kia/niroNobless/15.jpg"],
+    "user_seq": 260,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 162,
+    "price": "280",
+    "age": "18/07식",
+    "mileage": "7,900km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 73,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 163,
+    "price": "300",
+    "age": "18/11식",
+    "mileage": "387km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/12.jpg", "/assets/images/car/hyundai/ioniqQ/14.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 74,
+    "eccar_id": 55
+  },
+  {
+    "usedcar_id": 164,
+    "price": "370",
+    "age": "20/06식",
+    "mileage": "12km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 41,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 165,
+    "price": "1,230",
+    "age": "17/03식",
+    "mileage": "28,485km",
+    "img_id": ["/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/8.jpg", "/assets/images/car/kia/soulEV/17.jpg"],
+    "user_seq": 102,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 166,
+    "price": "350",
+    "age": "18/10식",
+    "mileage": "4,171km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 75,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 167,
+    "price": "359",
+    "age": "19/07식",
+    "mileage": "1,718km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 76,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 168,
+    "price": "2,790",
+    "age": "19/03식",
+    "mileage": "31,380km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/24.jpg", "/assets/images/car/samsung/sm3ZESE/7.jpg", "/assets/images/car/samsung/sm3ZESE/18.jpg", "/assets/images/car/samsung/sm3ZESE/16.jpg"],
+    "user_seq": 1,
+    "eccar_id": 25
+  },
+  {
+    "usedcar_id": 169,
+    "price": "410",
+    "age": "19/08식",
+    "mileage": "22km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 42,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 170,
+    "price": "1,650",
+    "age": "16/09식",
+    "mileage": "78,000km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/17.jpg", "/assets/images/car/hyundai/konaPremium/18.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 261,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 171,
+    "price": "280",
+    "age": "18/10식",
+    "mileage": "2,850km",
+    "img_id": ["/assets/images/car/kia/niroNobless/3.jpg", "/assets/images/car/kia/niroNobless/6.jpg", "/assets/images/car/kia/niroNobless/9.jpg", "/assets/images/car/kia/niroNobless/15.jpg"],
+    "user_seq": 55,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 172,
+    "price": "340",
+    "age": "19/05식",
+    "mileage": "32km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 77,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 173,
+    "price": "2,350",
+    "age": "18/08식",
+    "mileage": "61,000km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 178,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 174,
+    "price": "1,690",
+    "age": "17/03식",
+    "mileage": "126,280km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 262,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 175,
+    "price": "350",
+    "age": "18/05식",
+    "mileage": "1,687km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/1.jpg", "/assets/images/car/samsung/sm3ZESE/4.jpg", "/assets/images/car/samsung/sm3ZESE/8.jpg", "/assets/images/car/samsung/sm3ZESE/19.jpg"],
+    "user_seq": 78,
+    "eccar_id": 23
+  },
+  {
+    "usedcar_id": 176,
+    "price": "350",
+    "age": "19/07식",
+    "mileage": "50km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/24.jpg", "/assets/images/car/samsung/sm3ZESE/7.jpg", "/assets/images/car/samsung/sm3ZESE/18.jpg", "/assets/images/car/samsung/sm3ZESE/16.jpg"],
+    "user_seq": 79,
+    "eccar_id": 25
+  },
+  {
+    "usedcar_id": 177,
+    "price": "2,050",
+    "age": "18/01식",
+    "mileage": "37,615km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/6.jpg", "/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 236,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 178,
+    "price": "3,300",
+    "age": "19/06식",
+    "mileage": "16,861km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/12.jpg", "/assets/images/car/samsung/sm3ZERE/14.jpg", "/assets/images/car/samsung/sm3ZERE/17.jpg", "/assets/images/car/samsung/sm3ZERE/18.jpg"],
+    "user_seq": 9,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 179,
+    "price": "2,070",
+    "age": "17/05식",
+    "mileage": "22,700km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/8.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/16.jpg"],
+    "user_seq": 263,
+    "eccar_id": 19
+  },
+  {
+    "usedcar_id": 180,
+    "price": "1,080",
+    "age": "16/12식",
+    "mileage": "48,925km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/17.jpg", "/assets/images/car/hyundai/konaPremium/18.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 103,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 181,
+    "price": "975",
+    "age": "16/12식",
+    "mileage": "32,101km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/12.jpg", "/assets/images/car/hyundai/ioniqQ/14.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 97,
+    "eccar_id": 55
+  },
+  {
+    "usedcar_id": 182,
+    "price": "2,850",
+    "age": "18/05식",
+    "mileage": "32,566km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 27,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 183,
+    "price": "1,280",
+    "age": "17/09식",
+    "mileage": "24,800km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/12.jpg", "/assets/images/car/samsung/sm3ZERE/14.jpg", "/assets/images/car/samsung/sm3ZERE/17.jpg", "/assets/images/car/samsung/sm3ZERE/18.jpg"],
+    "user_seq": 104,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 184,
+    "price": "340",
+    "age": "19/07식",
+    "mileage": "161km",
+    "img_id": ["/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/8.jpg", "/assets/images/car/kia/soulEV/17.jpg"],
+    "user_seq": 80,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 185,
+    "price": "850",
+    "age": "15/08식",
+    "mileage": "25,000km",
+    "img_id": ["/assets/images/car/kia/soulEV/3.jpg", "/assets/images/car/kia/soulEV/5.jpg", "/assets/images/car/kia/soulEV/8.jpg", "/assets/images/car/kia/soulEV/17.jpg"],
+    "user_seq": 117,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 186,
+    "price": "800",
+    "age": "15/11식",
+    "mileage": "45,153km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/2.jpg", "/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/18.jpg"],
+    "user_seq": 118,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 187,
+    "price": "330",
+    "age": "17/12식",
+    "mileage": "5,069km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/8.jpg", "/assets/images/car/gm/boltEVpriemier/9.jpg", "/assets/images/car/gm/boltEVpriemier/10.jpg"],
+    "user_seq": 81,
+    "eccar_id": 44
+  },
+  {
+    "usedcar_id": 188,
+    "price": "1,790",
+    "age": "17/09식",
+    "mileage": "7,027km",
+    "img_id": ["/assets/images/car/gm/boltEV/1.jpg", "/assets/images/car/gm/boltEV/6.jpg", "/assets/images/car/gm/boltEV/8.jpg", "/assets/images/car/gm/boltEV/23.jpg"],
+    "user_seq": 242,
+    "eccar_id": 45
+  },
+  {
+    "usedcar_id": 189,
+    "price": "380",
+    "age": "19/03식",
+    "mileage": "2,200km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/11.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg", "/assets/images/car/samsung/twizyIntence/22.jpg"],
+    "user_seq": 82,
+    "eccar_id": 18
+  },
+  {
+    "usedcar_id": 190,
+    "price": "860",
+    "age": "15/12식",
+    "mileage": "79,901km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/2.jpg", "/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/18.jpg"],
+    "user_seq": 119,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 191,
+    "price": "699",
+    "age": "14/04식",
+    "mileage": "39,296km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 125,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 192,
+    "price": "999",
+    "age": "18/06식",
+    "mileage": "961km",
+    "img_id": ["/assets/images/car/hyundai/ioniqI/2.jpg", "/assets/images/car/hyundai/ioniqI/8.jpg", "/assets/images/car/hyundai/ioniqI/17.jpg", "/assets/images/car/hyundai/ioniqI/22.jpg"],
+    "user_seq": 83,
+    "eccar_id": 58
+  },
+  {
+    "usedcar_id": 193,
+    "price": "3,080",
+    "age": "19/03식",
+    "mileage": "37,773km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 10,
+    "eccar_id": 41
+  },
+  {
+    "usedcar_id": 194,
+    "price": "1,750",
+    "age": "18/06식",
+    "mileage": "45,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 188,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 195,
+    "price": "930",
+    "age": "16/12식",
+    "mileage": "57,238km",
+    "img_id": ["/assets/images/car/kia/soulBouster/1.jpg", "/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/5.jpg", "/assets/images/car/samsung/sm3ZERE/10.jpg"],
+    "user_seq": 98,
+    "eccar_id": 33
+  },
+  {
+    "usedcar_id": 196,
+    "price": "1,290",
+    "age": "15/12식",
+    "mileage": "64,627km",
+    "img_id": ["/assets/images/car/hyundai/ioniqI/2.jpg", "/assets/images/car/hyundai/ioniqI/8.jpg", "/assets/images/car/hyundai/ioniqI/17.jpg", "/assets/images/car/hyundai/ioniqI/22.jpg"],
+    "user_seq": 155,
+    "eccar_id": 58
+  },
+  {
+    "usedcar_id": 197,
+    "price": "3,300",
+    "age": "18/10식",
+    "mileage": "35,000km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/24.jpg", "/assets/images/car/samsung/sm3ZESE/7.jpg", "/assets/images/car/samsung/sm3ZESE/18.jpg", "/assets/images/car/samsung/sm3ZESE/16.jpg"],
+    "user_seq": 197,
+    "eccar_id": 25
+  },
+  {
+    "usedcar_id": 198,
+    "price": "365",
+    "age": "18/05식",
+    "mileage": "285km",
+    "img_id": ["/assets/images/car/kia/niroNobless/3.jpg", "/assets/images/car/kia/niroNobless/6.jpg", "/assets/images/car/kia/niroNobless/9.jpg", "/assets/images/car/kia/niroNobless/15.jpg"],
+    "user_seq": 84,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 199,
+    "price": "990",
+    "age": "15/05식",
+    "mileage": "70,600km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/12.jpg", "/assets/images/car/samsung/sm3ZERE/14.jpg", "/assets/images/car/samsung/sm3ZERE/17.jpg", "/assets/images/car/samsung/sm3ZERE/18.jpg"],
+    "user_seq": 187,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 200,
+    "price": "420",
+    "age": "18/05식",
+    "mileage": "5,000km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 85,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 201,
+    "price": "1,440",
+    "age": "17/11식",
+    "mileage": "97,073km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/8.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/16.jpg"],
+    "user_seq": 220,
+    "eccar_id": 19
+  },
+  {
+    "usedcar_id": 202,
+    "price": "330",
+    "age": "20/06식",
+    "mileage": "31km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/24.jpg", "/assets/images/car/samsung/sm3ZESE/7.jpg", "/assets/images/car/samsung/sm3ZESE/18.jpg", "/assets/images/car/samsung/sm3ZESE/16.jpg"],
+    "user_seq": 43,
+    "eccar_id": 25
+  },
+  {
+    "usedcar_id": 203,
+    "price": "3,100",
+    "age": "18/06식",
+    "mileage": "27,280km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/8.jpg", "/assets/images/car/gm/boltEVpriemier/9.jpg", "/assets/images/car/gm/boltEVpriemier/10.jpg"],
+    "user_seq": 28,
+    "eccar_id": 44
+  },
+  {
+    "usedcar_id": 204,
+    "price": "1,979",
+    "age": "17/12식",
+    "mileage": "57,997km",
+    "img_id": ["/assets/images/car/kia/niroNobless/3.jpg", "/assets/images/car/kia/niroNobless/6.jpg", "/assets/images/car/kia/niroNobless/9.jpg", "/assets/images/car/kia/niroNobless/15.jpg"],
+    "user_seq": 237,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 205,
+    "price": "1,450",
+    "age": "17/02식",
+    "mileage": "11,667km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/13.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/20.jpg"],
+    "user_seq": 149,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 206,
+    "price": "2,150",
+    "age": "18/05식",
+    "mileage": "27,000km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 179,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 207,
+    "price": "2,100",
+    "age": "18/01식",
+    "mileage": "46,167km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/7.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/8.jpg", "/assets/images/car/hyundai/ioniqN/11.jpg"],
+    "user_seq": 238,
+    "eccar_id": 54
+  },
+  {
+    "usedcar_id": 208,
+    "price": "1,960",
+    "age": "16/11식",
+    "mileage": "7,071km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/12.jpg", "/assets/images/car/samsung/sm3ZERE/14.jpg", "/assets/images/car/samsung/sm3ZERE/17.jpg", "/assets/images/car/samsung/sm3ZERE/18.jpg"],
+    "user_seq": 246,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 209,
+    "price": "2,080",
+    "age": "16/12식",
+    "mileage": "10,487km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/8.jpg", "/assets/images/car/gm/boltEVpriemier/9.jpg", "/assets/images/car/gm/boltEVpriemier/10.jpg"],
+    "user_seq": 264,
+    "eccar_id": 44
+  },
+  {
+    "usedcar_id": 210,
+    "price": "1,150",
+    "age": "16/08식",
+    "mileage": "17,673km",
+    "img_id": ["/assets/images/car/gm/boltEVLT/5.jpg", "/assets/images/car/gm/boltEVLT/6.jpg", "/assets/images/car/gm/boltEVLT/7.jpg", "/assets/images/car/gm/boltEVLT/15.jpg"],
+    "user_seq": 105,
+    "eccar_id": 46
+  },
+  {
+    "usedcar_id": 211,
+    "price": "950",
+    "age": "17/01식",
+    "mileage": "82,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/11.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg", "/assets/images/car/samsung/twizyIntence/22.jpg"],
+    "user_seq": 106,
+    "eccar_id": 18
+  },
+  {
+    "usedcar_id": 212,
+    "price": "310",
+    "age": "18/06식",
+    "mileage": "1,009km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 86,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 213,
+    "price": "3,050",
+    "age": "19/01식",
+    "mileage": "17,000km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 11,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 214,
+    "price": "450",
+    "age": "19/07식",
+    "mileage": "450km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 87,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 215,
+    "price": "3,290",
+    "age": "19/05식",
+    "mileage": "19,116km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 12,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 216,
+    "price": "280",
+    "age": "19/12식",
+    "mileage": "15km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/12.jpg", "/assets/images/car/samsung/sm3ZERE/14.jpg", "/assets/images/car/samsung/sm3ZERE/17.jpg", "/assets/images/car/samsung/sm3ZERE/18.jpg"],
+    "user_seq": 44,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 217,
+    "price": "320",
+    "age": "18/05식",
+    "mileage": "3,700km",
+    "img_id": ["/assets/images/car/kia/niroNobless/3.jpg", "/assets/images/car/kia/niroNobless/6.jpg", "/assets/images/car/kia/niroNobless/9.jpg", "/assets/images/car/kia/niroNobless/15.jpg"],
+    "user_seq": 56,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 218,
+    "price": "2,790",
+    "age": "18/09식",
+    "mileage": "63,800km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 29,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 219,
+    "price": "2,430",
+    "age": "17/07식",
+    "mileage": "47,500km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/13.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/20.jpg"],
+    "user_seq": 180,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 220,
+    "price": "1,800",
+    "age": "17/01식",
+    "mileage": "18,421km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 247,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 221,
+    "price": "1,050",
+    "age": "18/10식",
+    "mileage": "56,000km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 30,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 222,
+    "price": "렌트승계",
+    "age": "17/10식",
+    "mileage": "54,400km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/2.jpg", "/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/18.jpg"],
+    "user_seq": 107,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 223,
+    "price": "1,100",
+    "age": "18/06식",
+    "mileage": "56,200km",
+    "img_id": ["/assets/images/car/samsung/twizyLife/2.jpg", "/assets/images/car/samsung/twizyLife/6.jpg", "/assets/images/car/samsung/twizyLife/14.jpg", "/assets/images/car/samsung/twizyLife/18.jpg"],
+    "user_seq": 170,
+    "eccar_id": 17
+  },
+  {
+    "usedcar_id": 224,
+    "price": "2,150",
+    "age": "18/09식",
+    "mileage": "81,000km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 198,
+    "eccar_id": 35
+  },
+  {
+    "usedcar_id": 225,
+    "price": "2,700",
+    "age": "18/05식",
+    "mileage": "10,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 31,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 226,
+    "price": "3,230",
+    "age": "18/04식",
+    "mileage": "45,000km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 181,
+    "eccar_id": 26
+  },
+  {
+    "usedcar_id": 227,
+    "price": "2,790",
+    "age": "19/07식",
+    "mileage": "41,600km",
+    "img_id": ["/assets/images/car/hyundai/ioniqI/2.jpg", "/assets/images/car/hyundai/ioniqI/8.jpg", "/assets/images/car/hyundai/ioniqI/17.jpg", "/assets/images/car/hyundai/ioniqI/22.jpg"],
+    "user_seq": 189,
+    "eccar_id": 58
+  },
+  {
+    "usedcar_id": 228,
+    "price": "3,080",
+    "age": "18/12식",
+    "mileage": "15,500km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 32,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 229,
+    "price": "3,150",
+    "age": "19/08식",
+    "mileage": "5,710km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/10.jpg", "/assets/images/car/hyundai/ioniqQ/12.jpg", "/assets/images/car/hyundai/ioniqQ/14.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg"],
+    "user_seq": 33,
+    "eccar_id": 55
+  },
+  {
+    "usedcar_id": 230,
+    "price": "2,200",
+    "age": "18/05식",
+    "mileage": "31,300km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 163,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 231,
+    "price": "2,540",
+    "age": "18/07식",
+    "mileage": "27,500km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/24.jpg", "/assets/images/car/samsung/sm3ZESE/7.jpg", "/assets/images/car/samsung/sm3ZESE/18.jpg", "/assets/images/car/samsung/sm3ZESE/16.jpg"],
+    "user_seq": 182,
+    "eccar_id": 25
+  },
+  {
+    "usedcar_id": 232,
+    "price": "319",
+    "age": "18/11식",
+    "mileage": "400km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/12.jpg", "/assets/images/car/samsung/sm3ZERE/14.jpg", "/assets/images/car/samsung/sm3ZERE/17.jpg", "/assets/images/car/samsung/sm3ZERE/18.jpg"],
+    "user_seq": 88,
+    "eccar_id": 27
+  },
+  {
+    "usedcar_id": 233,
+    "price": "1,650",
+    "age": "17/04식",
+    "mileage": "75,937km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/24.jpg", "/assets/images/car/samsung/sm3ZESE/7.jpg", "/assets/images/car/samsung/sm3ZESE/18.jpg", "/assets/images/car/samsung/sm3ZESE/16.jpg"],
+    "user_seq": 265,
+    "eccar_id": 25
+  },
+  {
+    "usedcar_id": 234,
+    "price": "3,200",
+    "age": "18/09식",
+    "mileage": "20,700km",
+    "img_id": ["/assets/images/car/kia/niroNobless/3.jpg", "/assets/images/car/kia/niroNobless/6.jpg", "/assets/images/car/kia/niroNobless/9.jpg", "/assets/images/car/kia/niroNobless/15.jpg"],
+    "user_seq": 199,
+    "eccar_id": 51
+  },
+  {
+    "usedcar_id": 235,
+    "price": "2,050",
+    "age": "18/05식",
+    "mileage": "20,000km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/2.jpg", "/assets/images/car/hyundai/ioniqQ/11.jpg", "/assets/images/car/hyundai/ioniqQ/16.jpg", "/assets/images/car/hyundai/ioniqQ/23.jpg"],
+    "user_seq": 206,
+    "eccar_id": 57
+  },
+  {
+    "usedcar_id": 236,
+    "price": "999",
+    "age": "16/12식",
+    "mileage": "48,688km",
+    "img_id": ["/assets/images/car/kia/soulEV/12.jpg", "/assets/images/car/kia/soulEV/15.jpg", "/assets/images/car/kia/soulEV/20.jpg", "/assets/images/car/kia/soulEV/13.jpg"],
+    "user_seq": 99,
+    "eccar_id": 34
+  },
+  {
+    "usedcar_id": 237,
+    "price": "1,130",
+    "age": "15/12식",
+    "mileage": "39,582km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/13.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/20.jpg"],
+    "user_seq": 120,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 238,
+    "price": "959",
+    "age": "16/12식",
+    "mileage": "68,186km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/11.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg", "/assets/images/car/samsung/twizyIntence/22.jpg"],
+    "user_seq": 100,
+    "eccar_id": 18
+  },
+  {
+    "usedcar_id": 239,
+    "price": "2,200",
+    "age": "17/06식",
+    "mileage": "48,500km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 164,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 240,
+    "price": "919",
+    "age": "16/03식",
+    "mileage": "44,625km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/11.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg", "/assets/images/car/samsung/twizyIntence/22.jpg"],
+    "user_seq": 108,
+    "eccar_id": 18
+  },
+  {
+    "usedcar_id": 241,
+    "price": "1,820",
+    "age": "17/08식",
+    "mileage": "38,152km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/17.jpg", "/assets/images/car/hyundai/konaPremium/18.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 221,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 242,
+    "price": "1,820",
+    "age": "17/08식",
+    "mileage": "38,152km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 222,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 243,
+    "price": "600",
+    "age": "15/12식",
+    "mileage": "201,000km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/13.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/20.jpg"],
+    "user_seq": 121,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 244,
+    "price": "2,390",
+    "age": "18/06식",
+    "mileage": "45,827km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/17.jpg", "/assets/images/car/hyundai/konaPremium/18.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 183,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 245,
+    "price": "1,850",
+    "age": "18/05식",
+    "mileage": "56,532km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/1.jpg", "/assets/images/car/hyundai/ioniqN/15.jpg", "/assets/images/car/hyundai/ioniqN/23.jpg", "/assets/images/car/hyundai/ioniqN/24.jpg"],
+    "user_seq": 223,
+    "eccar_id": 59
+  },
+  {
+    "usedcar_id": 246,
+    "price": "750",
+    "age": "13/12식",
+    "mileage": "95,000km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 127,
+    "eccar_id": 47
+  },
+  {
+    "usedcar_id": 247,
+    "price": "1,900",
+    "age": "17/05식",
+    "mileage": "98,500km",
+    "img_id": ["/assets/images/car/samsung/sm3ZERE/3.jpg", "/assets/images/car/samsung/sm3ZERE/19.jpg", "/assets/images/car/samsung/sm3ZERE/20.jpg", "/assets/images/car/samsung/sm3ZERE/21.jpg"],
+    "user_seq": 184,
+    "eccar_id": 26
+  },
+  {
+    "usedcar_id": 248,
+    "price": "2,560",
+    "age": "18/05식",
+    "mileage": "36,293km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 185,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 249,
+    "price": "3,290",
+    "age": "19/04식",
+    "mileage": "15,207km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/1.jpg", "/assets/images/car/hyundai/ioniqN/15.jpg", "/assets/images/car/hyundai/ioniqN/23.jpg", "/assets/images/car/hyundai/ioniqN/24.jpg"],
+    "user_seq": 13,
+    "eccar_id": 59
+  },
+  {
+    "usedcar_id": 250,
+    "price": "1,900",
+    "age": "18/02식",
+    "mileage": "45,000km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/17.jpg", "/assets/images/car/hyundai/konaPremium/18.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 224,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 251,
+    "price": "3,100",
+    "age": "19/03식",
+    "mileage": "15,000km",
+    "img_id": ["/assets/images/car/gm/boltEVLT/5.jpg", "/assets/images/car/gm/boltEVLT/6.jpg", "/assets/images/car/gm/boltEVLT/7.jpg", "/assets/images/car/gm/boltEVLT/15.jpg"],
+    "user_seq": 131,
+    "eccar_id": 46
+  },
+  {
+    "usedcar_id": 252,
+    "price": "3,300",
+    "age": "19/07식",
+    "mileage": "35,662km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/5.jpg", "/assets/images/car/samsung/twizyIntence/10.jpg", "/assets/images/car/samsung/twizyIntence/16.jpg", "/assets/images/car/samsung/twizyIntence/17.jpg"],
+    "user_seq": 200,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 253,
+    "price": "360",
+    "age": "19/11식",
+    "mileage": "55km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/7.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/8.jpg", "/assets/images/car/hyundai/ioniqN/11.jpg"],
+    "user_seq": 45,
+    "eccar_id": 54
+  },
+  {
+    "usedcar_id": 254,
+    "price": "470",
+    "age": "19/10식",
+    "mileage": "2,112km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/17.jpg", "/assets/images/car/hyundai/konaPremium/18.jpg", "/assets/images/car/hyundai/konaPremium/20.jpg"],
+    "user_seq": 46,
+    "eccar_id": 12
+  },
+  {
+    "usedcar_id": 255,
+    "price": "350",
+    "age": "17/07식",
+    "mileage": "3,600km",
+    "img_id": ["/assets/images/car/hyundai/konaPremium/1.jpg", "/assets/images/car/hyundai/konaPremium/4.jpg", "/assets/images/car/hyundai/konaPremium/6.jpg", "/assets/images/car/hyundai/konaPremium/8.jpg"],
+    "user_seq": 89,
+    "eccar_id": 10
+  },
+  {
+    "usedcar_id": 256,
+    "price": "3,450",
+    "age": "18/10식",
+    "mileage": "23,500km",
+    "img_id": ["/assets/images/car/gm/spark/1.jpg", "/assets/images/car/gm/spark/2.jpg", "/assets/images/car/gm/spark/3.jpg"],
+    "user_seq": 201,
+    "eccar_id": 48
+  },
+  {
+    "usedcar_id": 257,
+    "price": "3,000",
+    "age": "18/09식",
+    "mileage": "25,000km",
+    "img_id": ["/assets/images/car/samsung/twizyIntence/9.jpg", "/assets/images/car/samsung/twizyIntence/12.jpg", "/assets/images/car/samsung/twizyIntence/14.jpg", "/assets/images/car/samsung/twizyIntence/15.jpg"],
+    "user_seq": 202,
+    "eccar_id": 20
+  },
+  {
+    "usedcar_id": 258,
+    "price": "2,950",
+    "age": "18/11식",
+    "mileage": "36,272km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/13.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/20.jpg"],
+    "user_seq": 34,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 259,
+    "price": "2,180",
+    "age": "17/11식",
+    "mileage": "22,500km",
+    "img_id": ["/assets/images/car/samsung/sm3ZESE/24.jpg", "/assets/images/car/samsung/sm3ZESE/7.jpg", "/assets/images/car/samsung/sm3ZESE/18.jpg", "/assets/images/car/samsung/sm3ZESE/16.jpg"],
+    "user_seq": 239,
+    "eccar_id": 25
+  },
+  {
+    "usedcar_id": 260,
+    "price": "350",
+    "age": "18/06식",
+    "mileage": "1,000km",
+    "img_id": ["/assets/images/car/hyundai/ioniqN/3.jpg", "/assets/images/car/hyundai/ioniqN/9.jpg", "/assets/images/car/hyundai/ioniqN/10.jpg", "/assets/images/car/hyundai/ioniqN/12.jpg"],
+    "user_seq": 57,
+    "eccar_id": 56
+  },
+  {
+    "usedcar_id": 261,
+    "price": "2,850",
+    "age": "19/05식",
+    "mileage": "7,500km",
+    "img_id": ["/assets/images/car/hyundai/ioniqQ/13.jpg", "/assets/images/car/hyundai/ioniqQ/15.jpg", "/assets/images/car/hyundai/ioniqQ/18.jpg", "/assets/images/car/hyundai/ioniqQ/20.jpg"],
+    "user_seq": 162,
+    "eccar_id": 60
+  },
+  {
+    "usedcar_id": 262,
+    "price": "899",
+    "age": "16/12식",
+    "mileage": "44,261km",
+    "img_id": ["/assets/images/car/gm/boltEVpriemier/1.jpg", "/assets/images/car/gm/boltEVpriemier/2.jpg", "/assets/images/car/gm/boltEVpriemier/3.jpg", "/assets/images/car/gm/boltEVpriemier/5.jpg"],
+    "user_seq": 101,
+    "eccar_id": 41
+  }
+]

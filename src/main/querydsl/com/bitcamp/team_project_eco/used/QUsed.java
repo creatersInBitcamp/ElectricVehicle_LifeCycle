@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.usedCar;
+package com.bitcamp.team_project_eco.used;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
@@ -11,22 +11,22 @@ import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
- * QUsedCar is a Querydsl query type for UsedCar
+ * QUsed is a Querydsl query type for Used
  */
 @Generated("com.querydsl.codegen.EntitySerializer")
-public class QUsedCar extends EntityPathBase<UsedCar> {
+public class QUsed extends EntityPathBase<Used> {
 
-    private static final long serialVersionUID = 1954593768L;
+    private static final long serialVersionUID = -1036738890L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
-    public static final QUsedCar usedCar = new QUsedCar("usedCar");
+    public static final QUsed used = new QUsed("used");
 
     public final StringPath age = createString("age");
 
     public final com.bitcamp.team_project_eco.electriccar.QElectricCar electricCar;
 
-    public final SimplePath<com.bitcamp.team_project_eco.used.Img> img = createSimple("img", com.bitcamp.team_project_eco.used.Img.class);
+    public final SimplePath<Img> img = createSimple("img", Img.class);
 
     public final StringPath mileage = createString("mileage");
 
@@ -36,23 +36,23 @@ public class QUsedCar extends EntityPathBase<UsedCar> {
 
     public final com.bitcamp.team_project_eco.user.QUser user;
 
-    public QUsedCar(String variable) {
-        this(UsedCar.class, forVariable(variable), INITS);
+    public QUsed(String variable) {
+        this(Used.class, forVariable(variable), INITS);
     }
 
-    public QUsedCar(Path<? extends UsedCar> path) {
+    public QUsed(Path<? extends Used> path) {
         this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QUsedCar(PathMetadata metadata) {
+    public QUsed(PathMetadata metadata) {
         this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QUsedCar(PathMetadata metadata, PathInits inits) {
-        this(UsedCar.class, metadata, inits);
+    public QUsed(PathMetadata metadata, PathInits inits) {
+        this(Used.class, metadata, inits);
     }
 
-    public QUsedCar(Class<? extends UsedCar> type, PathMetadata metadata, PathInits inits) {
+    public QUsed(Class<? extends Used> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.electricCar = inits.isInitialized("electricCar") ? new com.bitcamp.team_project_eco.electriccar.QElectricCar(forProperty("electricCar")) : null;
         this.user = inits.isInitialized("user") ? new com.bitcamp.team_project_eco.user.QUser(forProperty("user")) : null;
