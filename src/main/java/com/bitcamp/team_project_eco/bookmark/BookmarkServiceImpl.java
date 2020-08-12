@@ -88,10 +88,10 @@ public class BookmarkServiceImpl implements BookmarkService{
             BookmarkList bookmark = new BookmarkList();
             bookmark.setId(bookmarkRepository.findAll().get(i).getBookmarkId());
             if(bookmarkRepository.findAll().get(i).getSights() != null){
-                bookmark.setCategory(bookmarkRepository.findAll().get(i).getSights());
+                bookmark.setPlace(bookmarkRepository.findAll().get(i).getSights());
                 list.add(bookmarkRepository.findAll().get(i).getSights());
             }else if(bookmarkRepository.findAll().get(i).getChargingStation() != null){
-                bookmark.setCategory(bookmarkRepository.findAll().get(i).getChargingStation());
+                bookmark.setPlace(bookmarkRepository.findAll().get(i).getChargingStation());
                 list.add(bookmarkRepository.findAll().get(i).getChargingStation());
             }
             bookmarkLists.add(bookmark);

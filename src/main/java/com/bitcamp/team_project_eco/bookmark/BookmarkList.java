@@ -9,5 +9,5 @@ import lombok.Setter;
 @Setter
 public class BookmarkList {
     Long id;
-    Object category;
+    Object place;
 }
