@@ -22,7 +22,7 @@ public class Comment {
     @Column(name = "comment", nullable = false, length = 500) private String comment;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_seq")
     private User user;
 
     @ManyToOne(cascade = CascadeType.ALL)
