@@ -39,7 +39,7 @@ public class PostController {
 
     @GetMapping("/recent")
     public Page<Post> recentList() {
-        return service.recentSort(PageRequest.of(0, 5, Sort.by(Sort.Order.desc("post_id"))));
+        return service.recentSort(PageRequest.of(0, 5, Sort.by(Sort.Order.asc("post_id"))));
     }
 
     @GetMapping("/getall")
@@ -47,20 +47,19 @@ public class PostController {
         return (List<Post>) service.findAll();
     }
 
-    @GetMapping("/getone/{postId}")
+    @GetMapping("/getOne/{postId}")
     public Optional<Post> getOnePost(@PathVariable String postId) {
         return service.findById(postId);
     }
 
     @PostMapping("/insert")
     public void insertPost(@RequestBody NewPostVO newPost) {
-        System.out.println(newPost.toString());
         service.insertPost(newPost);
     }
 
     @PostMapping("/update")
-    public void updatePost(@RequestBody Post post) {
-        service.updatePost(post);
+    public void updatePost(@RequestBody NewPostVO upPost) {
+        service.updatePost(upPost);
     }
 
     @GetMapping("/delete/{postId}")

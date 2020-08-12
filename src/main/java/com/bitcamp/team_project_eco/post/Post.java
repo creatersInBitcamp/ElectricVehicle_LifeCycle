@@ -3,9 +3,11 @@ package com.bitcamp.team_project_eco.post;
 import com.bitcamp.team_project_eco.comment.Comment;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -34,10 +36,12 @@ public class Post {
         this.user = user;
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Comment> comments;
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comment> comments = new ArrayList<>();
 
-    public Post(String userName, String link, String title, String date, String img, String content, int recommendation, int hits, String category, User user) {
+    public Post(String userName, String link, String title, String date, String img,
+                String content, int recommendation, int hits, String category, User user,
+                List<Comment> commentList) {
         this.userName = userName;
         this.link = link;
         this.title = title;
@@ -48,6 +52,7 @@ public class Post {
         this.hits = hits;
         this.category = category;
         setUser(user);
+        this.comments.addAll(commentList);
     }
 
     public Post() {
