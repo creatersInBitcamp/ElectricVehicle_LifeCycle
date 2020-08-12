@@ -18,7 +18,10 @@ public class UsedCar {
     @Column(name = "price") private String price;
     @Column(name = "age") private String age;
     @Column(name = "mileage") private String mileage;
-    @Column(name = "img_id") private String imgId;
+    @Column(name = "img_1") private String imgFirst;
+    @Column(name = "img_2") private String imgSecond;
+    @Column(name = "img_3") private String imgThird;
+    @Column(name = "img_4") private String imgFourth;
 
     /*@JsonIgnore
     @ManyToOne
@@ -34,6 +37,10 @@ public class UsedCar {
     @JoinColumn(name = "user_seq")
     private User user;
 
+    public UsedCar() {
+
+    }
+
     public void setUser(User user){
         this.user = user;
     }
@@ -47,19 +54,23 @@ public class UsedCar {
         this.electricCar = electricCar;
     }
 
-    public UsedCar(){}
-
     @Builder
     public UsedCar(String price,
                    String age,
                    String mileage,
-                   String imgId,
+                   String imgFirst,
+                   String imgSecond,
+                   String imgThird,
+                   String imgFourth,
                    User userSeq,
                    ElectricCar eccarId){
         this.price = price;
         this.age = age;
         this.mileage = mileage;
-        this.imgId = imgId;
+        this.imgFirst = imgFirst;
+        this.imgSecond = imgSecond;
+        this.imgThird = imgThird;
+        this.imgFourth = imgFourth;
         setUser(userSeq);
         setElectricCar(eccarId);
     }

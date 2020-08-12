@@ -62,7 +62,7 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     public void readCsv() {
-        InputStream is = getClass().getResourceAsStream("/static/used743.csv");
+        InputStream is = getClass().getResourceAsStream("/static/used_cars531.csv");
 
         try {
             BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
@@ -73,7 +73,10 @@ public class UsedCarServiceImpl implements UsedCarService {
                         csvRecord.get(0),//price
                         csvRecord.get(1),//age
                         csvRecord.get(2),//mileage
-                        csvRecord.get(3),
+                        csvRecord.get(3),//image
+                        csvRecord.get(4),//image
+                        csvRecord.get(5),//image
+                        csvRecord.get(6),//image
                         userRepository.findById(Long.parseLong(csvRecord.get(3))).orElse(new User()),
                         electricCarRepository.findById(Long.parseLong(csvRecord.get(4))).orElse(new ElectricCar())
                 ));
