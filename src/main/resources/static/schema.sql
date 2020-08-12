@@ -15,7 +15,7 @@ CREATE TABLE user
     `sns_confirm`    boolean        NULL,
     `email_confirm`  boolean        NULL,
     `grade`          INT            NULL,
-    `ban_date`       DATETIME       NULL,
+    `ban_date`       VARCHAR(45)    NULL,
     `profile_image`  VARCHAR(45)    NULL,
     `profile_text`   VARCHAR(45)    NULL,
     `payment_info`   VARCHAR(45)    NULL,
@@ -112,7 +112,7 @@ ALTER TABLE purchase COMMENT '구매';
 
 ALTER TABLE purchase
     ADD CONSTRAINT FK_purchase_eccar_id_eccar_eccar_id FOREIGN KEY (eccar_id)
-        REFERENCES eccar (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+        REFERENCES electric_car (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 ALTER TABLE purchase
     ADD CONSTRAINT FK_purchase_user_seq_user_user_seq FOREIGN KEY (user_seq)
@@ -134,7 +134,7 @@ ALTER TABLE wishlist
 
 ALTER TABLE wishlist
     ADD CONSTRAINT FK_wishlist_eccar_id_eccar_eccar_id FOREIGN KEY (eccar_id)
-        REFERENCES eccar (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+        REFERENCES electric_car (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 
 
@@ -180,7 +180,7 @@ CREATE TABLE bookmark
     `bookmark_id`          INT    NOT NULL    AUTO_INCREMENT COMMENT '즐겨찾기아이디',
     `sights_id`            INT    NULL        COMMENT '관광지아이디',
     `charging_station_id`  INT    NULL        COMMENT '충전소아이디',
-    `user_id`              INT    NULL        COMMENT '유저아이디',
+    `user_seq`              INT    NULL        COMMENT '유저아이디',
     PRIMARY KEY (bookmark_id)
 );
 
@@ -191,25 +191,27 @@ ALTER TABLE bookmark
         REFERENCES sights (sights_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 ALTER TABLE bookmark
-    ADD CONSTRAINT FK_bookmark_charging_station_id_charging_station_charging_station_id FOREIGN KEY (charging_station_id)
+    ADD CONSTRAINT FK_bookmark_charging_station_id FOREIGN KEY (charging_station_id)
         REFERENCES charging_station (charging_station_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 ALTER TABLE bookmark
-    ADD CONSTRAINT FK_bookmark_user_id_user_user_seq FOREIGN KEY (user_id)
+    ADD CONSTRAINT FK_bookmark_user_id_user_user_seq FOREIGN KEY (user_seq)
         REFERENCES user (user_seq) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 /*게시글*/
 CREATE TABLE post
 (
     `post_id`         INT            NOT NULL    AUTO_INCREMENT COMMENT '포스트 아이디',
+    `user_name`       VARCHAR(45)    NULL        COMMENT '사용자이름',
     `link`            VARCHAR(45)    NULL        COMMENT '기사링크',
     `title`           VARCHAR(45)    NULL        COMMENT '제목',
-    `ban_date`        VARCHAR(45)    NULL        COMMENT '작성일자',
+    `date`            VARCHAR(45)    NULL        COMMENT '작성일자',
     `img`             VARCHAR(45)    NULL        COMMENT '이미지링크',
     `content`         VARCHAR(45)    NULL        COMMENT '내용',
-    `recommendation`  INT            NULL        COMMENT '추천수',
+    `recomendation`  INT            NULL        COMMENT '추천수',
     `hits`            INT            NULL        COMMENT '조회수',
-    `user_seq`        INT            NULL        COMMENT '사용자아이디',
+    `category`        INT            NULL        COMMENT '카테고리',
+    `user_seq`              INT    NULL        COMMENT '유저아이디',
     PRIMARY KEY (post_id)
 );
 
