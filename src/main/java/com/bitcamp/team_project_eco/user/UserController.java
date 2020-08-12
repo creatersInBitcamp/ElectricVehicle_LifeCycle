@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -20,20 +19,12 @@ public class UserController {
     }
 
     @GetMapping("/check/{userId}")
-    public boolean idCheck(@PathVariable("userId") String userId) {
-        System.out.println("아이디 들어옴: " + userId);
-        return false;
+    public Boolean idCheck(@PathVariable String userId) {
+        System.out.println("유저아이디: " + userId);
+        Optional<User> idCheckResult = userService.findByUserId(userId);
+        System.out.println(idCheckResult.isPresent());
+        return idCheckResult.isPresent();
     }
-
-   /* @GetMapping("/idCheck/${userId}")
-    public ResponseEntity<Object> idCheck(@PathVariable String userId){
-        Optional<User> idCheckResult = userService.findUserByUserId(userId);
-        if(idCheckResult.isPresent()) {
-            return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }*/
 
     @GetMapping("findAll")
     public Iterable<User> findAll(){
