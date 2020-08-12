@@ -2,6 +2,10 @@ package com.bitcamp.team_project_eco.post;
 
 import com.bitcamp.team_project_eco.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +21,21 @@ public class PostController {
     @GetMapping("/readcsv")
     public void csvRead(){
         service.readCsv();
+    }
+
+    @GetMapping("/pageall/{page}")
+    public Page<Post> postList(@PathVariable int page) {
+        return service.pagingFindAll(PageRequest.of(page-1, 10));
+    }
+
+    @GetMapping("/popular")
+    public Page<Post> popularList() {
+        return service.popularSort(PageRequest.of(0, 5));
+    }
+
+    @GetMapping("/recent")
+    public Page<Post> recentList() {
+        return service.recentSort(PageRequest.of(0, 5));
     }
 
     @GetMapping("/getall")

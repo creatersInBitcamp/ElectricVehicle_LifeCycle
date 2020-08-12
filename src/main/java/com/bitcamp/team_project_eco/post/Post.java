@@ -16,7 +16,8 @@ import java.util.List;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "post_id") private int postId;
+    @Column(name = "post_id", nullable = false) private int postId;
+    @Column(name = "user_name", nullable = false, length = 30) private String userName;
     @Column(name = "link", nullable = false) private String link;
     @Column(name = "title", nullable = false) private String titie;
     @Column(name = "date") private String date;
@@ -38,7 +39,8 @@ public class Post {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Comment> comments;
 
-    public Post(String link, String title, String date, String img, String content, int recomendation, int hits, String category, User user) {
+    public Post(String userName, String link, String title, String date, String img, String content, int recomendation, int hits, String category, User user) {
+        this.userName = userName;
         this.link = link;
         this.titie = title;
         this.date = date;
