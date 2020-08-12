@@ -1,4 +1,4 @@
-package com.bitcamp.team_project_eco.used;
+package com.bitcamp.team_project_eco.usedCar;
 
 import lombok.Getter;
 import lombok.Setter;

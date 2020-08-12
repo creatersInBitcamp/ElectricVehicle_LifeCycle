@@ -1,9 +1,8 @@
-package com.bitcamp.team_project_eco.used;
+package com.bitcamp.team_project_eco.usedCar;
 
+import com.bitcamp.team_project_eco.usedCar.Img;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.XSlf4j;
 
 import javax.persistence.AttributeConverter;
 import java.io.IOException;

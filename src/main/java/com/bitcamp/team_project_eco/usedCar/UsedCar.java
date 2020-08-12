@@ -1,9 +1,6 @@
 package com.bitcamp.team_project_eco.usedCar;
 
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
-import com.bitcamp.team_project_eco.image.Image;
-import com.bitcamp.team_project_eco.used.AdditionalDataConverter;
-import com.bitcamp.team_project_eco.used.Img;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

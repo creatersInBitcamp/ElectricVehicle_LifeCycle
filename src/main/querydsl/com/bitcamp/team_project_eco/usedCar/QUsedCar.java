@@ -26,7 +26,7 @@ public class QUsedCar extends EntityPathBase<UsedCar> {
 
     public final com.bitcamp.team_project_eco.electriccar.QElectricCar electricCar;
 
-    public final SimplePath<com.bitcamp.team_project_eco.used.Img> img = createSimple("img", com.bitcamp.team_project_eco.used.Img.class);
+    public final SimplePath<Img> img = createSimple("img", Img.class);
 
     public final StringPath mileage = createString("mileage");
 
