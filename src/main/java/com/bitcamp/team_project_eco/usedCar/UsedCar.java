@@ -1,7 +1,6 @@
 package com.bitcamp.team_project_eco.usedCar;
 
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
-import com.bitcamp.team_project_eco.image.Image;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
@@ -19,14 +18,11 @@ public class UsedCar {
     @Column(name = "age") private String age;
     @Column(name = "mileage") private String mileage;
 
-    /*@JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "img_id")
-    private Image image;
-
-    public void setImage(Image image){
-        this.image = image;
-    }*/
+    @Convert(converter = AdditionalDataConverter.class)
+    private Img img;
+    public void setImg(Img img){
+        this.img = img;
+    }
 
     @JsonIgnore
     @ManyToOne
@@ -52,13 +48,21 @@ public class UsedCar {
     public UsedCar(String price,
                    String age,
                    String mileage,
-//                   Image imageId,
+                   String imgId1,
+                   String imgId2,
+                   String imgId3,
+                   String imgId4,
                    User userSeq,
-                   ElectricCar eccarId){
+                   ElectricCar eccarId) {
         this.price = price;
         this.age = age;
         this.mileage = mileage;
-//        this.image = imageId;
+        Img image = new Img();
+        image.setImg1(imgId1);
+        image.setImg2(imgId2);
+        image.setImg3(imgId3);
+        image.setImg4(imgId4);
+        setImg(image);
         setUser(userSeq);
         setElectricCar(eccarId);
     }

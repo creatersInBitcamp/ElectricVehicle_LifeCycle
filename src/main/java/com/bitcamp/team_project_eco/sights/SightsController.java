@@ -1,6 +1,7 @@
 package com.bitcamp.team_project_eco.sights;
 
 import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
+import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +29,14 @@ public class SightsController {
         return sightsService.findById(sightsId);
     }
 
+    @PostMapping("/insert")
+    public void insertSights(@RequestBody Sights sights) {
+        sightsService.insertSights(sights);
+    }
+    @PostMapping("/update")
+    public void updateSights(@RequestBody Sights sights) {
+        sightsService.updateSights(sights);
+    }
     @GetMapping("/delete")
     public void deleteSights(@PathVariable String sightsId) {
         sightsService.delete(sightsId);

@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.chargingStation;
 
+import com.bitcamp.team_project_eco.car.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,15 @@ public class ChargingStationController {
     @GetMapping("/getone/{chargingStationId}")
     public Optional<ChargingStation> getOneChargingStation(@PathVariable String chargingStationId) {
         return chargingStationService.findById(chargingStationId);
+    }
+
+    @PostMapping("/insert")
+    public void insertPost(@RequestBody ChargingStation chargingStation) {
+        chargingStationService.insertChargingStation(chargingStation);
+    }
+    @PostMapping("/update")
+    public void updatePost(@RequestBody ChargingStation chargingStation) {
+        chargingStationService.updateChargingStation(chargingStation);
     }
 
     @GetMapping("/delete")

@@ -15,7 +15,7 @@ CREATE TABLE user
     `sns_confirm`    boolean        NULL,
     `email_confirm`  boolean        NULL,
     `grade`          INT            NULL,
-    `ban_date`       DATETIME       NULL,
+    `ban_date`       VARCHAR(45)    NULL,
     `profile_image`  VARCHAR(45)    NULL,
     `profile_text`   VARCHAR(45)    NULL,
     `payment_info`   VARCHAR(45)    NULL,
@@ -27,7 +27,7 @@ ALTER TABLE user COMMENT '사용자';
 
 
 /*전기차*/
-CREATE TABLE eccar
+CREATE TABLE electric_car
 (
     `eccar_id`                  INT            NOT NULL    AUTO_INCREMENT        COMMENT '차 아이디',
     `car_name`                  VARCHAR(45)    NULL        COMMENT '이름',
@@ -68,11 +68,11 @@ CREATE TABLE eccar
     PRIMARY KEY (eccar_id)
 )default character set utf8 collate UTF8_GENERAL_CI;
 
-ALTER TABLE eccar COMMENT '전기차';
+ALTER TABLE electric_car COMMENT '전기차';
 
 CREATE TABLE used_car
 (
-    `usedcar_id`    INT(11)        NOT NULL    AUTO_INCREMENT COMMENT '중고차 아이디',
+    `usedcar_id`    INT            NOT NULL    AUTO_INCREMENT        COMMENT '중고차 아이디',
     `price`         VARCHAR(45)    NULL        DEFAULT NULL COMMENT '중고가격',
     `age`           VARCHAR(45)    NULL        DEFAULT NULL COMMENT '연식',
     `mileage`       VARCHAR(45)    NULL        DEFAULT NULL COMMENT '주행거리',
@@ -90,7 +90,7 @@ ALTER TABLE used_car
 
 ALTER TABLE used_car
     ADD CONSTRAINT FK_used_car_eccar_id_eccar_eccar_id FOREIGN KEY (eccar_id)
-        REFERENCES eccar (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+        REFERENCES electric_car (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 ALTER TABLE used_car
     ADD CONSTRAINT FK_used_car_img_id_img_img_id FOREIGN KEY (img_id)
@@ -112,7 +112,7 @@ ALTER TABLE purchase COMMENT '구매';
 
 ALTER TABLE purchase
     ADD CONSTRAINT FK_purchase_eccar_id_eccar_eccar_id FOREIGN KEY (eccar_id)
-        REFERENCES eccar (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+        REFERENCES electric_car (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 ALTER TABLE purchase
     ADD CONSTRAINT FK_purchase_user_seq_user_user_seq FOREIGN KEY (user_seq)
@@ -134,7 +134,7 @@ ALTER TABLE wishlist
 
 ALTER TABLE wishlist
     ADD CONSTRAINT FK_wishlist_eccar_id_eccar_eccar_id FOREIGN KEY (eccar_id)
-        REFERENCES eccar (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+        REFERENCES electric_car (eccar_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 
 
@@ -175,27 +175,43 @@ CREATE TABLE sights
 
 ALTER TABLE sights COMMENT '관광지';
 
-CREATE TABLE bookmarky_value
+CREATE TABLE bookmark
 (
     `bookmark_id`          INT    NOT NULL    AUTO_INCREMENT COMMENT '즐겨찾기아이디',
     `sights_id`            INT    NULL        COMMENT '관광지아이디',
     `charging_station_id`  INT    NULL        COMMENT '충전소아이디',
     `user_seq`              INT    NULL        COMMENT '유저아이디',
     PRIMARY KEY (bookmark_id)
-)default character set utf8 collate UTF8_GENERAL_CI;
+);
+
+ALTER TABLE bookmark COMMENT '즐겨찾기';
+
+ALTER TABLE bookmark
+    ADD CONSTRAINT FK_bookmark_sights_id_sights_sights_id FOREIGN KEY (sights_id)
+        REFERENCES sights (sights_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE bookmark
+    ADD CONSTRAINT FK_bookmark_charging_station_id FOREIGN KEY (charging_station_id)
+        REFERENCES charging_station (charging_station_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE bookmark
+    ADD CONSTRAINT FK_bookmark_user_id_user_user_seq FOREIGN KEY (user_seq)
+        REFERENCES user (user_seq) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 /*게시글*/
 CREATE TABLE post
 (
     `post_id`         INT            NOT NULL    AUTO_INCREMENT COMMENT '포스트 아이디',
+    `user_name`       VARCHAR(45)    NULL        COMMENT '사용자이름',
     `link`            VARCHAR(45)    NULL        COMMENT '기사링크',
     `title`           VARCHAR(45)    NULL        COMMENT '제목',
-    `ban_date`        VARCHAR(45)    NULL        COMMENT '작성일자',
+    `date`            VARCHAR(45)    NULL        COMMENT '작성일자',
     `img`             VARCHAR(45)    NULL        COMMENT '이미지링크',
     `content`         VARCHAR(45)    NULL        COMMENT '내용',
-    `recommendation`  INT            NULL        COMMENT '추천수',
+    `recomendation`  INT            NULL        COMMENT '추천수',
     `hits`            INT            NULL        COMMENT '조회수',
-    `user_seq`        INT            NULL        COMMENT '사용자아이디',
+    `category`        INT            NULL        COMMENT '카테고리',
+    `user_seq`              INT    NULL        COMMENT '유저아이디',
     PRIMARY KEY (post_id)
 );
 

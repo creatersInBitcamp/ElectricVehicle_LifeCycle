@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.chargingStation;
 
+import com.bitcamp.team_project_eco.car.Car;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -13,6 +14,10 @@ import java.util.Optional;
 
 interface ChargingStationService extends JpaService<ChargingStation>{
     public void readCsv();
+
+    void insertChargingStation(ChargingStation chargingStation);
+
+    void updateChargingStation(ChargingStation chargingStation);
 }
 
 @Service
@@ -75,5 +80,15 @@ public class ChargingStationServiceImpl implements ChargingStationService{
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void insertChargingStation(ChargingStation chargingStation) {
+        chargingStationRepository.save(chargingStation);
+    }
+
+    @Override
+    public void updateChargingStation(ChargingStation chargingStation) {
+
     }
 }

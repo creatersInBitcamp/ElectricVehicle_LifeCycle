@@ -1,11 +1,16 @@
 package com.bitcamp.team_project_eco.bookmark;
 
 import com.bitcamp.team_project_eco.utils.JpaService;
+import com.bitcamp.team_project_eco.wishlist.Wishlist;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 interface BookmarkService extends JpaService<Bookmark>{
+
+    void insertBookmark(Bookmark bookmark);
+
+    void updateBookmark(Bookmark bookmark);
 }
 
 @Service
@@ -39,5 +44,15 @@ public class BookmarkServiceImpl implements BookmarkService{
     @Override
     public boolean exists(String id) {
         return bookmarkRepository.existsById(Integer.parseInt(id));
+    }
+
+    @Override
+    public void insertBookmark(Bookmark bookmark) {
+        bookmarkRepository.save(bookmark);
+    }
+
+    @Override
+    public void updateBookmark(Bookmark bookmark) {
+
     }
 }

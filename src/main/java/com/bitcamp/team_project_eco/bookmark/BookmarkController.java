@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.bookmark;
 
+import com.bitcamp.team_project_eco.wishlist.Wishlist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,15 @@ public class BookmarkController {
     @GetMapping("/getone/{bookmarkId}")
     public Optional<Bookmark> getOneBookmark(@PathVariable String bookmarkId) {
         return bookmarkService.findById(bookmarkId);
+    }
+
+    @PostMapping("/insert")
+    public void insertBookmark(@RequestBody Bookmark bookmark) {
+        bookmarkService.insertBookmark(bookmark);
+    }
+    @PostMapping("/update")
+    public void updateBookmark(@RequestBody Bookmark bookmark) {
+        bookmarkService.updateBookmark(bookmark);
     }
 
     @GetMapping("/delete")
