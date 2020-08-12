@@ -15,12 +15,13 @@ import javax.persistence.EntityManager;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Optional;
 
 interface PostService extends JpaService<Post> {
     public void readCsv();
 
-    void insertPost(Post post);
+    void insertPost(NewPostVO newPost);
 
     void updatePost(Post post);
 
@@ -29,6 +30,8 @@ interface PostService extends JpaService<Post> {
     Page<Post> popularSort(PageRequest of);
 
     Page<Post> recentSort(PageRequest of);
+
+    Page<Post> allPostFindByCategory(String category, PageRequest of);
 }
 
 @Service
@@ -82,7 +85,7 @@ public class PostServiceImpl implements PostService {
                     csvRecord.get(4),
                     0,
                     0,
-                    "News",
+                    "news",
                     userRepository.findById(Long.parseLong(csvRecord.get(5))).orElse(new User()) // user Entity
                     ));
         }
@@ -92,13 +95,16 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public void insertPost(Post post) {
-        repository.save(post);
+    public void insertPost(NewPostVO object) {
+        User u = object.user;
+        Post np = new Post(object.userName, object.link, object.title, object.date, object.img,
+                object.content, 0, 0, object.category, u);
+        repository.save(np);
     }
 
     @Override
     public void updatePost(Post post) {
-//        int targetPostId = post.getPostId();
+
     }
 
     @Override
@@ -114,5 +120,11 @@ public class PostServiceImpl implements PostService {
     @Override
     public Page<Post> recentSort(PageRequest of) {
         return repository.findAll(of);
+    }
+
+    @Override
+    public Page<Post> allPostFindByCategory(String category, PageRequest of) {
+        Pageable pageable = of;
+        return repository.findByCategory(category, pageable);
     }
 }
