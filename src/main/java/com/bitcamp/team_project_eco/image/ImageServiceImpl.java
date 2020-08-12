@@ -27,7 +27,7 @@ public class ImageServiceImpl implements ImageService{
 
     @Override
     public Optional<Image> findById(String id) {
-        return imageRepository.findById(Integer.parseInt(id));
+        return imageRepository.findById(Long.valueOf(id));
     }
 
     @Override
@@ -47,7 +47,7 @@ public class ImageServiceImpl implements ImageService{
 
     @Override
     public boolean exists(String id) {
-        return imageRepository.existsById(Integer.parseInt(id));
+        return imageRepository.existsById(Long.valueOf(id));
     }
 
     @Override

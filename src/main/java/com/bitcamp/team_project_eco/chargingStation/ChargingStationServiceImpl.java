@@ -30,7 +30,7 @@ public class ChargingStationServiceImpl implements ChargingStationService{
 
     @Override
     public Optional<ChargingStation> findById(String id) {
-        return chargingStationRepository.findById(Integer.parseInt(id));
+        return chargingStationRepository.findById(Long.valueOf(id));
     }
 
     @Override
@@ -50,7 +50,7 @@ public class ChargingStationServiceImpl implements ChargingStationService{
 
     @Override
     public boolean exists(String id) {
-        return chargingStationRepository.existsById(Integer.parseInt(id));
+        return chargingStationRepository.existsById(Long.valueOf(id));
     }
 
     @Override
@@ -75,7 +75,8 @@ public class ChargingStationServiceImpl implements ChargingStationService{
                         csvRecord.get(9),
                         csvRecord.get(10),
                         csvRecord.get(11),
-                        csvRecord.get(12)));
+                        csvRecord.get(12),
+                        "station"));
             }
         } catch (Exception e) {
             e.printStackTrace();

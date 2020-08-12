@@ -23,7 +23,7 @@ public class WishlistServiceImpl implements WishlistService{
 
     @Override
     public Optional<Wishlist> findById(String id) {
-        return wishlistRepository.findById(Integer.parseInt(id));
+        return wishlistRepository.findById(Long.valueOf(id));
     }
 
     @Override
@@ -43,7 +43,7 @@ public class WishlistServiceImpl implements WishlistService{
 
     @Override
     public boolean exists(String id) {
-        return wishlistRepository.existsById(Integer.parseInt(id));
+        return wishlistRepository.existsById(Long.valueOf(id));
     }
 
     @Override

@@ -1,10 +1,14 @@
 package com.bitcamp.team_project_eco.bookmark;
 
+import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
+import com.bitcamp.team_project_eco.chargingStation.ChargingStationServiceImpl;
+import com.bitcamp.team_project_eco.sights.Sights;
 import com.bitcamp.team_project_eco.wishlist.Wishlist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -12,10 +16,17 @@ import java.util.Optional;
 @RequestMapping("/bookmarks")
 public class BookmarkController {
     @Autowired BookmarkService bookmarkService;
+    @Autowired
+    ChargingStationServiceImpl chargingStationService;
 
     @GetMapping("/getall")
     public List<Bookmark> getAllBookmark(){
         return (List<Bookmark>) bookmarkService.findAll();
+    }
+
+    @GetMapping("/getallbookmark")
+    public List<Object> getAllBookmarks(){
+        return bookmarkService.findAllBookmark();
     }
 
     @GetMapping("/getone/{bookmarkId}")
@@ -24,17 +35,18 @@ public class BookmarkController {
     }
 
     @PostMapping("/insert")
-    public void insertBookmark(@RequestBody Bookmark bookmark) {
-        bookmarkService.insertBookmark(bookmark);
+    public void insertBookmark(@RequestBody BookmarkVO id) {
+        bookmarkService.insertBookmark(id);
     }
     @PostMapping("/update")
-    public void updateBookmark(@RequestBody Bookmark bookmark) {
-        bookmarkService.updateBookmark(bookmark);
+    public void updateBookmark(@RequestBody BookmarkVO id) {
+        bookmarkService.updateBookmark(id);
     }
 
-    @GetMapping("/delete")
-    public void deleteBookmark(@PathVariable String bookmarkId) {
-        bookmarkService.delete(bookmarkId);
+    @GetMapping("/delete/{bookmarkID}")
+    public void deleteBookmark(@PathVariable String bookmarkID) {
+        System.out.println(bookmarkID);
+        bookmarkService.delete(bookmarkID);
     }
 
 }

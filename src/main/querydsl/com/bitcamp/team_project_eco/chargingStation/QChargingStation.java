@@ -30,6 +30,8 @@ public class QChargingStation extends EntityPathBase<ChargingStation> {
 
     public final StringPath businessHours = createString("businessHours");
 
+    public final StringPath category = createString("category");
+
     public final StringPath chargerId = createString("chargerId");
 
     public final StringPath chargerState = createString("chargerState");

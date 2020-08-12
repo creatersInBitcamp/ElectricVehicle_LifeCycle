@@ -25,16 +25,17 @@ public class Sights {
     @Column(name = "capacity") private int capacity;
     @Column(name = "parking_lot") private int parkingLot;
     @Column(name = "info", length = 700) private String info;
+    @Column(name = "category") private String category;
 
-    @OneToMany(mappedBy = "sights")
-    private List<Bookmark> bookmarkList = new ArrayList<Bookmark>();
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Bookmark> bookmarkList;
 
     public Sights(){}
 
     @Builder
     public Sights (String name, String streetAddress, String branchAddress,
                    double xValue, double yValue, int capacity,
-                   int parkingLot, String info) {
+                   int parkingLot, String info, String category) {
         this.name = name;
         this.streetAddress = streetAddress;
         this.branchAddress = branchAddress;
@@ -43,5 +44,6 @@ public class Sights {
         this.capacity = capacity;
         this.parkingLot = parkingLot;
         this.info = info;
+        this.category = category;
     }
 }

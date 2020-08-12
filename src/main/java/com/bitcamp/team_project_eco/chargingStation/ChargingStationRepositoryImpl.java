@@ -13,7 +13,7 @@ interface CustomedChargingStationRepository{
 public class ChargingStationRepositoryImpl extends QuerydslRepositorySupport implements CustomedChargingStationRepository{
     private final JPAQueryFactory jpaQueryFactory;
     public ChargingStationRepositoryImpl(JPAQueryFactory jpaQueryFactory){
-        super(ChargingStationRepositoryImpl.class);
+        super(ChargingStation.class);
         this.jpaQueryFactory = jpaQueryFactory;
     }
 }

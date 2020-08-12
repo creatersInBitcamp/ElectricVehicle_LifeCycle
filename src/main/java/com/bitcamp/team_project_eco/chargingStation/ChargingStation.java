@@ -28,9 +28,10 @@ public class ChargingStation {
     @Column(name = "phone") private String phone;
     @Column(name = "update_date") private String updateDate;
     @Column(name = "boosting_charge") private String boostingCharge;
+    @Column(name = "category") private String category;
 
-    @OneToMany(mappedBy = "chargingStation")
-    private List<Bookmark> bookmarkList = new ArrayList<Bookmark>();
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Bookmark> bookmarkList;
 
     public ChargingStation(){}
 
@@ -38,7 +39,7 @@ public class ChargingStation {
     public ChargingStation (String unitName, String chargerId, int chargerTypeID, String chargerType,
                             String chargerState, String address, double xValue, double yValue, String businessHours,
                             String agencyName, String phone, String updateDate,
-                            String boostingCharge) {
+                            String boostingCharge, String category) {
         this.unitName = unitName;
         this.chargerId = chargerId;
         this.chargerType = chargerType;
@@ -52,5 +53,6 @@ public class ChargingStation {
         this.chargerState = chargerState;
         this.updateDate = updateDate;
         this.boostingCharge = boostingCharge;
+        this.category = category;
     }
 }

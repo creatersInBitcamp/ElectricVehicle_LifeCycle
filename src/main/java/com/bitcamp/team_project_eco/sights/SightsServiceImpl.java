@@ -71,7 +71,8 @@ public class SightsServiceImpl implements SightsService{
                         Double.parseDouble(csvRecord.get(4)),
                         Integer.parseInt(csvRecord.get(5)),
                         Integer.parseInt(csvRecord.get(6)),
-                        csvRecord.get(7)));
+                        csvRecord.get(7),
+                        "sights"));
             }
         } catch (Exception e) {
             e.printStackTrace();

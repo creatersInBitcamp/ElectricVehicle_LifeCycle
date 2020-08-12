@@ -26,6 +26,8 @@ public class QSights extends EntityPathBase<Sights> {
 
     public final NumberPath<Integer> capacity = createNumber("capacity", Integer.class);
 
+    public final StringPath category = createString("category");
+
     public final StringPath info = createString("info");
 
     public final StringPath name = createString("name");

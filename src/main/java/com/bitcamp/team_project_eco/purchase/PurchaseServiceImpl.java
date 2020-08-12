@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.purchase;
 
+import com.amazonaws.services.dynamodbv2.xspec.L;
 import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import com.bitcamp.team_project_eco.utils.JpaService;
@@ -30,7 +31,7 @@ public class PurchaseServiceImpl implements PurchaseService{
 
     @Override
     public Optional<Purchase> findById(String id) {
-        return purchaseRepository.findById(Integer.parseInt(id));
+        return purchaseRepository.findById(Long.valueOf(id));
     }
 
     @Override
@@ -50,7 +51,7 @@ public class PurchaseServiceImpl implements PurchaseService{
 
     @Override
     public boolean exists(String id) {
-        return purchaseRepository.existsById(Integer.parseInt(id));
+        return purchaseRepository.existsById(Long.valueOf(id));
     }
 
     @Override
