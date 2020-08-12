@@ -5,7 +5,9 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.awt.print.Book;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,17 +17,17 @@ public class Sights {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sights_id") private Long sightsId;
-    @Column(name = "name", nullable = false) private String name;
-    @Column(name = "street_address", nullable = false) private String streetAddress;
-    @Column(name = "branch_address", nullable = false) private String branchAddress;
-    @Column(name = "x_value", nullable = false) private double xValue;
-    @Column(name = "y_value", nullable = false) private double yValue;
-    @Column(name = "capacity", nullable = false) private int capacity;
-    @Column(name = "parking_lot", nullable = false) private int parkingLot;
-    @Column(name = "info", nullable = false) private String info;
+    @Column(name = "name") private String name;
+    @Column(name = "street_address") private String streetAddress;
+    @Column(name = "branch_address") private String branchAddress;
+    @Column(name = "x_value") private double xValue;
+    @Column(name = "y_value") private double yValue;
+    @Column(name = "capacity") private int capacity;
+    @Column(name = "parking_lot") private int parkingLot;
+    @Column(name = "info", length = 700) private String info;
 
-    @OneToMany(mappedBy = "sights", cascade = CascadeType.ALL)
-    private List<Bookmark> bookmarkList;
+    @OneToMany(mappedBy = "sights")
+    private List<Bookmark> bookmarkList = new ArrayList<Bookmark>();
 
     public Sights(){}
 

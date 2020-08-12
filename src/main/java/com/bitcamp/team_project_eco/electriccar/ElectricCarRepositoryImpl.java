@@ -5,6 +5,10 @@ import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport
 
 interface CustomedECarRepository {}
 
-public class ElectricCarRepositoryImpl implements CustomedECarRepository {
-
+public class ElectricCarRepositoryImpl extends QuerydslRepositorySupport implements CustomedECarRepository {
+    private final JPAQueryFactory jpaQueryFactory;
+    public ElectricCarRepositoryImpl(JPAQueryFactory jpaQueryFactory){
+        super(ElectricCar.class);
+        this.jpaQueryFactory = jpaQueryFactory;
+    }
 }
