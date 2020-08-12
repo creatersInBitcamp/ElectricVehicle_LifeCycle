@@ -4,6 +4,8 @@ import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -12,25 +14,17 @@ import java.io.InputStreamReader;
 import java.util.Optional;
 
 interface UserService extends JpaService<User> {
-    Optional<User> findUserByUserId(String user);
+
     void readCsv();
 
     boolean insert(User user);
+
+    Optional<User> findByUserId(String userId);
 }
 
 @Service
 public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
-
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
-    @Override
-    public Optional<User> findUserByUserId(String user) {
-        Optional<User> idCheck = userRepository.findByUserId(user);
-        return idCheck;
-    }
+    @Autowired UserRepository userRepository;
 
     @Override
     public void readCsv() {
@@ -76,6 +70,11 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public Optional<User> findByUserId(String userId) {
+        return userRepository.findByUserId(userId);
     }
 
     @Override

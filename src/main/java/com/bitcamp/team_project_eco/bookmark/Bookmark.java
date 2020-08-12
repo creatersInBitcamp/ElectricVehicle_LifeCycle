@@ -25,14 +25,24 @@ public class Bookmark {
     @JoinColumn(name = "sights_id")
     private Sights sights;
 
+    public void setSights(Sights sights){
+        this.sights = sights;
+    }
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "charging_station_id")
     private ChargingStation chargingStation;
 
+    public void setChargingStation(ChargingStation chargingStation){
+        this.chargingStation = chargingStation;
+    }
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
+    public void setUser(User user){
+        this.user = user;
+    }
 }

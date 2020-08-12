@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 interface CustomUserRepository {
-    Optional<User> findByUserId(String userId);
 }
 @Repository
 public class UserRepositoryImpl extends QuerydslRepositorySupport implements CustomUserRepository{
@@ -18,8 +17,4 @@ public class UserRepositoryImpl extends QuerydslRepositorySupport implements Cus
         this.queryFactory = queryFactory;
     }
 
-    @Override
-    public Optional<User> findByUserId(String userId) {
-        return Optional.empty();
-    }
 }
