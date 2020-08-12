@@ -18,6 +18,7 @@ public class UsedCar {
     @Column(name = "price") private String price;
     @Column(name = "age") private String age;
     @Column(name = "mileage") private String mileage;
+    @Column(name = "img_id") private String imgId;
 
     /*@JsonIgnore
     @ManyToOne
@@ -52,13 +53,13 @@ public class UsedCar {
     public UsedCar(String price,
                    String age,
                    String mileage,
-//                   Image imageId,
+                   String imgId,
                    User userSeq,
                    ElectricCar eccarId){
         this.price = price;
         this.age = age;
         this.mileage = mileage;
-//        this.image = imageId;
+        this.imgId = imgId;
         setUser(userSeq);
         setElectricCar(eccarId);
     }

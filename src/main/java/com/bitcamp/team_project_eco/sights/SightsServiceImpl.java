@@ -1,6 +1,7 @@
 package com.bitcamp.team_project_eco.sights;
 
 import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
+import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -14,6 +15,10 @@ import java.util.Optional;
 
 interface SightsService extends JpaService<Sights> {
     public void readCsv();
+
+    void insertSights(Sights sights);
+
+    void updateSights(Sights sights);
 }
 
 @Service
@@ -59,17 +64,27 @@ public class SightsServiceImpl implements SightsService{
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
             for (CSVRecord csvRecord : csvRecords) {
                 sightsRepository.save(new Sights(
+                        csvRecord.get(0),
                         csvRecord.get(1),
                         csvRecord.get(2),
-                        csvRecord.get(3),
+                        Double.parseDouble(csvRecord.get(3)),
                         Double.parseDouble(csvRecord.get(4)),
-                        Double.parseDouble(csvRecord.get(5)),
+                        Integer.parseInt(csvRecord.get(5)),
                         Integer.parseInt(csvRecord.get(6)),
-                        Integer.parseInt(csvRecord.get(7)),
-                        csvRecord.get(8)));
+                        csvRecord.get(7)));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void insertSights(Sights sights) {
+        sightsRepository.save(sights);
+    }
+
+    @Override
+    public void updateSights(Sights sights) {
+
     }
 }

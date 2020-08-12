@@ -9,46 +9,47 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name="car")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="car_id",nullable = false) private Long carId;
-    @Column(name="car_name",nullable = false) private String carName;
-    @Column(name="brand",nullable = false) private String brand ;
-    @Column(name="price",nullable = false) private String price ;
-    @Column(name="engine_type",nullable = false) private String engineType  ;
-    @Column(name="supercharge_method",nullable = false) private String superchargeMethod;
-    @Column(name="exhaust_volume",nullable = false) private String exhaustVolume;
-    @Column(name="fuel",nullable = false) private String fuel;
-    @Column(name="fuel_efficiency",nullable = false) private String fuelEfficiency;
-    @Column(name="passengers_number",nullable = false) private String passengersNumber ;
-    @Column(name="driving_method",nullable = false) private String drivingMethod;
-    @Column(name="transmission",nullable = false) private String transmission;
-    @Column(name="maximum_output",nullable = false) private String maximumOutput ;
-    @Column(name="maximum_torque",nullable = false) private String maximumTorque;
-    @Column(name="top_Speed",nullable = false) private String topSpeed;
-    @Column(name="acceleration_performance",nullable = false) private String accelerationPerformance ;
-    @Column(name="CO2_emissions",nullable = false) private String CO2Emissions;
-    @Column(name="length",nullable = false) private String length ;
-    @Column(name="width",nullable = false) private String width;
-    @Column(name="height",nullable = false) private String height;
-    @Column(name="wheel_base",nullable = false) private String wheelBase ;
-    @Column(name="front_distance",nullable = false) private String frontDistance;
-    @Column(name="back_distance",nullable = false) private String backDistance;
-    @Column(name="weight",nullable = false) private String weight;
-    @Column(name="front_wheel",nullable = false) private String frontWheel ;
-    @Column(name="rear_wheel",nullable = false) private String rearWheel;
-    @Column(name="front_suspension",nullable = false) private String frontSuspension;
-    @Column(name="rear_suspension",nullable = false) private String rearSuspension ;
-    @Column(name="front_braking",nullable = false) private String frontBraking;
-    @Column(name="rear_braking",nullable = false) private String rearBraking;
-    @Column(name="steering",nullable = false) private String steering ;
-    @Column(name="img",nullable = false) private String img;
+    @Column(name="car_id"  ) private Long carId;
+    @Column(name="car_name") private String carName;
+    @Column(name="brand") private String brand ;
+    @Column(name="price"  ) private String price ;
+    @Column(name="engine_type"  ) private String engineType  ;
+    @Column(name="supercharge_method"  ) private String superchargeMethod;
+    @Column(name="exhaust_volume"  ) private String exhaustVolume;
+    @Column(name="fuel"  ) private String fuel;
+    @Column(name="fuel_efficiency"  ) private String fuelEfficiency;
+    @Column(name="passengers_number"  ) private String passengersNumber ;
+    @Column(name="driving_method"  ) private String drivingMethod;
+    @Column(name="transmission"  ) private String transmission;
+    @Column(name="maximum_output"  ) private String maximumOutput ;
+    @Column(name="maximum_torque"  ) private String maximumTorque;
+    @Column(name="top_Speed"  ) private String topSpeed;
+    @Column(name="acceleration_performance"  ) private String accelerationPerformance ;
+    @Column(name="CO2_emissions"  ) private String CO2Emissions;
+    @Column(name="length"  ) private String length ;
+    @Column(name="width"  ) private String width;
+    @Column(name="height"  ) private String height;
+    @Column(name="wheel_base"  ) private String wheelBase ;
+    @Column(name="front_distance"  ) private String frontDistance;
+    @Column(name="back_distance"  ) private String backDistance;
+    @Column(name="weight"  ) private String weight;
+    @Column(name="front_wheel"  ) private String frontWheel ;
+    @Column(name="rear_wheel"  ) private String rearWheel;
+    @Column(name="front_suspension"  ) private String frontSuspension;
+    @Column(name="rear_suspension"  ) private String rearSuspension ;
+    @Column(name="front_braking"  ) private String frontBraking;
+    @Column(name="rear_braking"  ) private String rearBraking;
+    @Column(name="steering"  ) private String steering ;
+    @Column(name="img"  ) private String img;
+
+    public Car(){}
 
     @Builder
-    private Car(Long carId,
+    public Car(
                 String carName,
                 String brand,
                 String price,
@@ -80,7 +81,6 @@ public class Car {
                 String rearBraking,
                 String steering,
                 String img){
-        this.carId = carId;
         this.carName = carName;
         this.brand = brand;
         this.price = price;

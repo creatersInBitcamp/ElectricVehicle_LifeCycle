@@ -27,9 +27,15 @@ public class Wishlist {
     @ManyToOne
     @JoinColumn(name = "user_seq")
     private User user;
+    public void setUser(User user){
+        this.user = user;
+    }
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "eccar_id")
     private ElectricCar electricCar;
+    public void setElectricCar(ElectricCar electricCar){
+        this.electricCar = electricCar;
+    }
 }

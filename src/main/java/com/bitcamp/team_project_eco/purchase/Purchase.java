@@ -18,7 +18,7 @@ import javax.persistence.*;
 public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="order_id",nullable = false) private Long id;
+    @Column(name="order_id",nullable = false) private Long orderId;
     @Column(name="purchasing_method",nullable = false) private String purchasingMethod;
     @Column(name="purchase_time",nullable = false) private String purchaseTime;
     @Column(name="purchase_amount",nullable = false) private String purchaseAmount ;
@@ -28,11 +28,17 @@ public class Purchase {
     @ManyToOne
     @JoinColumn(name = "user_seq")
     private User user;
+    public void setUser(User user){
+        this.user = user;
+    }
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "eccar_id")
     private ElectricCar electricCar;
+    public void setElectricCar(ElectricCar electricCar){
+        this.electricCar = electricCar;
+    }
 
     public Purchase(){}
 

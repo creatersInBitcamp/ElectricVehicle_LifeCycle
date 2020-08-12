@@ -1,23 +1,45 @@
 package com.bitcamp.team_project_eco.car;
 
+import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
+import com.bitcamp.team_project_eco.post.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/car")
+@RequestMapping("/cars")
 public class CarController {
-//    @Autowired CarService carService;
+    @Autowired CarService carService;
 
-//    @GetMapping("/carAll")
-//    public List<Car> searchAll() { return carService.findAll(); }
+    @GetMapping("/csv")
+    public void csvRead(){
+        carService.readCsv();
+    }
 
-//    @GetMapping("/carSearch/{carName}")
-//    public Car[] select(@PathVariable String carName) {
-//        String car = "%"+carName+"%";
-//        System.out.println(car);
-//        return carService.searchByCarName(car);
-//    }
+    @GetMapping("/getall")
+    public List<Car> getAllChargingStation(){
+        return (List<Car>) carService.findAll();
+    }
+
+    @GetMapping("/getone/{carId}")
+    public Optional<Car> getOneChargingStation(@PathVariable String carId) {
+        return carService.findById(carId);
+    }
+
+    @PostMapping("/insert")
+    public void insertCar(@RequestBody Car car) {
+        carService.insertCar(car);
+    }
+    @PostMapping("/update")
+    public void updateCar(@RequestBody Car car) {
+        carService.updateCar(car);
+    }
+
+    @GetMapping("/delete")
+    public void deleteChargingStation(@PathVariable String carId) {
+        carService.delete(carId);
+    }
 }

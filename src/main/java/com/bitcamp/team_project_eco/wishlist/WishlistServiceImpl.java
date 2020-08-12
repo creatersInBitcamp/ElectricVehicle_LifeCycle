@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.wishlist;
 
+import com.bitcamp.team_project_eco.car.Car;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.springframework.stereotype.Service;
 
@@ -7,6 +8,9 @@ import java.util.Optional;
 
 interface WishlistService extends JpaService<Wishlist>{
 
+    void insertWishlist(Wishlist wishlist);
+
+    void updateWishlist(Wishlist wishlist);
 }
 
 @Service
@@ -40,5 +44,15 @@ public class WishlistServiceImpl implements WishlistService{
     @Override
     public boolean exists(String id) {
         return wishlistRepository.existsById(Integer.parseInt(id));
+    }
+
+    @Override
+    public void insertWishlist(Wishlist wishlist) {
+        wishlistRepository.save(wishlist);
+    }
+
+    @Override
+    public void updateWishlist(Wishlist wishlist) {
+
     }
 }

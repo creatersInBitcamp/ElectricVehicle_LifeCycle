@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.electriccar;
 
+import com.bitcamp.team_project_eco.car.Car;
 import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,15 @@ public class ElectricCarController {
     @GetMapping("/getone/{eccarId}")
     public Optional<ElectricCar> getOneElectriccar(@PathVariable String eccarId) {
         return electricCarService.findById(eccarId);
+    }
+
+    @PostMapping("/insert")
+    public void insertElectricCar(@RequestBody ElectricCar electricCar) {
+        electricCarService.insertElectricCar(electricCar);
+    }
+    @PostMapping("/update")
+    public void updateElectricCar(@RequestBody ElectricCar electricCar) {
+        electricCarService.updateElectricCar(electricCar);
     }
 
     @GetMapping("/delete")
