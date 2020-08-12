@@ -23,7 +23,7 @@ interface PostService extends JpaService<Post> {
 
     void insertPost(NewPostVO newPost);
 
-    void updatePost(Post post);
+    void updatePost(NewPostVO upPost);
 
     Page<Post> pagingFindAll(Pageable page);
 
@@ -103,7 +103,9 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public void updatePost(Post post) {
+    public void updatePost(NewPostVO post) {
+        User u = post.user;
+//        repository.s
     }
 
     @Override

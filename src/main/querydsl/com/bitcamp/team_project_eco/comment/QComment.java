@@ -32,6 +32,8 @@ public class QComment extends EntityPathBase<Comment> {
 
     public final com.bitcamp.team_project_eco.user.QUser user;
 
+    public final StringPath userId = createString("userId");
+
     public QComment(String variable) {
         this(Comment.class, forVariable(variable), INITS);
     }

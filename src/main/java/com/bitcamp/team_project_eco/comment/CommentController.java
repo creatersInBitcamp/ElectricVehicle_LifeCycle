@@ -16,4 +16,9 @@ public class CommentController {
     public void insertCommentByPostId(@RequestBody NewCommentVO comment){
         commentService.insertComment(comment);
     }
+
+    @GetMapping("/delete/{commentId}")
+    public void deleteComment(@PathVariable String commentId) {
+        commentService.delete(commentId);
+    }
 }

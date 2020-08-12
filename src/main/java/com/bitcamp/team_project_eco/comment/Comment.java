@@ -19,6 +19,7 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comment_id") private Long commentId;
+    @Column(name = "user_id", nullable = false, length = 45) private String userId;
     @Column(name = "reg_date", nullable = false, length = 45) private String regDate;
     @Column(name = "comment", nullable = false, length = 500) private String comment;
 
@@ -34,7 +35,8 @@ public class Comment {
 
     public Comment() {}
 
-    public Comment(String regDate, String comment, User user, Post post) {
+    public Comment(String userId, String regDate, String comment, User user, Post post) {
+        this.userId = userId;
         this.regDate = regDate;
         this.comment = comment;
         setUser(user);

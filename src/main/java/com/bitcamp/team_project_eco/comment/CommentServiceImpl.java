@@ -55,6 +55,6 @@ public class CommentServiceImpl implements CommentService {
     public void insertComment(NewCommentVO comment) {
         User u = ur.findById(comment.user.getUserSeq()).get();
         Post p = pr.findById(comment.post.getPostId()).get();
-        repository.save(new Comment(comment.regDate, comment.comment, u, p));
+        repository.save(new Comment(comment.user.getUserId(), comment.regDate, comment.comment, u, p));
     }
 }

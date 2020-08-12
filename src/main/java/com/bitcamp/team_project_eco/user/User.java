@@ -43,22 +43,22 @@ public class User {
     @Column(name = "payment_info") private String paymentInfo;
 
     @OneToMany(mappedBy = "user")
-    private List<UsedCar> usedCarList = new ArrayList<UsedCar>();
+    private List<UsedCar> usedCarList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user") // 외래키를 주는 쪽이 oneToMany
-    private List<Post> postList = new ArrayList<Post>();
+    private List<Post> postList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
-    private List<Comment> commentList = new ArrayList<Comment>();
+    private List<Comment> commentList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
-    private List<Bookmark> bookmarkList = new ArrayList<Bookmark>();
+    private List<Bookmark> bookmarkList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
-    private List<Purchase> purchasesList = new ArrayList<Purchase>();
+    private List<Purchase> purchasesList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
-    private List<Wishlist> wishlistList = new ArrayList<Wishlist>();
+    private List<Wishlist> wishlistList = new ArrayList<>();
 
 
     public User() {}
