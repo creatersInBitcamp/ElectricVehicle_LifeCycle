@@ -38,9 +38,9 @@ public class QPost extends EntityPathBase<Post> {
 
     public final NumberPath<Integer> postId = createNumber("postId", Integer.class);
 
-    public final NumberPath<Integer> recomendation = createNumber("recomendation", Integer.class);
+    public final NumberPath<Integer> recommendation = createNumber("recommendation", Integer.class);
 
-    public final StringPath titie = createString("titie");
+    public final StringPath title = createString("title");
 
     public final com.bitcamp.team_project_eco.user.QUser user;
 

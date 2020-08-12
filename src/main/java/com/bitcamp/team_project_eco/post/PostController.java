@@ -25,17 +25,21 @@ public class PostController {
 
     @GetMapping("/pageall/{page}")
     public Page<Post> postList(@PathVariable int page) {
-        return service.pagingFindAll(PageRequest.of(page-1, 10));
+       return service.pagingFindAll(PageRequest.of(page-1, 5));
+    }
+    @GetMapping("/pages/{category}/{page}")
+    public Page<Post> allPostByCate(@PathVariable int page, @PathVariable String category) {
+        return service.allPostFindByCategory(category, PageRequest.of(page-1, 5));
     }
 
     @GetMapping("/popular")
     public Page<Post> popularList() {
-        return service.popularSort(PageRequest.of(0, 5));
+        return service.popularSort(PageRequest.of(0, 5, Sort.by(Sort.Order.desc("hits"))));
     }
 
     @GetMapping("/recent")
     public Page<Post> recentList() {
-        return service.recentSort(PageRequest.of(0, 5));
+        return service.recentSort(PageRequest.of(0, 5, Sort.by(Sort.Order.desc("post_id"))));
     }
 
     @GetMapping("/getall")
@@ -49,15 +53,17 @@ public class PostController {
     }
 
     @PostMapping("/insert")
-    public void insertPost(@RequestBody Post post) {
-        service.insertPost(post);
+    public void insertPost(@RequestBody NewPostVO newPost) {
+        System.out.println(newPost.toString());
+        service.insertPost(newPost);
     }
+
     @PostMapping("/update")
     public void updatePost(@RequestBody Post post) {
         service.updatePost(post);
     }
 
-    @GetMapping("/delete")
+    @GetMapping("/delete/{postId}")
     public void deletePost(@PathVariable String postId) {
         service.delete(postId);
     }

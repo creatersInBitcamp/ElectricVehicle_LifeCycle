@@ -4,10 +4,8 @@ import com.bitcamp.team_project_eco.comment.Comment;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -19,11 +17,11 @@ public class Post {
     @Column(name = "post_id", nullable = false) private int postId;
     @Column(name = "user_name", nullable = false, length = 30) private String userName;
     @Column(name = "link", nullable = false) private String link;
-    @Column(name = "title", nullable = false) private String titie;
+    @Column(name = "title", nullable = false) private String title;
     @Column(name = "date") private String date;
     @Column(name = "img", nullable = false, length = 700) private String img;
     @Column(name = "content", nullable = false) private String content;
-    @Column(name = "recomendation", nullable = false) private int recomendation;
+    @Column(name = "recomendation", nullable = false) private int recommendation;
     @Column(name = "hits", nullable = false) private int hits;
     @Column(name = "category", nullable = false, length = 45) private String category;
 
@@ -39,14 +37,14 @@ public class Post {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Comment> comments;
 
-    public Post(String userName, String link, String title, String date, String img, String content, int recomendation, int hits, String category, User user) {
+    public Post(String userName, String link, String title, String date, String img, String content, int recommendation, int hits, String category, User user) {
         this.userName = userName;
         this.link = link;
-        this.titie = title;
+        this.title = title;
         this.date = date;
         this.img = img;
         this.content = content;
-        this.recomendation = recomendation;
+        this.recommendation = recommendation;
         this.hits = hits;
         this.category = category;
         setUser(user);
