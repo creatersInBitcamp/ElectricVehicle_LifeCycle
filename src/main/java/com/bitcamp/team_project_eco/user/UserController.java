@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -26,9 +27,10 @@ public class UserController {
         return idCheckResult.isPresent();
     }
 
-    @GetMapping("findAll")
-    public Iterable<User> findAll(){
-        return userService.findAll();
+    @GetMapping("/findAll")
+    public List<User> findAll(){
+        System.out.println("자바들어옴");
+        return userService.findUsers();
     }
 
     @PostMapping("/register")
@@ -49,5 +51,10 @@ public class UserController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+    @GetMapping("/sendPassword/{email}")
+    public String sendPassword(@PathVariable String email){
+        System.out.println(email);
+        return userService.findByEmail(email).map(com.bitcamp.team_project_eco.user.User::getPassword).orElse(null);
     }
 }

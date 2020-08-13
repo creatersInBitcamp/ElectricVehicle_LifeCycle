@@ -1,6 +1,7 @@
 package com.bitcamp.team_project_eco.sights;
 
 import com.bitcamp.team_project_eco.bookmark.Bookmark;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -27,15 +28,16 @@ public class Sights {
     @Column(name = "info", length = 700) private String info;
     @Column(name = "category") private String category;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Bookmark> bookmarkList;
+    @OneToMany(mappedBy = "sights",cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Bookmark> bookmarkList = new ArrayList<>();
 
     public Sights(){}
 
     @Builder
     public Sights (String name, String streetAddress, String branchAddress,
                    double xValue, double yValue, int capacity,
-                   int parkingLot, String info, String category) {
+                   int parkingLot, String info, String category,
+                   List<Bookmark> bookmarkList) {
         this.name = name;
         this.streetAddress = streetAddress;
         this.branchAddress = branchAddress;
@@ -45,5 +47,6 @@ public class Sights {
         this.parkingLot = parkingLot;
         this.info = info;
         this.category = category;
+        this.bookmarkList.addAll(bookmarkList);
     }
 }

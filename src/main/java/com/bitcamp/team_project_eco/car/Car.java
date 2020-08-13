@@ -21,7 +21,7 @@ public class Car {
     @Column(name="supercharge_method"  ) private String superchargeMethod;
     @Column(name="exhaust_volume"  ) private String exhaustVolume;
     @Column(name="fuel"  ) private String fuel;
-    @Column(name="fuel_efficiency"  ) private String fuelEfficiency;
+      @Column(name="fuel_efficiency"  ) private String fuelEfficiency;
     @Column(name="passengers_number"  ) private String passengersNumber ;
     @Column(name="driving_method"  ) private String drivingMethod;
     @Column(name="transmission"  ) private String transmission;
