@@ -67,4 +67,16 @@ public class PostController {
         service.delete(postId);
     }
 
+    @GetMapping("/search/{category}/{condition}/{searchWord}/{page}")
+    public Page<Post> searchPosts(@PathVariable String category,
+                                  @PathVariable String condition,
+                                  @PathVariable String searchWord,
+                                  @PathVariable int page){
+        System.out.print(category+", ");
+        System.out.print(condition+", ");
+        System.out.print(searchWord+", ");
+        System.out.print(page);
+        return service.findBySearchWord(category, condition, searchWord, PageRequest.of(page-1, 5));
+    }
+
 }

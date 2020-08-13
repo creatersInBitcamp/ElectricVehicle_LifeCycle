@@ -3,7 +3,6 @@ package com.bitcamp.team_project_eco.post;
 import com.bitcamp.team_project_eco.comment.Comment;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,7 +16,7 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "post_id", nullable = false) private int postId;
-    @Column(name = "user_name", nullable = false, length = 30) private String userName;
+    @Column(name = "user_name", nullable = false, length = 30) private String userId;
     @Column(name = "link", nullable = false) private String link;
     @Column(name = "title", nullable = false) private String title;
     @Column(name = "date") private String date;
@@ -39,10 +38,10 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 
-    public Post(String userName, String link, String title, String date, String img,
+    public Post(String userId, String link, String title, String date, String img,
                 String content, int recommendation, int hits, String category, User user,
                 List<Comment> commentList) {
-        this.userName = userName;
+        this.userId = userId;
         this.link = link;
         this.title = title;
         this.date = date;
