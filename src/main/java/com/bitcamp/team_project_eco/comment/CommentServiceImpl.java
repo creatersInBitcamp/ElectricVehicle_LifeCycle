@@ -28,7 +28,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public Optional<Comment> findById(String id) {
-        return repository.findById(Integer.parseInt(id));
+        return repository.findById(Long.parseLong(id));
     }
 
     @Override
@@ -48,7 +48,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public boolean exists(String id) {
-        return repository.existsById(Integer.parseInt(id));
+        return repository.existsById(Long.parseLong(id));
     }
 
     @Override
