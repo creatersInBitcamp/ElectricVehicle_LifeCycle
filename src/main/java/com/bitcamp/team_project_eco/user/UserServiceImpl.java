@@ -5,7 +5,6 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -20,6 +19,8 @@ interface UserService extends JpaService<User> {
     boolean insert(User user);
 
     Optional<User> findByUserId(String userId);
+
+    Optional<User> findByEmail(String email);
 }
 
 @Service
@@ -75,6 +76,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> findByUserId(String userId) {
         return userRepository.findByUserId(userId);
+    }
+
+    @Override
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     @Override
