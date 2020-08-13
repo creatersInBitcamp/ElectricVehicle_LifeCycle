@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Optional;
 
 interface ChargingStationService extends JpaService<ChargingStation>{
@@ -76,7 +77,8 @@ public class ChargingStationServiceImpl implements ChargingStationService{
                         csvRecord.get(10),
                         csvRecord.get(11),
                         csvRecord.get(12),
-                        "station"));
+                        "station",
+                        new ArrayList<>()));
             }
         } catch (Exception e) {
             e.printStackTrace();

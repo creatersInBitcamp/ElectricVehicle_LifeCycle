@@ -4,19 +4,22 @@ import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import com.bitcamp.team_project_eco.chargingStation.ChargingStationRepository;
 import com.bitcamp.team_project_eco.sights.Sights;
 import com.bitcamp.team_project_eco.sights.SightsRepository;
+import com.bitcamp.team_project_eco.user.User;
+import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 interface BookmarkService extends JpaService<Bookmark>{
 
-    void insertBookmark(BookmarkVO id);
+    void insertBookmark(BookmarkVO bookmarkVO);
 
-    void updateBookmark(BookmarkVO id);
+    void updateBookmark(BookmarkVO bookmarkVO);
+
+    void deleteBookmark(String bookmarkId);
 
     List<Object> findAllBookmark();
 }
@@ -26,11 +29,13 @@ public class BookmarkServiceImpl implements BookmarkService{
     private final BookmarkRepository bookmarkRepository;
     private final ChargingStationRepository chargingStationRepository;
     private final SightsRepository sightsRepository;
+    private final UserRepository userRepository;
 
-    public BookmarkServiceImpl(BookmarkRepository bookmarkRepository, ChargingStationRepository chargingStationRepository, SightsRepository sightsRepository) {
+    public BookmarkServiceImpl(BookmarkRepository bookmarkRepository, ChargingStationRepository chargingStationRepository, SightsRepository sightsRepository, UserRepository userRepository) {
         this.bookmarkRepository = bookmarkRepository;
         this.chargingStationRepository = chargingStationRepository;
         this.sightsRepository = sightsRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -61,16 +66,14 @@ public class BookmarkServiceImpl implements BookmarkService{
     }
 
     @Override
-    public void insertBookmark(BookmarkVO id) {
-        Bookmark bookmark = new Bookmark();
-        if(id.isCharging()){
-            bookmark.setChargingStation(chargingStationRepository.findById(Long.valueOf(id.getId())).orElseThrow(() -> new NoSuchElementException("Chargingstation not found")));
-            System.out.println(bookmark.toString());
-            bookmarkRepository.save(bookmark);
+    public void insertBookmark(BookmarkVO bookmarkVO) {
+        if(bookmarkVO.isCharging()){
+            ChargingStation c = chargingStationRepository.findById(Long.valueOf(bookmarkVO.getId())).get();
+            bookmarkRepository.save(new Bookmark(Long.valueOf(bookmarkVO.getId()),null,c,null));
+
         }else{
-            bookmark.setSights(sightsRepository.findById(Long.valueOf(id.getId())).orElseThrow(() -> new NoSuchElementException("Sights not found")));
-            System.out.println(bookmark.toString());
-            bookmarkRepository.save(bookmark);
+            Sights s = sightsRepository.findById(Long.valueOf(bookmarkVO.getId())).get();
+            bookmarkRepository.save(new Bookmark(Long.valueOf(bookmarkVO.getId()),s,null,null));
         }
 
     }
@@ -78,6 +81,26 @@ public class BookmarkServiceImpl implements BookmarkService{
     @Override
     public void updateBookmark(BookmarkVO id) {
 
+    }
+
+    @Override
+    public void deleteBookmark(String bookmarkId) {
+        System.out.println(Long.valueOf(bookmarkId));
+        System.out.println(bookmarkRepository.findById(Long.valueOf(bookmarkId)).toString());
+        Bookmark bookmark = bookmarkRepository.findById(Long.valueOf(bookmarkId)).get();
+        System.out.println(bookmark.toString());
+//        User user = bookmark.getUser();
+//        user.getBookmarkList().remove(bookmark);
+//        userRepository.saveAndFlush(user);
+        ChargingStation chargingStation = bookmark.getChargingStation();
+        chargingStation.getBookmarkList().remove(bookmark);
+        chargingStationRepository.saveAndFlush(chargingStation);
+        Sights sights = bookmark.getSights();
+        sights.getBookmarkList().remove(bookmark);
+        bookmark.setUser(null);
+        bookmark.setChargingStation(null);
+        bookmark.setSights(null);
+        bookmarkRepository.save(bookmark);
     }
 
     @Override

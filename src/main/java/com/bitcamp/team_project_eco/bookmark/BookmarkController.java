@@ -35,8 +35,8 @@ public class BookmarkController {
     }
 
     @PostMapping("/insert")
-    public void insertBookmark(@RequestBody BookmarkVO id) {
-        bookmarkService.insertBookmark(id);
+    public void insertBookmark(@RequestBody BookmarkVO bookmarkVO) {
+        bookmarkService.insertBookmark(bookmarkVO);
     }
     @PostMapping("/update")
     public void updateBookmark(@RequestBody BookmarkVO id) {
@@ -44,9 +44,14 @@ public class BookmarkController {
     }
 
     @GetMapping("/delete/{bookmarkID}")
-    public void deleteBookmark(@PathVariable String bookmarkID) {
+    public void delete(@PathVariable String bookmarkID) {
         System.out.println(bookmarkID);
         bookmarkService.delete(bookmarkID);
+    }
+
+    @GetMapping("/deletebookmark/{bookmarkId}")
+    public void deleteBookmark(@PathVariable String bookmarkId){
+        bookmarkService.deleteBookmark(bookmarkId);
     }
 
 }

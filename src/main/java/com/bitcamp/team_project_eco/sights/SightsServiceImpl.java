@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.sights;
 
+import com.bitcamp.team_project_eco.bookmark.Bookmark;
 import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import com.bitcamp.team_project_eco.utils.JpaService;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 interface SightsService extends JpaService<Sights> {
@@ -72,7 +75,8 @@ public class SightsServiceImpl implements SightsService{
                         Integer.parseInt(csvRecord.get(5)),
                         Integer.parseInt(csvRecord.get(6)),
                         csvRecord.get(7),
-                        "sights"));
+                        "sights",
+                        new ArrayList<>()));
             }
         } catch (Exception e) {
             e.printStackTrace();
