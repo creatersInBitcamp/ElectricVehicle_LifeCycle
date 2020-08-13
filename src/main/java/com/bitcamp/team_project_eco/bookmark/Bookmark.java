@@ -20,7 +20,6 @@ public class Bookmark {
     @Column(name = "bookmark_id")
     private Long bookmarkId;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "sights_id")
     private Sights sights;
@@ -29,7 +28,6 @@ public class Bookmark {
         this.sights = sights;
     }
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "charging_station_id")
     private ChargingStation chargingStation;
@@ -38,7 +36,6 @@ public class Bookmark {
         this.chargingStation = chargingStation;
     }
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_seq")
     private User user;
