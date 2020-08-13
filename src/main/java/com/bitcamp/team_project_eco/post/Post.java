@@ -15,7 +15,7 @@ import java.util.List;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "post_id", nullable = false) private int postId;
+    @Column(name = "post_id", nullable = false) private Long postId;
     @Column(name = "user_name", nullable = false, length = 30) private String userId;
     @Column(name = "link", nullable = false) private String link;
     @Column(name = "title", nullable = false) private String title;

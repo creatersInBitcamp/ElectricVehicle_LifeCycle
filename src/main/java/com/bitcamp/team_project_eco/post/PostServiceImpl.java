@@ -47,7 +47,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Optional<Post> findById(String id) {
-        return repository.findById(Integer.parseInt(id));
+        return repository.findById(Long.parseLong(id));
     }
 
     @Override
@@ -67,7 +67,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public boolean exists(String id) {
-        return repository.existsById(Integer.parseInt(id));
+        return repository.existsById(Long.parseLong(id));
     }
 
     @Override
@@ -107,7 +107,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public void updatePost(NewPostVO post) {
         User u = post.user;
-        Post up = repository.findById(Integer.parseInt(post.postId)).get();
+        Post up = repository.findById(Long.parseLong(post.postId)).get();
         up.setTitle(post.title);
         up.setLink(post.link);
         up.setImg(post.img);

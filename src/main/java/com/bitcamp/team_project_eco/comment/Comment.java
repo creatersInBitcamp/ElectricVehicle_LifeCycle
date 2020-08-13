@@ -4,8 +4,6 @@ import com.bitcamp.team_project_eco.post.Post;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import org.joda.time.DateTime;
-
 import javax.persistence.*;
 
 @Entity
@@ -24,12 +22,12 @@ public class Comment {
     @Column(name = "comment", nullable = false, length = 500) private String comment;
 
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "user_seq")
     private User user;
 
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "post_id")
     private Post post;
 

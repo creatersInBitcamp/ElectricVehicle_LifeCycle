@@ -7,11 +7,16 @@ import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 interface CommentService extends JpaService<Comment> {
 
     void insertComment(NewCommentVO comment);
+
+    List<Comment> findAllByPostId(Long postId);
+
+    void deleteComment(NewCommentVO comment);
 }
 
 @Service
@@ -42,9 +47,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public void delete(String id) {
-        repository.delete(findById(id).orElse(new Comment()));
-    }
+    public void delete(String id) { repository.delete(findById(id).get()); }
 
     @Override
     public boolean exists(String id) {
@@ -57,4 +60,23 @@ public class CommentServiceImpl implements CommentService {
         Post p = pr.findById(comment.post.getPostId()).get();
         repository.save(new Comment(comment.user.getUserId(), comment.regDate, comment.comment, u, p));
     }
+
+    @Override
+    public List<Comment> findAllByPostId(Long postId) {
+        return null;
+    }
+
+    @Override
+    public void deleteComment(NewCommentVO comment) {
+        User u = comment.getUser();
+        u.getCommentList().remove(comment);
+        ur.save(u);
+        Post p = comment.getPost();
+        p.getComments().remove(comment);
+        pr.save(p);
+        comment.setPost(null);
+        comment.setUser(null);
+//        repository.save(new Comment(comment.commentId));
+    }
+
 }

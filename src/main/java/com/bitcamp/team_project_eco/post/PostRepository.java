@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface PostRepository extends JpaRepository<Post, Integer>, CustomedPostRepository {
+public interface PostRepository extends JpaRepository<Post, Long>, CustomedPostRepository {
 
     @Query("select e from Post e where e.category = :category")
     Page<Post> findByCategory(String category, Pageable pageable);
