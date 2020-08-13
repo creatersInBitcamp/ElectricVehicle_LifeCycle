@@ -16,5 +16,4 @@ public class UserRepositoryImpl extends QuerydslRepositorySupport implements Cus
         super(User.class);
         this.queryFactory = queryFactory;
     }
-
 }

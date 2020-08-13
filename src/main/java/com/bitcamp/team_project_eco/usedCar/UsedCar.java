@@ -1,11 +1,14 @@
 package com.bitcamp.team_project_eco.usedCar;
 
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
+import com.bitcamp.team_project_eco.usedCarSales.UsedCarSales;
 import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter @Setter @ToString
@@ -27,20 +30,24 @@ public class UsedCar {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_seq")
+    @JsonProperty("userSeq")
     private User user;
 
     public void setUser(User user){
         this.user = user;
     }
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "eccar_id")
+    @JsonProperty("eccarId")
     private ElectricCar electricCar;
 
     public void setElectricCar(ElectricCar electricCar){
         this.electricCar = electricCar;
     }
+
+    @OneToMany(mappedBy = "usedCar", cascade = CascadeType.ALL)
+    private List<UsedCarSales> usedCarSales;
 
     public UsedCar(){}
 

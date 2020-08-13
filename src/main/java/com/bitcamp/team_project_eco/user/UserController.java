@@ -50,4 +50,9 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
     }
+    @GetMapping("/sendPassword/{email}")
+    public String sendPassword(@PathVariable String email){
+        System.out.println(email);
+        return userService.findByEmail(email).map(com.bitcamp.team_project_eco.user.User::getPassword).orElse(null);
+    }
 }
