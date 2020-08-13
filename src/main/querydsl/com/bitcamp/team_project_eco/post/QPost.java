@@ -44,7 +44,7 @@ public class QPost extends EntityPathBase<Post> {
 
     public final com.bitcamp.team_project_eco.user.QUser user;
 
-    public final StringPath userName = createString("userName");
+    public final StringPath userId = createString("userId");
 
     public QPost(String variable) {
         this(Post.class, forVariable(variable), INITS);

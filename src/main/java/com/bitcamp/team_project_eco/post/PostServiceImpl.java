@@ -32,6 +32,8 @@ interface PostService extends JpaService<Post> {
     Page<Post> recentSort(PageRequest of);
 
     Page<Post> allPostFindByCategory(String category, PageRequest of);
+
+    Page<Post> findBySearchWord(String category, String condition, String searchWord, Pageable page);
 }
 
 @Service
@@ -77,7 +79,7 @@ public class PostServiceImpl implements PostService {
         Iterable<CSVRecord> csvRecords = csvParser.getRecords();
         for (CSVRecord csvRecord : csvRecords) {
             repository.save(new Post(
-                    "이형태",
+                    "0",
                     csvRecord.get(0),
                     csvRecord.get(1),
                     csvRecord.get(2),
@@ -105,7 +107,12 @@ public class PostServiceImpl implements PostService {
     @Override
     public void updatePost(NewPostVO post) {
         User u = post.user;
-//        repository.s
+        Post up = repository.findById(Integer.parseInt(post.postId)).get();
+        up.setTitle(post.title);
+        up.setLink(post.link);
+        up.setImg(post.img);
+        up.setContent(post.content);
+        repository.save(up);
     }
 
     @Override
@@ -127,5 +134,14 @@ public class PostServiceImpl implements PostService {
     public Page<Post> allPostFindByCategory(String category, PageRequest of) {
         Pageable pageable = of;
         return repository.findByCategory(category, pageable);
+    }
+
+    @Override
+    public Page<Post> findBySearchWord(String category, String condition, String searchWord, Pageable page) {
+        switch (condition) {
+            case "title": return repository.findByCategoryAndTitleLikeSearchWord(category, searchWord, page);
+            case "userId": return repository.findByCategoryAndUserIdLikeSearchWord(category, searchWord, page);
+            default: return repository.findByCategoryAndContentLikeSearchWord(category, searchWord, page);
+        }
     }
 }
