@@ -20,7 +20,7 @@ interface UsedCarService extends JpaService<UsedCar> {
 
     void readCsv();
 
-    void insertUsedCar(UsedCar usedCar);
+    boolean insert(UsedCarVO usedCar);
 }
 
 @Service
@@ -88,7 +88,23 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     @Query(value = "")
-    public void insertUsedCar(UsedCar usedCar) {
-        usedCarRepository.save(usedCar);
+    public boolean insert(UsedCarVO usedCar) {
+        try {
+            User u = usedCar.user;
+            ElectricCar car = usedCar.electricCar;
+
+            usedCarRepository.save(new UsedCar(
+                    usedCar.price, usedCar.age, usedCar.mileage,
+                    null, null, null, null,
+                    u,
+                    car
+            ));
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+
     }
 }

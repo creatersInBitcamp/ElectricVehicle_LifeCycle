@@ -34,6 +34,8 @@ public class QUsedCar extends EntityPathBase<UsedCar> {
 
     public final NumberPath<Long> usedCarId = createNumber("usedCarId", Long.class);
 
+    public final ListPath<com.bitcamp.team_project_eco.usedCarSales.UsedCarSales, com.bitcamp.team_project_eco.usedCarSales.QUsedCarSales> usedCarSales = this.<com.bitcamp.team_project_eco.usedCarSales.UsedCarSales, com.bitcamp.team_project_eco.usedCarSales.QUsedCarSales>createList("usedCarSales", com.bitcamp.team_project_eco.usedCarSales.UsedCarSales.class, com.bitcamp.team_project_eco.usedCarSales.QUsedCarSales.class, PathInits.DIRECT2);
+
     public final com.bitcamp.team_project_eco.user.QUser user;
 
     public QUsedCar(String variable) {
