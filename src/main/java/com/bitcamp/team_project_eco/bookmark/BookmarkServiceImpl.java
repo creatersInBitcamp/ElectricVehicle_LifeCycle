@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 interface BookmarkService extends JpaService<Bookmark>{
@@ -57,7 +58,7 @@ public class BookmarkServiceImpl implements BookmarkService{
     public void delete(String id) {
         Long bookmarId;
         bookmarkRepository.delete(findById(id).orElse(new Bookmark()));
-        System.out.println(findAll());
+//        System.out.println(findAll());
     }
 
     @Override
@@ -67,15 +68,28 @@ public class BookmarkServiceImpl implements BookmarkService{
 
     @Override
     public void insertBookmark(BookmarkVO bookmarkVO) {
+        Bookmark bookmark = new Bookmark();
+        /*User user = userRepository.getOne((long) 1);
+        bookmark.setUser(user);
+        if(bookmarkVO.isCharging()){
+            bookmark.setChargingStation(chargingStationRepository.findById(Long.valueOf(bookmarkVO.getId())).orElseThrow(() -> new NoSuchElementException("Chargingstation not found")));
+            System.out.println(bookmark.toString());
+            bookmarkRepository.save(bookmark);
+        }else{
+            bookmark.setSights(sightsRepository.findById(Long.valueOf(bookmarkVO.getId())).orElseThrow(() -> new NoSuchElementException("Sights not found")));
+            System.out.println(bookmark.toString());
+            bookmarkRepository.save(bookmark);
+        }*/
+
+       User user = userRepository.getOne((long) 1);
         if(bookmarkVO.isCharging()){
             ChargingStation c = chargingStationRepository.findById(Long.valueOf(bookmarkVO.getId())).get();
-            bookmarkRepository.save(new Bookmark(Long.valueOf(bookmarkVO.getId()),null,c,null));
+            bookmarkRepository.save(new Bookmark(Long.valueOf(bookmarkVO.getId()),null,c,user));
 
         }else{
             Sights s = sightsRepository.findById(Long.valueOf(bookmarkVO.getId())).get();
-            bookmarkRepository.save(new Bookmark(Long.valueOf(bookmarkVO.getId()),s,null,null));
+            bookmarkRepository.save(new Bookmark(Long.valueOf(bookmarkVO.getId()),s,null,user));
         }
-
     }
 
     @Override
@@ -86,12 +100,12 @@ public class BookmarkServiceImpl implements BookmarkService{
     @Override
     public void deleteBookmark(String bookmarkId) {
         System.out.println(Long.valueOf(bookmarkId));
-        System.out.println(bookmarkRepository.findById(Long.valueOf(bookmarkId)).toString());
+//        System.out.println(bookmarkRepository.findById(Long.valueOf(bookmarkId)).toString());
         Bookmark bookmark = bookmarkRepository.findById(Long.valueOf(bookmarkId)).get();
-        System.out.println(bookmark.toString());
-//        User user = bookmark.getUser();
-//        user.getBookmarkList().remove(bookmark);
-//        userRepository.saveAndFlush(user);
+//        System.out.println(bookmark.toString());
+        User user = bookmark.getUser();
+        user.getBookmarkList().remove(bookmark);
+        userRepository.saveAndFlush(user);
         ChargingStation chargingStation = bookmark.getChargingStation();
         chargingStation.getBookmarkList().remove(bookmark);
         chargingStationRepository.saveAndFlush(chargingStation);
