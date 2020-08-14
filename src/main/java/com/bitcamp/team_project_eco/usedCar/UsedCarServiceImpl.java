@@ -22,6 +22,10 @@ interface UsedCarService extends JpaService<UsedCar> {
     void readCsv();
 
     boolean insert(UsedCarVO usedCar);
+
+    boolean update(UsedCar usedCar);
+
+    boolean deleteCar(Long usedCarId);
 }
 
 @Service
@@ -99,5 +103,27 @@ public class UsedCarServiceImpl implements UsedCarService {
                 null, null, null, null,
                 u, car,new ArrayList<>()));
         return true;
+    }
+
+    @Override
+    public boolean update(UsedCar usedCar) {
+        try{
+            usedCarRepository.save(usedCar);
+            return true;
+        }catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deleteCar(Long usedCarId) {
+        try {
+            usedCarRepository.deleteById(usedCarId);
+            return true;
+        }catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

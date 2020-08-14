@@ -55,12 +55,12 @@ public class ElectricCar {
     @Column(name = "color", nullable = false) private String color;
     @Column(name = "eol", nullable = false) private boolean eol;
 
-    @OneToMany(mappedBy = "electricCar")
-    private List<UsedCar> usedCarList = new ArrayList<UsedCar>();
-    @OneToMany(mappedBy = "electricCar")
-    private List<Purchase> purchasesList = new ArrayList<Purchase>();
-    @OneToMany(mappedBy = "electricCar")
-    private List<Wishlist> wishlistList = new ArrayList<Wishlist>();
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<UsedCar> usedCarList = new ArrayList<>();
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Purchase> purchasesList = new ArrayList<>();
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Wishlist> wishlistList = new ArrayList<>();
 
     public ElectricCar() {}
 
