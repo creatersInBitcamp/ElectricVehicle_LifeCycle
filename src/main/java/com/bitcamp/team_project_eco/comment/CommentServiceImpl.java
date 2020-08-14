@@ -16,7 +16,6 @@ interface CommentService extends JpaService<Comment> {
 
     List<Comment> findAllByPostId(Long postId);
 
-    void deleteComment(NewCommentVO comment);
 }
 
 @Service
@@ -64,19 +63,6 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<Comment> findAllByPostId(Long postId) {
         return null;
-    }
-
-    @Override
-    public void deleteComment(NewCommentVO comment) {
-        User u = comment.getUser();
-        u.getCommentList().remove(comment);
-        ur.save(u);
-        Post p = comment.getPost();
-        p.getComments().remove(comment);
-        pr.save(p);
-        comment.setPost(null);
-        comment.setUser(null);
-//        repository.save(new Comment(comment.commentId));
     }
 
 }
