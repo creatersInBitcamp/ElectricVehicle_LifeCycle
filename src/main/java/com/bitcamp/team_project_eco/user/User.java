@@ -6,6 +6,7 @@ import com.bitcamp.team_project_eco.post.Post;
 import com.bitcamp.team_project_eco.purchase.Purchase;
 import com.bitcamp.team_project_eco.usedCar.UsedCar;
 import com.bitcamp.team_project_eco.wishlist.Wishlist;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,6 +26,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_seq") private Long userSeq;
     @Column(name = "user_id") private String userId;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password") private String password;
     @Column(name = "register_date") private String registerDate;
     @Column(name = "addr") private String addr;
@@ -42,22 +44,22 @@ public class User {
     @Column(name = "profile_text") private String profileText;
     @Column(name = "payment_info") private String paymentInfo;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UsedCar> usedCarList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) // 외래키를 주는 쪽이 oneToMany
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true) // 외래키를 주는 쪽이 oneToMany
     private List<Post> postList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> commentList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Bookmark> bookmarkList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Purchase> purchasesList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Wishlist> wishlistList = new ArrayList<>();
 
 
