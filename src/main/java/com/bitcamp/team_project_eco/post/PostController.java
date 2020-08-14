@@ -68,4 +68,9 @@ public class PostController {
                                   @PathVariable int page){
         return service.findBySearchWord(category, condition, searchWord, PageRequest.of(page-1, 5));
     }
+
+    @GetMapping("/recommend/{postId}")
+    public boolean recommend(@PathVariable Long postId) {
+        return service.recommend(postId);
+    }
 }

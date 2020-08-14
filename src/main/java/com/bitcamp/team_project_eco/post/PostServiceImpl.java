@@ -33,6 +33,8 @@ interface PostService extends JpaService<Post> {
     Page<Post> findBySearchWord(String category, String condition, String searchWord, Pageable page);
 
     Optional<Post> getOneById(String postId);
+
+    boolean recommend(Long postId);
 }
 
 @Service
@@ -146,5 +148,19 @@ public class PostServiceImpl implements PostService {
         sp.setHits(h);
         repository.save(sp);
         return repository.findById(Long.parseLong(postId));
+    }
+
+    @Override
+    public boolean recommend(Long postId) {
+        try {
+            Post p = repository.findById(postId).get();
+            int r = p.getRecommendation() + 1;
+            p.setRecommendation(r);
+            repository.save(p);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
