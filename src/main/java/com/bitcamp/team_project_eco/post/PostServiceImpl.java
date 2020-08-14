@@ -35,6 +35,8 @@ interface PostService extends JpaService<Post> {
     Optional<Post> getOneById(String postId);
 
     boolean recommend(Long postId);
+
+    boolean report(Long postId);
 }
 
 @Service
@@ -88,6 +90,7 @@ public class PostServiceImpl implements PostService {
                     csvRecord.get(4),
                     0,
                     0,
+                    0,
                     "news",
                     userRepository.findById(Long.parseLong(csvRecord.get(5))).get(), // user Entity
                     new ArrayList<>())); // comment list
@@ -101,7 +104,7 @@ public class PostServiceImpl implements PostService {
     public void insertPost(NewPostVO object) {
         User u = object.user;
         Post np = new Post(object.userName, object.link, object.title, object.date, object.img,
-                object.content, 0, 0, object.category, u, new ArrayList<>());
+                object.content, 0, 0,0, object.category, u, new ArrayList<>());
         repository.save(np);
     }
 
@@ -156,6 +159,20 @@ public class PostServiceImpl implements PostService {
             Post p = repository.findById(postId).get();
             int r = p.getRecommendation() + 1;
             p.setRecommendation(r);
+            repository.save(p);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean report(Long postId) {
+        try{
+            Post p = repository.findById(postId).get();
+            int r = p.getReport() + 1;
+            p.setReport(r);
             repository.save(p);
             return true;
         } catch (Exception e) {

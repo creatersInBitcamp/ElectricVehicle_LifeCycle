@@ -73,4 +73,9 @@ public class PostController {
     public boolean recommend(@PathVariable Long postId) {
         return service.recommend(postId);
     }
+
+    @GetMapping("/report/{postId}")
+    public boolean report(@PathVariable Long postId) {
+        return service.report(postId);
+    }
 }
