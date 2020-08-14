@@ -49,7 +49,7 @@ public class PostController {
 
     @GetMapping("/getOne/{postId}")
     public Optional<Post> getOnePost(@PathVariable String postId) {
-        return service.findById(postId);
+        return service.getOneById(postId);
     }
 
     @PostMapping("/insert")

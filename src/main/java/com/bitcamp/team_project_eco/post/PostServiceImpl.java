@@ -34,13 +34,15 @@ interface PostService extends JpaService<Post> {
     Page<Post> allPostFindByCategory(String category, PageRequest of);
 
     Page<Post> findBySearchWord(String category, String condition, String searchWord, Pageable page);
+
+    Optional<Post> getOneById(String postId);
 }
 
 @Service
 public class PostServiceImpl implements PostService {
     private final PostRepository repository;
     private final UserRepository userRepository;
-    public PostServiceImpl(PostRepository repository, EntityManager em, UserRepository userRepository) {
+    public PostServiceImpl(PostRepository repository, UserRepository userRepository) {
         this.repository = repository;
         this.userRepository = userRepository;
     }
@@ -143,5 +145,14 @@ public class PostServiceImpl implements PostService {
             case "userId": return repository.findByCategoryAndUserIdLikeSearchWord(category, searchWord, page);
             default: return repository.findByCategoryAndContentLikeSearchWord(category, searchWord, page);
         }
+    }
+
+    @Override
+    public Optional<Post> getOneById(String postId) {
+        Post sp = repository.findById(Long.parseLong(postId)).get();
+        int h = sp.getHits() + 1;
+        sp.setHits(h);
+        repository.save(sp);
+        return repository.findById(Long.parseLong(postId));
     }
 }
