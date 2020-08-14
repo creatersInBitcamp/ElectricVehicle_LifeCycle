@@ -9,7 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Getter @Setter @ToString
+@Getter @Setter @ToString(exclude = {"usedCar"})
 @Table(name = "used_car_sales")
 public class UsedCarSales {
     @Id

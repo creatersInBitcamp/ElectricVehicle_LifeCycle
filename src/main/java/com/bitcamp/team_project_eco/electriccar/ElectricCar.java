@@ -13,10 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter @Setter @ToString
+@Getter @Setter @ToString(exclude = {"usedCarList","purchasesList","wishlistList"})
 @Table(name = "electric_car")
-@NamedQuery(name = "ElectricCar.findByEccarId",
-        query = "select e from ElectricCar e where  e.eccarId = :eccarId")
 public class ElectricCar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -76,7 +74,7 @@ public class ElectricCar {
                        String backDistance, String weight, String frontWheel, String rearWheel,String frontSuspension,
                        String rearSuspension, String frontBraking, String rearBraking, String steering,
                        String img, String boostingCharge, String slowCharging, String color,
-                       String eol) {
+                       String eol,List<UsedCar> usedCarList,List<Purchase> purchasesList,List<Wishlist> wishlistList) {
         this.carName = carName;
         this.yyyy = yyyy;
         this. modelName = modelName;
@@ -112,6 +110,10 @@ public class ElectricCar {
         this.slowCharging = slowCharging;
         this.color = color;
         this.eol = Boolean.parseBoolean(eol);
+        this.usedCarList.addAll(usedCarList);
+        this.purchasesList.addAll(purchasesList);
+        this.wishlistList.addAll(wishlistList);
+
     }
 
 }

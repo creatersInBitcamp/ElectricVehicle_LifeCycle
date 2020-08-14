@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = {"bookmarkList"})
 @Table(name="charging_station")
 public class ChargingStation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

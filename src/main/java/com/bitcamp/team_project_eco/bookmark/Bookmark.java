@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@ToString(exclude = {"sights","chargingStation"})
+@ToString(exclude = {"sights","chargingStation","user"})
 @Table(name="bookmark")
 @NamedQuery(name = "Bookmark.findByBookmarkId",
         query = "select e from Bookmark e where e.bookmarkId = :bookmarkId")

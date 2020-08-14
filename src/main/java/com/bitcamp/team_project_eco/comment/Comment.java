@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = {"user","post"})
 @Table(name = "comment")
 @NamedQuery(name = "Comment.findByCommentId",
         query = "select e from Comment e where e.commentId = :comment_id")
