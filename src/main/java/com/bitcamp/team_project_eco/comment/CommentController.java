@@ -13,12 +13,6 @@ public class CommentController {
     //create, read, update, delete
     @Autowired CommentService commentService;
 
-//    @GetMapping("/getAll/{postId}")
-//    public List<Comment> findAllByPostId(@PathVariable String postId){
-//        Long pi = Long.parseLong(postId);
-//        return commentService.findAllByPostId(pi);
-//    }
-
     @PostMapping("/insert")
     public void insertCommentByPostId(@RequestBody NewCommentVO comment){
         commentService.insertComment(comment);

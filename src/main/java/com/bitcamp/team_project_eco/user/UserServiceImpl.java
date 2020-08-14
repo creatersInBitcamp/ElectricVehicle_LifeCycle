@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,7 +57,13 @@ public class UserServiceImpl implements UserService {
                         csvRecord.get(13), // banDate
                         csvRecord.get(14), //img
                         csvRecord.get(15), //text
-                        csvRecord.get(16)
+                        csvRecord.get(16),
+                        new ArrayList<>(),
+                        new ArrayList<>(),
+                        new ArrayList<>(),
+                        new ArrayList<>(),
+                        new ArrayList<>(),
+                        new ArrayList<>()
                 ));
             }
 

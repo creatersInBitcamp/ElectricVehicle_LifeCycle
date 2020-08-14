@@ -69,7 +69,9 @@ public class User {
                  String name, String sex, String birthDate, String email, String phoneNumber,
                  int visitCount, boolean snsConfirm, boolean emailConfirm, int grade,
                  String banDate, String profileImage, String profileText,
-                 String paymentInfo) {
+                 String paymentInfo,
+                 List<UsedCar> usedCarList, List<Post> postList, List<Comment>commentList,
+                 List<Bookmark> bookmarkList, List<Purchase> purchasesList, List<Wishlist> wishlists) {
         this.userId = userId;
         this.password = password;
         this.registerDate = registerDate;
@@ -87,6 +89,12 @@ public class User {
         this.profileImage = profileImage;
         this.profileText = profileText;
         this.paymentInfo = paymentInfo;
+        this.usedCarList.addAll(usedCarList);
+        this.postList.addAll(postList);
+        this.commentList.addAll(commentList);
+        this.bookmarkList.addAll(bookmarkList);
+        this.purchasesList.addAll(purchasesList);
+        this.wishlistList.addAll(wishlists);
 
     }
 
