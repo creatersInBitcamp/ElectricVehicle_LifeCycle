@@ -23,6 +23,7 @@ public class Post {
     @Column(name = "img", nullable = false, length = 700) private String img;
     @Column(name = "content", nullable = false) private String content;
     @Column(name = "recomendation", nullable = false) private int recommendation;
+    @Column(name = "", nullable = false) private int report;
     @Column(name = "hits", nullable = false) private int hits;
     @Column(name = "category", nullable = false, length = 45) private String category;
 
@@ -39,7 +40,7 @@ public class Post {
     private List<Comment> comments = new ArrayList<>();
 
     public Post(String userId, String link, String title, String date, String img,
-                String content, int recommendation, int hits, String category, User user,
+                String content, int recommendation, int report, int hits, String category, User user,
                 List<Comment> commentList) {
         this.userId = userId;
         this.link = link;
@@ -48,6 +49,7 @@ public class Post {
         this.img = img;
         this.content = content;
         this.recommendation = recommendation;
+        this.report = report;
         this.hits = hits;
         this.category = category;
         setUser(user);

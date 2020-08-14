@@ -29,7 +29,6 @@ public class UserController {
 
     @GetMapping("/findAll")
     public List<User> findAll(){
-        System.out.println("자바들어옴");
         return userService.findUsers();
     }
 
@@ -54,7 +53,11 @@ public class UserController {
     }
     @GetMapping("/sendPassword/{email}")
     public String sendPassword(@PathVariable String email){
-        System.out.println(email);
         return userService.findByEmail(email).map(com.bitcamp.team_project_eco.user.User::getPassword).orElse(null);
+    }
+
+    @PostMapping("/allUpdate")
+    public void allUpdate(@RequestBody List<User> user){
+        userService.allUpdate(user);
     }
 }

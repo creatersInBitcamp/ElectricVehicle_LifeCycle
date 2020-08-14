@@ -11,7 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -25,22 +24,26 @@ interface PostService extends JpaService<Post> {
 
     void updatePost(NewPostVO upPost);
 
-    Page<Post> pagingFindAll(Pageable page);
-
-    Page<Post> popularSort(PageRequest of);
+    Page<Post> popularSort(Pageable of);
 
     Page<Post> recentSort(PageRequest of);
 
-    Page<Post> allPostFindByCategory(String category, PageRequest of);
+    Page<Post> allPostFindByCategory(String category, int page);
 
     Page<Post> findBySearchWord(String category, String condition, String searchWord, Pageable page);
+
+    Optional<Post> getOneById(String postId);
+
+    boolean recommend(Long postId);
+
+    boolean report(Long postId);
 }
 
 @Service
 public class PostServiceImpl implements PostService {
     private final PostRepository repository;
     private final UserRepository userRepository;
-    public PostServiceImpl(PostRepository repository, EntityManager em, UserRepository userRepository) {
+    public PostServiceImpl(PostRepository repository, UserRepository userRepository) {
         this.repository = repository;
         this.userRepository = userRepository;
     }
@@ -87,6 +90,7 @@ public class PostServiceImpl implements PostService {
                     csvRecord.get(4),
                     0,
                     0,
+                    0,
                     "news",
                     userRepository.findById(Long.parseLong(csvRecord.get(5))).get(), // user Entity
                     new ArrayList<>())); // comment list
@@ -100,7 +104,7 @@ public class PostServiceImpl implements PostService {
     public void insertPost(NewPostVO object) {
         User u = object.user;
         Post np = new Post(object.userName, object.link, object.title, object.date, object.img,
-                object.content, 0, 0, object.category, u, new ArrayList<>());
+                object.content, 0, 0,0, object.category, u, new ArrayList<>());
         repository.save(np);
     }
 
@@ -116,12 +120,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Page<Post> pagingFindAll(Pageable page) {
-        return repository.findAll(page);
-    }
-
-    @Override
-    public Page<Post> popularSort(PageRequest of) {
+    public Page<Post> popularSort(Pageable of) {
         return repository.findAll(of);
     }
 
@@ -131,8 +130,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Page<Post> allPostFindByCategory(String category, PageRequest of) {
-        Pageable pageable = of;
+    public Page<Post> allPostFindByCategory(String category, int page) {
+        Pageable pageable = PageRequest.of(page-1, 8);
         return repository.findByCategory(category, pageable);
     }
 
@@ -142,6 +141,43 @@ public class PostServiceImpl implements PostService {
             case "title": return repository.findByCategoryAndTitleLikeSearchWord(category, searchWord, page);
             case "userId": return repository.findByCategoryAndUserIdLikeSearchWord(category, searchWord, page);
             default: return repository.findByCategoryAndContentLikeSearchWord(category, searchWord, page);
+        }
+    }
+
+    @Override
+    public Optional<Post> getOneById(String postId) {
+        Post sp = repository.findById(Long.parseLong(postId)).get();
+        int h = sp.getHits() + 1;
+        sp.setHits(h);
+        repository.save(sp);
+        return repository.findById(Long.parseLong(postId));
+    }
+
+    @Override
+    public boolean recommend(Long postId) {
+        try {
+            Post p = repository.findById(postId).get();
+            int r = p.getRecommendation() + 1;
+            p.setRecommendation(r);
+            repository.save(p);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean report(Long postId) {
+        try{
+            Post p = repository.findById(postId).get();
+            int r = p.getReport() + 1;
+            p.setReport(r);
+            repository.save(p);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
     }
 }
