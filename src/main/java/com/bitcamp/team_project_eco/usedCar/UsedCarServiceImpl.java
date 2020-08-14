@@ -96,8 +96,11 @@ public class UsedCarServiceImpl implements UsedCarService {
 
         usedCarRepository.save(new UsedCar(
                 usedCarVD.price, usedCarVD.age, usedCarVD.mileage,
-                null, null, null, null,
-                u, car,new ArrayList<>()));
+                "/assets/images/car/samsung/sm3ZERE/1.jpg",
+                "/assets/images/car/samsung/sm3ZERE/1.jpg",
+                "/assets/images/car/samsung/sm3ZERE/1.jpg",
+                "/assets/images/car/samsung/sm3ZERE/1.jpg",
+                u, car, new ArrayList<>()));
         return true;
     }
 }
