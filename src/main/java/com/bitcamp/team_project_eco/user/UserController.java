@@ -29,7 +29,7 @@ public class UserController {
 
     @GetMapping("/findAll")
     public List<User> findAll(){
-        System.out.println("자바들어옴");
+        System.out.println("처음 가져오기");
         return userService.findUsers();
     }
 
@@ -58,8 +58,9 @@ public class UserController {
         return userService.findByEmail(email).map(com.bitcamp.team_project_eco.user.User::getPassword).orElse(null);
     }
 
-    @GetMapping("/refresh/{userSeq}")
-    public Optional<User> refreshUser(@PathVariable String userSeq) {
-        return userService.findById(userSeq);
+    @PostMapping("/allUpdate")
+    public void allUpdate(@RequestBody List<User> user){
+        System.out.println("업데이트되는 유저");
+        userService.allUpdate(user);
     }
 }
