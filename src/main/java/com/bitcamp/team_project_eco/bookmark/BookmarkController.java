@@ -24,9 +24,9 @@ public class BookmarkController {
         return (List<Bookmark>) bookmarkService.findAll();
     }
 
-    @GetMapping("/getallbookmark")
-    public List<Object> getAllBookmarks(){
-        return bookmarkService.findAllBookmark();
+    @GetMapping("/getallbookmark/{userId}")
+    public List<Object> getAllBookmarks(@PathVariable String userId){
+        return bookmarkService.findAllBookmark(userId);
     }
 
     @GetMapping("/getone/{bookmarkId}")

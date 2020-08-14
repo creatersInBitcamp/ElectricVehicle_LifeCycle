@@ -22,7 +22,7 @@ interface BookmarkService extends JpaService<Bookmark>{
 
     void deleteBookmark(String bookmarkId);
 
-    List<Object> findAllBookmark();
+    List<Object> findAllBookmark(String userId);
 }
 
 @Service
@@ -68,20 +68,8 @@ public class BookmarkServiceImpl implements BookmarkService{
 
     @Override
     public void insertBookmark(BookmarkVO bookmarkVO) {
-        Bookmark bookmark = new Bookmark();
-        /*User user = userRepository.getOne((long) 1);
-        bookmark.setUser(user);
-        if(bookmarkVO.isCharging()){
-            bookmark.setChargingStation(chargingStationRepository.findById(Long.valueOf(bookmarkVO.getId())).orElseThrow(() -> new NoSuchElementException("Chargingstation not found")));
-            System.out.println(bookmark.toString());
-            bookmarkRepository.save(bookmark);
-        }else{
-            bookmark.setSights(sightsRepository.findById(Long.valueOf(bookmarkVO.getId())).orElseThrow(() -> new NoSuchElementException("Sights not found")));
-            System.out.println(bookmark.toString());
-            bookmarkRepository.save(bookmark);
-        }*/
-
-       User user = userRepository.getOne((long) 1);
+        System.out.println(bookmarkVO.getUserSeq());
+        User user = userRepository.findById(Long.valueOf(bookmarkVO.getUserSeq())).get();
         if(bookmarkVO.isCharging()){
             ChargingStation c = chargingStationRepository.findById(Long.valueOf(bookmarkVO.getId())).get();
             bookmarkRepository.save(new Bookmark(Long.valueOf(bookmarkVO.getId()),null,c,user));
@@ -99,10 +87,7 @@ public class BookmarkServiceImpl implements BookmarkService{
 
     @Override
     public void deleteBookmark(String bookmarkId) {
-        System.out.println(Long.valueOf(bookmarkId));
-        System.out.println(bookmarkRepository.findById(Long.valueOf(bookmarkId)).toString());
         Bookmark bookmark = bookmarkRepository.findById(Long.valueOf(bookmarkId)).get();
-        System.out.println(bookmark.toString());
         User user = bookmark.getUser();
         user.getBookmarkList().remove(bookmark);
         userRepository.saveAndFlush(user);
@@ -118,18 +103,19 @@ public class BookmarkServiceImpl implements BookmarkService{
     }
 
     @Override
-    public List<Object> findAllBookmark() {
+    public List<Object> findAllBookmark(String userId) {
         List<Object> list = new ArrayList<>();
         List<Object> bookmarkLists = new ArrayList<>();
+        List<Bookmark> b = userRepository.findById(Long.valueOf(userId)).get().getBookmarkList();
         for (int i=0; i<count();i++){
             BookmarkList bookmark = new BookmarkList();
-            bookmark.setId(bookmarkRepository.findAll().get(i).getBookmarkId());
-            if(bookmarkRepository.findAll().get(i).getSights() != null){
-                bookmark.setPlace(bookmarkRepository.findAll().get(i).getSights());
-                list.add(bookmarkRepository.findAll().get(i).getSights());
-            }else if(bookmarkRepository.findAll().get(i).getChargingStation() != null){
-                bookmark.setPlace(bookmarkRepository.findAll().get(i).getChargingStation());
-                list.add(bookmarkRepository.findAll().get(i).getChargingStation());
+            bookmark.setId(b.get(i).getBookmarkId());
+            if(b.get(i).getSights() != null){
+                bookmark.setPlace(b.get(i).getSights());
+                list.add(b.get(i).getSights());
+            }else if(b.get(i).getChargingStation() != null){
+                bookmark.setPlace(b.get(i).getChargingStation());
+                list.add(b.get(i).getChargingStation());
             }
             bookmarkLists.add(bookmark);
         }

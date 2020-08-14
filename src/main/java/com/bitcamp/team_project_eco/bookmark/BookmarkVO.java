@@ -7,5 +7,6 @@ import lombok.Setter;
 @Setter
 public class BookmarkVO {
     String id;
+    String userSeq;
     boolean charging;
 }
