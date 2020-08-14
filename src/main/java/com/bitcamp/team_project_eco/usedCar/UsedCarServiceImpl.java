@@ -87,24 +87,14 @@ public class UsedCarServiceImpl implements UsedCarService {
     }
 
     @Override
-    @Query(value = "")
     public boolean insert(UsedCarVO usedCar) {
-        try {
-            User u = usedCar.user;
-            ElectricCar car = usedCar.electricCar;
+        User u = usedCar.user;
+        ElectricCar car = usedCar.electricCar;
 
-            usedCarRepository.save(new UsedCar(
-                    usedCar.price, usedCar.age, usedCar.mileage,
-                    null, null, null, null,
-                    u,
-                    car
-            ));
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-
-
+        usedCarRepository.save(new UsedCar(
+                usedCar.price, usedCar.age, usedCar.mileage,
+                null, null, null, null,
+                u, car));
+        return true;
     }
 }

@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = {"sights","chargingStation"})
 @Table(name="bookmark")
 @NamedQuery(name = "Bookmark.findByBookmarkId",
         query = "select e from Bookmark e where e.bookmarkId = :bookmarkId")
@@ -43,7 +43,7 @@ public class Bookmark {
     }
 
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "user_seq")
     private User user;
 
