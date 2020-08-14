@@ -25,6 +25,8 @@ interface UserService extends JpaService<User> {
     Optional<User> findByEmail(String email);
 
     List<User> findUsers();
+
+    void allUpdate(List<User> user);
 }
 
 @Service
@@ -96,6 +98,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findUsers() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public void allUpdate(List<User> user) {
+        userRepository.saveAll(user);
     }
 
     @Override
