@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Optional;
 
 interface UsedCarService extends JpaService<UsedCar> {
@@ -78,7 +79,8 @@ public class UsedCarServiceImpl implements UsedCarService {
                         csvRecord.get(5),//image
                         csvRecord.get(6),//image
                         userRepository.findById(Long.parseLong(csvRecord.get(7))).orElse(new User()),
-                        electricCarRepository.findById(Long.parseLong(csvRecord.get(8))).orElse(new ElectricCar())
+                        electricCarRepository.findById(Long.parseLong(csvRecord.get(8))).orElse(new ElectricCar()),
+                        new ArrayList<>()
                 ));
             }
         } catch (Exception e) {
@@ -87,14 +89,15 @@ public class UsedCarServiceImpl implements UsedCarService {
     }
 
     @Override
-    public boolean insert(UsedCarVO usedCar) {
-        User u = usedCar.user;
-        ElectricCar car = usedCar.electricCar;
+    public boolean insert(UsedCarVO usedCarVD) {
+        System.out.println(usedCarVD.userSeq);
+        User u = userRepository.findById(Long.valueOf(usedCarVD.getUserSeq())).get();
+        ElectricCar car = electricCarRepository.findById(Long.valueOf(usedCarVD.getEccarId())).get();
 
         usedCarRepository.save(new UsedCar(
-                usedCar.price, usedCar.age, usedCar.mileage,
+                usedCarVD.price, usedCarVD.age, usedCarVD.mileage,
                 null, null, null, null,
-                u, car));
+                u, car,new ArrayList<>()));
         return true;
     }
 }

@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = {"usedCarList","postList","commentList","bookmarkList","purchasesList","wishlistList"})
 @Table(name = "user")
 @NamedQuery(name = "User.findByUserId",
             query = "select e from User e where e.userId = :userId")

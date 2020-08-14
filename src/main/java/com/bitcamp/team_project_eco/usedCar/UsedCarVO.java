@@ -8,6 +8,6 @@ import lombok.Setter;
 @Getter @Setter
 public class UsedCarVO {
     String price, age, mileage;
-    ElectricCar electricCar;
-    User user;
+    String eccarId;
+    String userSeq;
 }

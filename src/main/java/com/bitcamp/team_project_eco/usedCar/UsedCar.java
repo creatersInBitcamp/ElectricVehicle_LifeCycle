@@ -8,10 +8,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter @Setter @ToString
+@Getter @Setter @ToString(exclude = {"user","electricCar","usedCarSalesList"})
 @Table(name = "used_car")
 public class UsedCar {
     @Id
@@ -30,16 +31,15 @@ public class UsedCar {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_seq")
-    @JsonProperty("userSeq")
     private User user;
 
     public void setUser(User user){
         this.user = user;
     }
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "eccar_id")
-    @JsonProperty("eccarId")
     private ElectricCar electricCar;
 
     public void setElectricCar(ElectricCar electricCar){
@@ -47,7 +47,7 @@ public class UsedCar {
     }
 
     @OneToMany(mappedBy = "usedCar", cascade = CascadeType.ALL)
-    private List<UsedCarSales> usedCarSales;
+    private List<UsedCarSales> usedCarSalesList = new ArrayList<>();
 
     public UsedCar(){}
 
@@ -60,7 +60,8 @@ public class UsedCar {
                    String imgId3,
                    String imgId4,
                    User userSeq,
-                   ElectricCar eccarId) {
+                   ElectricCar eccarId,
+                   List<UsedCarSales> usedCarSalesList) {
         this.price = price;
         this.age = age;
         this.mileage = mileage;
@@ -72,5 +73,6 @@ public class UsedCar {
         setImg(image);
         setUser(userSeq);
         setElectricCar(eccarId);
+        this.usedCarSalesList.addAll(usedCarSalesList);
     }
 }

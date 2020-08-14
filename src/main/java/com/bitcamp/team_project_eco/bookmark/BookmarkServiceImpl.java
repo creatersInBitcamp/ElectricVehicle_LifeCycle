@@ -58,7 +58,7 @@ public class BookmarkServiceImpl implements BookmarkService{
     public void delete(String id) {
         Long bookmarId;
         bookmarkRepository.delete(findById(id).orElse(new Bookmark()));
-//        System.out.println(findAll());
+        System.out.println(findAll());
     }
 
     @Override
@@ -100,9 +100,9 @@ public class BookmarkServiceImpl implements BookmarkService{
     @Override
     public void deleteBookmark(String bookmarkId) {
         System.out.println(Long.valueOf(bookmarkId));
-//        System.out.println(bookmarkRepository.findById(Long.valueOf(bookmarkId)).toString());
+        System.out.println(bookmarkRepository.findById(Long.valueOf(bookmarkId)).toString());
         Bookmark bookmark = bookmarkRepository.findById(Long.valueOf(bookmarkId)).get();
-//        System.out.println(bookmark.toString());
+        System.out.println(bookmark.toString());
         User user = bookmark.getUser();
         user.getBookmarkList().remove(bookmark);
         userRepository.saveAndFlush(user);

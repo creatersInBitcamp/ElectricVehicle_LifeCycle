@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Optional;
 
 interface ElectricCarService extends JpaService<ElectricCar> {
@@ -101,7 +102,10 @@ public class ElectricCarServiceImpl implements ElectricCarService {
                         csvRecord.get(31),
                         csvRecord.get(32),
                         csvRecord.get(33),
-                        csvRecord.get(34)));
+                        csvRecord.get(34),
+                        new ArrayList<>(),
+                        new ArrayList<>(),
+                        new ArrayList<>()));
             }
         } catch (Exception e) {
             e.printStackTrace();

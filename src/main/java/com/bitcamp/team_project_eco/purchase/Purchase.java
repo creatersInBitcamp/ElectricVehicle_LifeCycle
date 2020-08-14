@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@ToString
+@ToString(exclude = {"user","electricCar"})
 @Table(name="purchase")
 public class Purchase {
     @Id

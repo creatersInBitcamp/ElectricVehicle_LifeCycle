@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter @Setter @ToString
+@Getter @Setter @ToString(exclude = {"user","comments"})
 @Table(name = "post")
 public class Post {
     @Id
