@@ -93,7 +93,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> findById(String id) {
-        return userRepository.findById((long) Integer.parseInt(id));
+        return userRepository.findById(Long.valueOf(id));
     }
 
     @Override
