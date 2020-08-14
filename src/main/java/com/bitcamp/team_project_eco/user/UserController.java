@@ -57,4 +57,9 @@ public class UserController {
         System.out.println(email);
         return userService.findByEmail(email).map(com.bitcamp.team_project_eco.user.User::getPassword).orElse(null);
     }
+
+    @GetMapping("/refresh/{userSeq}")
+    public Optional<User> refreshUser(@PathVariable String userSeq) {
+        return userService.findById(userSeq);
+    }
 }

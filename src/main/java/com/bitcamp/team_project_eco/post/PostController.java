@@ -1,10 +1,8 @@
 package com.bitcamp.team_project_eco.post;
 
-import com.bitcamp.team_project_eco.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,23 +21,19 @@ public class PostController {
         service.readCsv();
     }
 
-    @GetMapping("/pageall/{page}")
-    public Page<Post> postList(@PathVariable int page) {
-       return service.pagingFindAll(PageRequest.of(page-1, 5));
-    }
     @GetMapping("/pages/{category}/{page}")
     public Page<Post> allPostByCate(@PathVariable int page, @PathVariable String category) {
-        return service.allPostFindByCategory(category, PageRequest.of(page-1, 5));
+        return service.allPostFindByCategory(category, page);
     }
 
     @GetMapping("/popular")
     public Page<Post> popularList() {
-        return service.popularSort(PageRequest.of(0, 5, Sort.by(Sort.Order.desc("hits"))));
+        return service.popularSort(PageRequest.of(0, 5, Sort.by(Sort.Order.asc("hits"))));
     }
 
     @GetMapping("/recent")
     public Page<Post> recentList() {
-        return service.recentSort(PageRequest.of(0, 5, Sort.by(Sort.Order.asc("post_id"))));
+        return service.recentSort(PageRequest.of(0, 5, Sort.by(Sort.Order.desc("postId"))));
     }
 
     @GetMapping("/getall")
@@ -72,11 +66,6 @@ public class PostController {
                                   @PathVariable String condition,
                                   @PathVariable String searchWord,
                                   @PathVariable int page){
-        System.out.print(category+", ");
-        System.out.print(condition+", ");
-        System.out.print(searchWord+", ");
-        System.out.print(page);
         return service.findBySearchWord(category, condition, searchWord, PageRequest.of(page-1, 5));
     }
-
 }

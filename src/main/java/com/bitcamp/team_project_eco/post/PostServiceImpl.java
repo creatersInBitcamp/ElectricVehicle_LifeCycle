@@ -11,7 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -25,13 +24,11 @@ interface PostService extends JpaService<Post> {
 
     void updatePost(NewPostVO upPost);
 
-    Page<Post> pagingFindAll(Pageable page);
-
-    Page<Post> popularSort(PageRequest of);
+    Page<Post> popularSort(Pageable of);
 
     Page<Post> recentSort(PageRequest of);
 
-    Page<Post> allPostFindByCategory(String category, PageRequest of);
+    Page<Post> allPostFindByCategory(String category, int page);
 
     Page<Post> findBySearchWord(String category, String condition, String searchWord, Pageable page);
 
@@ -118,12 +115,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Page<Post> pagingFindAll(Pageable page) {
-        return repository.findAll(page);
-    }
-
-    @Override
-    public Page<Post> popularSort(PageRequest of) {
+    public Page<Post> popularSort(Pageable of) {
         return repository.findAll(of);
     }
 
@@ -133,8 +125,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Page<Post> allPostFindByCategory(String category, PageRequest of) {
-        Pageable pageable = of;
+    public Page<Post> allPostFindByCategory(String category, int page) {
+        Pageable pageable = PageRequest.of(page-1, 8);
         return repository.findByCategory(category, pageable);
     }
 

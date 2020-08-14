@@ -14,8 +14,6 @@ interface CommentService extends JpaService<Comment> {
 
     void insertComment(NewCommentVO comment);
 
-    List<Comment> findAllByPostId(Long postId);
-
 }
 
 @Service
@@ -58,11 +56,6 @@ public class CommentServiceImpl implements CommentService {
         User u = ur.findById(comment.user.getUserSeq()).get();
         Post p = pr.findById(comment.post.getPostId()).get();
         repository.save(new Comment(comment.userId, comment.regDate, comment.comment, u, p));
-    }
-
-    @Override
-    public List<Comment> findAllByPostId(Long postId) {
-        return null;
     }
 
 }
