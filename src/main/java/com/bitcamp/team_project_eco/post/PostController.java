@@ -37,8 +37,8 @@ public class PostController {
     }
 
     @GetMapping("/getall")
-    public List<Post> getAllPost(){
-        return (List<Post>) service.findAll();
+    public Iterable<Post> getAllPost(){
+        return service.findAll();
     }
 
     @GetMapping("/getOne/{postId}")
