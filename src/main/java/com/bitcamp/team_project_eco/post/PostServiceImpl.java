@@ -79,7 +79,7 @@ public class PostServiceImpl implements PostService {
         Iterable<CSVRecord> csvRecords = csvParser.getRecords();
         for (CSVRecord csvRecord : csvRecords) {
             repository.save(new Post(
-                    "0",
+                    "tedd911",
                     csvRecord.get(0),
                     csvRecord.get(1),
                     csvRecord.get(2),
@@ -88,8 +88,8 @@ public class PostServiceImpl implements PostService {
                     0,
                     0,
                     "news",
-                    userRepository.findById(Long.parseLong(csvRecord.get(5))).orElse(new User()), // user Entity
-                    new ArrayList<>()));
+                    userRepository.findById(Long.parseLong(csvRecord.get(5))).get(), // user Entity
+                    new ArrayList<>())); // comment list
         }
         } catch (Exception e) {
             e.printStackTrace();
