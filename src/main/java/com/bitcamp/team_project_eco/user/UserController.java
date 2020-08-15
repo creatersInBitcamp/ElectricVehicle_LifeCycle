@@ -60,4 +60,9 @@ public class UserController {
     public void allUpdate(@RequestBody List<User> user){
         userService.allUpdate(user);
     }
+
+    @GetMapping("/getone/{userSeq}")
+    public User refreshUser(@PathVariable String userSeq) {
+        return userService.findById(userSeq).get();
+    }
 }
