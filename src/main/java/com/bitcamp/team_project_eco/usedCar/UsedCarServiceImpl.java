@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.usedCar;
 
+import com.bitcamp.team_project_eco.car.Car;
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import com.bitcamp.team_project_eco.electriccar.ElectricCarRepository;
 import com.bitcamp.team_project_eco.user.User;
@@ -15,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 interface UsedCarService extends JpaService<UsedCar> {
@@ -26,6 +28,8 @@ interface UsedCarService extends JpaService<UsedCar> {
     boolean update(UsedCar usedCar);
 
     boolean deleteCar(Long usedCarId);
+
+    List<CarInfo> readWithCar();
 }
 
 @Service
@@ -128,5 +132,30 @@ public class UsedCarServiceImpl implements UsedCarService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public List<CarInfo> readWithCar() {
+        List<CarInfo> list = new ArrayList<>();
+        List<UsedCar> usedCarList  = usedCarRepository.findAll();
+        int i = 0;
+
+        while (i < usedCarList.size()){
+            UsedCar usedCar = usedCarList.get(i);
+            ElectricCar e = electricCarRepository.findById(usedCar.getElectricCar().getEccarId()).get();
+
+//            usedCar, e.getBrand(), e.getCarName(), e.getYyyy(), e.getModelName(), e.getTrim()
+            CarInfo info = new CarInfo();
+            info.setUsedCar(usedCar);
+            info.setBrand(e.getBrand());
+            info.setCarName(e.getCarName());
+            info.setYyyy(e.getYyyy());
+            info.setModelName(e.getModelName());
+            info.setTrim(e.getTrim());
+            list.add(info);
+            i++;
+        }
+        System.out.println(list.toString());
+        return list;
     }
 }

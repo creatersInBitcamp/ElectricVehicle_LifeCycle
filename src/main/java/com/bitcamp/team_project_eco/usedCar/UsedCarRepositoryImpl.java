@@ -5,8 +5,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
-interface IUsedCarRepository {
+import java.util.List;
 
+interface IUsedCarRepository {
 }
 
 @Repository
@@ -23,4 +24,6 @@ public class UsedCarRepositoryImpl extends QuerydslRepositorySupport implements 
         super(UsedCar.class);
         this.queryFactory = queryFactory;
     }
+
+
 }
