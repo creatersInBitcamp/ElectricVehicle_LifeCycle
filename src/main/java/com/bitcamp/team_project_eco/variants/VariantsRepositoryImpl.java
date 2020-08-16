@@ -1,16 +1,16 @@
-package com.bitcamp.team_project_eco.electriccar;
+package com.bitcamp.team_project_eco.variants;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
-interface CustomedECarRepository {}
+interface CustomedVariantsRepository{}
 
 @Repository
-public class ElectricCarRepositoryImpl extends QuerydslRepositorySupport implements CustomedECarRepository {
+public class VariantsRepositoryImpl extends QuerydslRepositorySupport implements CustomedVariantsRepository {
     private final JPAQueryFactory jpaQueryFactory;
-    public ElectricCarRepositoryImpl(JPAQueryFactory jpaQueryFactory){
-        super(ElectricCar.class);
+    public VariantsRepositoryImpl(JPAQueryFactory jpaQueryFactory){
+        super(Variants.class);
         this.jpaQueryFactory = jpaQueryFactory;
     }
 }
