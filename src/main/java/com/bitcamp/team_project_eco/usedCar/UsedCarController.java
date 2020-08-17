@@ -27,11 +27,21 @@ public class UsedCarController {
 
     @GetMapping("/getAllCarInfo")
     public List<CarInfo> getAllCarInfo () {
-        return usedCarService.readWithCar();
+        return null;
     }
 
     @GetMapping("/delete/{usedCarId}")
     public boolean update(@PathVariable Long usedCarId) {
         return usedCarService.deleteCar(usedCarId);
     }
+
+    @GetMapping("/usedVO")
+    public List<UsedCarVO> detail() {
+        return usedCarService.detail();
+    }
+    @GetMapping("/carInfo")
+    public List<CarInfo> carInfo() {
+        return usedCarService.carInfo();
+    }
+
 }

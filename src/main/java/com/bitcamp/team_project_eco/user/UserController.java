@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
 
@@ -66,8 +67,14 @@ public class UserController {
     public User refreshUser(@PathVariable String userSeq) {
         return userService.findById(userSeq).get();
     }
+
     @GetMapping("/usedCar")
     public List<AdminUsedCar> adminUsedCar(){
         return userService.findAdminUsedCar();
+    }
+
+    @PostMapping("/addCar")
+    public void addCar(@RequestBody File file) {
+        System.out.println(file.toString());
     }
 }

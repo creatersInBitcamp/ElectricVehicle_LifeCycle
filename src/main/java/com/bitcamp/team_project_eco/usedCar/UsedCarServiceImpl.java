@@ -29,7 +29,9 @@ interface UsedCarService extends JpaService<UsedCar> {
 
     boolean deleteCar(Long usedCarId);
 
-    List<CarInfo> readWithCar();
+    List<UsedCarVO> detail();
+
+    List<CarInfo> carInfo();
 }
 
 @Service
@@ -134,7 +136,7 @@ public class UsedCarServiceImpl implements UsedCarService {
         }
     }
 
-    @Override
+    /*@Override
     public List<CarInfo> readWithCar() {
         List<CarInfo> list = new ArrayList<>();
         List<UsedCar> usedCarList  = usedCarRepository.findAll();
@@ -157,5 +159,15 @@ public class UsedCarServiceImpl implements UsedCarService {
         }
         System.out.println(list.toString());
         return list;
+    }*/
+
+    @Override
+    public List<UsedCarVO> detail() {
+        return usedCarRepository.detail();
+    }
+
+    @Override
+    public List<CarInfo> carInfo() {
+        return usedCarRepository.carInfo();
     }
 }
