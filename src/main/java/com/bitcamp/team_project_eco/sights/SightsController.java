@@ -24,6 +24,11 @@ public class SightsController {
         return (List<Sights>) sightsService.findAll();
     }
 
+    @GetMapping("/getall/{userSeq}")
+    public List<? extends Object> getAllChargingStation(@PathVariable String userSeq){
+        return sightsService.findAll(userSeq);
+    }
+
     @GetMapping("/getone/{sightsId}")
     public Optional<Sights> getOneSights(@PathVariable String sightsId) {
         return sightsService.findById(sightsId);

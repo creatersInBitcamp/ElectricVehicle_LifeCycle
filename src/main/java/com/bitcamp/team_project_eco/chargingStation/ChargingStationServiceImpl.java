@@ -1,6 +1,8 @@
 package com.bitcamp.team_project_eco.chargingStation;
 
-import com.bitcamp.team_project_eco.car.Car;
+import com.bitcamp.team_project_eco.bookmark.Bookmark;
+import com.bitcamp.team_project_eco.bookmark.BookmarkRepository;
+import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -11,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 interface ChargingStationService extends JpaService<ChargingStation>{
@@ -19,14 +22,18 @@ interface ChargingStationService extends JpaService<ChargingStation>{
     void insertChargingStation(ChargingStation chargingStation);
 
     void updateChargingStation(ChargingStation chargingStation);
+
+    List<? extends Object> findAll(String userSeq);
 }
 
 @Service
 public class ChargingStationServiceImpl implements ChargingStationService{
     private final ChargingStationRepository chargingStationRepository;
+    private final UserRepository userRepository;
 
-    public ChargingStationServiceImpl(ChargingStationRepository chargingStationRepository) {
+    public ChargingStationServiceImpl(ChargingStationRepository chargingStationRepository, UserRepository userRepository) {
         this.chargingStationRepository = chargingStationRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -37,6 +44,63 @@ public class ChargingStationServiceImpl implements ChargingStationService{
     @Override
     public Iterable<ChargingStation> findAll() {
         return chargingStationRepository.findAll();
+    }
+
+    @Override
+    public List<? extends Object> findAll(String userSeq) {
+        List<Bookmark> b = userRepository.findById(Long.valueOf(userSeq)).get().getBookmarkList();
+        List<ChargingStation> chargingStations = chargingStationRepository.findAll();
+        System.out.println(b.toString());
+
+        if(b.isEmpty()){
+            return chargingStations;
+        }
+        else{
+            List<ChargingStationVO> chargingStationList = new ArrayList<>();
+            List<String> id = new ArrayList<>();
+            List<Boolean> check = new ArrayList<>();
+            for (Bookmark bookmark : b) {
+                if (bookmark.getChargingStation() == null){
+                    check.add(true);
+                }else {
+                    check.add(false);
+                    id.add(String.valueOf(bookmark.getChargingStation().getChargingStationId()));
+                }
+                System.out.println("충전소 "+check);
+            }
+            if (!check.contains(false)){
+                return chargingStations;
+            }
+            for(int i=0; i<count();i++){
+                ChargingStationVO c = new ChargingStationVO();
+                c.setChargingStationId(chargingStations.get(i).getChargingStationId());
+                c.setUnitName(chargingStations.get(i).getUnitName());
+                c.setChargerId(chargingStations.get(i).getChargerId());
+                c.setChargerTypeID(chargingStations.get(i).getChargerTypeID());
+                c.setChargerType(chargingStations.get(i).getChargerType());
+                c.setChargerState(chargingStations.get(i).getChargerState());
+                c.setAddress(chargingStations.get(i).getAddress());
+                c.setXValue(chargingStations.get(i).getXValue());
+                c.setYValue(chargingStations.get(i).getYValue());
+                c.setBusinessHours(chargingStations.get(i).getBusinessHours());
+                c.setAgencyName(chargingStations.get(i).getAgencyName());
+                c.setPhone(chargingStations.get(i).getPhone());
+                c.setUpdateDate(chargingStations.get(i).getUpdateDate());
+                c.setBoostingCharge(chargingStations.get(i).getBoostingCharge());
+                c.setCategory(chargingStations.get(i).getCategory());
+                c.setUserSeq(Long.valueOf(userSeq));
+
+                for(int j=0; j<id.size();j++){
+                    if (c.getChargingStationId().equals(Long.valueOf(id.get(j)))){
+                        c.setBookmarkList(b);
+                    }
+                }
+
+                chargingStationList.add(c);
+            }
+            return chargingStationList;
+        }
+
     }
 
     @Override
@@ -94,4 +158,5 @@ public class ChargingStationServiceImpl implements ChargingStationService{
     public void updateChargingStation(ChargingStation chargingStation) {
 
     }
+
 }

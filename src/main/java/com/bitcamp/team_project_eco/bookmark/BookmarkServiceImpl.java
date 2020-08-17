@@ -7,6 +7,7 @@ import com.bitcamp.team_project_eco.sights.SightsRepository;
 import com.bitcamp.team_project_eco.user.User;
 import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
+import com.querydsl.core.Tuple;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,6 +24,8 @@ interface BookmarkService extends JpaService<Bookmark>{
     void deleteBookmark(String bookmarkId);
 
     List<Object> findAllBookmark(String userId);
+
+    List<Object> findBookmarks(Long userSeq);
 }
 
 @Service
@@ -68,8 +71,8 @@ public class BookmarkServiceImpl implements BookmarkService{
 
     @Override
     public void insertBookmark(BookmarkVO bookmarkVO) {
-        System.out.println(bookmarkVO.getUserSeq());
-        User user = userRepository.findById(Long.valueOf(bookmarkVO.getUserSeq())).get();
+        System.out.println(bookmarkVO.getUserId());
+        User user = userRepository.findById(bookmarkVO.getUserId()).get();
         if(bookmarkVO.isCharging()){
             ChargingStation c = chargingStationRepository.findById(Long.valueOf(bookmarkVO.getId())).get();
             bookmarkRepository.save(new Bookmark(Long.valueOf(bookmarkVO.getId()),null,c,user));
@@ -120,8 +123,13 @@ public class BookmarkServiceImpl implements BookmarkService{
                 list.add(b.get(i).getChargingStation());
             }
             bookmarkLists.add(bookmark);
-            System.out.println(bookmarkLists.get(i).toString());
+            System.out.println(bookmarkLists);
         }
         return bookmarkLists;
+    }
+
+    @Override
+    public List<Object> findBookmarks(Long userSeq) {
+        return bookmarkRepository.findBookmarks(userSeq);
     }
 }

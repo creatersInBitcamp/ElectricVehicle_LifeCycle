@@ -23,6 +23,11 @@ public class ChargingStationController {
         return (List<ChargingStation>) chargingStationService.findAll();
     }
 
+    @GetMapping("/getall/{userSeq}")
+    public List<? extends Object> getAllChargingStation(@PathVariable String userSeq){
+        return chargingStationService.findAll(userSeq);
+    }
+
     @GetMapping("/getone/{chargingStationId}")
     public Optional<ChargingStation> getOneChargingStation(@PathVariable String chargingStationId) {
         return chargingStationService.findById(chargingStationId);

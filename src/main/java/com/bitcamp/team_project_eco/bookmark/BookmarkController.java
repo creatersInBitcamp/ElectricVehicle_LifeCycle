@@ -4,6 +4,7 @@ import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import com.bitcamp.team_project_eco.chargingStation.ChargingStationServiceImpl;
 import com.bitcamp.team_project_eco.sights.Sights;
 import com.bitcamp.team_project_eco.wishlist.Wishlist;
+import com.querydsl.core.Tuple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +26,8 @@ public class BookmarkController {
     }
 
     @GetMapping("/getallbookmark/{userId}")
-    public List<Object> getAllBookmarks(@PathVariable String userId){
-        return bookmarkService.findAllBookmark(userId);
+    public List<Object> getAllBookmarks(@PathVariable Long userId){
+        return bookmarkService.findBookmarks(userId);
     }
 
     @GetMapping("/getone/{bookmarkId}")

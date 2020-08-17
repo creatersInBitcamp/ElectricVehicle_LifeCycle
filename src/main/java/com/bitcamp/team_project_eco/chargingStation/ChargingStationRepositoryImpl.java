@@ -5,8 +5,9 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
-interface CustomedChargingStationRepository{
+import java.util.List;
 
+interface CustomedChargingStationRepository{
 }
 
 @Repository
