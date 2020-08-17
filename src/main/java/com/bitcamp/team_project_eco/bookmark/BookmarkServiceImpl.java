@@ -120,7 +120,7 @@ public class BookmarkServiceImpl implements BookmarkService{
                 list.add(b.get(i).getChargingStation());
             }
             bookmarkLists.add(bookmark);
-            System.out.println(bookmarkLists.toString());
+            System.out.println(bookmarkLists.get(i).toString());
         }
         return bookmarkLists;
     }
