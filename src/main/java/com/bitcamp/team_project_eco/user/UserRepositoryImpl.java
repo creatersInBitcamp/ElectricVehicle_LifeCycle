@@ -28,12 +28,7 @@ public class UserRepositoryImpl extends QuerydslRepositorySupport implements Cus
     @Override
     public List<AdminUsedCar> findAdminUsedCar() {
         List<AdminUsedCar> adminUsedCars =  queryFactory.select(Projections.fields(AdminUsedCar.class,
-                electricCar.carName,
-                user.name,
-                user.userId,
-                usedCar.price,
-                usedCar.mileage
-                ))
+                electricCar.carName, user.name, user.userId, usedCar.price, usedCar.mileage))
                 .from(usedCar)
                 .innerJoin(user).on(user.userSeq.eq(usedCar.user.userSeq))
                 .innerJoin(electricCar).on(electricCar.eccarId.eq(usedCar.electricCar.eccarId))

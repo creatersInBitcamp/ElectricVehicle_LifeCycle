@@ -29,7 +29,9 @@ interface UsedCarService extends JpaService<UsedCar> {
 
     boolean deleteCar(Long usedCarId);
 
-    List<CarInfo> readWithCar();
+    List<UsedCarVO> detail();
+
+    List<CarInfo> carInfo();
 }
 
 @Service
@@ -97,13 +99,13 @@ public class UsedCarServiceImpl implements UsedCarService {
     }
 
     @Override
-    public boolean insert(UsedCarVO usedCarVD) {
-        System.out.println(usedCarVD.userSeq);
-        User u = userRepository.findById(Long.valueOf(usedCarVD.getUserSeq())).get();
-        ElectricCar car = electricCarRepository.findById(Long.valueOf(usedCarVD.getEccarId())).get();
+    public boolean insert(UsedCarVO usedCar) {
+        System.out.println(usedCar.userSeq);
+        User u = userRepository.findById(Long.valueOf(usedCar.getUserSeq())).get();
+        ElectricCar car = electricCarRepository.findById(Long.valueOf(usedCar.getEccarId())).get();
 
         usedCarRepository.save(new UsedCar(
-                usedCarVD.price, usedCarVD.age, usedCarVD.mileage,
+                usedCar.price, usedCar.age, usedCar.mileage,
                 "/assets/images/car/samsung/sm3ZERE/1.jpg",
                 "/assets/images/car/samsung/sm3ZERE/1.jpg",
                 "/assets/images/car/samsung/sm3ZERE/1.jpg",
@@ -134,7 +136,7 @@ public class UsedCarServiceImpl implements UsedCarService {
         }
     }
 
-    @Override
+    /*@Override
     public List<CarInfo> readWithCar() {
         List<CarInfo> list = new ArrayList<>();
         List<UsedCar> usedCarList  = usedCarRepository.findAll();
@@ -157,5 +159,15 @@ public class UsedCarServiceImpl implements UsedCarService {
         }
         System.out.println(list.toString());
         return list;
+    }*/
+
+    @Override
+    public List<UsedCarVO> detail() {
+        return usedCarRepository.detail();
+    }
+
+    @Override
+    public List<CarInfo> carInfo() {
+        return usedCarRepository.carInfo();
     }
 }

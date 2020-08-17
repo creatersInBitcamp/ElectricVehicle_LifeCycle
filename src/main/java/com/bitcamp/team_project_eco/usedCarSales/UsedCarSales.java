@@ -1,12 +1,14 @@
 package com.bitcamp.team_project_eco.usedCarSales;
 
 import com.bitcamp.team_project_eco.usedCar.UsedCar;
+import com.bitcamp.team_project_eco.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 @Getter @Setter @ToString(exclude = {"usedCar"})
@@ -15,7 +17,6 @@ public class UsedCarSales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "req_id") private Long reqId;
-    @Column(name = "seller_seq") private int sellerSeq;
     @Column(name = "buyer_name") private String buyerName;
     @Column(name = "buyer_phone_number") private String buyerPhoneNumber;
     @Column(name = "buyer_email") private String buyerEmail;
@@ -29,18 +30,16 @@ public class UsedCarSales {
     }
 
     @Builder
-    public UsedCarSales(int sellerSeq,
-                        String buyerName,
+    public UsedCarSales(String buyerName,
                         String buyerPhoneNumber,
                         String buyerEmail,
                         String buyerAddr,
-                        UsedCar usedcarId){
-        this.sellerSeq = sellerSeq;
+                        UsedCar usedCarId){
         this.buyerName = buyerName;
         this.buyerPhoneNumber = buyerPhoneNumber;
         this.buyerEmail = buyerEmail;
         this.buyerAddr = buyerAddr;
-        setUsedCar(usedcarId);
+        setUsedCar(usedCarId);
     }
 
     public UsedCarSales() {
