@@ -32,8 +32,6 @@ public class QUsedCarSales extends EntityPathBase<UsedCarSales> {
 
     public final NumberPath<Long> reqId = createNumber("reqId", Long.class);
 
-    public final NumberPath<Integer> sellerSeq = createNumber("sellerSeq", Integer.class);
-
     public final com.bitcamp.team_project_eco.usedCar.QUsedCar usedCar;
 
     public QUsedCarSales(String variable) {

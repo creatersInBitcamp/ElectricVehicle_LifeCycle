@@ -1,9 +1,11 @@
 package com.bitcamp.team_project_eco.user;
 
+import com.bitcamp.team_project_eco.join.AdminUsedCar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
 
@@ -64,5 +66,15 @@ public class UserController {
     @GetMapping("/getone/{userSeq}")
     public User refreshUser(@PathVariable String userSeq) {
         return userService.findById(userSeq).get();
+    }
+
+    @GetMapping("/usedCar")
+    public List<AdminUsedCar> adminUsedCar(){
+        return userService.findAdminUsedCar();
+    }
+
+    @PostMapping("/addCar")
+    public void addCar(@RequestBody File file) {
+        System.out.println(file.toString());
     }
 }

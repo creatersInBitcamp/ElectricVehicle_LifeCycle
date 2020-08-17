@@ -12,10 +12,13 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 interface ElectricCarService extends JpaService<ElectricCar> {
     public void readCsv();
+
+    List<ElectricCarVO> getAll();
 
     void insertElectricCar(ElectricCar electricCar);
 
@@ -38,7 +41,169 @@ public class ElectricCarServiceImpl implements ElectricCarService {
 
     @Override
     public Iterable<ElectricCar> findAll() {
+        System.out.println(electricCarRepository.findAll().toString());
         return electricCarRepository.findAll();
+    }
+
+    @Override
+    public List<ElectricCarVO> getAll() {
+        List<ElectricCar> electricCarList = electricCarRepository.findAll();
+        List<ElectricCarVO> result = new ArrayList<>();
+        for(int i=0; i<count();i++){
+            ElectricCarVO carVO = new ElectricCarVO();
+            carVO.setCarId(Long.valueOf(i));
+            carVO.setCarName(electricCarList.get(i).getCarName());
+            carVO.setYyyy(electricCarList.get(i).getYyyy());
+            carVO.setTrim(electricCarList.get(i).getTrim());
+            carVO.setBrand(electricCarList.get(i).getBrand());
+            carVO.setPrice(electricCarList.get(i).getPrice());
+            carVO.setFuel(electricCarList.get(i).getFuel());
+            carVO.setFuelEfficiency(electricCarList.get(i).getFuelEfficiency());
+            carVO.setPassengersNumber(electricCarList.get(i).getPassengersNumber());
+            carVO.setDrivingMethod(electricCarList.get(i).getDrivingMethod());
+            carVO.setDistanceDriven(electricCarList.get(i).getDistanceDriven());
+            carVO.setEnergy(electricCarList.get(i).getEnergy());
+            carVO.setMaximumOutput(electricCarList.get(i).getMaximumOutput());
+            carVO.setMaximumTorque(electricCarList.get(i).getMaximumTorque());
+            carVO.setAccelerationPerformance(electricCarList.get(i).getAccelerationPerformance());
+            carVO.setLength(electricCarList.get(i).getLength());
+            carVO.setWidth(electricCarList.get(i).getWidth());
+            carVO.setHeight(electricCarList.get(i).getHeight());
+            carVO.setWheelBase(electricCarList.get(i).getWheelBase());
+            carVO.setFrontDistance(electricCarList.get(i).getFrontDistance());
+            carVO.setBackDistance(electricCarList.get(i).getBackDistance());
+            carVO.setWeight(electricCarList.get(i).getWeight());
+            carVO.setFrontWheel(electricCarList.get(i).getFrontWheel());
+            carVO.setRearWheel(electricCarList.get(i).getRearWheel());
+            carVO.setFrontSuspension(electricCarList.get(i).getFrontSuspension());
+            carVO.setRearSuspension(electricCarList.get(i).getRearSuspension());
+            carVO.setFrontBraking(electricCarList.get(i).getFrontBraking());
+            carVO.setRearBraking(electricCarList.get(i).getRearBraking());
+            carVO.setSteering(electricCarList.get(i).getSteering());
+            carVO.setImg(electricCarList.get(i).getImg());
+            carVO.setBoostingCharge(electricCarList.get(i).getBoostingCharge());
+            carVO.setSlowCharging(electricCarList.get(i).getSlowCharging());
+            List<String> colors = new ArrayList<>();
+            colors.set(0,electricCarList.get(i).getColor1());
+            if (electricCarList.get(i).getColor2() == ""){
+                carVO.setColors(colors);
+            }
+            else if (electricCarList.get(i).getColor3() == ""){
+                colors.set(1,electricCarList.get(i).getColor2());
+                carVO.setColors(colors);
+            }
+            else if (electricCarList.get(i).getColor4() == ""){
+                colors.set(1,electricCarList.get(i).getColor2());
+                colors.set(2,electricCarList.get(i).getColor3());
+                carVO.setColors(colors);
+            }
+            else if (electricCarList.get(i).getColor5() == ""){
+                colors.set(1,electricCarList.get(i).getColor2());
+                colors.set(2,electricCarList.get(i).getColor3());
+                colors.set(3,electricCarList.get(i).getColor4());
+                carVO.setColors(colors);
+            }
+            else if (electricCarList.get(i).getColor6() == ""){
+                colors.set(1,electricCarList.get(i).getColor2());
+                colors.set(2,electricCarList.get(i).getColor3());
+                colors.set(3,electricCarList.get(i).getColor4());
+                colors.set(4,electricCarList.get(i).getColor5());
+                carVO.setColors(colors);
+            }
+            else{
+                colors.set(1,electricCarList.get(i).getColor2());
+                colors.set(2,electricCarList.get(i).getColor3());
+                colors.set(3,electricCarList.get(i).getColor4());
+                colors.set(4,electricCarList.get(i).getColor5());
+                colors.set(5,electricCarList.get(i).getColor6());
+                carVO.setColors(colors);
+            }
+            carVO.setSale(electricCarList.get(i).isSale());
+            List<String> pictures = new ArrayList<>();
+            pictures.set(0,electricCarList.get(i).getPicture1());
+            pictures.set(1,electricCarList.get(i).getPicture2());
+            pictures.set(2,electricCarList.get(i).getPicture3());
+            pictures.set(3,electricCarList.get(i).getPicture4());
+            pictures.set(4,electricCarList.get(i).getPicture5());
+            pictures.set(5,electricCarList.get(i).getPicture6());
+            pictures.set(6,electricCarList.get(i).getPicture7());
+            pictures.set(7,electricCarList.get(i).getPicture8());
+            pictures.set(8,electricCarList.get(i).getPicture9());
+            pictures.set(9,electricCarList.get(i).getPicture10());
+            if (electricCarList.get(i).getPicture11() == ""){
+                carVO.setPrictures(pictures);
+            }
+            else if (electricCarList.get(i).getPicture12() == ""){
+                pictures.set(10,electricCarList.get(i).getPicture11());
+                carVO.setColors(pictures);
+            }
+            else if (electricCarList.get(i).getPicture13() == ""){
+                pictures.set(10,electricCarList.get(i).getPicture11());
+                pictures.set(11,electricCarList.get(i).getPicture12());
+                carVO.setColors(pictures);
+            }
+            else if (electricCarList.get(i).getPicture14() == ""){
+                pictures.set(10,electricCarList.get(i).getPicture11());
+                pictures.set(11,electricCarList.get(i).getPicture12());
+                pictures.set(12,electricCarList.get(i).getPicture13());
+                carVO.setColors(pictures);
+            }
+            else if (electricCarList.get(i).getPicture15() == ""){
+                pictures.set(10,electricCarList.get(i).getPicture11());
+                pictures.set(11,electricCarList.get(i).getPicture12());
+                pictures.set(12,electricCarList.get(i).getPicture13());
+                pictures.set(13,electricCarList.get(i).getPicture14());
+                carVO.setColors(pictures);
+            }
+            else if (electricCarList.get(i).getPicture16() == ""){
+                pictures.set(10,electricCarList.get(i).getPicture11());
+                pictures.set(11,electricCarList.get(i).getPicture12());
+                pictures.set(12,electricCarList.get(i).getPicture13());
+                pictures.set(13,electricCarList.get(i).getPicture14());
+                pictures.set(14,electricCarList.get(i).getPicture15());
+                carVO.setColors(pictures);
+            }
+            else if (electricCarList.get(i).getPicture17() == ""){
+                pictures.set(10,electricCarList.get(i).getPicture11());
+                pictures.set(11,electricCarList.get(i).getPicture12());
+                pictures.set(12,electricCarList.get(i).getPicture13());
+                pictures.set(13,electricCarList.get(i).getPicture14());
+                pictures.set(14,electricCarList.get(i).getPicture15());
+                pictures.set(15,electricCarList.get(i).getPicture16());
+                carVO.setColors(pictures);
+            }
+            else if (electricCarList.get(i).getPicture18() == ""){
+                pictures.set(10,electricCarList.get(i).getPicture11());
+                pictures.set(11,electricCarList.get(i).getPicture12());
+                pictures.set(12,electricCarList.get(i).getPicture13());
+                pictures.set(13,electricCarList.get(i).getPicture14());
+                pictures.set(14,electricCarList.get(i).getPicture15());
+                pictures.set(15,electricCarList.get(i).getPicture16());
+                pictures.set(16,electricCarList.get(i).getPicture17());
+                carVO.setColors(pictures);
+            }
+            else{
+                pictures.set(10,electricCarList.get(i).getPicture11());
+                pictures.set(11,electricCarList.get(i).getPicture12());
+                pictures.set(12,electricCarList.get(i).getPicture13());
+                pictures.set(13,electricCarList.get(i).getPicture14());
+                pictures.set(14,electricCarList.get(i).getPicture15());
+                pictures.set(15,electricCarList.get(i).getPicture16());
+                pictures.set(16,electricCarList.get(i).getPicture17());
+                pictures.set(17,electricCarList.get(i).getPicture18());
+                carVO.setColors(pictures);
+            }
+            carVO.setShortDetails(electricCarList.get(i).getShortDetails());
+            carVO.setNew(electricCarList.get(i).isNew());
+            carVO.setVideo(electricCarList.get(i).getVideo());
+            carVO.setUsedCarList(electricCarList.get(i).getUsedCarList());
+            carVO.setPurchasesList(electricCarList.get(i).getPurchasesList());
+            carVO.setWishlistList(electricCarList.get(i).getWishlistList());
+            carVO.setVariants(electricCarList.get(i).getVariants());
+            result.set(i,carVO);
+        }
+
+        return result;
     }
 
     @Override
@@ -59,7 +224,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
 
     @Override
     public void readCsv() {
-        InputStream is = getClass().getResourceAsStream("/static/electriccar.csv");
+        InputStream is = getClass().getResourceAsStream("/static/eccar.csv");
 
         try {
             BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
@@ -68,49 +233,77 @@ public class ElectricCarServiceImpl implements ElectricCarService {
             int i = 1;
             for (CSVRecord csvRecord : csvRecords) {
                 electricCarRepository.save(new ElectricCar(
-                        csvRecord.get(0),
-                        csvRecord.get(1),
-                        csvRecord.get(2),
-                        csvRecord.get(3),
-                        csvRecord.get(4),
-                        csvRecord.get(5),
-                        csvRecord.get(6),
-                        csvRecord.get(7),
-                        csvRecord.get(8),
-                        csvRecord.get(9),
-                        csvRecord.get(10),
-                        csvRecord.get(11),
-                        csvRecord.get(12),
-                        csvRecord.get(13),
-                        csvRecord.get(14),
-                        csvRecord.get(15),
-                        csvRecord.get(16),
-                        csvRecord.get(17),
-                        csvRecord.get(18),
-                        csvRecord.get(19),
-                        csvRecord.get(20),
-                        csvRecord.get(21),
-                        csvRecord.get(22),
-                        csvRecord.get(23),
-                        csvRecord.get(24),
-                        csvRecord.get(25),
-                        csvRecord.get(26),
-                        csvRecord.get(27),
-                        csvRecord.get(28),
-                        csvRecord.get(29),
-                        csvRecord.get(30),
-                        csvRecord.get(31),
-                        csvRecord.get(32),
-                        csvRecord.get(33),
-                        csvRecord.get(34),
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        new ArrayList<>()));
+                        csvRecord.get(0), //carName
+                        csvRecord.get(1),//yyyy
+                        csvRecord.get(2),//modelName
+                        csvRecord.get(3),//trim
+                        csvRecord.get(4),//brand
+                        csvRecord.get(5),//price
+                        csvRecord.get(6),//fuel
+                        csvRecord.get(7),//fuelEfficiency
+                        csvRecord.get(8),//passengersNumber
+                        csvRecord.get(9),//drivingMethod
+                        csvRecord.get(10),//transmission
+                        csvRecord.get(11),//distanceDriven
+                        csvRecord.get(12),//energy
+                        csvRecord.get(13),//maximumOutput
+                        csvRecord.get(14),//maximumTorque
+                        csvRecord.get(15),//accelerationPerformance
+                        csvRecord.get(16),//length
+                        csvRecord.get(17),//width
+                        csvRecord.get(18),//height
+                        csvRecord.get(19),//wheelBase
+                        csvRecord.get(20),//frontDistance
+                        csvRecord.get(21),//backDistance
+                        csvRecord.get(22),//weight
+                        csvRecord.get(23),//frontWheel
+                        csvRecord.get(24),//rearWheel
+                        csvRecord.get(25),//frontSuspension
+                        csvRecord.get(26),//rearSuspension
+                        csvRecord.get(27),//frontBraking
+                        csvRecord.get(28),//rearBraking
+                        csvRecord.get(29),//steering
+                        csvRecord.get(30),//img
+                        csvRecord.get(31),//boostingCharge
+                        csvRecord.get(32),//slowCharging
+                        csvRecord.get(33),//color1
+                        csvRecord.get(34),//color2
+                        csvRecord.get(35),//color3
+                        csvRecord.get(36),//color4
+                        csvRecord.get(37),//color5
+                        csvRecord.get(38),//color6
+                        Boolean.parseBoolean(csvRecord.get(39)),//sale
+                        csvRecord.get(40),//picture1
+                        csvRecord.get(41),//picture2
+                        csvRecord.get(42),//picture3
+                        csvRecord.get(43),//picture4
+                        csvRecord.get(44),//picture5
+                        csvRecord.get(45),//picture6
+                        csvRecord.get(46),//picture7
+                        csvRecord.get(47),//picture8
+                        csvRecord.get(48),//picture9
+                        csvRecord.get(49),//picture10
+                        csvRecord.get(50),//picture11
+                        csvRecord.get(51),//picture12
+                        csvRecord.get(52),//picture13
+                        csvRecord.get(53),//picture14
+                        csvRecord.get(54),//picture15
+                        csvRecord.get(55),//picture16
+                        csvRecord.get(56),//picture17
+                        csvRecord.get(57),//picture18
+                        csvRecord.get(58),//shortDetails
+                        Boolean.parseBoolean(csvRecord.get(59)),//New
+                        csvRecord.get(60),//video
+                        new ArrayList<>(),//usedCarList
+                        new ArrayList<>(),//purchasesList
+                        new ArrayList<>(),//wishlistList
+                        new ArrayList<>()));//variants
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     @Override
     public void insertElectricCar(ElectricCar electricCar) {

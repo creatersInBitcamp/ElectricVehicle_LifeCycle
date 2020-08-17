@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.user;
 
+import com.bitcamp.team_project_eco.join.AdminUsedCar;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -27,6 +28,8 @@ interface UserService extends JpaService<User> {
     List<User> findUsers();
 
     void allUpdate(List<User> user);
+
+    List<AdminUsedCar> findAdminUsedCar();
 }
 
 @Service
@@ -103,6 +106,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void allUpdate(List<User> user) {
         userRepository.saveAll(user);
+    }
+
+    @Override
+    public List<AdminUsedCar> findAdminUsedCar() {
+        return userRepository.findAdminUsedCar();
     }
 
     @Override

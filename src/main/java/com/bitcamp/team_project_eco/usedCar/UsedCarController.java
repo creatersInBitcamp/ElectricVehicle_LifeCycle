@@ -3,6 +3,7 @@ package com.bitcamp.team_project_eco.usedCar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -24,8 +25,23 @@ public class UsedCarController {
         return usedCarService.findAll();
     }
 
+    @GetMapping("/getAllCarInfo")
+    public List<CarInfo> getAllCarInfo () {
+        return null;
+    }
+
     @GetMapping("/delete/{usedCarId}")
     public boolean update(@PathVariable Long usedCarId) {
         return usedCarService.deleteCar(usedCarId);
     }
+
+    @GetMapping("/usedVO")
+    public List<UsedCarVO> detail() {
+        return usedCarService.detail();
+    }
+    @GetMapping("/carInfo")
+    public List<CarInfo> carInfo() {
+        return usedCarService.carInfo();
+    }
+
 }

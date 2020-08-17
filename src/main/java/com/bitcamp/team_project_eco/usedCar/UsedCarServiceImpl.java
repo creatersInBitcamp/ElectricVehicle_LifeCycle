@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.usedCar;
 
+import com.bitcamp.team_project_eco.car.Car;
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import com.bitcamp.team_project_eco.electriccar.ElectricCarRepository;
 import com.bitcamp.team_project_eco.user.User;
@@ -15,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 interface UsedCarService extends JpaService<UsedCar> {
@@ -26,6 +28,10 @@ interface UsedCarService extends JpaService<UsedCar> {
     boolean update(UsedCar usedCar);
 
     boolean deleteCar(Long usedCarId);
+
+    List<UsedCarVO> detail();
+
+    List<CarInfo> carInfo();
 }
 
 @Service
@@ -93,13 +99,13 @@ public class UsedCarServiceImpl implements UsedCarService {
     }
 
     @Override
-    public boolean insert(UsedCarVO usedCarVD) {
-        System.out.println(usedCarVD.userSeq);
-        User u = userRepository.findById(Long.valueOf(usedCarVD.getUserSeq())).get();
-        ElectricCar car = electricCarRepository.findById(Long.valueOf(usedCarVD.getEccarId())).get();
+    public boolean insert(UsedCarVO usedCar) {
+        System.out.println(usedCar.userSeq);
+        User u = userRepository.findById(Long.valueOf(usedCar.getUserSeq())).get();
+        ElectricCar car = electricCarRepository.findById(Long.valueOf(usedCar.getEccarId())).get();
 
         usedCarRepository.save(new UsedCar(
-                usedCarVD.price, usedCarVD.age, usedCarVD.mileage,
+                usedCar.price, usedCar.age, usedCar.mileage,
                 "/assets/images/car/samsung/sm3ZERE/1.jpg",
                 "/assets/images/car/samsung/sm3ZERE/1.jpg",
                 "/assets/images/car/samsung/sm3ZERE/1.jpg",
@@ -128,5 +134,40 @@ public class UsedCarServiceImpl implements UsedCarService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    /*@Override
+    public List<CarInfo> readWithCar() {
+        List<CarInfo> list = new ArrayList<>();
+        List<UsedCar> usedCarList  = usedCarRepository.findAll();
+        int i = 0;
+
+        while (i < usedCarList.size()){
+            UsedCar usedCar = usedCarList.get(i);
+            ElectricCar e = electricCarRepository.findById(usedCar.getElectricCar().getEccarId()).get();
+
+//            usedCar, e.getBrand(), e.getCarName(), e.getYyyy(), e.getModelName(), e.getTrim()
+            CarInfo info = new CarInfo();
+            info.setUsedCar(usedCar);
+            info.setBrand(e.getBrand());
+            info.setCarName(e.getCarName());
+            info.setYyyy(e.getYyyy());
+            info.setModelName(e.getModelName());
+            info.setTrim(e.getTrim());
+            list.add(info);
+            i++;
+        }
+        System.out.println(list.toString());
+        return list;
+    }*/
+
+    @Override
+    public List<UsedCarVO> detail() {
+        return usedCarRepository.detail();
+    }
+
+    @Override
+    public List<CarInfo> carInfo() {
+        return usedCarRepository.carInfo();
     }
 }

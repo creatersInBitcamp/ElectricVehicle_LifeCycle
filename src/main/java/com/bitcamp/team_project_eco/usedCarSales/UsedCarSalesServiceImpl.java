@@ -1,5 +1,8 @@
 package com.bitcamp.team_project_eco.usedCarSales;
 
+import com.bitcamp.team_project_eco.usedCar.UsedCar;
+import com.bitcamp.team_project_eco.usedCar.UsedCarRepository;
+import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.springframework.stereotype.Service;
 
@@ -13,21 +16,24 @@ interface UsedCarSalesService extends JpaService<UsedCarSales> {
 @Service
 public class UsedCarSalesServiceImpl implements UsedCarSalesService {
     private final UsedCarSalesRepository repository;
+    private final UsedCarRepository usedCarRepository;
+    private final UserRepository userRepository;
 
-    public UsedCarSalesServiceImpl(UsedCarSalesRepository repository) {
+    public UsedCarSalesServiceImpl(UsedCarSalesRepository repository, UsedCarRepository usedCarRepository, UserRepository userRepository) {
         this.repository = repository;
+        this.usedCarRepository = usedCarRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
     public boolean insert(SalesVO sales) {
+        UsedCar u = usedCarRepository.findById(Long.valueOf(sales.getUsedCarId())).get();
         repository.save(new UsedCarSales(
-                0,
                 sales.buyerName,
                 sales.buyerPhoneNumber,
                 sales.buyerEmail,
                 sales.buyerAddr,
-                null
-        ));
+                u));
         return true;
     }
 

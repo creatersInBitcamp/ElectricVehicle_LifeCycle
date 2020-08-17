@@ -30,7 +30,17 @@ public class QElectricCar extends EntityPathBase<ElectricCar> {
 
     public final StringPath carName = createString("carName");
 
-    public final StringPath color = createString("color");
+    public final StringPath color1 = createString("color1");
+
+    public final StringPath color2 = createString("color2");
+
+    public final StringPath color3 = createString("color3");
+
+    public final StringPath color4 = createString("color4");
+
+    public final StringPath color5 = createString("color5");
+
+    public final StringPath color6 = createString("color6");
 
     public final StringPath distanceDriven = createString("distanceDriven");
 
@@ -39,8 +49,6 @@ public class QElectricCar extends EntityPathBase<ElectricCar> {
     public final NumberPath<Long> eccarId = createNumber("eccarId", Long.class);
 
     public final StringPath energy = createString("energy");
-
-    public final BooleanPath eol = createBoolean("eol");
 
     public final StringPath frontBraking = createString("frontBraking");
 
@@ -66,7 +74,45 @@ public class QElectricCar extends EntityPathBase<ElectricCar> {
 
     public final StringPath modelName = createString("modelName");
 
+    public final BooleanPath New = createBoolean("New");
+
     public final StringPath passengersNumber = createString("passengersNumber");
+
+    public final StringPath picture1 = createString("picture1");
+
+    public final StringPath picture10 = createString("picture10");
+
+    public final StringPath picture11 = createString("picture11");
+
+    public final StringPath picture12 = createString("picture12");
+
+    public final StringPath picture13 = createString("picture13");
+
+    public final StringPath picture14 = createString("picture14");
+
+    public final StringPath picture15 = createString("picture15");
+
+    public final StringPath picture16 = createString("picture16");
+
+    public final StringPath picture17 = createString("picture17");
+
+    public final StringPath picture18 = createString("picture18");
+
+    public final StringPath picture2 = createString("picture2");
+
+    public final StringPath picture3 = createString("picture3");
+
+    public final StringPath picture4 = createString("picture4");
+
+    public final StringPath picture5 = createString("picture5");
+
+    public final StringPath picture6 = createString("picture6");
+
+    public final StringPath picture7 = createString("picture7");
+
+    public final StringPath picture8 = createString("picture8");
+
+    public final StringPath picture9 = createString("picture9");
 
     public final StringPath price = createString("price");
 
@@ -78,6 +124,10 @@ public class QElectricCar extends EntityPathBase<ElectricCar> {
 
     public final StringPath rearWheel = createString("rearWheel");
 
+    public final BooleanPath sale = createBoolean("sale");
+
+    public final StringPath shortDetails = createString("shortDetails");
+
     public final StringPath slowCharging = createString("slowCharging");
 
     public final StringPath steering = createString("steering");
@@ -87,6 +137,10 @@ public class QElectricCar extends EntityPathBase<ElectricCar> {
     public final StringPath trim = createString("trim");
 
     public final ListPath<com.bitcamp.team_project_eco.usedCar.UsedCar, com.bitcamp.team_project_eco.usedCar.QUsedCar> usedCarList = this.<com.bitcamp.team_project_eco.usedCar.UsedCar, com.bitcamp.team_project_eco.usedCar.QUsedCar>createList("usedCarList", com.bitcamp.team_project_eco.usedCar.UsedCar.class, com.bitcamp.team_project_eco.usedCar.QUsedCar.class, PathInits.DIRECT2);
+
+    public final ListPath<com.bitcamp.team_project_eco.variants.Variants, com.bitcamp.team_project_eco.variants.QVariants> variants = this.<com.bitcamp.team_project_eco.variants.Variants, com.bitcamp.team_project_eco.variants.QVariants>createList("variants", com.bitcamp.team_project_eco.variants.Variants.class, com.bitcamp.team_project_eco.variants.QVariants.class, PathInits.DIRECT2);
+
+    public final StringPath video = createString("video");
 
     public final StringPath weight = createString("weight");
 
