@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter @Setter @ToString(exclude = {"usedCarList","purchasesList","wishlistList","variantsList"})
+@Getter @Setter @ToString(exclude = {"usedCarList","purchasesList","wishlistList","variants"})
 @Table(name = "electric_car")
 public class ElectricCar {
     @Id

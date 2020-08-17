@@ -25,6 +25,11 @@ public class ElectricCarController {
         return (List<ElectricCar>) electricCarService.findAll();
     }
 
+    @GetMapping("/findall")
+    public List<ElectricCarVO> findAllElectriccar(){
+        return electricCarService.getAll();
+    }
+
     @GetMapping("/getone/{eccarId}")
     public Optional<ElectricCar> getOneElectriccar(@PathVariable String eccarId) {
         return electricCarService.findById(eccarId);
