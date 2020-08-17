@@ -32,7 +32,6 @@ public class UsedCar {
     @ManyToOne
     @JoinColumn(name = "user_seq")
     private User user;
-
     public void setUser(User user){
         this.user = user;
     }
