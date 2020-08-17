@@ -99,13 +99,13 @@ public class UsedCarServiceImpl implements UsedCarService {
     }
 
     @Override
-    public boolean insert(UsedCarVO usedCarVD) {
-        System.out.println(usedCarVD.userSeq);
-        User u = userRepository.findById(Long.valueOf(usedCarVD.getUserSeq())).get();
-        ElectricCar car = electricCarRepository.findById(Long.valueOf(usedCarVD.getEccarId())).get();
+    public boolean insert(UsedCarVO usedCar) {
+        System.out.println(usedCar.userSeq);
+        User u = userRepository.findById(Long.valueOf(usedCar.getUserSeq())).get();
+        ElectricCar car = electricCarRepository.findById(Long.valueOf(usedCar.getEccarId())).get();
 
         usedCarRepository.save(new UsedCar(
-                usedCarVD.price, usedCarVD.age, usedCarVD.mileage,
+                usedCar.price, usedCar.age, usedCar.mileage,
                 "/assets/images/car/samsung/sm3ZERE/1.jpg",
                 "/assets/images/car/samsung/sm3ZERE/1.jpg",
                 "/assets/images/car/samsung/sm3ZERE/1.jpg",

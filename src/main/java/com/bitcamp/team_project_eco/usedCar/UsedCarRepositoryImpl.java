@@ -56,6 +56,7 @@ public class UsedCarRepositoryImpl extends QuerydslRepositorySupport implements 
                 usedCar.age,
                 usedCar.mileage,
                 usedCar.img,
+                usedCar.user,
                 electricCar.carName,
                 electricCar.yyyy,
                 electricCar.modelName,

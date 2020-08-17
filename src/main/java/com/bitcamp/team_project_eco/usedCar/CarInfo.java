@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.usedCar;
 
+import com.bitcamp.team_project_eco.user.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,4 +10,5 @@ public class CarInfo {
     String price, age, mileage, carName,
             yyyy, modelName, trim, brand;
     Img img;
+    User user;
 }
