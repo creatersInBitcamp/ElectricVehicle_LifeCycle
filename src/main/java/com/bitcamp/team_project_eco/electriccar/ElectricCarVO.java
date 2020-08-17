@@ -11,6 +11,7 @@ import java.util.List;
 
 @Getter @Setter
 public class ElectricCarVO {
+    Long carId;
     String carName;
     String yyyy;
     String modelName;
@@ -44,13 +45,9 @@ public class ElectricCarVO {
     String img;
     String boostingCharge;
     String slowCharging;
-    String color1;String color2;String color3;String color4;String color5;String color6;
+    List<String> colors;
     boolean sale;
-    String picture1;String picture2;String picture3;String picture4;
-    String picture5;String picture6;String picture7;String picture8;
-    String picture9;String picture10;String picture11;String picture12;
-    String picture13;String picture14;String picture15;String picture16;
-    String picture17; String picture18;
+    List<String> prictures;
     String shortDetails;
     boolean New;
     String video;
