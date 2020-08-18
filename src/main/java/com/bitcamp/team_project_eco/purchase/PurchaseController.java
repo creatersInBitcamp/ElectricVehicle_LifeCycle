@@ -19,13 +19,13 @@ public class PurchaseController {
         return (List<Purchase>) purchaseService.findAll();
     }
 
-    @GetMapping("/getone/{eccarId}")
-    public Optional<Purchase> getOnePurchase(@PathVariable String eccarId) {
-        return purchaseService.findById(eccarId);
+    @GetMapping("/getone/{orderId}")
+    public Optional<Purchase> getOnePurchase(@PathVariable String orderId) {
+        return purchaseService.findById(orderId);
     }
 
     @PostMapping("/insert")
-    public void insertPurchase(@RequestBody Purchase purchase) {
+    public void insertPurchase(@RequestBody PurchaseVO purchase) {
         purchaseService.insertPurchase(purchase);
     }
     @PostMapping("/update")
@@ -33,7 +33,7 @@ public class PurchaseController {
         purchaseService.updatePurchase(purchase);
     }
 
-    @GetMapping("/delete")
+    @GetMapping("/delete/{orderId}")
     public void deletePurchase(@PathVariable String orderId) {
         purchaseService.delete(orderId);
     }

@@ -134,25 +134,25 @@ public class ElectricCarServiceImpl implements ElectricCarService {
             }
             else if (electricCarList.get(i).getPicture12().equals("")){
                 pictures.add(10,electricCarList.get(i).getPicture11());
-                carVO.setColors(pictures);
+                carVO.setPrictures(pictures);
             }
             else if (electricCarList.get(i).getPicture13().equals("")){
                 pictures.add(10,electricCarList.get(i).getPicture11());
                 pictures.add(11,electricCarList.get(i).getPicture12());
-                carVO.setColors(pictures);
+                carVO.setPrictures(pictures);
             }
             else if (electricCarList.get(i).getPicture14().equals("")){
                 pictures.add(10,electricCarList.get(i).getPicture11());
                 pictures.add(11,electricCarList.get(i).getPicture12());
                 pictures.add(12,electricCarList.get(i).getPicture13());
-                carVO.setColors(pictures);
+                carVO.setPrictures(pictures);
             }
             else if (electricCarList.get(i).getPicture15().equals("")){
                 pictures.add(10,electricCarList.get(i).getPicture11());
                 pictures.add(11,electricCarList.get(i).getPicture12());
                 pictures.add(12,electricCarList.get(i).getPicture13());
                 pictures.add(13,electricCarList.get(i).getPicture14());
-                carVO.setColors(pictures);
+                carVO.setPrictures(pictures);
             }
             else if (electricCarList.get(i).getPicture16().equals("")){
                 pictures.add(10,electricCarList.get(i).getPicture11());
@@ -160,7 +160,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
                 pictures.add(12,electricCarList.get(i).getPicture13());
                 pictures.add(13,electricCarList.get(i).getPicture14());
                 pictures.add(14,electricCarList.get(i).getPicture15());
-                carVO.setColors(pictures);
+                carVO.setPrictures(pictures);
             }
             else if (electricCarList.get(i).getPicture17().equals("")){
                 pictures.add(10,electricCarList.get(i).getPicture11());
@@ -169,7 +169,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
                 pictures.add(13,electricCarList.get(i).getPicture14());
                 pictures.add(14,electricCarList.get(i).getPicture15());
                 pictures.add(15,electricCarList.get(i).getPicture16());
-                carVO.setColors(pictures);
+                carVO.setPrictures(pictures);
             }
             else if (electricCarList.get(i).getPicture18().equals("")){
                 pictures.add(10,electricCarList.get(i).getPicture11());
@@ -179,7 +179,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
                 pictures.add(14,electricCarList.get(i).getPicture15());
                 pictures.add(15,electricCarList.get(i).getPicture16());
                 pictures.add(16,electricCarList.get(i).getPicture17());
-                carVO.setColors(pictures);
+                carVO.setPrictures(pictures);
             }
             else{
                 pictures.add(10,electricCarList.get(i).getPicture11());
@@ -190,7 +190,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
                 pictures.add(15,electricCarList.get(i).getPicture16());
                 pictures.add(16,electricCarList.get(i).getPicture17());
                 pictures.add(17,electricCarList.get(i).getPicture18());
-                carVO.setColors(pictures);
+                carVO.setPrictures(pictures);
             }
             carVO.setShortDetails(electricCarList.get(i).getShortDetails());
             carVO.setNew(electricCarList.get(i).isNew());

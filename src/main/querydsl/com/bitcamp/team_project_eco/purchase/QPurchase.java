@@ -22,11 +22,11 @@ public class QPurchase extends EntityPathBase<Purchase> {
 
     public static final QPurchase purchase = new QPurchase("purchase");
 
+    public final StringPath color = createString("color");
+
     public final com.bitcamp.team_project_eco.electriccar.QElectricCar electricCar;
 
     public final NumberPath<Long> orderId = createNumber("orderId", Long.class);
-
-    public final StringPath purchaseAmount = createString("purchaseAmount");
 
     public final StringPath purchasePrice = createString("purchasePrice");
 
