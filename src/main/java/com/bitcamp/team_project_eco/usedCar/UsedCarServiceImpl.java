@@ -25,13 +25,15 @@ interface UsedCarService extends JpaService<UsedCar> {
 
     boolean insert(UsedCarVO usedCar);
 
-    boolean update(UsedCar usedCar);
+    void update(UsedCarVO usedCar);
 
     boolean deleteCar(Long usedCarId);
 
     List<UsedCarVO> detail();
 
     List<CarInfo> carInfo();
+
+    Optional<UsedCar> getOneById(Long usedCarId);
 }
 
 @Service
@@ -115,14 +117,19 @@ public class UsedCarServiceImpl implements UsedCarService {
     }
 
     @Override
-    public boolean update(UsedCar usedCar) {
-        try{
-            usedCarRepository.save(usedCar);
-            return true;
-        }catch (Exception e) {
+    public void update(UsedCarVO usedCar) {
+        try {
+            UsedCar u = usedCarRepository.findById(usedCar.usedCarId).get();
+            u.setUsedCarId(usedCar.usedCarId);
+            u.setElectricCar(electricCarRepository.findById(usedCar.eccarId).get());
+            u.setAge(usedCar.age);
+            u.setPrice(usedCar.price);
+            u.setMileage(usedCar.mileage);
+            usedCarRepository.save(u);
+        } catch (Exception e) {
             e.printStackTrace();
-            return false;
         }
+
     }
 
     @Override
@@ -169,5 +176,10 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public List<CarInfo> carInfo() {
         return usedCarRepository.carInfo();
+    }
+
+    @Override
+    public Optional<UsedCar> getOneById(Long usedCarId) {
+        return usedCarRepository.findById(usedCarId);
     }
 }

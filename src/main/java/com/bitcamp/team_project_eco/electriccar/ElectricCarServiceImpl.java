@@ -41,7 +41,6 @@ public class ElectricCarServiceImpl implements ElectricCarService {
 
     @Override
     public Iterable<ElectricCar> findAll() {
-        System.out.println(electricCarRepository.findAll().toString());
         return electricCarRepository.findAll();
     }
 
@@ -49,7 +48,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
     public List<ElectricCarVO> getAll() {
         List<ElectricCar> electricCarList = electricCarRepository.findAll();
         List<ElectricCarVO> result = new ArrayList<>();
-        for(int i=0; i<count();i++){
+        for(int i=0; i< electricCarList.size(); i++){
             ElectricCarVO carVO = new ElectricCarVO();
             carVO.setEccarId(electricCarList.get(i).getEccarId());
             carVO.setCarName(electricCarList.get(i).getCarName());

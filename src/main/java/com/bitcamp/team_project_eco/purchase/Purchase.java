@@ -21,8 +21,8 @@ public class Purchase {
     @Column(name="order_id",nullable = false) private Long orderId;
     @Column(name="purchasing_method",nullable = false) private String purchasingMethod;
     @Column(name="purchase_time",nullable = false) private String purchaseTime;
-    @Column(name="purchase_amount",nullable = false) private String purchaseAmount ;
-    @Column(name="purchase_price",nullable = false) private String purchasePrice ;
+    @Column(name="purchase_price",nullable = false) private String purchasePrice;
+    @Column(name="color",nullable = false) private String color;
 
     @JsonIgnore
     @ManyToOne
@@ -43,11 +43,13 @@ public class Purchase {
     public Purchase(){}
 
     public Purchase(String purchasingMethod, String purchaseTime,
-                    String purchaseAmount, String purchasePrice) {
+                    String purchasePrice, String color, User user, ElectricCar electricCar) {
         this.purchasingMethod = purchasingMethod;
         this.purchaseTime = purchaseTime;
-        this.purchaseAmount = purchaseAmount;
         this.purchasePrice = purchasePrice;
+        this.color = color;
+        setUser(user);
+        setElectricCar(electricCar);
     }
 
 }
