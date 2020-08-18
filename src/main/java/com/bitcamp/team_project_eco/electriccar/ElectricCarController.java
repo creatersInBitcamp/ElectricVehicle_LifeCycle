@@ -27,7 +27,6 @@ public class ElectricCarController {
 
     @GetMapping("/getall")
     public List<ElectricCarVO> getAllElectriccar(){
-        System.out.println("실행");
         return electricCarService.getAll();
     }
 
