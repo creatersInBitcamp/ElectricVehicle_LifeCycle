@@ -20,13 +20,14 @@ public class ElectricCarController {
         electricCarService.readCsv();
     }
 
-    @GetMapping("/getall")
-    public List<ElectricCar> getAllElectriccar(){
+    @GetMapping("/findall")
+    public List<ElectricCar> findAllElectriccar(){
         return (List<ElectricCar>) electricCarService.findAll();
     }
 
-    @GetMapping("/findall")
-    public List<ElectricCarVO> findAllElectriccar(){
+    @GetMapping("/getall")
+    public List<ElectricCarVO> getAllElectriccar(){
+        System.out.println("실행");
         return electricCarService.getAll();
     }
 
