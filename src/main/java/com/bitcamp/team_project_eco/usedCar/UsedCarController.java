@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -39,9 +40,16 @@ public class UsedCarController {
     public List<UsedCarVO> detail() {
         return usedCarService.detail();
     }
+
     @GetMapping("/carInfo")
     public List<CarInfo> carInfo() {
         return usedCarService.carInfo();
     }
+
+    @GetMapping("/getOne/{usedCarId}")
+    public Optional<UsedCar> getOneUsedCar(@PathVariable Long usedCarId) {return usedCarService.getOneById(usedCarId);}
+
+    @PostMapping("/update")
+    public void updateUsedCar(@RequestBody UsedCarVO usedCar) {usedCarService.update(usedCar);}
 
 }

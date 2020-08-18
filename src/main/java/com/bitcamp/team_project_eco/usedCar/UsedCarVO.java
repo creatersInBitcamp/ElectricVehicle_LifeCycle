@@ -8,6 +8,7 @@ import lombok.Setter;
 @Getter @Setter
 public class UsedCarVO {
     String price, age, mileage;
+    Long usedCarId;
     Long eccarId;
     Long userSeq;
 }
