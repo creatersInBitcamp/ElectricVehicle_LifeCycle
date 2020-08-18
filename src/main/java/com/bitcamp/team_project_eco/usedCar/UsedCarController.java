@@ -32,7 +32,7 @@ public class UsedCarController {
     }
 
     @GetMapping("/delete/{usedCarId}")
-    public boolean update(@PathVariable Long usedCarId) {
+    public boolean delete(@PathVariable Long usedCarId) {
         return usedCarService.deleteCar(usedCarId);
     }
 
