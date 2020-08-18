@@ -8,6 +8,8 @@ import org.hibernate.criterion.Projection;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import static com.bitcamp.team_project_eco.usedCar.QUsedCar.usedCar;
@@ -15,6 +17,8 @@ import static com.bitcamp.team_project_eco.user.QUser.*;
 import static com.bitcamp.team_project_eco.electriccar.QElectricCar.*;
 interface CustomUserRepository {
     List<AdminUsedCar> findAdminUsedCar();
+
+    //int[] counting();
 }
 @Repository
 public class UserRepositoryImpl extends QuerydslRepositorySupport implements CustomUserRepository{
@@ -35,4 +39,16 @@ public class UserRepositoryImpl extends QuerydslRepositorySupport implements Cus
                 .fetch();
         return adminUsedCars;
     }
+        // select count(*) from user groupby user.sex
+    /*@Override
+    public int[] counting() {
+        int man = (int) queryFactory.selectFrom(user).where(user.sex.eq("남자")).fetchCount();
+        int woman = (int) queryFactory.selectFrom(user).where(user.sex.eq("여자")).fetchCount();
+        int age = queryFactory.select()
+        String formatDate= LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy"));
+        int date = Integer.parseInt(formatDate);
+
+
+        return new int[0];
+    }*/
 }

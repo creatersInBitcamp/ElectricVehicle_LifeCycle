@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 interface UserService extends JpaService<User> {
@@ -31,6 +32,10 @@ interface UserService extends JpaService<User> {
     List<AdminUsedCar> findAdminUsedCar();
 
     void saveCsv(MultipartFile file);
+
+    List<Map<String, Object>> counting();
+
+    List<Map<String, Object>> countAge();
 }
 
 @Service
@@ -78,6 +83,17 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public List<Map<String, Object>> counting() {
+        System.out.println(userRepository.counting());
+        return userRepository.counting();
+    }
+
+    @Override
+    public List<Map<String, Object>> countAge() {
+        return userRepository.countAge();
     }
 
     @Override

@@ -11,6 +11,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -85,4 +86,13 @@ public class UserController {
     public void uploadFile(MultipartFile file) throws IOException {
         userService.saveCsv(file);
     }
+    @GetMapping("/countSex")
+    public List<Map<String, Object>> counting(){
+        return userService.counting();
+    }
+    @GetMapping("/countAge")
+    public List<Map<String,Object>> countAge() {
+        return userService.countAge();
+    }
+
 }
