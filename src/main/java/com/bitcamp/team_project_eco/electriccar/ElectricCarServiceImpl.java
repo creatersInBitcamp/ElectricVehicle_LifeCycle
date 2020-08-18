@@ -41,7 +41,6 @@ public class ElectricCarServiceImpl implements ElectricCarService {
 
     @Override
     public Iterable<ElectricCar> findAll() {
-        System.out.println(electricCarRepository.findAll().toString());
         return electricCarRepository.findAll();
     }
 
@@ -49,9 +48,9 @@ public class ElectricCarServiceImpl implements ElectricCarService {
     public List<ElectricCarVO> getAll() {
         List<ElectricCar> electricCarList = electricCarRepository.findAll();
         List<ElectricCarVO> result = new ArrayList<>();
-        for(int i=0; i<count();i++){
+        for(int i=0; i< electricCarList.size(); i++){
             ElectricCarVO carVO = new ElectricCarVO();
-            carVO.setCarId(Long.valueOf(i));
+            carVO.setCarId((long) i);
             carVO.setCarName(electricCarList.get(i).getCarName());
             carVO.setYyyy(electricCarList.get(i).getYyyy());
             carVO.setTrim(electricCarList.get(i).getTrim());
@@ -84,113 +83,113 @@ public class ElectricCarServiceImpl implements ElectricCarService {
             carVO.setBoostingCharge(electricCarList.get(i).getBoostingCharge());
             carVO.setSlowCharging(electricCarList.get(i).getSlowCharging());
             List<String> colors = new ArrayList<>();
-            colors.set(0,electricCarList.get(i).getColor1());
-            if (electricCarList.get(i).getColor2() == ""){
+            colors.add(0,electricCarList.get(i).getColor1());
+            if (electricCarList.get(i).getColor2().equals("")){
                 carVO.setColors(colors);
             }
-            else if (electricCarList.get(i).getColor3() == ""){
-                colors.set(1,electricCarList.get(i).getColor2());
+            else if (electricCarList.get(i).getColor3().equals("")){
+                colors.add(1,electricCarList.get(i).getColor2());
                 carVO.setColors(colors);
             }
-            else if (electricCarList.get(i).getColor4() == ""){
-                colors.set(1,electricCarList.get(i).getColor2());
-                colors.set(2,electricCarList.get(i).getColor3());
+            else if (electricCarList.get(i).getColor4().equals("")){
+                colors.add(1,electricCarList.get(i).getColor2());
+                colors.add(2,electricCarList.get(i).getColor3());
                 carVO.setColors(colors);
             }
-            else if (electricCarList.get(i).getColor5() == ""){
-                colors.set(1,electricCarList.get(i).getColor2());
-                colors.set(2,electricCarList.get(i).getColor3());
-                colors.set(3,electricCarList.get(i).getColor4());
+            else if (electricCarList.get(i).getColor5().equals("")){
+                colors.add(1,electricCarList.get(i).getColor2());
+                colors.add(2,electricCarList.get(i).getColor3());
+                colors.add(3,electricCarList.get(i).getColor4());
                 carVO.setColors(colors);
             }
-            else if (electricCarList.get(i).getColor6() == ""){
-                colors.set(1,electricCarList.get(i).getColor2());
-                colors.set(2,electricCarList.get(i).getColor3());
-                colors.set(3,electricCarList.get(i).getColor4());
-                colors.set(4,electricCarList.get(i).getColor5());
+            else if (electricCarList.get(i).getColor6().equals("")){
+                colors.add(1,electricCarList.get(i).getColor2());
+                colors.add(2,electricCarList.get(i).getColor3());
+                colors.add(3,electricCarList.get(i).getColor4());
+                colors.add(4,electricCarList.get(i).getColor5());
                 carVO.setColors(colors);
             }
             else{
-                colors.set(1,electricCarList.get(i).getColor2());
-                colors.set(2,electricCarList.get(i).getColor3());
-                colors.set(3,electricCarList.get(i).getColor4());
-                colors.set(4,electricCarList.get(i).getColor5());
-                colors.set(5,electricCarList.get(i).getColor6());
+                colors.add(1,electricCarList.get(i).getColor2());
+                colors.add(2,electricCarList.get(i).getColor3());
+                colors.add(3,electricCarList.get(i).getColor4());
+                colors.add(4,electricCarList.get(i).getColor5());
+                colors.add(5,electricCarList.get(i).getColor6());
                 carVO.setColors(colors);
             }
             carVO.setSale(electricCarList.get(i).isSale());
             List<String> pictures = new ArrayList<>();
-            pictures.set(0,electricCarList.get(i).getPicture1());
-            pictures.set(1,electricCarList.get(i).getPicture2());
-            pictures.set(2,electricCarList.get(i).getPicture3());
-            pictures.set(3,electricCarList.get(i).getPicture4());
-            pictures.set(4,electricCarList.get(i).getPicture5());
-            pictures.set(5,electricCarList.get(i).getPicture6());
-            pictures.set(6,electricCarList.get(i).getPicture7());
-            pictures.set(7,electricCarList.get(i).getPicture8());
-            pictures.set(8,electricCarList.get(i).getPicture9());
-            pictures.set(9,electricCarList.get(i).getPicture10());
-            if (electricCarList.get(i).getPicture11() == ""){
+            pictures.add(0,electricCarList.get(i).getPicture1());
+            pictures.add(1,electricCarList.get(i).getPicture2());
+            pictures.add(2,electricCarList.get(i).getPicture3());
+            pictures.add(3,electricCarList.get(i).getPicture4());
+            pictures.add(4,electricCarList.get(i).getPicture5());
+            pictures.add(5,electricCarList.get(i).getPicture6());
+            pictures.add(6,electricCarList.get(i).getPicture7());
+            pictures.add(7,electricCarList.get(i).getPicture8());
+            pictures.add(8,electricCarList.get(i).getPicture9());
+            pictures.add(9,electricCarList.get(i).getPicture10());
+            if (electricCarList.get(i).getPicture11().equals("")){
                 carVO.setPrictures(pictures);
             }
-            else if (electricCarList.get(i).getPicture12() == ""){
-                pictures.set(10,electricCarList.get(i).getPicture11());
+            else if (electricCarList.get(i).getPicture12().equals("")){
+                pictures.add(10,electricCarList.get(i).getPicture11());
                 carVO.setColors(pictures);
             }
-            else if (electricCarList.get(i).getPicture13() == ""){
-                pictures.set(10,electricCarList.get(i).getPicture11());
-                pictures.set(11,electricCarList.get(i).getPicture12());
+            else if (electricCarList.get(i).getPicture13().equals("")){
+                pictures.add(10,electricCarList.get(i).getPicture11());
+                pictures.add(11,electricCarList.get(i).getPicture12());
                 carVO.setColors(pictures);
             }
-            else if (electricCarList.get(i).getPicture14() == ""){
-                pictures.set(10,electricCarList.get(i).getPicture11());
-                pictures.set(11,electricCarList.get(i).getPicture12());
-                pictures.set(12,electricCarList.get(i).getPicture13());
+            else if (electricCarList.get(i).getPicture14().equals("")){
+                pictures.add(10,electricCarList.get(i).getPicture11());
+                pictures.add(11,electricCarList.get(i).getPicture12());
+                pictures.add(12,electricCarList.get(i).getPicture13());
                 carVO.setColors(pictures);
             }
-            else if (electricCarList.get(i).getPicture15() == ""){
-                pictures.set(10,electricCarList.get(i).getPicture11());
-                pictures.set(11,electricCarList.get(i).getPicture12());
-                pictures.set(12,electricCarList.get(i).getPicture13());
-                pictures.set(13,electricCarList.get(i).getPicture14());
+            else if (electricCarList.get(i).getPicture15().equals("")){
+                pictures.add(10,electricCarList.get(i).getPicture11());
+                pictures.add(11,electricCarList.get(i).getPicture12());
+                pictures.add(12,electricCarList.get(i).getPicture13());
+                pictures.add(13,electricCarList.get(i).getPicture14());
                 carVO.setColors(pictures);
             }
-            else if (electricCarList.get(i).getPicture16() == ""){
-                pictures.set(10,electricCarList.get(i).getPicture11());
-                pictures.set(11,electricCarList.get(i).getPicture12());
-                pictures.set(12,electricCarList.get(i).getPicture13());
-                pictures.set(13,electricCarList.get(i).getPicture14());
-                pictures.set(14,electricCarList.get(i).getPicture15());
+            else if (electricCarList.get(i).getPicture16().equals("")){
+                pictures.add(10,electricCarList.get(i).getPicture11());
+                pictures.add(11,electricCarList.get(i).getPicture12());
+                pictures.add(12,electricCarList.get(i).getPicture13());
+                pictures.add(13,electricCarList.get(i).getPicture14());
+                pictures.add(14,electricCarList.get(i).getPicture15());
                 carVO.setColors(pictures);
             }
-            else if (electricCarList.get(i).getPicture17() == ""){
-                pictures.set(10,electricCarList.get(i).getPicture11());
-                pictures.set(11,electricCarList.get(i).getPicture12());
-                pictures.set(12,electricCarList.get(i).getPicture13());
-                pictures.set(13,electricCarList.get(i).getPicture14());
-                pictures.set(14,electricCarList.get(i).getPicture15());
-                pictures.set(15,electricCarList.get(i).getPicture16());
+            else if (electricCarList.get(i).getPicture17().equals("")){
+                pictures.add(10,electricCarList.get(i).getPicture11());
+                pictures.add(11,electricCarList.get(i).getPicture12());
+                pictures.add(12,electricCarList.get(i).getPicture13());
+                pictures.add(13,electricCarList.get(i).getPicture14());
+                pictures.add(14,electricCarList.get(i).getPicture15());
+                pictures.add(15,electricCarList.get(i).getPicture16());
                 carVO.setColors(pictures);
             }
-            else if (electricCarList.get(i).getPicture18() == ""){
-                pictures.set(10,electricCarList.get(i).getPicture11());
-                pictures.set(11,electricCarList.get(i).getPicture12());
-                pictures.set(12,electricCarList.get(i).getPicture13());
-                pictures.set(13,electricCarList.get(i).getPicture14());
-                pictures.set(14,electricCarList.get(i).getPicture15());
-                pictures.set(15,electricCarList.get(i).getPicture16());
-                pictures.set(16,electricCarList.get(i).getPicture17());
+            else if (electricCarList.get(i).getPicture18().equals("")){
+                pictures.add(10,electricCarList.get(i).getPicture11());
+                pictures.add(11,electricCarList.get(i).getPicture12());
+                pictures.add(12,electricCarList.get(i).getPicture13());
+                pictures.add(13,electricCarList.get(i).getPicture14());
+                pictures.add(14,electricCarList.get(i).getPicture15());
+                pictures.add(15,electricCarList.get(i).getPicture16());
+                pictures.add(16,electricCarList.get(i).getPicture17());
                 carVO.setColors(pictures);
             }
             else{
-                pictures.set(10,electricCarList.get(i).getPicture11());
-                pictures.set(11,electricCarList.get(i).getPicture12());
-                pictures.set(12,electricCarList.get(i).getPicture13());
-                pictures.set(13,electricCarList.get(i).getPicture14());
-                pictures.set(14,electricCarList.get(i).getPicture15());
-                pictures.set(15,electricCarList.get(i).getPicture16());
-                pictures.set(16,electricCarList.get(i).getPicture17());
-                pictures.set(17,electricCarList.get(i).getPicture18());
+                pictures.add(10,electricCarList.get(i).getPicture11());
+                pictures.add(11,electricCarList.get(i).getPicture12());
+                pictures.add(12,electricCarList.get(i).getPicture13());
+                pictures.add(13,electricCarList.get(i).getPicture14());
+                pictures.add(14,electricCarList.get(i).getPicture15());
+                pictures.add(15,electricCarList.get(i).getPicture16());
+                pictures.add(16,electricCarList.get(i).getPicture17());
+                pictures.add(17,electricCarList.get(i).getPicture18());
                 carVO.setColors(pictures);
             }
             carVO.setShortDetails(electricCarList.get(i).getShortDetails());
@@ -200,7 +199,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
             carVO.setPurchasesList(electricCarList.get(i).getPurchasesList());
             carVO.setWishlistList(electricCarList.get(i).getWishlistList());
             carVO.setVariants(electricCarList.get(i).getVariants());
-            result.set(i,carVO);
+            result.add(i,carVO);
         }
 
         return result;
