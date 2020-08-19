@@ -35,7 +35,7 @@ interface UserService extends JpaService<User> {
 
     List<Map<String, Object>> counting();
 
-    List<Map<String, Object>> countAge();
+    List<Map<String, String>> countAge();
 }
 
 @Service
@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<Map<String, Object>> countAge() {
+    public List<Map<String, String>> countAge() {
         return userRepository.countAge();
     }
 
