@@ -31,6 +31,8 @@ public class TestEntity {
     @JoinColumn(name = "eccar_id")
     private ElectricCar eeletricCar;
 
+    public TestEntity() { }
+
     public TestEntity(String yyyymmdd, User user, ElectricCar electricCar) {
         this. yyyymmdd = yyyymmdd;
         setUser(user);
