@@ -4,16 +4,13 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString
 @Entity
 @Table(name = "fare")
 public class Fare {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false) private Long id;
-    @Column(name = "fare_id", nullable = false) private int fareId;
+    @Column(name = "fare_id", nullable = false) private Long id;
     @Column(name = "start_name", nullable = false) private String startName;
     @Column(name = "arrive_name", nullable = false) private String arriveName;
     @Column(name = "type_one", nullable = false) private String typeOne;
@@ -23,19 +20,19 @@ public class Fare {
     @Column(name = "type_five", nullable = false) private String typeFive;
     @Column(name = "type_light_car", nullable = false) private String typeLightCar;
 
-    @Builder
-    private Fare(Long id,
-                int fareId,
-                 String startName,
-                 String arriveName,
-                 String typeOne,
-                 String typeTwo,
-                 String typeThree,
-                 String typeFour,
-                 String typeFive,
-                 String typeLightCar) {
+    public Fare() {
+    }
+
+    public Fare(Long id,
+                String startName,
+                String arriveName,
+                String typeOne,
+                String typeTwo,
+                String typeThree,
+                String typeFour,
+                String typeFive,
+                String typeLightCar) {
         this.id = id;
-        this.fareId = fareId;
         this.startName = startName;
         this.arriveName = arriveName;
         this.typeOne = typeOne;

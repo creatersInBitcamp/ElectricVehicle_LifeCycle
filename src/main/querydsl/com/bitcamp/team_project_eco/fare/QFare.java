@@ -21,8 +21,6 @@ public class QFare extends EntityPathBase<Fare> {
 
     public final StringPath arriveName = createString("arriveName");
 
-    public final NumberPath<Integer> fareId = createNumber("fareId", Integer.class);
-
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final StringPath startName = createString("startName");

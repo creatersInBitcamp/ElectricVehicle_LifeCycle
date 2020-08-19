@@ -19,6 +19,11 @@ public class CarController {
         carService.readCsv();
     }
 
+    @GetMapping("/carSearch/{searchWord}")
+    public List<Car> searchByWord(@PathVariable String searchWord) {
+        return carService.searchCar(searchWord);
+    }
+
     @GetMapping("/getall")
     public List<Car> getAllChargingStation(){
         return (List<Car>) carService.findAll();
