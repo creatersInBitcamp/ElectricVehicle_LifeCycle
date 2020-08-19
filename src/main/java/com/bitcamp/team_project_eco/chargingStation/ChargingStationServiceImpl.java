@@ -1,7 +1,8 @@
 package com.bitcamp.team_project_eco.chargingStation;
 
 import com.bitcamp.team_project_eco.bookmark.Bookmark;
-import com.bitcamp.team_project_eco.bookmark.BookmarkRepository;
+import com.bitcamp.team_project_eco.electriccar.ElectricCar;
+import com.bitcamp.team_project_eco.electriccar.ElectricCarRepository;
 import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
@@ -24,16 +25,19 @@ interface ChargingStationService extends JpaService<ChargingStation>{
     void updateChargingStation(ChargingStation chargingStation);
 
     List<? extends Object> findAll(String userSeq);
+    List<? extends Object> getMycarChargingStation(String eccarId, String userSeq);
 }
 
 @Service
 public class ChargingStationServiceImpl implements ChargingStationService{
     private final ChargingStationRepository chargingStationRepository;
     private final UserRepository userRepository;
+    private final ElectricCarRepository electricCarRepository;
 
-    public ChargingStationServiceImpl(ChargingStationRepository chargingStationRepository, UserRepository userRepository) {
+    public ChargingStationServiceImpl(ChargingStationRepository chargingStationRepository, UserRepository userRepository, ElectricCarRepository electricCarRepository) {
         this.chargingStationRepository = chargingStationRepository;
         this.userRepository = userRepository;
+        this.electricCarRepository = electricCarRepository;
     }
 
     @Override
@@ -90,8 +94,8 @@ public class ChargingStationServiceImpl implements ChargingStationService{
                 c.setCategory(chargingStations.get(i).getCategory());
                 c.setUserSeq(Long.valueOf(userSeq));
 
-                for(int j=0; j<id.size();j++){
-                    if (c.getChargingStationId().equals(Long.valueOf(id.get(j)))){
+                for (String s : id) {
+                    if (c.getChargingStationId().equals(Long.valueOf(s))) {
                         c.setBookmarkList(b);
                     }
                 }
@@ -100,7 +104,62 @@ public class ChargingStationServiceImpl implements ChargingStationService{
             }
             return chargingStationList;
         }
+    }
 
+    @Override
+    public List<? extends Object> getMycarChargingStation(String eccarId, String userSeq) {
+        List<Bookmark> b = userRepository.findById(Long.valueOf(userSeq)).get().getBookmarkList();
+        Optional<ElectricCar> electricCar = electricCarRepository.findById(Long.valueOf(eccarId));
+        List<ChargingStation> chargingStations = chargingStationRepository.getMycarChargingStation(electricCar);
+        if(b.isEmpty()){
+            return chargingStations;
+        }
+        else{
+            List<ChargingStationVO> chargingStationList = new ArrayList<>();
+            List<String> id = new ArrayList<>();
+            List<Boolean> check = new ArrayList<>();
+            for (Bookmark bookmark : b) {
+                if (bookmark.getChargingStation() == null){
+                    check.add(true);
+                }else {
+                    check.add(false);
+                    id.add(String.valueOf(bookmark.getChargingStation().getChargingStationId()));
+                }
+                System.out.println("충전소 "+check);
+            }
+            if (!check.contains(false)){
+                return chargingStations;
+            }
+            for(int i=0; i<chargingStations.size();i++){
+                ChargingStationVO c = new ChargingStationVO();
+                System.out.println(chargingStations.get(i).getChargingStationId());
+                c.setChargingStationId(chargingStations.get(i).getChargingStationId());
+                c.setUnitName(chargingStations.get(i).getUnitName());
+                c.setChargerId(chargingStations.get(i).getChargerId());
+                c.setChargerTypeID(chargingStations.get(i).getChargerTypeID());
+                c.setChargerType(chargingStations.get(i).getChargerType());
+                c.setChargerState(chargingStations.get(i).getChargerState());
+                c.setAddress(chargingStations.get(i).getAddress());
+                c.setXValue(chargingStations.get(i).getXValue());
+                c.setYValue(chargingStations.get(i).getYValue());
+                c.setBusinessHours(chargingStations.get(i).getBusinessHours());
+                c.setAgencyName(chargingStations.get(i).getAgencyName());
+                c.setPhone(chargingStations.get(i).getPhone());
+                c.setUpdateDate(chargingStations.get(i).getUpdateDate());
+                c.setBoostingCharge(chargingStations.get(i).getBoostingCharge());
+                c.setCategory(chargingStations.get(i).getCategory());
+                c.setUserSeq(Long.valueOf(userSeq));
+
+                for (String s : id) {
+                    if (c.getChargingStationId().equals(Long.valueOf(s))) {
+                        c.setBookmarkList(b);
+                    }
+                }
+
+                chargingStationList.add(c);
+            }
+            return chargingStationList;
+        }
     }
 
     @Override

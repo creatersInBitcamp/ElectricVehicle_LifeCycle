@@ -53,6 +53,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
             carVO.setEccarId(electricCarList.get(i).getEccarId());
             carVO.setCarName(electricCarList.get(i).getCarName());
             carVO.setYyyy(electricCarList.get(i).getYyyy());
+            carVO.setModelName(electricCarList.get(i).getModelName());
             carVO.setTrim(electricCarList.get(i).getTrim());
             carVO.setBrand(electricCarList.get(i).getBrand());
             carVO.setPrice(electricCarList.get(i).getPrice());
@@ -60,6 +61,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
             carVO.setFuelEfficiency(electricCarList.get(i).getFuelEfficiency());
             carVO.setPassengersNumber(electricCarList.get(i).getPassengersNumber());
             carVO.setDrivingMethod(electricCarList.get(i).getDrivingMethod());
+            carVO.setTransmission(electricCarList.get(i).getTransmission());
             carVO.setDistanceDriven(electricCarList.get(i).getDistanceDriven());
             carVO.setEnergy(electricCarList.get(i).getEnergy());
             carVO.setMaximumOutput(electricCarList.get(i).getMaximumOutput());
