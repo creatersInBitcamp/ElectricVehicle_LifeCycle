@@ -2,6 +2,7 @@ package com.bitcamp.team_project_eco.usedCarSales;
 
 import com.bitcamp.team_project_eco.usedCar.UsedCar;
 import com.bitcamp.team_project_eco.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +23,7 @@ public class UsedCarSales {
     @Column(name = "buyer_email") private String buyerEmail;
     @Column(name = "buyer_addr") private String buyerAddr;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "usedcar_id")
     private UsedCar usedCar;
