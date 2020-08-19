@@ -9,6 +9,7 @@ import org.apache.commons.csv.CSVRecord;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -24,9 +25,9 @@ interface PostService extends JpaService<Post> {
 
     void updatePost(NewPostVO upPost);
 
-    Page<Post> popularSort(Pageable of);
+    Page<Post> popularSort();
 
-    Page<Post> recentSort(PageRequest of);
+    Page<Post> recentSort();
 
     Page<Post> allPostFindByCategory(String category, int page);
 
@@ -120,13 +121,13 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Page<Post> popularSort(Pageable of) {
-        return repository.findAll(of);
+    public Page<Post> popularSort() {
+        return repository.findAll(PageRequest.of(0,5, Sort.Direction.DESC,"hits","recommendation"));
     }
 
     @Override
-    public Page<Post> recentSort(PageRequest of) {
-        return repository.findAll(of);
+    public Page<Post> recentSort() {
+        return repository.findAll(PageRequest.of(0,5, Sort.Direction.DESC,"postId"));
     }
 
     @Override

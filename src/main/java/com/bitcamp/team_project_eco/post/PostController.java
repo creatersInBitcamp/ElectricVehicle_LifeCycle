@@ -28,12 +28,12 @@ public class PostController {
 
     @GetMapping("/popular")
     public Page<Post> popularList() {
-        return service.popularSort(PageRequest.of(0, 5, Sort.by(Sort.Order.asc("hits"))));
+        return service.popularSort();
     }
 
     @GetMapping("/recent")
     public Page<Post> recentList() {
-        return service.recentSort(PageRequest.of(0, 5, Sort.by(Sort.Order.desc("postId"))));
+        return service.recentSort();
     }
 
     @GetMapping("/getall")
