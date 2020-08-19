@@ -83,7 +83,7 @@ public class UsedCarServiceImpl implements UsedCarService {
             Iterable<CSVRecord> csvRecords = parser.getRecords();
             for(CSVRecord csvRecord : csvRecords) {
                 usedCarRepository.save(new UsedCar(
-                        csvRecord.get(0),//price
+                        csvRecord.get(0).replace(",",""),//price
                         csvRecord.get(1),//age
                         csvRecord.get(2),//mileage
                         csvRecord.get(3),//image
