@@ -91,7 +91,7 @@ public class UserController {
         return userService.counting();
     }
     @GetMapping("/countAge")
-    public List<Map<String,Object>> countAge() {
+    public List<Map<String,String>> countAge() {
         return userService.countAge();
     }
 
