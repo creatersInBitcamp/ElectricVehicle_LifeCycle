@@ -82,6 +82,7 @@ public class UserController {
     public void addCar(@RequestParam("files")MultipartFile file) {
         System.out.println(file);
     }
+
     @PostMapping("/uploadFile")
     public void uploadFile(MultipartFile file) throws IOException {
         userService.saveCsv(file);
@@ -90,6 +91,7 @@ public class UserController {
     public List<Map<String, Object>> counting(){
         return userService.counting();
     }
+
     @GetMapping("/countAge")
     public List<Map<String,String>> countAge() {
         return userService.countAge();

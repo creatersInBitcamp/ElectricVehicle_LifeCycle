@@ -32,6 +32,8 @@ public class QUsedCar extends EntityPathBase<UsedCar> {
 
     public final StringPath price = createString("price");
 
+    public final BooleanPath sale = createBoolean("sale");
+
     public final NumberPath<Long> usedCarId = createNumber("usedCarId", Long.class);
 
     public final ListPath<com.bitcamp.team_project_eco.usedCarSales.UsedCarSales, com.bitcamp.team_project_eco.usedCarSales.QUsedCarSales> usedCarSalesList = this.<com.bitcamp.team_project_eco.usedCarSales.UsedCarSales, com.bitcamp.team_project_eco.usedCarSales.QUsedCarSales>createList("usedCarSalesList", com.bitcamp.team_project_eco.usedCarSales.UsedCarSales.class, com.bitcamp.team_project_eco.usedCarSales.QUsedCarSales.class, PathInits.DIRECT2);
