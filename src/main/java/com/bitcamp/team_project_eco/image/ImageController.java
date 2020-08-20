@@ -1,6 +1,5 @@
 package com.bitcamp.team_project_eco.image;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +9,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/images")
 public class ImageController {
-    @Autowired ImageService imageService;
+    private final ImageService imageService;
+
+    public ImageController(ImageService imageService) {
+        this.imageService = imageService;
+    }
 
     @GetMapping("/csv")
     public void csvRead(){

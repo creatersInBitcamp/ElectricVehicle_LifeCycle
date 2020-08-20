@@ -2,6 +2,8 @@ package com.bitcamp.team_project_eco.chargingStation;
 
 import com.bitcamp.team_project_eco.bookmark.Bookmark;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -30,7 +32,8 @@ public class ChargingStation {
     @Column(name = "boosting_charge") private String boostingCharge;
     @Column(name = "category") private String category;
 
-    @OneToMany(mappedBy = "chargingStation", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "chargingStation", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Bookmark> bookmarkList = new ArrayList<>();
 
     public ChargingStation(){}

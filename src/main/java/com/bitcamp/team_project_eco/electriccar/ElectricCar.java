@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -82,13 +84,17 @@ public class ElectricCar {
     @Column(name = "new") private boolean New;
     @Column(name = "video") private String video;
 
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<UsedCar> usedCarList = new ArrayList<>();
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Purchase> purchasesList = new ArrayList<>();
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Wishlist> wishlistList = new ArrayList<>();
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Variants> variants = new ArrayList<>();
 
 

@@ -4,6 +4,8 @@ import com.bitcamp.team_project_eco.bookmark.Bookmark;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.awt.print.Book;
@@ -28,7 +30,8 @@ public class Sights {
     @Column(name = "info", length = 700) private String info;
     @Column(name = "category") private String category;
 
-    @OneToMany(mappedBy = "sights",cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "sights",cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Bookmark> bookmarkList = new ArrayList<>();
 
     public Sights(){}

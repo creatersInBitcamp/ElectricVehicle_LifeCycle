@@ -6,6 +6,8 @@ import com.bitcamp.team_project_eco.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -45,7 +47,8 @@ public class UsedCar {
         this.electricCar = electricCar;
     }
 
-    @OneToMany(mappedBy = "usedCar", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "usedCar", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<UsedCarSales> usedCarSalesList = new ArrayList<>();
 
     public UsedCar(){}
