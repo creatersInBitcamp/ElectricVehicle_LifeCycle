@@ -1,39 +1,13 @@
 spring:
-  http:
-    encoding:
-      enable:
-        true
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://127.0.0.1:3306/mariadb
-    username: mariadb
-    password: mariadb
+    url: jdbc:h2:mem:testdb;
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database-platform: org.hibernate.dialect.H2Dialect
     open-in-view: false
     show-sql: true
     hibernate:
       ddl-auto: create-drop
-  servlet:
-    multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
-      format_sql: true
-      ddl-auto: update
-
-logging:
-  level:
-    org:
-      hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE
-server:
-  port: 8080
-  servlet:
-    encoding:
-      charset: UTF-8
-    force: true
