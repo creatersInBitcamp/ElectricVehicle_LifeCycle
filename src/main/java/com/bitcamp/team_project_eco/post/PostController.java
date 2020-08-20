@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -25,6 +26,11 @@ public class PostController {
     @GetMapping("/pages/{category}/{page}")
     public Page<Post> allPostByCate(@PathVariable int page, @PathVariable String category) {
         return service.allPostFindByCategory(category, page);
+    }
+
+    @GetMapping("/notice/{category}")
+    public List<Post> noticeAll(@PathVariable String category) {
+        return service.findByCategory(category);
     }
 
     @GetMapping("/popular")

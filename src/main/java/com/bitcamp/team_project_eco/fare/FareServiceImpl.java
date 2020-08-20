@@ -9,12 +9,13 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Optional;
 
 interface FareService extends JpaService<Fare> {
     boolean readCsv();
 
-    Fare findFare(String startName, String arriveName);
+    List<Fare> findFare(String startName, String arriveName);
 }
 
 @Service
@@ -77,7 +78,9 @@ public class FareServiceImpl implements FareService {
     }
 
     @Override
-    public Fare findFare(String startName, String arriveName) {
-        return repository.findByStartNameAndArriveName(startName, arriveName);
+    public List<Fare> findFare(String startName, String arriveName) {
+        List<Fare> f = repository.findByStartNameAndArriveName(startName, arriveName);
+        System.out.println(f.toString());
+        return f;
     }
 }

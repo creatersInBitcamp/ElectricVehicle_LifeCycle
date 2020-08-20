@@ -4,11 +4,14 @@ spring:
     url: jdbc:mariadb://127.0.0.1:3306/mariadb
     username: mariadb
     password: mariadb
-
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: update
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
 server:
   port: 8080

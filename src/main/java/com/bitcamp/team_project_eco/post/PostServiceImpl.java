@@ -16,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 interface PostService extends JpaService<Post> {
@@ -38,6 +39,8 @@ interface PostService extends JpaService<Post> {
     boolean recommend(Long postId);
 
     boolean report(Long postId);
+
+    List<Post> findByCategory(String category);
 }
 
 @Service
@@ -179,5 +182,10 @@ public class PostServiceImpl implements PostService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public List<Post> findByCategory(String category) {
+        return repository.findByOnlyCategory(category);
     }
 }

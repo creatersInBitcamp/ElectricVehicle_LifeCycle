@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 public interface PostRepository extends JpaRepository<Post, Long>, CustomedPostRepository {
 
     @Query("select e from Post e where e.category = :category")
@@ -25,4 +27,6 @@ public interface PostRepository extends JpaRepository<Post, Long>, CustomedPostR
     Page<Post> findByCategoryAndUserIdLikeSearchWord(@Param("category") String category,
                                                      @Param("userId")String userId,
                                                      Pageable page);
+    @Query("select e from Post e where e.category = :category")
+    List<Post> findByOnlyCategory(String category);
 }

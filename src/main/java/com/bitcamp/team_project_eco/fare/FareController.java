@@ -25,8 +25,9 @@ public class FareController {
     }
 
     @GetMapping("/search/{startName}/{arriveName}")
-    public Fare search(@PathVariable String startName,
+    public List<Fare> search(@PathVariable String startName,
                        @PathVariable String arriveName) {
+        System.out.println("출발지 : "+startName+" 도착지 : "+arriveName);
         return fareService.findFare(startName, arriveName);
     }
 }
