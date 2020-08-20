@@ -47,9 +47,13 @@ public class UsedCarController {
     }
 
     @GetMapping("/getOne/{usedCarId}")
-    public Optional<UsedCar> getOneUsedCar(@PathVariable Long usedCarId) {return usedCarService.getOneById(usedCarId);}
+    public Optional<UsedCar> getOneUsedCar(@PathVariable Long usedCarId) {
+        return usedCarService.getOneById(usedCarId);
+    }
 
     @PostMapping("/update")
-    public void updateUsedCar(@RequestBody UsedCarVO usedCar) {usedCarService.update(usedCar);}
+    public void updateUsedCar(@RequestBody UsedCarVO usedCar) {
+        usedCarService.update(usedCar);
+    }
 
 }
