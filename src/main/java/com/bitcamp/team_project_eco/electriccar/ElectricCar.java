@@ -85,16 +85,16 @@ public class ElectricCar {
     @Column(name = "video") private String video;
 
     @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
+    @Fetch(value = FetchMode.SELECT)
     private List<UsedCar> usedCarList = new ArrayList<>();
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Fetch(value = FetchMode.SELECT)
     private List<Purchase> purchasesList = new ArrayList<>();
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Fetch(value = FetchMode.SELECT)
     private List<Wishlist> wishlistList = new ArrayList<>();
-    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
+    @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Fetch(value = FetchMode.SELECT)
     private List<Variants> variants = new ArrayList<>();
 
 

@@ -38,8 +38,8 @@ public class Post {
         this.user = user;
     }
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Fetch(value = FetchMode.SELECT)
     private List<Comment> comments = new ArrayList<>();
 
     public Post(String userId, String link, String title, String date, String img,

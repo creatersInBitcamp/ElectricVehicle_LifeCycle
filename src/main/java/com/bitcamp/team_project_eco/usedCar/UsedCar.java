@@ -47,7 +47,7 @@ public class UsedCar {
         this.electricCar = electricCar;
     }
 
-    @OneToMany(mappedBy = "usedCar", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "usedCar", cascade = CascadeType.ALL)
     @Fetch(value = FetchMode.SUBSELECT)
     private List<UsedCarSales> usedCarSalesList = new ArrayList<>();
 

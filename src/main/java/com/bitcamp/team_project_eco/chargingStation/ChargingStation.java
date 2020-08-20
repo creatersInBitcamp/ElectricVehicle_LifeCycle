@@ -32,8 +32,8 @@ public class ChargingStation {
     @Column(name = "boosting_charge") private String boostingCharge;
     @Column(name = "category") private String category;
 
-    @OneToMany(mappedBy = "chargingStation", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
+    @OneToMany(mappedBy = "chargingStation", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Fetch(value = FetchMode.SELECT)
     private List<Bookmark> bookmarkList = new ArrayList<>();
 
     public ChargingStation(){}

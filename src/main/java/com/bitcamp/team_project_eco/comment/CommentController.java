@@ -18,8 +18,8 @@ public class CommentController {
         commentService.insertComment(comment);
     }
 
-    @PostMapping("/delete/")
-    public void deleteComment(@RequestBody NewCommentVO comment) {
-        commentService.delete(comment.commentId);
+    @GetMapping("/delete/{commentId}")
+    public void deleteComment(@PathVariable String commentId) {
+        commentService.delete(commentId);
     }
 }
