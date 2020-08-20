@@ -1,8 +1,4 @@
 spring:
-  http:
-    encoding:
-      enable:
-        true
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://127.0.0.1:3306/mariadb
@@ -11,24 +7,11 @@ spring:
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    open-in-view: false
-    show-sql: true
     hibernate:
-      format_sql: true
       ddl-auto: update
 
-logging:
-  level:
-    org:
-      hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE
 server:
   port: 8080
   servlet:
     encoding:
       charset: UTF-8
-    force: true

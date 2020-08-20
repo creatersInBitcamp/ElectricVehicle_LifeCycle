@@ -48,7 +48,6 @@ public class UsedCar {
     }
 
     @OneToMany(mappedBy = "usedCar", cascade = CascadeType.ALL)
-    @Fetch(value = FetchMode.SUBSELECT)
     private List<UsedCarSales> usedCarSalesList = new ArrayList<>();
 
     public UsedCar(){}

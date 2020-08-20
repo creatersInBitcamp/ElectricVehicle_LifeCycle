@@ -31,7 +31,6 @@ public class Sights {
     @Column(name = "category") private String category;
 
     @OneToMany(mappedBy = "sights",cascade = CascadeType.ALL, orphanRemoval = true)
-    @Fetch(value = FetchMode.SELECT)
     private List<Bookmark> bookmarkList = new ArrayList<>();
 
     public Sights(){}
