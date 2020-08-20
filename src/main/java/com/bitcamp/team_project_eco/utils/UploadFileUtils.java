@@ -41,7 +41,7 @@ public class UploadFileUtils {
 
     }
 
-    private static String calcPath(String uploadPath) {
+    /*private static String calcPath(String uploadPath) {
 
         Calendar cal = Calendar.getInstance();
 
@@ -56,9 +56,9 @@ public class UploadFileUtils {
         logger.info(datePath);
 
         return datePath;
-    }
+    }*/
 
-    private static void makeDir(String uploadPath, String... paths) {
+    /*private static void makeDir(String uploadPath, String... paths) {
 
         if (new File(paths[paths.length - 1]).exists()) {
             return;
@@ -72,5 +72,5 @@ public class UploadFileUtils {
                 dirPath.mkdir();
             }
         }
-    }
+    }*/
 }
