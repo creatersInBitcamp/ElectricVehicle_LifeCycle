@@ -35,6 +35,11 @@ public class ElectricCarController {
         return electricCarService.findById(eccarId);
     }
 
+    @GetMapping("/search/{searchWord}")
+    public List<ElectricCar> searchCar(@PathVariable String searchWord) {
+        return electricCarService.findAllByWord(searchWord);
+    }
+
     @PostMapping("/insert")
     public void insertElectricCar(@RequestBody ElectricCar electricCar) {
         electricCarService.insertElectricCar(electricCar);

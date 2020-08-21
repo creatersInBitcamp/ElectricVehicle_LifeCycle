@@ -66,7 +66,7 @@ public class TestServiceImpl implements TestService{
             int j = 0;
             for (CSVRecord csvRecord : csvRecords) { // csv row
                 for( int y = 1; y < 13; y++) { // csv col
-                int userId = (j % 300); //유저가 300명일 때, csv data의 순환만큼 순서대로 유저를 대입하고 유저수가 순환하면 다시 0번 유저부터 시작.
+                int userId = (j % 10); //유저가 300명일 때, csv data의 순환만큼 순서대로 유저를 대입하고 유저수가 순환하면 다시 0번 유저부터 시작.
                     for(int z = 0; z < Integer.parseInt(csvRecord.get(y)); z++) { // csv data y월,
                             testRepository.save(new TestEntity(
                                     "2019-"+ y +"-01",

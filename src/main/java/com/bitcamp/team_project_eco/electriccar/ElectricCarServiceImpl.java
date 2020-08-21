@@ -23,6 +23,8 @@ interface ElectricCarService extends JpaService<ElectricCar> {
     void insertElectricCar(ElectricCar electricCar);
 
     void updateElectricCar(ElectricCar electricCar);
+
+    List<ElectricCar> findAllByWord(String searchWord);
 }
 
 @Service
@@ -314,5 +316,10 @@ public class ElectricCarServiceImpl implements ElectricCarService {
     @Override
     public void updateElectricCar(ElectricCar electricCar) {
 
+    }
+
+    @Override
+    public List<ElectricCar> findAllByWord(String searchWord) {
+        return electricCarRepository.findAllByCarName(searchWord);
     }
 }

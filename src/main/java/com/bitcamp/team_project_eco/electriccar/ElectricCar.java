@@ -4,6 +4,7 @@ import com.bitcamp.team_project_eco.purchase.Purchase;
 import com.bitcamp.team_project_eco.usedCar.UsedCar;
 import com.bitcamp.team_project_eco.variants.Variants;
 import com.bitcamp.team_project_eco.wishlist.Wishlist;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -86,6 +87,7 @@ public class ElectricCar {
 
     @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UsedCar> usedCarList = new ArrayList<>();
+    @JsonIgnore
     @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Purchase> purchasesList = new ArrayList<>();
     @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
