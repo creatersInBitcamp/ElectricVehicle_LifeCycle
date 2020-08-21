@@ -81,6 +81,7 @@ public class ElectricCar {
     @Column(name = "short_details") private String shortDetails;
     @Column(name = "new") private boolean New;
     @Column(name = "video") private String video;
+    @Column(name = "date") private String date;
 
     @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UsedCar> usedCarList = new ArrayList<>();
@@ -138,6 +139,7 @@ public class ElectricCar {
                        String shortDetails,
                        boolean New,
                        String video,
+                       String date,
                        List<UsedCar> usedCarList,
                        List<Purchase> purchasesList,
                        List<Wishlist> wishlistList,
@@ -203,6 +205,7 @@ public class ElectricCar {
         this.shortDetails = shortDetails;
         this.New = New;
         this.video = video;
+        this.date = date;
         this.usedCarList.addAll(usedCarList);
         this.purchasesList.addAll(purchasesList);
         this.wishlistList.addAll(wishlistList);

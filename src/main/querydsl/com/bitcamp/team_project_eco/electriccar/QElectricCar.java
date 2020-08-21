@@ -42,6 +42,8 @@ public class QElectricCar extends EntityPathBase<ElectricCar> {
 
     public final StringPath color6 = createString("color6");
 
+    public final StringPath date = createString("date");
+
     public final StringPath distanceDriven = createString("distanceDriven");
 
     public final StringPath drivingMethod = createString("drivingMethod");

@@ -1,7 +1,5 @@
 package com.bitcamp.team_project_eco.electriccar;
 
-import com.bitcamp.team_project_eco.car.Car;
-import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -197,6 +195,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
             carVO.setShortDetails(electricCarList.get(i).getShortDetails());
             carVO.setNew(electricCarList.get(i).isNew());
             carVO.setVideo(electricCarList.get(i).getVideo());
+            carVO.setDate(electricCarList.get(i).getDate());
             carVO.setUsedCarList(electricCarList.get(i).getUsedCarList());
             carVO.setPurchasesList(electricCarList.get(i).getPurchasesList());
             carVO.setWishlistList(electricCarList.get(i).getWishlistList());
@@ -295,6 +294,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
                         csvRecord.get(58),//shortDetails
                         Boolean.parseBoolean(csvRecord.get(59)),//New
                         csvRecord.get(60),//video
+                        csvRecord.get(61),//date
                         new ArrayList<>(),//usedCarList
                         new ArrayList<>(),//purchasesList
                         new ArrayList<>(),//wishlistList

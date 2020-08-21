@@ -1,11 +1,8 @@
 package com.bitcamp.team_project_eco.electriccar;
 
-import com.bitcamp.team_project_eco.car.Car;
-import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 

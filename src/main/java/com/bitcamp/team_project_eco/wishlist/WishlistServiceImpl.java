@@ -1,6 +1,5 @@
 package com.bitcamp.team_project_eco.wishlist;
 
-import com.bitcamp.team_project_eco.car.Car;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.springframework.stereotype.Service;
 

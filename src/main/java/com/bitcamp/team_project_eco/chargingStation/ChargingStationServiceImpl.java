@@ -78,7 +78,7 @@ public class ChargingStationServiceImpl implements ChargingStationService{
             for(int i=0; i<count();i++){
                 ChargingStationVO c = new ChargingStationVO();
                 c.setChargingStationId(chargingStations.get(i).getChargingStationId());
-                c.setUnitName(chargingStations.get(i).getUnitName());
+                c.setName(chargingStations.get(i).getName());
                 c.setChargerId(chargingStations.get(i).getChargerId());
                 c.setChargerTypeID(chargingStations.get(i).getChargerTypeID());
                 c.setChargerType(chargingStations.get(i).getChargerType());
@@ -134,7 +134,7 @@ public class ChargingStationServiceImpl implements ChargingStationService{
                 ChargingStationVO c = new ChargingStationVO();
                 System.out.println(chargingStations.get(i).getChargingStationId());
                 c.setChargingStationId(chargingStations.get(i).getChargingStationId());
-                c.setUnitName(chargingStations.get(i).getUnitName());
+                c.setName(chargingStations.get(i).getName());
                 c.setChargerId(chargingStations.get(i).getChargerId());
                 c.setChargerTypeID(chargingStations.get(i).getChargerTypeID());
                 c.setChargerType(chargingStations.get(i).getChargerType());

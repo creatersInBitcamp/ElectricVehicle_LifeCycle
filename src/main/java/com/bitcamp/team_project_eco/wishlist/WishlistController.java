@@ -1,6 +1,5 @@
 package com.bitcamp.team_project_eco.wishlist;
 
-import com.bitcamp.team_project_eco.car.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

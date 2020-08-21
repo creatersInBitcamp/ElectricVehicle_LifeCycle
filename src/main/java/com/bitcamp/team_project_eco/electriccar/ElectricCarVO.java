@@ -7,6 +7,7 @@ import com.bitcamp.team_project_eco.wishlist.Wishlist;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import java.util.List;
 
 @Getter @Setter
@@ -51,6 +52,7 @@ public class ElectricCarVO {
     String shortDetails;
     boolean New;
     String video;
+    String date;
     List<UsedCar> usedCarList;
     List<Purchase> purchasesList;
     List<Wishlist> wishlistList;
