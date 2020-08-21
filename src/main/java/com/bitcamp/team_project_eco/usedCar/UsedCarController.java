@@ -1,9 +1,7 @@
 package com.bitcamp.team_project_eco.usedCar;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,7 +9,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/usedCars")
 public class UsedCarController {
-    @Autowired UsedCarService usedCarService;
+    private final UsedCarService usedCarService;
+
+    public UsedCarController(UsedCarService usedCarService) {
+        this.usedCarService = usedCarService;
+    }
 
     @GetMapping("/csv")
     public void readCsv(){usedCarService.readCsv();}

@@ -1,6 +1,5 @@
 package com.bitcamp.team_project_eco.variants;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +9,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/variants")
 public class VariantsController {
-    @Autowired
-    VariantsService variantsService;
+    private final VariantsService variantsService;
+
+    public VariantsController(VariantsService variantsService) {
+        this.variantsService = variantsService;
+    }
 
     @GetMapping("/csv")
     public void csvRead(){

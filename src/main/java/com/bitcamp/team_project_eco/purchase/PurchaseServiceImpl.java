@@ -7,6 +7,8 @@ import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 interface PurchaseService extends JpaService<Purchase>{
@@ -14,6 +16,8 @@ interface PurchaseService extends JpaService<Purchase>{
     void insertPurchase(PurchaseVO purchase);
 
     void updatePurchase(Purchase purchase);
+
+    List<OrderVO> findAllOrder();
 }
 
 @Service
@@ -71,5 +75,23 @@ public class PurchaseServiceImpl implements PurchaseService{
     @Override
     public void updatePurchase(Purchase purchase) {
         purchaseRepository.save(purchase);
+    }
+
+    @Override
+    public List<OrderVO> findAllOrder() {
+        OrderVO o = new OrderVO();
+        List<OrderVO> result = new ArrayList<>();
+        List<Purchase> list = purchaseRepository.findAll();
+        for (Purchase purchase : list) {
+            o.setUserName(purchase.getUser().getName());
+            o.setCarName(purchase.getElectricCar().getCarName());
+            o.setColor(purchase.getColor());
+            o.setOrderId(purchase.getOrderId());
+            o.setPurchasePrice(purchase.getPurchasePrice());
+            o.setPurchaseTime(purchase.getPurchaseTime());
+            o.setPurchasingMethod(purchase.getPurchasingMethod());
+            result.add(o);
+        }
+        return result;
     }
 }

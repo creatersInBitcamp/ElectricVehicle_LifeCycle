@@ -4,6 +4,8 @@ import com.bitcamp.team_project_eco.bookmark.Bookmark;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.awt.print.Book;

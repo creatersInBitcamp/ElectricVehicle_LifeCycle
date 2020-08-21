@@ -1,7 +1,5 @@
 package com.bitcamp.team_project_eco.wishlist;
 
-import com.bitcamp.team_project_eco.car.Car;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +9,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/wishlists")
 public class WishlistController {
-    @Autowired WishlistService wishlistService;
+   private final WishlistService wishlistService;
+
+    public WishlistController(WishlistService wishlistService) {
+        this.wishlistService = wishlistService;
+    }
 
     @GetMapping("/getall")
     public List<Wishlist> getAllWishlist(){

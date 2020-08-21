@@ -2,6 +2,8 @@ package com.bitcamp.team_project_eco.chargingStation;
 
 import com.bitcamp.team_project_eco.bookmark.Bookmark;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;

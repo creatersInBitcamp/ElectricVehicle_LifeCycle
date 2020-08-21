@@ -1,10 +1,7 @@
 package com.bitcamp.team_project_eco.purchase;
 
-import com.bitcamp.team_project_eco.electriccar.ElectricCar;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,11 +9,15 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/purchases")
 public class PurchaseController {
-    @Autowired PurchaseService purchaseService;
+    private final PurchaseService purchaseService;
+
+    public PurchaseController(PurchaseService purchaseService) {
+        this.purchaseService = purchaseService;
+    }
 
     @GetMapping("/getall")
-    public List<Purchase> getAllPurchase(){
-        return (List<Purchase>) purchaseService.findAll();
+    public List<OrderVO> getAllPurchase(){
+        return purchaseService.findAllOrder();
     }
 
     @GetMapping("/getone/{orderId}")

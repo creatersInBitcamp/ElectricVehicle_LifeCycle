@@ -1,9 +1,7 @@
 package com.bitcamp.team_project_eco.post;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +12,11 @@ import java.util.Optional;
 @RequestMapping("/posts")
 public class PostController {
     // create, read, update, delete.
-    @Autowired PostService service;
+    private final PostService service;
+
+    public PostController(PostService service) {
+        this.service = service;
+    }
 
     @GetMapping("/readcsv")
     public void csvRead(){
@@ -24,6 +26,11 @@ public class PostController {
     @GetMapping("/pages/{category}/{page}")
     public Page<Post> allPostByCate(@PathVariable int page, @PathVariable String category) {
         return service.allPostFindByCategory(category, page);
+    }
+
+    @GetMapping("/notice/{category}")
+    public List<Post> noticeAll(@PathVariable String category) {
+        return service.findByCategory(category);
     }
 
     @GetMapping("/popular")

@@ -4,10 +4,13 @@ import com.bitcamp.team_project_eco.purchase.Purchase;
 import com.bitcamp.team_project_eco.usedCar.UsedCar;
 import com.bitcamp.team_project_eco.variants.Variants;
 import com.bitcamp.team_project_eco.wishlist.Wishlist;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;

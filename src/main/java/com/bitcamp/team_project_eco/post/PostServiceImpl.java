@@ -16,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 interface PostService extends JpaService<Post> {
@@ -38,6 +39,8 @@ interface PostService extends JpaService<Post> {
     boolean recommend(Long postId);
 
     boolean report(Long postId);
+
+    List<Post> findByCategory(String category);
 }
 
 @Service
@@ -103,7 +106,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void insertPost(NewPostVO object) {
-        User u = object.user;
+        User u = userRepository.findById(Long.parseLong(object.getUserSeq())).get();
         Post np = new Post(object.userName, object.link, object.title, object.date, object.img,
                 object.content, 0, 0,0, object.category, u, new ArrayList<>());
         repository.save(np);
@@ -111,7 +114,6 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void updatePost(NewPostVO post) {
-        User u = post.user;
         Post up = repository.findById(Long.parseLong(post.postId)).get();
         up.setTitle(post.title);
         up.setLink(post.link);
@@ -180,5 +182,10 @@ public class PostServiceImpl implements PostService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public List<Post> findByCategory(String category) {
+        return repository.findByOnlyCategory(category);
     }
 }

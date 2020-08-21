@@ -1,8 +1,5 @@
 package com.bitcamp.team_project_eco.sights;
 
-import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
-import com.bitcamp.team_project_eco.electriccar.ElectricCar;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +9,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/sights")
 public class SightsController {
-    @Autowired SightsService sightsService;
+    private final SightsService sightsService;
+
+    public SightsController(SightsService sightsService) {
+        this.sightsService = sightsService;
+    }
 
     @GetMapping("/csv")
     public void csvRead(){

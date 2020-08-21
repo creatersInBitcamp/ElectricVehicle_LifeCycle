@@ -7,6 +7,8 @@ import com.bitcamp.team_project_eco.purchase.Purchase;
 import com.bitcamp.team_project_eco.usedCar.UsedCar;
 import com.bitcamp.team_project_eco.wishlist.Wishlist;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;

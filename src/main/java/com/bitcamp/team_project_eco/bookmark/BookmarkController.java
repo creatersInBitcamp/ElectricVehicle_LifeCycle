@@ -1,24 +1,22 @@
 package com.bitcamp.team_project_eco.bookmark;
 
-import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import com.bitcamp.team_project_eco.chargingStation.ChargingStationServiceImpl;
-import com.bitcamp.team_project_eco.sights.Sights;
-import com.bitcamp.team_project_eco.wishlist.Wishlist;
-import com.querydsl.core.Tuple;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/bookmarks")
 public class BookmarkController {
-    @Autowired BookmarkService bookmarkService;
-    @Autowired
-    ChargingStationServiceImpl chargingStationService;
+    private final BookmarkService bookmarkService;
+    private final ChargingStationServiceImpl chargingStationService;
+
+    public BookmarkController(BookmarkService bookmarkService, ChargingStationServiceImpl chargingStationService) {
+        this.bookmarkService = bookmarkService;
+        this.chargingStationService = chargingStationService;
+    }
 
     @GetMapping("/getall")
     public List<Bookmark> getAllBookmark(){

@@ -1,7 +1,5 @@
 package com.bitcamp.team_project_eco.chargingStation;
 
-import com.bitcamp.team_project_eco.car.Car;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +9,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/chargingstations")
 public class ChargingStationController {
-    @Autowired ChargingStationService chargingStationService;
+    private final ChargingStationService chargingStationService;
+
+    public ChargingStationController(ChargingStationService chargingStationService) {
+        this.chargingStationService = chargingStationService;
+    }
 
     @GetMapping("/csv")
     public void csvRead(){

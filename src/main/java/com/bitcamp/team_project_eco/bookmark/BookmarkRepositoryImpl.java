@@ -39,20 +39,17 @@ public class BookmarkRepositoryImpl extends QuerydslRepositorySupport implements
     @Override
     public ChargingStation findByChargingStationId(String chargingStationId) {
         QChargingStation qChargingStation = chargingStation;
-        ChargingStation findOne = jpaQueryFactory.selectFrom(qChargingStation).where(qChargingStation.chargerId.eq(chargingStationId)).fetchOne();
-        return findOne;
+        return jpaQueryFactory.selectFrom(qChargingStation).where(qChargingStation.chargerId.eq(chargingStationId)).fetchOne();
     }
     @Override
     public User findByUserSeq(Long userSeq) {
         QUser qUser = user;
-        User findOne = jpaQueryFactory.selectFrom(qUser).where(qUser.userSeq.eq(userSeq)).fetchOne();
-        return findOne;
+        return jpaQueryFactory.selectFrom(qUser).where(qUser.userSeq.eq(userSeq)).fetchOne();
     }
     @Override
     public Sights findBySightsId(Long sightsId) {
         QSights qSights = sights;
-        Sights findOne = jpaQueryFactory.selectFrom(qSights).where(qSights.sightsId.eq(sightsId)).fetchOne();
-        return findOne;
+        return jpaQueryFactory.selectFrom(qSights).where(qSights.sightsId.eq(sightsId)).fetchOne();
     }
     @Override
     public List<Object> findBookmarks(Long userSeq) {

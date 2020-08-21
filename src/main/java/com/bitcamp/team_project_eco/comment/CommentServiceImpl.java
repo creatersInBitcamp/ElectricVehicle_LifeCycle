@@ -44,7 +44,9 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public void delete(String id) { repository.delete(findById(id).get()); }
+    public void delete(String id) {
+        repository.delete(findById(id).orElse(new Comment()));
+    }
 
     @Override
     public boolean exists(String id) {
