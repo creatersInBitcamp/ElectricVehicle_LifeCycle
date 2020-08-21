@@ -21,6 +21,7 @@ public class UsedCar {
     @Column(name = "price") private String price;
     @Column(name = "age") private String age;
     @Column(name = "mileage") private String mileage;
+    @Column(name = "sale") private boolean sale;
 
     @Convert(converter = AdditionalDataConverter.class)
     private Img img;
@@ -40,7 +41,6 @@ public class UsedCar {
     @ManyToOne
     @JoinColumn(name = "eccar_id")
     private ElectricCar electricCar;
-
     public void setElectricCar(ElectricCar electricCar){
         this.electricCar = electricCar;
     }
@@ -54,6 +54,7 @@ public class UsedCar {
     public UsedCar(String price,
                    String age,
                    String mileage,
+                   boolean sale,
                    String imgId1,
                    String imgId2,
                    String imgId3,
@@ -64,6 +65,7 @@ public class UsedCar {
         this.price = price;
         this.age = age;
         this.mileage = mileage;
+        this.sale = sale;
         Img image = new Img();
         image.setImg1(imgId1);
         image.setImg2(imgId2);
