@@ -87,7 +87,6 @@ public class ElectricCar {
 
     @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UsedCar> usedCarList = new ArrayList<>();
-    @JsonIgnore
     @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Purchase> purchasesList = new ArrayList<>();
     @OneToMany(mappedBy = "electricCar", cascade = CascadeType.ALL, orphanRemoval = true)

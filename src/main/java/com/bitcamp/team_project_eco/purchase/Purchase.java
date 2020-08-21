@@ -24,6 +24,7 @@ public class Purchase {
     @Column(name="purchase_price",nullable = false) private String purchasePrice;
     @Column(name="color",nullable = false) private String color;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_seq")
     private User user;
@@ -31,6 +32,7 @@ public class Purchase {
         this.user = user;
     }
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "eccar_id")
     private ElectricCar electricCar;

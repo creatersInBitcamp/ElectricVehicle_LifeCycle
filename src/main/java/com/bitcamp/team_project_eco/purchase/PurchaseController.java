@@ -16,8 +16,8 @@ public class PurchaseController {
     }
 
     @GetMapping("/getall")
-    public List<Purchase> getAllPurchase(){
-        return (List<Purchase>) purchaseService.findAll();
+    public List<OrderVO> getAllPurchase(){
+        return purchaseService.findAllOrder();
     }
 
     @GetMapping("/getone/{orderId}")
