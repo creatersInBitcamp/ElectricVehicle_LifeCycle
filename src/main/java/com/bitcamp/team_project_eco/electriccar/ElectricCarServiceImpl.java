@@ -197,6 +197,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
             carVO.setShortDetails(electricCarList.get(i).getShortDetails());
             carVO.setNew(electricCarList.get(i).isNew());
             carVO.setVideo(electricCarList.get(i).getVideo());
+            carVO.setDate(electricCarList.get(i).getDate());
             carVO.setUsedCarList(electricCarList.get(i).getUsedCarList());
             carVO.setPurchasesList(electricCarList.get(i).getPurchasesList());
             carVO.setWishlistList(electricCarList.get(i).getWishlistList());
@@ -295,6 +296,7 @@ public class ElectricCarServiceImpl implements ElectricCarService {
                         csvRecord.get(58),//shortDetails
                         Boolean.parseBoolean(csvRecord.get(59)),//New
                         csvRecord.get(60),//video
+                        csvRecord.get(61),//date
                         new ArrayList<>(),//usedCarList
                         new ArrayList<>(),//purchasesList
                         new ArrayList<>(),//wishlistList

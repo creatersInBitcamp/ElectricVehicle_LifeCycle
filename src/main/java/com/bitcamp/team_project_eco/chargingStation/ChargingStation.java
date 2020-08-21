@@ -15,7 +15,7 @@ import java.util.List;
 public class ChargingStation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "charging_station_id") private Long chargingStationId;
-    @Column(name = "unit_name") private String unitName;
+    @Column(name = "name") private String name;
     @Column(name = "charger_id") private String chargerId;
     @Column(name = "charger_type_id") private int chargerTypeID;
     @Column(name = "charger_type") private String chargerType;
@@ -36,12 +36,12 @@ public class ChargingStation {
     public ChargingStation(){}
 
     @Builder
-    public ChargingStation (String unitName, String chargerId, int chargerTypeID, String chargerType,
+    public ChargingStation (String name, String chargerId, int chargerTypeID, String chargerType,
                             String chargerState, String address, double xValue, double yValue, String businessHours,
                             String agencyName, String phone, String updateDate,
                             String boostingCharge, String category,
                             List<Bookmark> bookmarkList) {
-        this.unitName = unitName;
+        this.name = name;
         this.chargerId = chargerId;
         this.chargerType = chargerType;
         this.chargerTypeID = chargerTypeID;
