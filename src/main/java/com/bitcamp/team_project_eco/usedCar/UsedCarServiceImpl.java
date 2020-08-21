@@ -34,6 +34,8 @@ interface UsedCarService extends JpaService<UsedCar> {
     List<CarInfo> carInfo();
 
     Optional<UsedCar> getOneById(Long usedCarId);
+
+    List<CarInfo> getDetail(String usedCarId);
 }
 
 @Service
@@ -182,5 +184,10 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public Optional<UsedCar> getOneById(Long usedCarId) {
         return usedCarRepository.findById(usedCarId);
+    }
+
+    @Override
+    public List<CarInfo> getDetail(String usedCarId) {
+        return usedCarRepository.findByUsedCarId(Long.parseLong(usedCarId));
     }
 }
