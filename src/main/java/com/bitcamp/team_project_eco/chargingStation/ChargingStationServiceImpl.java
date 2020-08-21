@@ -3,6 +3,7 @@ package com.bitcamp.team_project_eco.chargingStation;
 import com.bitcamp.team_project_eco.bookmark.Bookmark;
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import com.bitcamp.team_project_eco.electriccar.ElectricCarRepository;
+import com.bitcamp.team_project_eco.user.User;
 import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
@@ -13,6 +14,8 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -20,9 +23,10 @@ import java.util.Optional;
 interface ChargingStationService extends JpaService<ChargingStation>{
     public void readCsv();
 
-    void insertChargingStation(ChargingStation chargingStation);
+    void insertChargingStation(ChargingStaionAdminVO chargingStaionAdminVO);
 
     void updateChargingStation(ChargingStation chargingStation);
+    void allUpdate(List<ChargingStation> chargingStation);
 
     List<? extends Object> findAll(String userSeq);
     List<? extends Object> getMycarChargingStation(String eccarId, String userSeq);
@@ -54,7 +58,6 @@ public class ChargingStationServiceImpl implements ChargingStationService{
     public List<? extends Object> findAll(String userSeq) {
         List<Bookmark> b = userRepository.findById(Long.valueOf(userSeq)).get().getBookmarkList();
         List<ChargingStation> chargingStations = chargingStationRepository.findAll();
-        System.out.println(b.toString());
 
         if(b.isEmpty()){
             return chargingStations;
@@ -70,7 +73,6 @@ public class ChargingStationServiceImpl implements ChargingStationService{
                     check.add(false);
                     id.add(String.valueOf(bookmark.getChargingStation().getChargingStationId()));
                 }
-                System.out.println("충전소 "+check);
             }
             if (!check.contains(false)){
                 return chargingStations;
@@ -125,14 +127,12 @@ public class ChargingStationServiceImpl implements ChargingStationService{
                     check.add(false);
                     id.add(String.valueOf(bookmark.getChargingStation().getChargingStationId()));
                 }
-                System.out.println("충전소 "+check);
             }
             if (!check.contains(false)){
                 return chargingStations;
             }
             for(int i=0; i<chargingStations.size();i++){
                 ChargingStationVO c = new ChargingStationVO();
-                System.out.println(chargingStations.get(i).getChargingStationId());
                 c.setChargingStationId(chargingStations.get(i).getChargingStationId());
                 c.setName(chargingStations.get(i).getName());
                 c.setChargerId(chargingStations.get(i).getChargerId());
@@ -209,13 +209,33 @@ public class ChargingStationServiceImpl implements ChargingStationService{
     }
 
     @Override
-    public void insertChargingStation(ChargingStation chargingStation) {
+    public void insertChargingStation(ChargingStaionAdminVO chargingStaionAdminVO) {
+        ChargingStation chargingStation = new ChargingStation();
+        chargingStation.setName(chargingStaionAdminVO.name);
+        chargingStation.setChargerId("1");
+        chargingStation.setChargerTypeID(chargingStaionAdminVO.chargerTypeID);
+        chargingStation.setChargerType(chargingStaionAdminVO.chargerType);
+        chargingStation.setChargerState(chargingStaionAdminVO.chargerState);
+        chargingStation.setAddress(chargingStaionAdminVO.address);
+        chargingStation.setXValue(chargingStaionAdminVO.xValue);
+        chargingStation.setYValue(chargingStaionAdminVO.yValue);
+        chargingStation.setBusinessHours("24시간 이용가능");
+        chargingStation.setAgencyName("환경부");
+        chargingStation.setPhone("1661-9408");
+        chargingStation.setUpdateDate(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy")));
+        chargingStation.setBoostingCharge("급속(50kW)");
+        chargingStation.setCategory("station");
         chargingStationRepository.save(chargingStation);
     }
 
     @Override
     public void updateChargingStation(ChargingStation chargingStation) {
 
+    }
+
+    @Override
+    public void allUpdate(List<ChargingStation> chargingStation) {
+        chargingStationRepository.saveAll(chargingStation);
     }
 
 }

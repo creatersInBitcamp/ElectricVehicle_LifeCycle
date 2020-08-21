@@ -2,6 +2,7 @@ package com.bitcamp.team_project_eco.car;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,6 @@ public class CarController {
 
     @GetMapping("/carSearch/{searchWord}")
     public List<Car> searchByWord(@PathVariable String searchWord) {
-        System.out.println(searchWord);
         return carService.searchCar(searchWord);
     }
 

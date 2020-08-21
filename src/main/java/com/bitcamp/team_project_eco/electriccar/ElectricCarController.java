@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.electriccar;
 
+import com.bitcamp.team_project_eco.user.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
