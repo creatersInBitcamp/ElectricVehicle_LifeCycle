@@ -78,7 +78,7 @@ public class SightsServiceImpl implements SightsService{
                 s.setSightsId(sights.get(i).getSightsId());
                 s.setName(sights.get(i).getName());
                 s.setStreetAddress(sights.get(i).getStreetAddress());
-                s.setBranchAddress(sights.get(i).getBranchAddress());
+                s.setAddress(sights.get(i).getAddress());
                 s.setXValue(sights.get(i).getXValue());
                 s.setYValue(sights.get(i).getYValue());
                 s.setCapacity(sights.get(i).getCapacity());
