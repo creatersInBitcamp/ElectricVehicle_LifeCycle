@@ -25,7 +25,7 @@ interface ChargingStationService extends JpaService<ChargingStation>{
 
     void insertChargingStation(ChargingStaionAdminVO chargingStaionAdminVO);
 
-    void updateChargingStation(ChargingStation chargingStation);
+    void updateChargingStation(ChargingStationVO chargingStationVO);
     void allUpdate(List<ChargingStation> chargingStation);
 
     List<? extends Object> findAll(String userSeq);
@@ -212,24 +212,24 @@ public class ChargingStationServiceImpl implements ChargingStationService{
     public void insertChargingStation(ChargingStaionAdminVO chargingStaionAdminVO) {
         ChargingStation chargingStation = new ChargingStation();
         chargingStation.setName(chargingStaionAdminVO.name);
-        chargingStation.setChargerId("1");
+        chargingStation.setChargerId(chargingStaionAdminVO.chargerId);
         chargingStation.setChargerTypeID(chargingStaionAdminVO.chargerTypeID);
         chargingStation.setChargerType(chargingStaionAdminVO.chargerType);
         chargingStation.setChargerState(chargingStaionAdminVO.chargerState);
         chargingStation.setAddress(chargingStaionAdminVO.address);
         chargingStation.setXValue(chargingStaionAdminVO.xValue);
         chargingStation.setYValue(chargingStaionAdminVO.yValue);
-        chargingStation.setBusinessHours("24시간 이용가능");
-        chargingStation.setAgencyName("환경부");
-        chargingStation.setPhone("1661-9408");
-        chargingStation.setUpdateDate(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy")));
-        chargingStation.setBoostingCharge("급속(50kW)");
-        chargingStation.setCategory("station");
+        chargingStation.setBusinessHours(chargingStaionAdminVO.businessHours);
+        chargingStation.setAgencyName(chargingStaionAdminVO.agencyName);
+        chargingStation.setPhone(chargingStaionAdminVO.phone);
+        chargingStation.setUpdateDate(chargingStaionAdminVO.updateDate);
+        chargingStation.setBoostingCharge(chargingStaionAdminVO.boostingCharge);
+        chargingStation.setCategory(chargingStaionAdminVO.category);
         chargingStationRepository.save(chargingStation);
     }
 
     @Override
-    public void updateChargingStation(ChargingStation chargingStation) {
+    public void updateChargingStation(ChargingStationVO chargingStationVO) {
 
     }
 

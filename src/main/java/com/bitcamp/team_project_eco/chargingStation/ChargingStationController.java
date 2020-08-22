@@ -47,8 +47,8 @@ public class ChargingStationController {
     }
 
     @PostMapping("/update")
-    public void updatePost(@RequestBody ChargingStation chargingStation) {
-        chargingStationService.updateChargingStation(chargingStation);
+    public void updatePost(@RequestBody ChargingStationVO chargingStationVO) {
+        chargingStationService.updateChargingStation(chargingStationVO);
     }
 
     @PostMapping("/allUpdate")

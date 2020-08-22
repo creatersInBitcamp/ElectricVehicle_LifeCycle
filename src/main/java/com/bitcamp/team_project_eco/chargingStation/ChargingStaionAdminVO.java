@@ -10,10 +10,17 @@ import java.util.List;
 @Setter
 public class ChargingStaionAdminVO {
     String name;
+    String chargerId;
     int chargerTypeID;
     String chargerType;
     String chargerState;
     String address;
     double xValue;
     double yValue;
+    String businessHours;
+    String agencyName;
+    String phone;
+    String updateDate;
+    String boostingCharge;
+    String category;
 }
