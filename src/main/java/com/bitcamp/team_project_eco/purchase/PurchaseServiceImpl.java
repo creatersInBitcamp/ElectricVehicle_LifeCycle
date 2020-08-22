@@ -101,15 +101,15 @@ public class PurchaseServiceImpl implements PurchaseService{
     public List<OrderVO> findAllOrder(Long userSeq) {
         List<OrderVO> result = new ArrayList<>();
         List<Purchase> list = userRepository.findById(userSeq).get().getPurchasesList();
-        for (int i=0; i<list.size(); i++){
+        for (Purchase purchase : list) {
             OrderVO o = new OrderVO();
-            o.setCarName(list.get(i).getElectricCar().getCarName());
-            o.setColor(list.get(i).getColor());
-            o.setOrderId(list.get(i).getOrderId());
-            o.setPurchasePrice(list.get(i).getPurchasePrice());
-            o.setPurchaseTime(list.get(i).getPurchaseTime());
-            o.setPurchasingMethod(list.get(i).getPurchasingMethod());
-            o.setMerchantUid(list.get(i).getMerchantUid());
+            o.setCarName(purchase.getElectricCar().getCarName());
+            o.setColor(purchase.getColor());
+            o.setOrderId(purchase.getOrderId());
+            o.setPurchasePrice(purchase.getPurchasePrice());
+            o.setPurchaseTime(purchase.getPurchaseTime());
+            o.setPurchasingMethod(purchase.getPurchasingMethod());
+            o.setMerchantUid(purchase.getMerchantUid());
             result.add(o);
         }
         return result;
