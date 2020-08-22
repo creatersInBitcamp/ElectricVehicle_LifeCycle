@@ -42,9 +42,9 @@ public class QChargingStation extends EntityPathBase<ChargingStation> {
 
     public final NumberPath<Long> chargingStationId = createNumber("chargingStationId", Long.class);
 
-    public final StringPath phone = createString("phone");
+    public final StringPath name = createString("name");
 
-    public final StringPath unitName = createString("unitName");
+    public final StringPath phone = createString("phone");
 
     public final StringPath updateDate = createString("updateDate");
 

@@ -142,7 +142,7 @@ ALTER TABLE wishlist
 CREATE TABLE charging_station
 (
     `charging_station_id`  INT             NOT NULL AUTO_INCREMENT   COMMENT '충전소아이디',
-    `unit_name`            VARCHAR(45)     NULL        COMMENT '충전소명',
+    `name`            VARCHAR(45)     NULL        COMMENT '충전소명',
     `charger_id`           VARCHAR(45)     NULL        COMMENT '충전기ID',
     `charger_type`         INT             NULL        COMMENT '충전기타입',
     `charger_state`        VARCHAR(45)     NULL        COMMENT '충전기상태',
@@ -163,7 +163,7 @@ CREATE TABLE sights
 (
     `sights_id`       INT             NOT NULL    AUTO_INCREMENT COMMENT '관광지아이디',
     `name`            VARCHAR(45)     NULL        COMMENT '이름',
-    `street_address`  VARCHAR(45)     NULL        COMMENT '소재지도로명주소',
+    `address`         VARCHAR(45)     NULL        COMMENT '소재지도로명주소',
     `branch_address`  VARCHAR(45)     NULL        COMMENT '소재지지번주소',
     `x_value`         double          NULL        COMMENT '위도',
     `y_value`         double          NULL        COMMENT '경도',

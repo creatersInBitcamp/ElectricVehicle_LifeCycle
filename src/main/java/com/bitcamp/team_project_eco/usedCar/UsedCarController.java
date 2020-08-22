@@ -56,6 +56,11 @@ public class UsedCarController {
         return usedCarService.getOneById(usedCarId);
     }
 
+    @GetMapping("/getDetail/{usedCarId}")
+    public List<CarInfo> getDetail(@PathVariable String usedCarId) {
+        return usedCarService.getDetail(usedCarId);
+    }
+
     @PostMapping("/update")
     public void updateUsedCar(@RequestBody UsedCarVO usedCar) {
         usedCarService.update(usedCar);
