@@ -63,4 +63,14 @@ public class UsedCarController {
         usedCarService.update(usedCar);
     }
 
+    @GetMapping("/getAllMyCar/{userSeq}")
+    public List<CarInfo> getAllMyCar(@PathVariable String userSeq) {
+        return usedCarService.getMyCar(userSeq);
+    }
+
+    @GetMapping("/deleteMyCar/{usedCarId}")
+    public boolean deleteMyCar(@PathVariable Long usedCarId) {
+        return usedCarService.deleteCar(usedCarId);
+    }
+
 }

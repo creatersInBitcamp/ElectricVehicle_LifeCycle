@@ -34,6 +34,8 @@ interface UsedCarService extends JpaService<UsedCar> {
     Optional<UsedCar> getOneById(Long usedCarId);
 
     List<CarInfo> getDetail(String usedCarId);
+
+    List<CarInfo> getMyCar(String userSeq);
 }
 
 @Service
@@ -87,12 +89,13 @@ public class UsedCarServiceImpl implements UsedCarService {
                         csvRecord.get(1),//age
                         csvRecord.get(2),//mileage
                         Boolean.parseBoolean(csvRecord.get(3)),//sale
-                        csvRecord.get(4),//image
+                        Boolean.parseBoolean(csvRecord.get(4)),//main
                         csvRecord.get(5),//image
                         csvRecord.get(6),//image
                         csvRecord.get(7),//image
-                        userRepository.findById(Long.parseLong(csvRecord.get(8))).orElse(new User()),
-                        electricCarRepository.findById(Long.parseLong(csvRecord.get(9))).orElse(new ElectricCar()),
+                        csvRecord.get(8),//image
+                        userRepository.findById(Long.parseLong(csvRecord.get(9))).orElse(new User()),
+                        electricCarRepository.findById(Long.parseLong(csvRecord.get(10))).orElse(new ElectricCar()),
                         new ArrayList<>()
                 ));
             }
@@ -103,16 +106,16 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     public boolean insert(UsedCarVO usedCar) {
-        System.out.println(usedCar.userSeq);
         User u = userRepository.findById(Long.valueOf(usedCar.getUserSeq())).get();
         ElectricCar car = electricCarRepository.findById(Long.valueOf(usedCar.getEccarId())).get();
 
         usedCarRepository.save(new UsedCar(
                 usedCar.price, usedCar.age, usedCar.mileage, usedCar.sale,
-                "/assets/images/car/samsung/sm3ZERE/1.jpg",
-                "/assets/images/car/samsung/sm3ZERE/1.jpg",
-                "/assets/images/car/samsung/sm3ZERE/1.jpg",
-                "/assets/images/car/samsung/sm3ZERE/1.jpg",
+                false,
+                null,
+                null,
+                null,
+                null,
                 u, car, new ArrayList<>()));
         return true;
     }
@@ -187,5 +190,10 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public List<CarInfo> getDetail(String usedCarId) {
         return usedCarRepository.findByUsedCarId(Long.parseLong(usedCarId));
+    }
+
+    @Override
+    public List<CarInfo> getMyCar(String userSeq) {
+        return usedCarRepository.findByUserSeq(Long.parseLong(userSeq));
     }
 }

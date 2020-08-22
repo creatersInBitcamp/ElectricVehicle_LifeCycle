@@ -24,6 +24,7 @@ public class UsedCar {
     @Column(name = "age") private String age;
     @Column(name = "mileage") private String mileage;
     @Column(name = "sale") private boolean sale;
+    @Column(name = "main") private boolean main;
 
     @Convert(converter = AdditionalDataConverter.class)
     private Img img;
@@ -57,6 +58,7 @@ public class UsedCar {
                    String age,
                    String mileage,
                    boolean sale,
+                   boolean main,
                    String imgId1,
                    String imgId2,
                    String imgId3,
@@ -68,6 +70,7 @@ public class UsedCar {
         this.age = age;
         this.mileage = mileage;
         this.sale = sale;
+        this.main = main;
         Img image = new Img();
         image.setImg1(imgId1);
         image.setImg2(imgId2);
