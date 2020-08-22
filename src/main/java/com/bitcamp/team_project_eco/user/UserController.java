@@ -1,8 +1,10 @@
 package com.bitcamp.team_project_eco.user;
 
 import com.bitcamp.team_project_eco.join.AdminUsedCar;
+import com.querydsl.core.Tuple;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -58,6 +60,12 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/count")
+    public int count() {
+        return userService.count();
+    }
+
     @GetMapping("/sendPassword/{email}")
     public String sendPassword(@PathVariable String email){
         return userService.findByEmail(email).map(com.bitcamp.team_project_eco.user.User::getPassword).orElse(null);
@@ -96,5 +104,20 @@ public class UserController {
     public List<Map<String,String>> countAge() {
         return userService.countAge();
     }
+
+    @GetMapping("/findCarNamePrice/{eccarId}")
+    public List<Map<String,String>> findCarNamePrice(@PathVariable String eccarId) {
+        return userService.findCarNamePrice(eccarId);
+    }
+
+    @GetMapping("/findBrandCar")
+    public List<Map<String,String>> findBrandCar(){
+        return userService.findBrandCar();
+    }
+    @GetMapping("/findBrandUsedCar")
+    public List<Map<String,String>> findBrandUsedCar() {
+        return userService.findBrandUsedCar();
+    }
+
 
 }
