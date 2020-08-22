@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class OrderVO {
     Long orderId;
-    String purchasingMethod, purchaseTime, purchasePrice, color, carName, userName;
+    String purchasingMethod, merchantUid, purchaseTime, purchasePrice, color, carName, userName;
 }

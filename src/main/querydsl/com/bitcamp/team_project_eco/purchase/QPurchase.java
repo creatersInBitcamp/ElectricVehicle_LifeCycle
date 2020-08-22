@@ -26,6 +26,8 @@ public class QPurchase extends EntityPathBase<Purchase> {
 
     public final com.bitcamp.team_project_eco.electriccar.QElectricCar electricCar;
 
+    public final StringPath merchantUid = createString("merchantUid");
+
     public final NumberPath<Long> orderId = createNumber("orderId", Long.class);
 
     public final StringPath purchasePrice = createString("purchasePrice");

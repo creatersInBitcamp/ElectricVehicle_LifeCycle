@@ -20,6 +20,7 @@ public class Purchase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="order_id",nullable = false) private Long orderId;
     @Column(name="purchasing_method",nullable = false) private String purchasingMethod;
+    @Column(name="merchant_uid",nullable = false) private String merchantUid;
     @Column(name="purchase_time",nullable = false) private String purchaseTime;
     @Column(name="purchase_price",nullable = false) private String purchasePrice;
     @Column(name="color",nullable = false) private String color;
@@ -42,9 +43,10 @@ public class Purchase {
 
     public Purchase(){}
 
-    public Purchase(String purchasingMethod, String purchaseTime,
+    public Purchase(String purchasingMethod, String merchantUid, String purchaseTime,
                     String purchasePrice, String color, User user, ElectricCar electricCar) {
         this.purchasingMethod = purchasingMethod;
+        this.merchantUid = merchantUid;
         this.purchaseTime = purchaseTime;
         this.purchasePrice = purchasePrice;
         this.color = color;

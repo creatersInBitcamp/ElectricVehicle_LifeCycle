@@ -20,6 +20,11 @@ public class PurchaseController {
         return purchaseService.findAllOrder();
     }
 
+    @GetMapping("/getall/{userSeq}")
+    public List<OrderVO> getAllPurchase(@PathVariable Long userSeq){
+        return purchaseService.findAllOrder(userSeq);
+    }
+
     @GetMapping("/getone/{orderId}")
     public Optional<Purchase> getOnePurchase(@PathVariable String orderId) {
         return purchaseService.findById(orderId);

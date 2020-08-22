@@ -18,6 +18,7 @@ interface PurchaseService extends JpaService<Purchase>{
     void updatePurchase(Purchase purchase);
 
     List<OrderVO> findAllOrder();
+    List<OrderVO> findAllOrder(Long userSeq);
 }
 
 @Service
@@ -64,6 +65,7 @@ public class PurchaseServiceImpl implements PurchaseService{
         ElectricCar ec = electricCarRepository.findById(Long.parseLong(purchase.getEccarId())).get();
         purchaseRepository.save(new Purchase(
                 purchase.purchasingMethod,
+                purchase.merchant_uid,
                 purchase.purchaseTime,
                 purchase.purchasePrice,
                 purchase.color,
@@ -90,6 +92,24 @@ public class PurchaseServiceImpl implements PurchaseService{
             o.setPurchasePrice(purchase.getPurchasePrice());
             o.setPurchaseTime(purchase.getPurchaseTime());
             o.setPurchasingMethod(purchase.getPurchasingMethod());
+            result.add(o);
+        }
+        return result;
+    }
+
+    @Override
+    public List<OrderVO> findAllOrder(Long userSeq) {
+        List<OrderVO> result = new ArrayList<>();
+        List<Purchase> list = userRepository.findById(userSeq).get().getPurchasesList();
+        for (int i=0; i<list.size(); i++){
+            OrderVO o = new OrderVO();
+            o.setCarName(list.get(i).getElectricCar().getCarName());
+            o.setColor(list.get(i).getColor());
+            o.setOrderId(list.get(i).getOrderId());
+            o.setPurchasePrice(list.get(i).getPurchasePrice());
+            o.setPurchaseTime(list.get(i).getPurchaseTime());
+            o.setPurchasingMethod(list.get(i).getPurchasingMethod());
+            o.setMerchantUid(list.get(i).getMerchantUid());
             result.add(o);
         }
         return result;
