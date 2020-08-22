@@ -28,6 +28,8 @@ public class QUsedCar extends EntityPathBase<UsedCar> {
 
     public final SimplePath<Img> img = createSimple("img", Img.class);
 
+    public final BooleanPath main = createBoolean("main");
+
     public final StringPath mileage = createString("mileage");
 
     public final StringPath price = createString("price");
