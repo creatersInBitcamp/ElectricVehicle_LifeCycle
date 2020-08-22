@@ -1,7 +1,5 @@
 package com.bitcamp.team_project_eco.electriccar;
 
-import com.bitcamp.team_project_eco.car.Car;
-import com.bitcamp.team_project_eco.chargingStation.ChargingStation;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;

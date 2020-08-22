@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter @Setter
 public class SalesVO {
-    String buyerName, buyerPhoneNumber, buyerEmail, buyerAddr;
+    String buyerName, buyerPhoneNumber, buyerEmail, buyerAddr, carName;
     Long usedCarId;
 }

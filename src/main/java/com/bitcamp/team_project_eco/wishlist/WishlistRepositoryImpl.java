@@ -1,6 +1,5 @@
 package com.bitcamp.team_project_eco.wishlist;
 
-import com.bitcamp.team_project_eco.car.Car;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;

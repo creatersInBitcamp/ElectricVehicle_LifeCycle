@@ -3,6 +3,7 @@ package com.bitcamp.team_project_eco.electriccar;
 import com.bitcamp.team_project_eco.user.User;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
