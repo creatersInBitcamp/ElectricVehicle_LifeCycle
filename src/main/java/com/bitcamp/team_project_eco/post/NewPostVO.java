@@ -6,5 +6,5 @@ import lombok.Setter;
 
 @Getter @Setter
 public class NewPostVO {
-    String postId, userName, link, title, date, img, content, category, userSeq;
+    String postId, userId, link, title, date, img, content, category, userSeq;
 }

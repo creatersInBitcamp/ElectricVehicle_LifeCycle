@@ -107,7 +107,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public void insertPost(NewPostVO object) {
         User u = userRepository.findById(Long.parseLong(object.getUserSeq())).get();
-        Post np = new Post(object.userName, object.link, object.title, object.date, object.img,
+        Post np = new Post(object.userId, object.link, object.title, object.date, object.img,
                 object.content, 0, 0,0, object.category, u, new ArrayList<>());
         repository.save(np);
     }
