@@ -2,6 +2,7 @@ package com.bitcamp.team_project_eco.usedCar;
 
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import com.bitcamp.team_project_eco.electriccar.ElectricCarRepository;
+import com.bitcamp.team_project_eco.electriccar.ElectricCarVO;
 import com.bitcamp.team_project_eco.user.User;
 import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
@@ -20,6 +21,8 @@ import java.util.Optional;
 interface UsedCarService extends JpaService<UsedCar> {
 
     void readCsv();
+
+    public List<UsedCarsVO> getAll();
 
     boolean insert(UsedCarVO usedCar);
 
@@ -61,7 +64,43 @@ public class UsedCarServiceImpl implements UsedCarService {
     public Iterable<UsedCar> findAll() {
         return usedCarRepository.findAll();
     }
-
+    @Override
+    public List<UsedCarsVO> getAll() {
+        List<UsedCar> usedCarList = usedCarRepository.findAll();
+        List<UsedCarsVO> result = new ArrayList<>();
+        for(int i=0; i< usedCarList.size(); i++){
+            UsedCarsVO carVO = new UsedCarsVO();
+            carVO.setUsedCarId(usedCarList.get(i).getUsedCarId());
+            carVO.setPrice(usedCarList.get(i).getPrice());
+            carVO.setAge(usedCarList.get(i).getAge());
+            carVO.setMileage(usedCarList.get(i).getMileage());
+            carVO.setSale(usedCarList.get(i).isSale());
+            carVO.setMain(usedCarList.get(i).isMain());
+            carVO.setImg(usedCarList.get(i).getImg());
+            carVO.setUser(usedCarList.get(i).getUser());
+            carVO.setCarName(usedCarList.get(i).getElectricCar().getCarName());
+            carVO.setYyyy(usedCarList.get(i).getElectricCar().getYyyy());
+            carVO.setModelName(usedCarList.get(i).getElectricCar().getModelName());
+            carVO.setTrim(usedCarList.get(i).getElectricCar().getTrim());
+            carVO.setBrand(usedCarList.get(i).getElectricCar().getBrand());
+            List<String> pictures = new ArrayList<>();
+            pictures.add(usedCarList.get(i).getImg().getImg1());
+            pictures.add(usedCarList.get(i).getImg().getImg2());
+            pictures.add(usedCarList.get(i).getImg().getImg3());
+            pictures.add(usedCarList.get(i).getImg().getImg4());
+            pictures.add(usedCarList.get(i).getPicture5());
+            pictures.add(usedCarList.get(i).getPicture6());
+            pictures.add(usedCarList.get(i).getPicture7());
+            pictures.add(usedCarList.get(i).getPicture8());
+            pictures.add(usedCarList.get(i).getPicture9());
+            pictures.add(usedCarList.get(i).getPicture10());
+            pictures.add(usedCarList.get(i).getPicture11());
+            carVO.setPictures(pictures);
+            carVO.setUsedCarSalesList(usedCarList.get(i).getUsedCarSalesList());
+            result.add(carVO);
+        }
+        return result;
+    }
     @Override
     public int count() {
         return (int) usedCarRepository.count();
@@ -79,7 +118,7 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     public void readCsv() {
-        InputStream is = getClass().getResourceAsStream("/static/used_cars531.csv");
+        InputStream is = getClass().getResourceAsStream("/static/usedcar.csv");
 
         try {
             BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
@@ -92,12 +131,19 @@ public class UsedCarServiceImpl implements UsedCarService {
                         csvRecord.get(2),//mileage
                         Boolean.parseBoolean(csvRecord.get(3)),//sale
                         Boolean.parseBoolean(csvRecord.get(4)),//main
-                        csvRecord.get(5),//image
-                        csvRecord.get(6),//image
-                        csvRecord.get(7),//image
-                        csvRecord.get(8),//image
+                        csvRecord.get(5),//image1
+                        csvRecord.get(6),//image2
+                        csvRecord.get(7),//image3
+                        csvRecord.get(8),//image4
                         userRepository.findById(Long.parseLong(csvRecord.get(9))).orElse(new User()),
                         electricCarRepository.findById(Long.parseLong(csvRecord.get(10))).orElse(new ElectricCar()),
+                        csvRecord.get(11),//image5
+                        csvRecord.get(12),//image6
+                        csvRecord.get(13),//image7
+                        csvRecord.get(14),//image8
+                        csvRecord.get(15),//image9
+                        csvRecord.get(16),//image10
+                        csvRecord.get(17),//image11
                         new ArrayList<>()
                 ));
             }
@@ -118,7 +164,16 @@ public class UsedCarServiceImpl implements UsedCarService {
                 null,
                 null,
                 null,
-                u, car, new ArrayList<>()));
+                u,
+                car,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                new ArrayList<>()));
         return true;
     }
 
