@@ -6,11 +6,18 @@ import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 interface UsedCarSalesService extends JpaService<UsedCarSales> {
 
     boolean insert(SalesVO carSales);
+
+    Optional<UsedCarSales> findById(Long usedCarId);
+
+    List<SalesVO> getInfo();
+
+    List<UsedCarSales> getDetail(String usedCarId);
 }
 
 @Service
@@ -28,13 +35,37 @@ public class UsedCarSalesServiceImpl implements UsedCarSalesService {
     @Override
     public boolean insert(SalesVO sales) {
         UsedCar u = usedCarRepository.findById(Long.valueOf(sales.getUsedCarId())).get();
+//        SalesVO vo = new SalesVO();
+//        vo.setBuyerAddr(sales.buyerAddr);
+//        vo.setBuyerEmail(sales.buyerEmail);
+//        vo.setBuyerName(sales.buyerName);
+//        vo.setBuyerPhoneNumber(sales.buyerPhoneNumber);
+//        vo.setCarName(sales.carName);
+//        vo.setUsedCarId(u.getUsedCarId());
         repository.save(new UsedCarSales(
                 sales.buyerName,
                 sales.buyerPhoneNumber,
                 sales.buyerEmail,
                 sales.buyerAddr,
+                sales.carName,
                 u));
         return true;
+    }
+
+    @Override
+    public Optional<UsedCarSales> findById(Long usedCarId) {
+        System.out.println(repository.findById(usedCarId));
+        return repository.findById(usedCarId);
+    }
+
+    @Override
+    public List<SalesVO> getInfo() {
+        return repository.getInfo();
+    }
+
+    @Override
+    public List<UsedCarSales> getDetail(String usedCarId) {
+        return repository.findByUsedCarId(Long.parseLong(usedCarId));
     }
 
     @Override

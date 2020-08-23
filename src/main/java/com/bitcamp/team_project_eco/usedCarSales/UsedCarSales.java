@@ -22,6 +22,7 @@ public class UsedCarSales {
     @Column(name = "buyer_phone_number") private String buyerPhoneNumber;
     @Column(name = "buyer_email") private String buyerEmail;
     @Column(name = "buyer_addr") private String buyerAddr;
+    @Column(name = "car_name") private String carName;
 
     @JsonIgnore
     @ManyToOne
@@ -36,11 +37,13 @@ public class UsedCarSales {
                         String buyerPhoneNumber,
                         String buyerEmail,
                         String buyerAddr,
+                        String carName,
                         UsedCar usedCarId){
         this.buyerName = buyerName;
         this.buyerPhoneNumber = buyerPhoneNumber;
         this.buyerEmail = buyerEmail;
         this.buyerAddr = buyerAddr;
+        this.carName = carName;
         setUsedCar(usedCarId);
     }
 

@@ -28,6 +28,11 @@ public class UsedCarController {
         return usedCarService.findAll();
     }
 
+    @GetMapping("/findall")
+    public List<UsedCarsVO> findAllUsedCar () {
+        return usedCarService.getAll();
+    }
+
     @GetMapping("/getAllCarInfo")
     public List<CarInfo> getAllCarInfo () {
         return null;
@@ -49,9 +54,28 @@ public class UsedCarController {
     }
 
     @GetMapping("/getOne/{usedCarId}")
-    public Optional<UsedCar> getOneUsedCar(@PathVariable Long usedCarId) {return usedCarService.getOneById(usedCarId);}
+    public Optional<UsedCar> getOneUsedCar(@PathVariable Long usedCarId) {
+        return usedCarService.getOneById(usedCarId);
+    }
+
+    @GetMapping("/getDetail/{usedCarId}")
+    public List<CarInfo> getDetail(@PathVariable String usedCarId) {
+        return usedCarService.getDetail(usedCarId);
+    }
 
     @PostMapping("/update")
-    public void updateUsedCar(@RequestBody UsedCarVO usedCar) {usedCarService.update(usedCar);}
+    public void updateUsedCar(@RequestBody UsedCarVO usedCar) {
+        usedCarService.update(usedCar);
+    }
+
+    @GetMapping("/getAllMyCar/{userSeq}")
+    public List<CarInfo> getAllMyCar(@PathVariable String userSeq) {
+        return usedCarService.getMyCar(userSeq);
+    }
+
+    @GetMapping("/deleteMyCar/{usedCarId}")
+    public boolean deleteMyCar(@PathVariable Long usedCarId) {
+        return usedCarService.deleteCar(usedCarId);
+    }
 
 }

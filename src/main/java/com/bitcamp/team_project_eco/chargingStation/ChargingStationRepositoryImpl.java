@@ -30,7 +30,6 @@ public class ChargingStationRepositoryImpl extends QuerydslRepositorySupport imp
                 .selectFrom(chargingStation)
                 .where(chargingStation.chargerType.contains(eccar.get().getBoostingCharge()))
                 .fetch();
-        System.out.println(chargingStationList);
         return chargingStationList;
     }
 }

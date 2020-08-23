@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PurchaseVO {
-    String purchasingMethod, purchaseTime, purchasePrice, color, userSeq, eccarId;
+    String purchasingMethod,merchant_uid, purchaseTime, purchasePrice, color, userSeq, eccarId;
 }

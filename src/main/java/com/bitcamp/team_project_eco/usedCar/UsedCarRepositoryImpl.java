@@ -15,6 +15,10 @@ interface IUsedCarRepository {
     List<UsedCarVO> detail();
 
     List<CarInfo> carInfo();
+
+    List<CarInfo> findByUsedCarId(long parseLong);
+
+    List<CarInfo> findByUserSeq(long parseLong);
 }
 
 @Repository
@@ -64,6 +68,49 @@ public class UsedCarRepositoryImpl extends QuerydslRepositorySupport implements 
                 electricCar.brand))
                 .from(usedCar)
                 .innerJoin(electricCar).on(electricCar.eccarId.eq(usedCar.electricCar.eccarId))
+                .fetch();
+        return list;
+    }
+
+    @Override
+    public List<CarInfo> findByUsedCarId(long parseLong) {
+        List<CarInfo> list = queryFactory.select(Projections.fields(CarInfo.class,
+                usedCar.usedCarId,
+                usedCar.price,
+                usedCar.age,
+                usedCar.mileage,
+                usedCar.img,
+                usedCar.user,
+                electricCar.carName,
+                electricCar.yyyy,
+                electricCar.modelName,
+                electricCar.trim,
+                electricCar.brand))
+                .from(usedCar)
+                .innerJoin(electricCar).on(electricCar.eccarId.eq(usedCar.electricCar.eccarId))
+                .where(usedCar.usedCarId.eq(parseLong))
+                .fetch();
+        return list;
+    }
+
+    @Override
+    public List<CarInfo> findByUserSeq(long parseLong) {
+        List<CarInfo> list = queryFactory.select(Projections.fields(CarInfo.class,
+                usedCar.usedCarId,
+                usedCar.price,
+                usedCar.age,
+                usedCar.mileage,
+                usedCar.img,
+                usedCar.user,
+//                electricCar.img,
+                electricCar.carName,
+                electricCar.yyyy,
+                electricCar.modelName,
+                electricCar.trim,
+                electricCar.brand))
+                .from(usedCar)
+                .innerJoin(electricCar).on(electricCar.eccarId.eq(usedCar.electricCar.eccarId))
+                .where(usedCar.user.userSeq.eq(parseLong))
                 .fetch();
         return list;
     }

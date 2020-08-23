@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.chargingStation;
 
+import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,15 +42,21 @@ public class ChargingStationController {
     }
 
     @PostMapping("/insert")
-    public void insertPost(@RequestBody ChargingStation chargingStation) {
-        chargingStationService.insertChargingStation(chargingStation);
-    }
-    @PostMapping("/update")
-    public void updatePost(@RequestBody ChargingStation chargingStation) {
-        chargingStationService.updateChargingStation(chargingStation);
+    public void insertPost(@RequestBody ChargingStaionAdminVO chargingStaionAdminVO) {
+        chargingStationService.insertChargingStation(chargingStaionAdminVO);
     }
 
-    @GetMapping("/delete")
+    @PostMapping("/update")
+    public void updatePost(@RequestBody ChargingStationVO chargingStationVO) {
+        chargingStationService.updateChargingStation(chargingStationVO);
+    }
+
+    @PostMapping("/allUpdate")
+    public void allUpdate(@RequestBody List<ChargingStation> chargingStationList){
+        chargingStationService.allUpdate(chargingStationList);
+    }
+
+    @GetMapping("/delete/{chargingStationId}")
     public void deleteChargingStation(@PathVariable String chargingStationId) {
         chargingStationService.delete(chargingStationId);
     }

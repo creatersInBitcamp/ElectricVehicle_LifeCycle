@@ -26,7 +26,7 @@ public class SightsController {
     }
 
     @GetMapping("/getall/{userSeq}")
-    public List<? extends Object> getAllChargingStation(@PathVariable String userSeq){
+    public List<? extends Object> getAllSights(@PathVariable String userSeq){
         return sightsService.findAll(userSeq);
     }
 

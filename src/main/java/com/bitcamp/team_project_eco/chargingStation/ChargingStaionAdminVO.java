@@ -6,9 +6,9 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Getter @Setter
-public class ChargingStationVO {
-    Long chargingStationId;
+@Getter
+@Setter
+public class ChargingStaionAdminVO {
     String name;
     String chargerId;
     int chargerTypeID;
@@ -23,6 +23,4 @@ public class ChargingStationVO {
     String updateDate;
     String boostingCharge;
     String category;
-    List<Bookmark> bookmarkList;
-    Long userSeq;
 }

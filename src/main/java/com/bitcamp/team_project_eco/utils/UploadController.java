@@ -22,7 +22,7 @@ public class UploadController {
     @RequestMapping(value = "/imgUpload", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
     public String uploadAjaxCoverImg(MultipartFile file) throws Exception {
 
-        String uploadpath = "almom/coverImage";
+        String uploadpath = "homeBanner";
 
         ResponseEntity<String> img_path = new ResponseEntity<>(
                 UploadFileUtils.uploadFile(uploadpath, file.getOriginalFilename(), file.getBytes()),

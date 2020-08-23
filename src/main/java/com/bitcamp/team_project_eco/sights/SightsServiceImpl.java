@@ -51,7 +51,6 @@ public class SightsServiceImpl implements SightsService{
     @Override
     public List<? extends Object> findAll(String userSeq) {
         List<Bookmark> b = userRepository.findById(Long.valueOf(userSeq)).get().getBookmarkList();
-        System.out.println("흠"+b.toString());
         List<Sights> sights = sightsRepository.findAll();
 
         if(b.isEmpty()){
@@ -68,7 +67,6 @@ public class SightsServiceImpl implements SightsService{
                     check.add(false);
                     id.add(String.valueOf(bookmark.getSights().getSightsId()));
                 }
-                System.out.println("관광지 "+check);
             }
             if (!check.contains(false)){
                 return sights;
@@ -78,7 +76,7 @@ public class SightsServiceImpl implements SightsService{
                 s.setSightsId(sights.get(i).getSightsId());
                 s.setName(sights.get(i).getName());
                 s.setStreetAddress(sights.get(i).getStreetAddress());
-                s.setBranchAddress(sights.get(i).getBranchAddress());
+                s.setAddress(sights.get(i).getAddress());
                 s.setXValue(sights.get(i).getXValue());
                 s.setYValue(sights.get(i).getYValue());
                 s.setCapacity(sights.get(i).getCapacity());
