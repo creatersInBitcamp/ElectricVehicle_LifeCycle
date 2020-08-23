@@ -32,6 +32,28 @@ public class QUsedCar extends EntityPathBase<UsedCar> {
 
     public final StringPath mileage = createString("mileage");
 
+    public final StringPath picture1 = createString("picture1");
+
+    public final StringPath picture10 = createString("picture10");
+
+    public final StringPath picture11 = createString("picture11");
+
+    public final StringPath picture2 = createString("picture2");
+
+    public final StringPath picture3 = createString("picture3");
+
+    public final StringPath picture4 = createString("picture4");
+
+    public final StringPath picture5 = createString("picture5");
+
+    public final StringPath picture6 = createString("picture6");
+
+    public final StringPath picture7 = createString("picture7");
+
+    public final StringPath picture8 = createString("picture8");
+
+    public final StringPath picture9 = createString("picture9");
+
     public final StringPath price = createString("price");
 
     public final BooleanPath sale = createBoolean("sale");

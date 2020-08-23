@@ -28,6 +28,11 @@ public class UsedCarController {
         return usedCarService.findAll();
     }
 
+    @GetMapping("/findall")
+    public List<UsedCarsVO> findAllUsedCar () {
+        return usedCarService.getAll();
+    }
+
     @GetMapping("/getAllCarInfo")
     public List<CarInfo> getAllCarInfo () {
         return null;
