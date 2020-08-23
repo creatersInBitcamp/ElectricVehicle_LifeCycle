@@ -114,6 +114,7 @@ public class UserController {
     public List<Map<String,String>> findBrandCar(){
         return userService.findBrandCar();
     }
+
     @GetMapping("/findBrandUsedCar")
     public List<Map<String,String>> findBrandUsedCar() {
         return userService.findBrandUsedCar();
