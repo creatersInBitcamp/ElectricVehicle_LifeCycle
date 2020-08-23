@@ -26,7 +26,11 @@ interface UsedCarService extends JpaService<UsedCar> {
 
     boolean insert(UsedCarVO usedCar);
 
+    void update(Long usedCarId);
+
     void update(UsedCarVO usedCar);
+
+    void update(List<CarInfo> before);
 
     boolean deleteCar(Long usedCarId);
 
@@ -39,6 +43,8 @@ interface UsedCarService extends JpaService<UsedCar> {
     List<CarInfo> getDetail(String usedCarId);
 
     List<CarInfo> getMyCar(String userSeq);
+
+    List<CarInfo> getFirstCar(String userSeq);
 }
 
 @Service
@@ -158,7 +164,7 @@ public class UsedCarServiceImpl implements UsedCarService {
         usedCarRepository.save(new UsedCar(
                 usedCar.price, usedCar.age, usedCar.mileage, usedCar.sale,
                 false,
-                null,
+                usedCar.img,
                 null,
                 null,
                 null,
@@ -176,6 +182,18 @@ public class UsedCarServiceImpl implements UsedCarService {
     }
 
     @Override
+    public void update(Long usedCarId) {
+        System.out.println(usedCarId);
+        System.out.println( usedCarRepository.findById(usedCarId).get());
+        usedCarRepository.findById(usedCarId).get().setMain(true);
+        UsedCar usedCar = usedCarRepository.findById(usedCarId).get();
+        usedCar.setMain(true);
+        usedCarRepository.save(usedCar);
+
+
+    }
+
+    @Override
     public void update(UsedCarVO usedCar) {
         try {
             UsedCar u = usedCarRepository.findById(usedCar.usedCarId).get();
@@ -184,11 +202,22 @@ public class UsedCarServiceImpl implements UsedCarService {
             u.setAge(usedCar.age);
             u.setPrice(usedCar.price);
             u.setMileage(usedCar.mileage);
+            u.setSale(usedCar.sale);
+            u.setMain(usedCar.main);
             usedCarRepository.save(u);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void update(List<CarInfo> before) {
+        for(int i=0; i<before.size();i++){
+            UsedCar usedCar = usedCarRepository.findById(before.get(i).usedCarId).get();
+            usedCar.setMain(false);
+            usedCarRepository.save(usedCar);
+        }
     }
 
     @Override
@@ -250,5 +279,10 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public List<CarInfo> getMyCar(String userSeq) {
         return usedCarRepository.findByUserSeq(Long.parseLong(userSeq));
+    }
+
+    @Override
+    public List<CarInfo> getFirstCar(String userSeq) {
+        return usedCarRepository.findFirstByUserSeq(Long.parseLong(userSeq));
     }
 }
