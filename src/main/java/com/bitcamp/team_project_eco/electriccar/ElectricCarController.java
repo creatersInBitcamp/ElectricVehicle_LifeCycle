@@ -1,7 +1,11 @@
 package com.bitcamp.team_project_eco.electriccar;
 
+import com.bitcamp.team_project_eco.user.User;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.EntityManager;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +31,7 @@ public class ElectricCarController {
 
     @GetMapping("/getall")
     public List<ElectricCarVO> getAllElectriccar(){
+
         return electricCarService.getAll();
     }
 
@@ -44,6 +49,12 @@ public class ElectricCarController {
     public void insertElectricCar(@RequestBody ElectricCar electricCar) {
         electricCarService.insertElectricCar(electricCar);
     }
+
+    @PostMapping("/uploadFile")
+    public void uploadFile(MultipartFile file) throws IOException {
+        electricCarService.saveCsv(file);
+    }
+
     @PostMapping("/update")
     public void updateElectricCar(@RequestBody ElectricCar electricCar) {
         electricCarService.updateElectricCar(electricCar);

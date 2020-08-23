@@ -61,7 +61,6 @@ public class BookmarkServiceImpl implements BookmarkService{
     public void delete(String id) {
         Long bookmarId;
         bookmarkRepository.delete(findById(id).orElse(new Bookmark()));
-        System.out.println(findAll());
     }
 
     @Override
@@ -71,7 +70,6 @@ public class BookmarkServiceImpl implements BookmarkService{
 
     @Override
     public void insertBookmark(BookmarkVO bookmarkVO) {
-        System.out.println(bookmarkVO.getUserId());
         User user = userRepository.findById(bookmarkVO.getUserId()).get();
         if(bookmarkVO.isCharging()){
             ChargingStation c = chargingStationRepository.findById(Long.valueOf(bookmarkVO.getId())).get();
@@ -110,11 +108,9 @@ public class BookmarkServiceImpl implements BookmarkService{
         List<Object> list = new ArrayList<>();
         List<Object> bookmarkLists = new ArrayList<>();
         List<Bookmark> b = userRepository.findById(Long.valueOf(userId)).get().getBookmarkList();
-        System.out.println(b);
         for (int i=0; i<count();i++){
             BookmarkList bookmark = new BookmarkList();
             bookmark.setId(b.get(i).getBookmarkId());
-            System.out.println(bookmark.getId());
             if(b.get(i).getSights() != null){
                 bookmark.setPlace(b.get(i).getSights());
                 list.add(b.get(i).getSights());
@@ -123,7 +119,6 @@ public class BookmarkServiceImpl implements BookmarkService{
                 list.add(b.get(i).getChargingStation());
             }
             bookmarkLists.add(bookmark);
-            System.out.println(bookmarkLists);
         }
         return bookmarkLists;
     }

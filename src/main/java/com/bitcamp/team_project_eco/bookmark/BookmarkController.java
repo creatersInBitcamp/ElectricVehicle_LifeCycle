@@ -44,7 +44,6 @@ public class BookmarkController {
 
     @GetMapping("/delete/{bookmarkID}")
     public void delete(@PathVariable String bookmarkID) {
-        System.out.println(bookmarkID);
         bookmarkService.delete(bookmarkID);
     }
 

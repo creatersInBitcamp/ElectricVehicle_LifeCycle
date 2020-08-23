@@ -53,18 +53,15 @@ public class BookmarkRepositoryImpl extends QuerydslRepositorySupport implements
     }
     @Override
     public List<Object> findBookmarks(Long userSeq) {
-        System.out.println("durl"+userSeq);
         List<Bookmark> b = jpaQueryFactory
                 .selectFrom(bookmark)
                 .where(bookmark.user.userSeq.eq(userSeq))
                 .fetch();
-        System.out.println(b);
         List<Object> list = new ArrayList<>();
         List<Object> bookmarkLists = new ArrayList<>();
         for (int i=0; i<b.size();i++){
             BookmarkList bookmark = new BookmarkList();
             bookmark.setId(b.get(i).getBookmarkId());
-            System.out.println(bookmark.getId());
             if(b.get(i).getSights() != null){
                 bookmark.setPlace(b.get(i).getSights());
                 list.add(b.get(i).getSights());
@@ -73,7 +70,6 @@ public class BookmarkRepositoryImpl extends QuerydslRepositorySupport implements
                 list.add(b.get(i).getChargingStation());
             }
             bookmarkLists.add(bookmark);
-            System.out.println(bookmarkLists);
         }
         return bookmarkLists;
     }
