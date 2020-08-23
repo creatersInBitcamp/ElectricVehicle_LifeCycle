@@ -131,23 +131,23 @@ public class ChargingStationServiceImpl implements ChargingStationService{
             if (!check.contains(false)){
                 return chargingStations;
             }
-            for(int i=0; i<chargingStations.size();i++){
+            for (ChargingStation chargingStation : chargingStations) {
                 ChargingStationVO c = new ChargingStationVO();
-                c.setChargingStationId(chargingStations.get(i).getChargingStationId());
-                c.setName(chargingStations.get(i).getName());
-                c.setChargerId(chargingStations.get(i).getChargerId());
-                c.setChargerTypeID(chargingStations.get(i).getChargerTypeID());
-                c.setChargerType(chargingStations.get(i).getChargerType());
-                c.setChargerState(chargingStations.get(i).getChargerState());
-                c.setAddress(chargingStations.get(i).getAddress());
-                c.setXValue(chargingStations.get(i).getXValue());
-                c.setYValue(chargingStations.get(i).getYValue());
-                c.setBusinessHours(chargingStations.get(i).getBusinessHours());
-                c.setAgencyName(chargingStations.get(i).getAgencyName());
-                c.setPhone(chargingStations.get(i).getPhone());
-                c.setUpdateDate(chargingStations.get(i).getUpdateDate());
-                c.setBoostingCharge(chargingStations.get(i).getBoostingCharge());
-                c.setCategory(chargingStations.get(i).getCategory());
+                c.setChargingStationId(chargingStation.getChargingStationId());
+                c.setName(chargingStation.getName());
+                c.setChargerId(chargingStation.getChargerId());
+                c.setChargerTypeID(chargingStation.getChargerTypeID());
+                c.setChargerType(chargingStation.getChargerType());
+                c.setChargerState(chargingStation.getChargerState());
+                c.setAddress(chargingStation.getAddress());
+                c.setXValue(chargingStation.getXValue());
+                c.setYValue(chargingStation.getYValue());
+                c.setBusinessHours(chargingStation.getBusinessHours());
+                c.setAgencyName(chargingStation.getAgencyName());
+                c.setPhone(chargingStation.getPhone());
+                c.setUpdateDate(chargingStation.getUpdateDate());
+                c.setBoostingCharge(chargingStation.getBoostingCharge());
+                c.setCategory(chargingStation.getCategory());
                 c.setUserSeq(Long.valueOf(userSeq));
 
                 for (String s : id) {
