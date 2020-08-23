@@ -11,7 +11,7 @@ public class SightsVO {
     Long sightsId;
     String name;
     String streetAddress;
-    String branchAddress;
+    String address;
     double xValue;
     double yValue;
     int capacity;

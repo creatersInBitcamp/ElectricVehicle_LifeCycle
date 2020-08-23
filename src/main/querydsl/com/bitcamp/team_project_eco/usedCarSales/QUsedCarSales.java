@@ -30,6 +30,8 @@ public class QUsedCarSales extends EntityPathBase<UsedCarSales> {
 
     public final StringPath buyerPhoneNumber = createString("buyerPhoneNumber");
 
+    public final StringPath carName = createString("carName");
+
     public final NumberPath<Long> reqId = createNumber("reqId", Long.class);
 
     public final com.bitcamp.team_project_eco.usedCar.QUsedCar usedCar;

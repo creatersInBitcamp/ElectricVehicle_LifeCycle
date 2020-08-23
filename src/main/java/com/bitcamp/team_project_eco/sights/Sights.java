@@ -22,7 +22,7 @@ public class Sights {
     @Column(name = "sights_id") private Long sightsId;
     @Column(name = "name") private String name;
     @Column(name = "street_address") private String streetAddress;
-    @Column(name = "branch_address") private String branchAddress;
+    @Column(name = "address") private String address;
     @Column(name = "x_value") private double xValue;
     @Column(name = "y_value") private double yValue;
     @Column(name = "capacity") private int capacity;
@@ -36,13 +36,13 @@ public class Sights {
     public Sights(){}
 
     @Builder
-    public Sights (String name, String streetAddress, String branchAddress,
+    public Sights (String name, String streetAddress, String address,
                    double xValue, double yValue, int capacity,
                    int parkingLot, String info, String category,
                    List<Bookmark> bookmarkList) {
         this.name = name;
         this.streetAddress = streetAddress;
-        this.branchAddress = branchAddress;
+        this.address = address;
         this.xValue = xValue;
         this.yValue = yValue;
         this.capacity = capacity;

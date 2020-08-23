@@ -18,6 +18,11 @@ public class UsedCarController {
     @GetMapping("/csv")
     public void readCsv(){usedCarService.readCsv();}
 
+    @GetMapping("/count")
+    public int count(){
+        return usedCarService.count();
+    }
+
     @PostMapping("/register")
     public boolean register(@RequestBody UsedCarVO usedCar) {
         return usedCarService.insert(usedCar);
@@ -49,9 +54,18 @@ public class UsedCarController {
     }
 
     @GetMapping("/getOne/{usedCarId}")
-    public Optional<UsedCar> getOneUsedCar(@PathVariable Long usedCarId) {return usedCarService.getOneById(usedCarId);}
+    public Optional<UsedCar> getOneUsedCar(@PathVariable Long usedCarId) {
+        return usedCarService.getOneById(usedCarId);
+    }
+
+    @GetMapping("/getDetail/{usedCarId}")
+    public List<CarInfo> getDetail(@PathVariable String usedCarId) {
+        return usedCarService.getDetail(usedCarId);
+    }
 
     @PostMapping("/update")
-    public void updateUsedCar(@RequestBody UsedCarVO usedCar) {usedCarService.update(usedCar);}
+    public void updateUsedCar(@RequestBody UsedCarVO usedCar) {
+        usedCarService.update(usedCar);
+    }
 
 }

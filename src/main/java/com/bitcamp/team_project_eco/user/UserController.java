@@ -34,9 +34,8 @@ public class UserController {
     }
 
     @GetMapping("/findAll")
-    public ResponseEntity<List<User>> findAll(){
-        List<User> result = userService.findUsers();
-        return ResponseEntity.ok(result);
+    public List<User> findAll(){
+        return userService.findUsers();
     }
 
     @PostMapping("/register")
@@ -58,6 +57,12 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/count")
+    public int count() {
+        return userService.count();
+    }
+
     @GetMapping("/sendPassword/{email}")
     public String sendPassword(@PathVariable String email){
         return userService.findByEmail(email).map(com.bitcamp.team_project_eco.user.User::getPassword).orElse(null);
@@ -82,6 +87,7 @@ public class UserController {
     public void addCar(@RequestParam("files")MultipartFile file) {
         System.out.println(file);
     }
+
     @PostMapping("/uploadFile")
     public void uploadFile(MultipartFile file) throws IOException {
         userService.saveCsv(file);
@@ -90,9 +96,25 @@ public class UserController {
     public List<Map<String, Object>> counting(){
         return userService.counting();
     }
+
     @GetMapping("/countAge")
     public List<Map<String,String>> countAge() {
         return userService.countAge();
     }
+
+    @GetMapping("/findCarNamePrice/{eccarId}")
+    public List<Map<String,String>> findCarNamePrice(@PathVariable String eccarId) {
+        return userService.findCarNamePrice(eccarId);
+    }
+
+    @GetMapping("/findBrandCar")
+    public List<Map<String,String>> findBrandCar(){
+        return userService.findBrandCar();
+    }
+    @GetMapping("/findBrandUsedCar")
+    public List<Map<String,String>> findBrandUsedCar() {
+        return userService.findBrandUsedCar();
+    }
+
 
 }

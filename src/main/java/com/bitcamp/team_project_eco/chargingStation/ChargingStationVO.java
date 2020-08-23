@@ -9,7 +9,7 @@ import java.util.List;
 @Getter @Setter
 public class ChargingStationVO {
     Long chargingStationId;
-    String unitName;
+    String name;
     String chargerId;
     int chargerTypeID;
     String chargerType;
