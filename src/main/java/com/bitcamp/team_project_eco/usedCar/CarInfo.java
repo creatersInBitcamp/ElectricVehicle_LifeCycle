@@ -7,8 +7,10 @@ import lombok.Setter;
 @Getter @Setter
 public class CarInfo {
     Long usedCarId;
+    Long eccarId;
     String price, age, mileage, carName,
             yyyy, modelName, trim, brand;
+    boolean main;
     Img img;
     User user;
 }

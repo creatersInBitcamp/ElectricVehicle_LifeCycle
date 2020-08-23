@@ -36,6 +36,8 @@ interface UsedCarService extends JpaService<UsedCar> {
     List<CarInfo> getDetail(String usedCarId);
 
     List<CarInfo> getMyCar(String userSeq);
+
+    List<CarInfo> getFirstCar(String userSeq);
 }
 
 @Service
@@ -112,7 +114,7 @@ public class UsedCarServiceImpl implements UsedCarService {
         usedCarRepository.save(new UsedCar(
                 usedCar.price, usedCar.age, usedCar.mileage, usedCar.sale,
                 false,
-                null,
+                usedCar.img,
                 null,
                 null,
                 null,
@@ -129,6 +131,8 @@ public class UsedCarServiceImpl implements UsedCarService {
             u.setAge(usedCar.age);
             u.setPrice(usedCar.price);
             u.setMileage(usedCar.mileage);
+            u.setSale(usedCar.sale);
+            u.setMain(usedCar.main);
             usedCarRepository.save(u);
         } catch (Exception e) {
             e.printStackTrace();
@@ -195,5 +199,10 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public List<CarInfo> getMyCar(String userSeq) {
         return usedCarRepository.findByUserSeq(Long.parseLong(userSeq));
+    }
+
+    @Override
+    public List<CarInfo> getFirstCar(String userSeq) {
+        return usedCarRepository.findFirstByUserSeq(Long.parseLong(userSeq));
     }
 }

@@ -7,8 +7,8 @@ import lombok.Setter;
 
 @Getter @Setter
 public class UsedCarVO {
-    boolean sale;
-    String price, age, mileage;
+    boolean sale, main;
+    String price, age, mileage, img;
     Long usedCarId;
     Long eccarId;
     Long userSeq;
