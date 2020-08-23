@@ -18,6 +18,11 @@ public class UsedCarController {
     @GetMapping("/csv")
     public void readCsv(){usedCarService.readCsv();}
 
+    @GetMapping("/count")
+    public int count(){
+        return usedCarService.count();
+    }
+
     @PostMapping("/register")
     public boolean register(@RequestBody UsedCarVO usedCar) {
         return usedCarService.insert(usedCar);

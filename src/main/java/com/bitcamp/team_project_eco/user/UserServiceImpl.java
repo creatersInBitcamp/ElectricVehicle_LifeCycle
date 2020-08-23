@@ -2,9 +2,12 @@ package com.bitcamp.team_project_eco.user;
 
 import com.bitcamp.team_project_eco.join.AdminUsedCar;
 import com.bitcamp.team_project_eco.utils.JpaService;
+import com.querydsl.core.Tuple;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -35,15 +38,17 @@ interface UserService extends JpaService<User> {
     List<Map<String, Object>> counting();
 
     List<Map<String, String>> countAge();
+
+    List<Map<String, String>> findCarNamePrice(String eccarId);
+
+    List<Map<String, String>> findBrandCar();
+
+    List<Map<String,String>> findBrandUsedCar();
 }
 
 @Service
 public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
-
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    @Autowired UserRepository userRepository;
 
     @Override
     public void saveCsv(MultipartFile file) {
@@ -97,6 +102,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Map<String, String>> countAge() {
         return userRepository.countAge();
+    }
+
+    @Override
+    public List<Map<String, String>> findCarNamePrice(String eccarId) {
+        return userRepository.findCarNamePrice(eccarId);
+    }
+
+    @Override
+    public List<Map<String, String>> findBrandCar() {
+        return userRepository.findBrandCar();
+    }
+
+    @Override
+    public List<Map<String,String>> findBrandUsedCar() {
+        return userRepository.findBrandUsedCar();
     }
 
     @Override
