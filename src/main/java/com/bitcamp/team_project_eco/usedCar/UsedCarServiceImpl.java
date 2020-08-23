@@ -26,7 +26,11 @@ interface UsedCarService extends JpaService<UsedCar> {
 
     boolean insert(UsedCarVO usedCar);
 
+    void update(Long usedCarId);
+
     void update(UsedCarVO usedCar);
+
+    void update(List<CarInfo> before);
 
     boolean deleteCar(Long usedCarId);
 
@@ -178,6 +182,18 @@ public class UsedCarServiceImpl implements UsedCarService {
     }
 
     @Override
+    public void update(Long usedCarId) {
+        System.out.println(usedCarId);
+        System.out.println( usedCarRepository.findById(usedCarId).get());
+        usedCarRepository.findById(usedCarId).get().setMain(true);
+        UsedCar usedCar = usedCarRepository.findById(usedCarId).get();
+        usedCar.setMain(true);
+        usedCarRepository.save(usedCar);
+
+
+    }
+
+    @Override
     public void update(UsedCarVO usedCar) {
         try {
             UsedCar u = usedCarRepository.findById(usedCar.usedCarId).get();
@@ -193,6 +209,15 @@ public class UsedCarServiceImpl implements UsedCarService {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void update(List<CarInfo> before) {
+        for(int i=0; i<before.size();i++){
+            UsedCar usedCar = usedCarRepository.findById(before.get(i).usedCarId).get();
+            usedCar.setMain(false);
+            usedCarRepository.save(usedCar);
+        }
     }
 
     @Override

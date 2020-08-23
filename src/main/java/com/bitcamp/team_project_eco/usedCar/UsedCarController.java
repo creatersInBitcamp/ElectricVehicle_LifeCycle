@@ -78,9 +78,14 @@ public class UsedCarController {
         return usedCarService.getFirstCar(userSeq);
     }
 
+    @GetMapping("/updateFirstCar/{usedCarId}")
+    public void updateFirstCar(@PathVariable Long usedCarId) {
+        usedCarService.update(usedCarId);
+    }
+
     @PostMapping("/updateFirstCar")
-    public void updateFirstCar(@RequestBody UsedCarVO usedCar) {
-        usedCarService.update(usedCar);
+    public void updateFirstCar(@RequestBody List<CarInfo> before) {
+        usedCarService.update(before);
     }
 
     @GetMapping("/deleteMyCar/{usedCarId}")
