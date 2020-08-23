@@ -131,6 +131,7 @@ public class UsedCarRepositoryImpl extends QuerydslRepositorySupport implements 
                 usedCar.user,
                 usedCar.main,
 //                electricCar.img,
+                electricCar.eccarId,
                 electricCar.carName,
                 electricCar.yyyy,
                 electricCar.modelName,
