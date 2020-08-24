@@ -36,4 +36,7 @@ public interface UserRepository extends JpaRepository<User, Long>, CustomUserRep
 
     @Query(value = "update user set password = :password where user.user_id = :userId",nativeQuery = true)
     void changePassword(@Param("userId") String userId, @Param("password") String password);
+
+    @Query(value = "update user set grade = :grade, ban_date = :banDate where user_id =:userId ",nativeQuery = true)
+    void oneUpdate(@Param("userId") String userId,@Param("grade") int grade,@Param("banDate") String banDate);
 }

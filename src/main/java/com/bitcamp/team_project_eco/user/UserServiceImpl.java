@@ -46,6 +46,9 @@ interface UserService extends JpaService<User> {
     boolean updateOne(User user);
 
     boolean changePassword(String userId, String password);
+
+
+    void oneUpdate(String userId, int grade, String banDate);
 }
 
 @Service
@@ -154,6 +157,11 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public void oneUpdate(String userId, int grade, String banDate) {
+        userRepository.oneUpdate(userId, grade, banDate);
     }
 
     @Override
