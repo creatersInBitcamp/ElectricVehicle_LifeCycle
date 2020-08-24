@@ -42,13 +42,13 @@ public class ChargingStationController {
     }
 
     @PostMapping("/insert")
-    public void insertPost(@RequestBody ChargingStaionAdminVO chargingStaionAdminVO) {
+    public void insertChargingStation(@RequestBody ChargingStaionAdminVO chargingStaionAdminVO) {
         chargingStationService.insertChargingStation(chargingStaionAdminVO);
     }
 
     @PostMapping("/update")
-    public void updatePost(@RequestBody ChargingStationVO chargingStationVO) {
-        chargingStationService.updateChargingStation(chargingStationVO);
+    public void updateChargingStation(@RequestBody ChargingStation chargingStation) {
+        chargingStationService.updateChargingStation(chargingStation);
     }
 
     @PostMapping("/allUpdate")
