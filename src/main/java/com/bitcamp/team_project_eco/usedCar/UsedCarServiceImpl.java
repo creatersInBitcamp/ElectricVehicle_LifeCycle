@@ -47,6 +47,8 @@ interface UsedCarService extends JpaService<UsedCar> {
     List<CarInfo> getFirstCar(String userSeq);
 
     boolean deleteCarByUserSeq(List<UsedCar> myCars);
+
+    List<CarInfo> getDetailList(String userSeq);
 }
 
 @Service
