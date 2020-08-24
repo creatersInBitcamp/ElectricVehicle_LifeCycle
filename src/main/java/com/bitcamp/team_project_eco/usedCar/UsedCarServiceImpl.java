@@ -75,6 +75,7 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public List<UsedCarsVO> getAll() {
         List<UsedCar> usedCarList = usedCarRepository.findAll();
+        System.out.println(usedCarList.get(0).getElectricCar());
         List<UsedCarsVO> result = new ArrayList<>();
         for(int i=0; i< usedCarList.size(); i++){
             UsedCarsVO carVO = new UsedCarsVO();
