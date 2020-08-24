@@ -14,9 +14,11 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,7 +27,7 @@ interface ChargingStationService extends JpaService<ChargingStation>{
 
     void insertChargingStation(ChargingStaionAdminVO chargingStaionAdminVO);
 
-    void updateChargingStation(ChargingStationVO chargingStationVO);
+    void updateChargingStation(ChargingStation chargingStation);
     void allUpdate(List<ChargingStation> chargingStation);
 
     List<? extends Object> findAll(String userSeq);
@@ -229,8 +231,22 @@ public class ChargingStationServiceImpl implements ChargingStationService{
     }
 
     @Override
-    public void updateChargingStation(ChargingStationVO chargingStationVO) {
-
+    public void updateChargingStation(ChargingStation chargingStation) {
+       ChargingStation station = chargingStationRepository.findById(chargingStation.getChargingStationId()).get();
+       station.setAddress(chargingStation.getAddress());
+       station.setAgencyName(chargingStation.getAgencyName());
+//       station.setBookmarkList(chargingStation.getBookmarkList());
+       station.setBoostingCharge(chargingStation.getBoostingCharge());
+       station.setBusinessHours(chargingStation.getBusinessHours());
+       station.setCategory(chargingStation.getCategory());
+       station.setChargerId(chargingStation.getChargerId());
+       station.setChargerState(chargingStation.getChargerState());
+       station.setChargerType(chargingStation.getChargerType());
+       station.setChargingStationId(chargingStation.getChargingStationId());
+       station.setName(chargingStation.getName());
+       station.setPhone(chargingStation.getPhone());
+       station.setUpdateDate(String.valueOf(new SimpleDateFormat("yyyyMMddHHmmss")));
+       chargingStationRepository.save(station);
     }
 
     @Override

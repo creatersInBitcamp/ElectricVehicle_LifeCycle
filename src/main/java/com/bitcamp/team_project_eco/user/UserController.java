@@ -40,6 +40,12 @@ public class UserController {
         return userService.insert(user);
     }
 
+    @PostMapping("/updateOne")
+    public boolean updateUser(@RequestBody User user) {
+        System.out.println(user.toString());
+        return userService.updateOne(user);
+    }
+
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody User user) {
         Optional<User> findUser = userService.findByUserId(user.getUserId());
