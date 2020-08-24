@@ -44,6 +44,8 @@ interface UserService extends JpaService<User> {
     List<Map<String, String>> findBrandCar();
 
     List<Map<String,String>> findBrandUsedCar();
+
+    boolean updateOne(User user);
 }
 
 @Service
@@ -117,6 +119,30 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Map<String,String>> findBrandUsedCar() {
         return userRepository.findBrandUsedCar();
+    }
+
+    @Override
+    public boolean updateOne(User user) {
+        try{
+            Long userSeq = user.getUserSeq();
+            String email = user.getEmail();
+            String phoneNumber = user.getPhoneNumber();
+            String addr = user.getAddr();
+            String profileImage = user.getProfileImage();
+            String profileText = user.getProfileText();
+            User up = userRepository.findById(userSeq).get();
+            up.setEmail(email);
+            up.setPhoneNumber(phoneNumber);
+            up.setAddr(addr);
+            up.setProfileImage(profileImage);
+            up.setProfileText(profileText);
+            userRepository.save(up);
+//            userRepository.updateUser(userSeq, profileImage, profileText, email, phoneNumber, addr);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override

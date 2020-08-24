@@ -30,4 +30,7 @@ public interface UserRepository extends JpaRepository<User, Long>, CustomUserRep
     // Select electric_car.brand, count(*) from used_car, electric_car where used_car.eCCAR_ID = electric_car.eCCAR_ID group by  electric_car.brand ;
     @Query(value = "Select electric_car.brand, count(*) as count from used_car inner Join electric_car on used_car.eccar_id = electric_car.eccar_id group by  electric_car.brand",nativeQuery = true)
     List<Map<String, String>> findBrandUsedCar();
+
+    @Query(value = "update User u set u.profileImage = :profileImage, u.email = :email, u.phoneNumber = :phoneNumber, u.addr = :addr, u.profileText = :profileText where u.userSeq = :userSeq")
+    void updateUser(@Param("userSeq") Long userSeq, @Param("profileImage") String profileImage, @Param("profileText") String profileText, @Param("email") String email, @Param("phoneNumber") String phoneNumber, @Param("addr") String addr);
 }

@@ -17,7 +17,6 @@ import static com.bitcamp.team_project_eco.electriccar.QElectricCar.*;
 interface CustomUserRepository {
     List<AdminUsedCar> findAdminUsedCar();
 
-
     //int[] counting();
 }
 @Repository
@@ -39,6 +38,5 @@ public class UserRepositoryImpl extends QuerydslRepositorySupport implements Cus
                 .fetch();
         return adminUsedCars;
     }
-
 
 }
