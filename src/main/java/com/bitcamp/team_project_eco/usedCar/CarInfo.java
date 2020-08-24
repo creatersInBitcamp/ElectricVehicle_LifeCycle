@@ -11,6 +11,7 @@ public class CarInfo {
     String price, age, mileage, carName,
             yyyy, modelName, trim, brand;
     boolean main;
+    boolean sale;
     Img img;
     User user;
 }

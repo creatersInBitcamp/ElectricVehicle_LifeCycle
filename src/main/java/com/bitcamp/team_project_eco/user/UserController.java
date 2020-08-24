@@ -1,16 +1,11 @@
 package com.bitcamp.team_project_eco.user;
 
 import com.bitcamp.team_project_eco.join.AdminUsedCar;
-import com.querydsl.core.Tuple;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +25,6 @@ public class UserController {
 
     @GetMapping("/check/{userId}")
     public Boolean idCheck(@PathVariable String userId) {
-        System.out.println("유저아이디: " + userId);
         Optional<User> idCheckResult = userService.findByUserId(userId);
         System.out.println(idCheckResult.isPresent());
         return idCheckResult.isPresent();
@@ -124,6 +118,11 @@ public class UserController {
     @GetMapping("/findBrandUsedCar")
     public List<Map<String,String>> findBrandUsedCar() {
         return userService.findBrandUsedCar();
+    }
+
+    @PostMapping("/changePassword")
+    public boolean changePassword(@RequestBody User user) {
+        return userService.changePassword(user.getUserId(), user.getPassword());
     }
 
 
