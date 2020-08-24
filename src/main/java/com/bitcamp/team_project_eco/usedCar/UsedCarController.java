@@ -98,9 +98,9 @@ public class UsedCarController {
         return usedCarService.deleteCar(usedCarId);
     }
 
-    @GetMapping("/deleteAllCar/{userSeq}")
-    public boolean deleteAllCar(@PathVariable Long userSeq) {
-        return usedCarService.deleteCarByUserSeq(userSeq);
+    @PostMapping("/deleteAllCar")
+    public boolean deleteAllCar(@RequestBody List<UsedCar> myCars) {
+        return usedCarService.deleteCarByUserSeq(myCars);
     }
 
 }

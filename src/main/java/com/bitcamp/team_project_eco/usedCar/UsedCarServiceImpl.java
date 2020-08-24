@@ -11,6 +11,7 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -46,7 +47,7 @@ interface UsedCarService extends JpaService<UsedCar> {
 
     List<CarInfo> getFirstCar(String userSeq);
 
-    boolean deleteCarByUserSeq(Long userSeq);
+    boolean deleteCarByUserSeq(List<UsedCar> myCars);
 }
 
 @Service
@@ -224,6 +225,7 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     public boolean deleteCar(Long usedCarId) {
+        System.out.println("deleteCar "+usedCarId);
         try {
             usedCarRepository.deleteById(usedCarId);
             return true;
@@ -289,19 +291,14 @@ public class UsedCarServiceImpl implements UsedCarService {
     }
 
     @Override
-    public boolean deleteCarByUserSeq(Long userSeq) {
+    public boolean deleteCarByUserSeq(List<UsedCar> myCars) {
         try {
-            User user = userRepository.findById(userSeq).get();
-            List<UsedCar> list = user.getUsedCarList();
-            for (int i=0; i<list.size(); i++) {
-                Long id = list.get(i).getUsedCarId();
+            for (int i=0; i<myCars.size(); i++) {
+                System.out.println(myCars.get(i));
+                Long id = myCars.get(i).getUsedCarId();
                 System.out.println(id);
                 deleteCar(id);
             }
-            /*for(int i=264; i<266; i++){
-                deleteCar(Long.valueOf(i));
-            }*/
-
             return true;
         } catch (Exception e) {
             e.printStackTrace();
