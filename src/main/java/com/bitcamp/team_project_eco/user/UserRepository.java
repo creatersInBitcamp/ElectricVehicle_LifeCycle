@@ -1,5 +1,7 @@
 package com.bitcamp.team_project_eco.user;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -39,4 +41,5 @@ public interface UserRepository extends JpaRepository<User, Long>, CustomUserRep
 
     @Query(value = "update user set grade = :grade, ban_date = :banDate where user_id =:userId ",nativeQuery = true)
     void oneUpdate(@Param("userId") String userId,@Param("grade") int grade,@Param("banDate") String banDate);
+
 }

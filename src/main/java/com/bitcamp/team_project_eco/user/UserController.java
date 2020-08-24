@@ -2,6 +2,7 @@ package com.bitcamp.team_project_eco.user;
 
 import com.bitcamp.team_project_eco.join.AdminUsedCar;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,9 +31,9 @@ public class UserController {
         return idCheckResult.isPresent();
     }
 
-    @GetMapping("/findAll")
-    public List<User> findAll(){
-        return userService.findUsers();
+    @GetMapping("/findAll/{page}/{size}")
+    public Page<User> findAll(@PathVariable int page, @PathVariable int size){
+        return userService.findUsers(page, size);
     }
 
     @PostMapping("/register")

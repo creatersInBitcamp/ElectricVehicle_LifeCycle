@@ -6,6 +6,9 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,7 +28,7 @@ interface UserService extends JpaService<User> {
 
     Optional<User> findByEmail(String email);
 
-    List<User> findUsers();
+    Page<User> findUsers(int page, int size);
 
     void allUpdate(List<User> user);
 
@@ -227,8 +230,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findUsers() {
-        return userRepository.findAll();
+    public Page<User> findUsers(int page, int size) {
+        return userRepository.findAll(PageRequest.of(page,size));
     }
 
     @Override
