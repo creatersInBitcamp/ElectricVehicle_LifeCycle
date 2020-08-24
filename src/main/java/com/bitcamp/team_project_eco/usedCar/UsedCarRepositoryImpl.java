@@ -21,6 +21,8 @@ interface IUsedCarRepository {
     List<CarInfo> findByUserSeq(long parseLong);
 
     List<CarInfo> findFirstByUserSeq(long parseLong);
+
+    List<CarInfo> findBySalesUserSeq(long parseLong);
 }
 
 @Repository
@@ -83,6 +85,7 @@ public class UsedCarRepositoryImpl extends QuerydslRepositorySupport implements 
                 usedCar.mileage,
                 usedCar.img,
                 usedCar.user,
+                usedCar.sale,
                 electricCar.carName,
                 electricCar.yyyy,
                 electricCar.modelName,
@@ -91,6 +94,7 @@ public class UsedCarRepositoryImpl extends QuerydslRepositorySupport implements 
                 .from(usedCar)
                 .innerJoin(electricCar).on(electricCar.eccarId.eq(usedCar.electricCar.eccarId))
                 .where(usedCar.usedCarId.eq(parseLong))
+                .where(usedCar.sale.eq(true))
                 .fetch();
         return list;
     }
@@ -105,6 +109,7 @@ public class UsedCarRepositoryImpl extends QuerydslRepositorySupport implements 
                 usedCar.img,
                 usedCar.user,
                 usedCar.main,
+                usedCar.sale,
 //                electricCar.img,
                 electricCar.eccarId,
                 electricCar.carName,
@@ -142,6 +147,32 @@ public class UsedCarRepositoryImpl extends QuerydslRepositorySupport implements 
                 .where(usedCar.user.userSeq.eq(parseLong))
                 .where(usedCar.sale.eq(false))
                 .where(usedCar.main.eq(true))
+                .fetch();
+        return list;
+    }
+
+    @Override
+    public List<CarInfo> findBySalesUserSeq(long parseLong) {
+        List<CarInfo> list = queryFactory.select(Projections.fields(CarInfo.class,
+                usedCar.usedCarId,
+                usedCar.price,
+                usedCar.age,
+                usedCar.mileage,
+                usedCar.img,
+                usedCar.user,
+                usedCar.main,
+                usedCar.sale,
+//                electricCar.img,
+                electricCar.eccarId,
+                electricCar.carName,
+                electricCar.yyyy,
+                electricCar.modelName,
+                electricCar.trim,
+                electricCar.brand))
+                .from(usedCar)
+                .innerJoin(electricCar).on(electricCar.eccarId.eq(usedCar.electricCar.eccarId))
+                .where(usedCar.user.userSeq.eq(parseLong))
+                .where(usedCar.sale.eq(true))
                 .fetch();
         return list;
     }

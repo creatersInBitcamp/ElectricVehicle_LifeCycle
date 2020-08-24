@@ -47,6 +47,8 @@ interface UsedCarService extends JpaService<UsedCar> {
     List<CarInfo> getFirstCar(String userSeq);
 
     boolean deleteCarByUserSeq(Long userSeq);
+
+    List<CarInfo> getDetailList(String userSeq);
 }
 
 @Service
@@ -307,5 +309,10 @@ public class UsedCarServiceImpl implements UsedCarService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public List<CarInfo> getDetailList(String userSeq) {
+        return usedCarRepository.findBySalesUserSeq(Long.parseLong(userSeq));
     }
 }

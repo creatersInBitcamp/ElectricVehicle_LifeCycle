@@ -1,5 +1,6 @@
 package com.bitcamp.team_project_eco.usedCar;
 
+import com.bitcamp.team_project_eco.car.Car;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -81,6 +82,11 @@ public class UsedCarController {
     @GetMapping("/updateFirstCar/{usedCarId}")
     public void updateFirstCar(@PathVariable Long usedCarId) {
         usedCarService.update(usedCarId);
+    }
+
+    @GetMapping("/getDetailList/{userSeq}")
+    public List<CarInfo> getDetailList(@PathVariable String userSeq) {
+        return usedCarService.getDetailList(userSeq);
     }
 
     @PostMapping("/updateFirstCar")
