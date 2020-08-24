@@ -70,6 +70,11 @@ public class UserController {
         userService.allUpdate(user);
     }
 
+    @PostMapping("/oneUpdate")
+    public void oneUpdate(@RequestBody User user){
+        userService.oneUpdate(user.getUserId(), user.getGrade(), user.getBanDate());
+    }
+
     @GetMapping("/getone/{userSeq}")
     public User refreshUser(@PathVariable String userSeq) {
         return userService.findById(userSeq).get();
