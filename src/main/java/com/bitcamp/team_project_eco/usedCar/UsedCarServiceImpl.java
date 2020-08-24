@@ -45,6 +45,10 @@ interface UsedCarService extends JpaService<UsedCar> {
     List<CarInfo> getMyCar(String userSeq);
 
     List<CarInfo> getFirstCar(String userSeq);
+
+    boolean deleteCarByUserSeq(List<UsedCar> myCars);
+
+    List<CarInfo> getDetailList(String userSeq);
 }
 
 @Service
@@ -222,6 +226,7 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     public boolean deleteCar(Long usedCarId) {
+        System.out.println("deleteCar "+usedCarId);
         try {
             usedCarRepository.deleteById(usedCarId);
             return true;
@@ -284,5 +289,26 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public List<CarInfo> getFirstCar(String userSeq) {
         return usedCarRepository.findFirstByUserSeq(Long.parseLong(userSeq));
+    }
+
+    @Override
+    public boolean deleteCarByUserSeq(List<UsedCar> myCars) {
+        try {
+            for (int i=0; i<myCars.size(); i++) {
+                System.out.println(myCars.get(i));
+                Long id = myCars.get(i).getUsedCarId();
+                System.out.println(id);
+                deleteCar(id);
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public List<CarInfo> getDetailList(String userSeq) {
+        return usedCarRepository.findBySalesUserSeq(Long.parseLong(userSeq));
     }
 }
