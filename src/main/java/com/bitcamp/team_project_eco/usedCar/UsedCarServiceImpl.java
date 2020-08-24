@@ -11,7 +11,6 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -304,5 +303,10 @@ public class UsedCarServiceImpl implements UsedCarService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public List<CarInfo> getDetailList(String userSeq) {
+        return usedCarRepository.findBySalesUserSeq(Long.parseLong(userSeq));
     }
 }
