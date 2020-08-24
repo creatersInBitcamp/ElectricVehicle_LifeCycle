@@ -25,7 +25,7 @@ public class Post {
     @Column(name = "img", nullable = false, length = 700) private String img;
     @Column(name = "content", nullable = false) private String content;
     @Column(name = "recomendation", nullable = false) private int recommendation;
-    @Column(name = "", nullable = false) private int report;
+    @Column(name = "report", nullable = false) private int report;
     @Column(name = "hits", nullable = false) private int hits;
     @Column(name = "category", nullable = false, length = 45) private String category;
 

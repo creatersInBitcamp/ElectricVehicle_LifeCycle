@@ -202,7 +202,7 @@ ALTER TABLE bookmark
 CREATE TABLE post
 (
     `post_id`         INT            NOT NULL    AUTO_INCREMENT COMMENT '포스트 아이디',
-    `user_name`       VARCHAR(45)    NULL        COMMENT '사용자이름',
+    `user_id`       VARCHAR(45)    NULL        COMMENT '사용자아이디',
     `link`            VARCHAR(45)    NULL        COMMENT '기사링크',
     `title`           VARCHAR(45)    NULL        COMMENT '제목',
     `date`            VARCHAR(45)    NULL        COMMENT '작성일자',

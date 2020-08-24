@@ -55,6 +55,7 @@ public class PostController {
 
     @PostMapping("/insert")
     public void insertPost(@RequestBody NewPostVO newPost) {
+        System.out.println(newPost.toString());
         service.insertPost(newPost);
     }
 
