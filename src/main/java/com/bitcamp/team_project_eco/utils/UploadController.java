@@ -32,6 +32,17 @@ public class UploadController {
         return coverImagePath;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/postImgUpload", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
+    public String uploadPostImg(MultipartFile file) throws Exception {
+        String uploadpath = "homeBanner";
+
+        ResponseEntity<String> img_path = new ResponseEntity<>(
+                UploadFileUtils.uploadFile(uploadpath, file.getOriginalFilename(), file.getBytes()),
+                HttpStatus.CREATED);
+        return (String) img_path.getBody();
+    }
+
 
 
 }
