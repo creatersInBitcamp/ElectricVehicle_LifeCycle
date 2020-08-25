@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://127.0.0.1:3306/mariadb
-    username: stest
-    password: 1234
+    url: jdbc:mariadb://127.0.0.1:3306/evdb
+    username: evdb
+    password: evdb
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
