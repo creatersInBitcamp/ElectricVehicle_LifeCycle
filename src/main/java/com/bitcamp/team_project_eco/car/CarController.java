@@ -23,7 +23,6 @@ public class CarController {
 
     @GetMapping("/carSearch/{searchWord}")
     public List<Car> searchByWord(@PathVariable String searchWord) {
-        System.out.println(searchWord);
         return carService.searchCar(searchWord);
     }
 
