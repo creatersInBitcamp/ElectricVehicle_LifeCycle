@@ -32,5 +32,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-/src/main/java/com/bitcamp/team_project_eco/utils/S3Util.java
