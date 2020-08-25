@@ -14,9 +14,6 @@ import javax.inject.Inject;
 @Controller
 public class UploadController {
 
-    S3Util s3 = new S3Util();
-    String bucketName = "evcar";
-
     //커버이미지 업로드
     @ResponseBody
     @RequestMapping(value = "/imgUpload", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
@@ -35,10 +32,10 @@ public class UploadController {
     @ResponseBody
     @RequestMapping(value = "/postImgUpload", method = RequestMethod.POST, produces = "text/plain;charset=UTF-8")
     public String uploadPostImg(MultipartFile file) throws Exception {
-        String uploadpath = "PostImage";
+        String uploadpath = "postImage";
 
         ResponseEntity<String> img_path = new ResponseEntity<>(
-                UploadFileUtils.uploadFile(uploadpath, file.getOriginalFilename(), file.getBytes()),
+                UploadFileUtils.postUploadFile(uploadpath, file.getOriginalFilename(), file.getBytes()),
                 HttpStatus.CREATED);
         return (String) img_path.getBody();
     }
@@ -49,7 +46,7 @@ public class UploadController {
         String uploadpath = "profileImg";
 
         ResponseEntity<String> img_path = new ResponseEntity<>(
-                UploadFileUtils.uploadFile(uploadpath, file.getOriginalFilename(), file.getBytes()),
+                UploadFileUtils.profileUploadFile(uploadpath, file.getOriginalFilename(), file.getBytes()),
                 HttpStatus.CREATED);
         return (String) img_path.getBody();
     }
