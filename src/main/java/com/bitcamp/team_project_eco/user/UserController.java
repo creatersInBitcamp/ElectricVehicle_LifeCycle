@@ -67,7 +67,8 @@ public class UserController {
 
     @GetMapping("/sendPassword/{email}")
     public String sendPassword(@PathVariable String email){
-        return userService.findByEmail(email).map(com.bitcamp.team_project_eco.user.User::getPassword).orElse(null);
+
+        return userService.sendPassword(email);
     }
 
     @PostMapping("/allUpdate")
