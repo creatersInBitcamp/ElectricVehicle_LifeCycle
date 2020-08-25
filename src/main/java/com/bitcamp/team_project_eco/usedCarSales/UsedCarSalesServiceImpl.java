@@ -54,7 +54,6 @@ public class UsedCarSalesServiceImpl implements UsedCarSalesService {
 
     @Override
     public Optional<UsedCarSales> findById(Long usedCarId) {
-        System.out.println(repository.findById(usedCarId));
         return repository.findById(usedCarId);
     }
 

@@ -27,7 +27,6 @@ public class UserController {
     @GetMapping("/check/{userId}")
     public Boolean idCheck(@PathVariable String userId) {
         Optional<User> idCheckResult = userService.findByUserId(userId);
-        System.out.println(idCheckResult.isPresent());
         return idCheckResult.isPresent();
     }
 
@@ -43,7 +42,6 @@ public class UserController {
 
     @PostMapping("/updateOne")
     public boolean updateUser(@RequestBody User user) {
-        System.out.println(user.toString());
         return userService.updateOne(user);
     }
 

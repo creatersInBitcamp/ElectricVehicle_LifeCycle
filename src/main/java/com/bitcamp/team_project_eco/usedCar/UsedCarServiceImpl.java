@@ -75,7 +75,6 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public List<UsedCarsVO> getAll() {
         List<UsedCar> usedCarList = usedCarRepository.findAll();
-        System.out.println(usedCarList.get(0).getElectricCar());
         List<UsedCarsVO> result = new ArrayList<>();
         for(int i=0; i< usedCarList.size(); i++){
             UsedCarsVO carVO = new UsedCarsVO();
@@ -188,8 +187,6 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     public void update(Long usedCarId) {
-        System.out.println(usedCarId);
-        System.out.println( usedCarRepository.findById(usedCarId).get());
         usedCarRepository.findById(usedCarId).get().setMain(true);
         UsedCar usedCar = usedCarRepository.findById(usedCarId).get();
         usedCar.setMain(true);
@@ -227,7 +224,6 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     public boolean deleteCar(Long usedCarId) {
-        System.out.println("deleteCar "+usedCarId);
         try {
             usedCarRepository.deleteById(usedCarId);
             return true;
@@ -258,7 +254,6 @@ public class UsedCarServiceImpl implements UsedCarService {
             list.add(info);
             i++;
         }
-        System.out.println(list.toString());
         return list;
     }*/
 
@@ -296,9 +291,7 @@ public class UsedCarServiceImpl implements UsedCarService {
     public boolean deleteCarByUserSeq(List<UsedCar> myCars) {
         try {
             for (int i=0; i<myCars.size(); i++) {
-                System.out.println(myCars.get(i));
                 Long id = myCars.get(i).getUsedCarId();
-                System.out.println(id);
                 deleteCar(id);
             }
             return true;

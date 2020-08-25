@@ -70,8 +70,6 @@ public class VariantsServiceImpl implements VariantsService{
                         csvRecord.get(1),
                         electricCarRepository.findById(Long.valueOf(csvRecord.get(2))).get()));
 
-//                System.out.println(csvRecord.get(2));
-//                System.out.println(electricCarRepository.findById(Long.valueOf(csvRecord.get(2))).get());
             }
         } catch (Exception e) {
             e.printStackTrace();

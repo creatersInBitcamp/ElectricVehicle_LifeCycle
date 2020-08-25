@@ -103,7 +103,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Map<String, Object>> counting() {
-        System.out.println(userRepository.counting());
         return userRepository.counting();
     }
 

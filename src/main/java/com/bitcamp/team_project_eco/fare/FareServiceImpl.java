@@ -80,7 +80,6 @@ public class FareServiceImpl implements FareService {
     @Override
     public List<Fare> findFare(String startName, String arriveName) {
         List<Fare> f = repository.findByStartNameAndArriveName(startName, arriveName);
-        System.out.println(f.toString());
         return f;
     }
 }

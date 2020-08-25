@@ -20,7 +20,6 @@ class TeamProjectEcoApplicationTests {
     @Test
     void testRepo(){
         userServiceImpl.readCsv();
-        System.out.println("tttttttt"+userServiceImpl.findAll());
 
     }
 
