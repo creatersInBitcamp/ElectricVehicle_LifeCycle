@@ -31,7 +31,7 @@ interface ChargingStationService extends JpaService<ChargingStation>{
     void allUpdate(List<ChargingStation> chargingStation);
 
     List<? extends Object> findAll(String userSeq);
-    List<? extends Object> getMycarChargingStation(String eccarId, String userSeq);
+    List<? extends Object> getMycarChargingStation(Long eccarId, String userSeq);
 }
 
 @Service
@@ -111,9 +111,9 @@ public class ChargingStationServiceImpl implements ChargingStationService{
     }
 
     @Override
-    public List<? extends Object> getMycarChargingStation(String eccarId, String userSeq) {
+    public List<? extends Object> getMycarChargingStation(Long eccarId, String userSeq) {
         List<Bookmark> b = userRepository.findById(Long.valueOf(userSeq)).get().getBookmarkList();
-        Optional<ElectricCar> electricCar = electricCarRepository.findById(Long.valueOf(eccarId));
+        Optional<ElectricCar> electricCar = electricCarRepository.findById(eccarId);
         List<ChargingStation> chargingStations = chargingStationRepository.getMycarChargingStation(electricCar);
         if(b.isEmpty()){
             return chargingStations;

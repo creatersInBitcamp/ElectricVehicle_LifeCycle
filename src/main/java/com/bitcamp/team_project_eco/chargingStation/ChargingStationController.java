@@ -1,6 +1,6 @@
 package com.bitcamp.team_project_eco.chargingStation;
 
-import com.bitcamp.team_project_eco.electriccar.ElectricCar;
+import com.bitcamp.team_project_eco.usedCar.UsedCarServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +11,11 @@ import java.util.Optional;
 @RequestMapping("/chargingstations")
 public class ChargingStationController {
     private final ChargingStationService chargingStationService;
+    private final UsedCarServiceImpl usedCarService;
 
-    public ChargingStationController(ChargingStationService chargingStationService) {
+    public ChargingStationController(ChargingStationService chargingStationService, UsedCarServiceImpl usedCarService) {
         this.chargingStationService = chargingStationService;
+        this.usedCarService = usedCarService;
     }
 
     @GetMapping("/csv")
@@ -28,11 +30,16 @@ public class ChargingStationController {
 
     @GetMapping("/getall/{userSeq}")
     public List<? extends Object> getAllChargingStation(@PathVariable String userSeq){
-        return chargingStationService.findAll(userSeq);
+        if(usedCarService.getFirstCar(userSeq).isEmpty()){
+            return chargingStationService.findAll(userSeq);
+        }else{
+            Long eccarId = usedCarService.getFirstCar(userSeq).get(0).getEccarId();
+            return chargingStationService.getMycarChargingStation(eccarId,userSeq);
+        }
     }
 
     @GetMapping("/getmycar/{eccarId}/{userSeq}")
-    public List<? extends Object> getMycarChargingStation(@PathVariable String eccarId, @PathVariable String userSeq){
+    public List<? extends Object> getMycarChargingStation(@PathVariable Long eccarId, @PathVariable String userSeq){
         return chargingStationService.getMycarChargingStation(eccarId,userSeq);
     }
 
