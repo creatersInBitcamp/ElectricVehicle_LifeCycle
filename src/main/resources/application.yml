@@ -1,10 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://127.0.0.1:3306/mariadb
-    username: mariadb
-    password: mariadb
-
+    url: jdbc:mariadb://electriccardb.cxzuzyxcseji.ap-northeast-2.rds.amazonaws.com/electriccardb
+    username: electriccardb
+    password: electriccardb
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
@@ -13,7 +12,6 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
-
 server:
   port: 8080
   servlet:

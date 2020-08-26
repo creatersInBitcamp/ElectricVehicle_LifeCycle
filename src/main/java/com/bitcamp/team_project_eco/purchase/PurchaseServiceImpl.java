@@ -81,10 +81,10 @@ public class PurchaseServiceImpl implements PurchaseService{
 
     @Override
     public List<OrderVO> findAllOrder() {
-        OrderVO o = new OrderVO();
         List<OrderVO> result = new ArrayList<>();
         List<Purchase> list = purchaseRepository.findAll();
         for (Purchase purchase : list) {
+            OrderVO o = new OrderVO();
             o.setUserName(purchase.getUser().getName());
             o.setCarName(purchase.getElectricCar().getCarName());
             o.setColor(purchase.getColor());
