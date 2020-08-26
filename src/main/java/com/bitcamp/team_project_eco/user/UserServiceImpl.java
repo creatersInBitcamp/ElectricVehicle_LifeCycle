@@ -8,15 +8,11 @@ import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 interface UserService extends JpaService<User> {
 
@@ -52,6 +48,8 @@ interface UserService extends JpaService<User> {
 
 
     void oneUpdate(String userId, int grade, String banDate);
+
+    String sendPassword(String email);
 }
 
 @Service
@@ -164,6 +162,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public void oneUpdate(String userId, int grade, String banDate) {
         userRepository.oneUpdate(userId, grade, banDate);
+    }
+
+    @Override
+    public String sendPassword(String email) {
+        UUID uuid = UUID.randomUUID();
+        String password = uuid.toString();
+        userRepository.sendPassword(email, password);
+        return password.toString();
     }
 
     @Override
