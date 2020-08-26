@@ -109,4 +109,8 @@ public class UsedCarController {
         return usedCarService.deleteCarByUserSeq(myCars);
     }
 
+    @GetMapping("/deleteMyFirstCar/{usedCarId}")
+    public boolean deleteMyFirstCar(@PathVariable Long usedCarId) {
+        return usedCarService.deleteMyFirstCar(usedCarId);
+    }
 }
