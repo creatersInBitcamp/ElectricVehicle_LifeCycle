@@ -10,8 +10,8 @@ import org.slf4j.LoggerFactory;
 
 public class UploadFileUtils {
     private static final Logger logger = LoggerFactory.getLogger(UploadFileUtils.class);
-    private static final String contextPath = "https://teamev.s3.ap-northeast-2.amazonaws.com"; // 앞에 버킷네임 teamev911 수정.
-    private static final String bucketName = "teamev"; //AWS S3 생성한 버킷네임.
+    private static final String contextPath = "https://teamev911.s3.ap-northeast-2.amazonaws.com"; // 앞에 버킷네임 teamev911 수정.
+    private static final String bucketName = "teamev911"; //AWS S3 생성한 버킷네임.
 
     public static String uploadFile(String uploadPath, String originalName, byte[] byteData) throws Exception {
         S3Util s3 = new S3Util();
