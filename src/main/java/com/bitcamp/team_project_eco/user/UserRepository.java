@@ -28,8 +28,6 @@ public interface UserRepository extends JpaRepository<User, Long>, CustomUserRep
     @Query(value = "select brand, count(*) as count from electric_car group by brand",nativeQuery = true)
     List<Map<String, String>> findBrandCar();
 
-    // Select electric_car.brand, count(*) from used_car inner Join electric_car on used_car.eCCAR_ID = electric_car.eCCAR_ID group by  electric_car.brand
-    // Select electric_car.brand, count(*) from used_car, electric_car where used_car.eCCAR_ID = electric_car.eCCAR_ID group by  electric_car.brand ;
     @Query(value = "Select electric_car.brand, count(*) as count from used_car inner Join electric_car on used_car.eccar_id = electric_car.eccar_id where used_car.sale = true group by  electric_car.brand;",nativeQuery = true)
     List<Map<String, String>> findBrandUsedCar();
 
