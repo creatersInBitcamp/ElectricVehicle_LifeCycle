@@ -3,10 +3,7 @@ package com.bitcamp.team_project_eco.utils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.inject.Inject;
@@ -24,9 +21,8 @@ public class UploadController {
         ResponseEntity<String> img_path = new ResponseEntity<>(
                 UploadFileUtils.uploadFile(uploadpath, file.getOriginalFilename(), file.getBytes()),
                 HttpStatus.CREATED);
-        String coverImagePath = (String) img_path.getBody();
 
-        return coverImagePath;
+        return (String) img_path.getBody();
     }
 
     @ResponseBody
@@ -50,7 +46,5 @@ public class UploadController {
                 HttpStatus.CREATED);
         return (String) img_path.getBody();
     }
-
-
 
 }
