@@ -2,7 +2,6 @@ package com.bitcamp.team_project_eco.usedCar;
 
 import com.bitcamp.team_project_eco.electriccar.ElectricCar;
 import com.bitcamp.team_project_eco.electriccar.ElectricCarRepository;
-import com.bitcamp.team_project_eco.electriccar.ElectricCarVO;
 import com.bitcamp.team_project_eco.user.User;
 import com.bitcamp.team_project_eco.user.UserRepository;
 import com.bitcamp.team_project_eco.utils.JpaService;
@@ -49,6 +48,8 @@ interface UsedCarService extends JpaService<UsedCar> {
     boolean deleteCarByUserSeq(List<UsedCar> myCars);
 
     List<CarInfo> getDetailList(String userSeq);
+
+    boolean deleteMyFirstCar(Long usedCarId);
 }
 
 @Service
@@ -304,5 +305,18 @@ public class UsedCarServiceImpl implements UsedCarService {
     @Override
     public List<CarInfo> getDetailList(String userSeq) {
         return usedCarRepository.findBySalesUserSeq(Long.parseLong(userSeq));
+    }
+
+    @Override
+    public boolean deleteMyFirstCar(Long usedCarId) {
+        try{
+            UsedCar usedCar = usedCarRepository.findById(usedCarId).get();
+            usedCar.setMain(false);
+            usedCarRepository.save(usedCar);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 }
