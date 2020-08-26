@@ -7,8 +7,8 @@ public enum Key {
     public String toString(){
         String resultKey = "";
         switch(this) {
-            case ACCESS_KEY: resultKey = "access"; break;
-            case SECRET_KEY: resultKey = "secret"; break;
+            case ACCESS_KEY: resultKey = ""; break;
+            case SECRET_KEY: resultKey = ""; break;
         }
         return resultKey;
     }
