@@ -16,8 +16,8 @@ import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 
 public class S3Util {
-    private String accessKey = "AKIAJUI7MBBY27RGARPQ"; // 엑세스 키
-    private String secretKey = "ck13Y0PqyGwmy4Yf1NtSaAYe2D2ibqMPfdF74BJ9"; // 보안 엑세스 키
+    private String accessKey = "AKIAJF2ATHROISSVBB2A"; // 엑세스 키
+    private String secretKey = "UIhbCdEXP8lGDcwKFqCtA2PK23KTawCk4bE5jNa+"; // 보안 엑세스 키
 
     private AmazonS3 conn;
 
