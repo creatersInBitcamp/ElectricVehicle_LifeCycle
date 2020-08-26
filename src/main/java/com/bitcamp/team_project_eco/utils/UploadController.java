@@ -24,9 +24,8 @@ public class UploadController {
         ResponseEntity<String> img_path = new ResponseEntity<>(
                 UploadFileUtils.uploadFile(uploadpath, file.getOriginalFilename(), file.getBytes()),
                 HttpStatus.CREATED);
-        String coverImagePath = (String) img_path.getBody();
 
-        return coverImagePath;
+        return (String) img_path.getBody();
     }
 
     @ResponseBody
